@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Oleo+Script:wght@400;700&display=swap");
 .screen-reader-txt {
   border: 0;
   clip: rect(1px, 1px, 1px, 1px);
@@ -10,4 +11,8 @@
   width: 1px;
   word-wrap: normal !important;
   color: red;
+}
+
+.oleo_font {
+  font-family: "Oleo Script", system-ui;
 }/*# sourceMappingURL=style.css.map */
