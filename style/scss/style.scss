@@ -1,2 +1,29 @@
 @use 'general.scss';
 @use 'helpers/fonts.scss';
+
+.faded-img {
+    filter:opacity(0.5);
+
+    &:hover {
+        filter:opacity(1);
+    }
+}
+
+.ingredient {
+    &__bg-img {
+        animation: pop ease-in-out 200ms forwards;
+    }
+}
+
+@keyframes pop {
+    0% {
+        width: 0;
+        height: 0;
+        transform-origin: center;
+    }
+
+    100% {
+        width: 130%;
+        height: 100%;
+    }
+}

@@ -15,4 +15,27 @@
 
 .oleo_font {
   font-family: "Oleo Script", system-ui;
+}
+
+.faded-img {
+  filter: opacity(0.5);
+}
+.faded-img:hover {
+  filter: opacity(1);
+}
+
+.ingredient__bg-img {
+  animation: pop ease-in-out 200ms forwards;
+}
+
+@keyframes pop {
+  0% {
+    width: 0;
+    height: 0;
+    transform-origin: center;
+  }
+  100% {
+    width: 130%;
+    height: 100%;
+  }
 }/*# sourceMappingURL=style.css.map */
