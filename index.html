@@ -8,6 +8,7 @@
   <script src="scripts/mobile_menu.js" defer></script>
   <script src="scripts/paralax.js" defer></script>
   <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
   <script src="https://kit.fontawesome.com/c777fc19af.js" crossorigin="anonymous"></script>
 </head>
 
@@ -135,85 +136,515 @@
             <p>C'est tres simple: a chaque etape, choisissez vos ingredients. A la fin du quizz, quand vous etes surs de votre recette, cliquez sur 'cuisiner' et la recette sera alors enregistree !</p>
             <form action="">
 
-              <fieldset>
-                <legend>Choisissez d'abord votre bouillon (1 choix possible)</legend>
+              <fieldset class="my-4">
+                <legend class="my-2 font-semibold">Choisissez d'abord votre bouillon (1 choix possible)</legend>
                 <!-- Choix du bouillon -->
-                <div class="grid grid-cols-12">
-                  <!-- ingredient #1 -->
-                  <div class="col-span-3 w-11/12 group relative ingredient">
-                    <input class="hidden peer" type="radio" id="bouillon-opt-1" name="bouillon" value="bouillon-opt-1" checked>
-                    <label class="cursor-pointer text-center flex flex-col p-4 justify-center items-center text-sm group-hover:text-white group-hover:peer-checked:text-black" for="bouillon-opt-1">
-                        <img class="w-10 z-[2]" src="img/veggie2.png" alt="">
-                        <span class="z-[2] max-w-[80%] mx-auto">Shoyu - sauce soja</span>
-                        <!-- background decoratif au survol -->
-                        <div class="absolute inset-0 flex items-center justify-center z-[1]">
-                          <img class="cursor-pointer w-0 h-0 transition-all duration-200 ease-in-out group-hover:w-full group-hover:h-full origin-center" src="img/presntation_cards/ingredeints-bg.png" alt="">
-                      </div>
-                    </label>
-                    <!-- background decoratif au clic -->
-                    <div class="absolute inset-0 hidden peer-checked:flex items-center justify-center z-[1]">
+                <div class="grid grid-cols-12 gap-4">
+
+                  <!-- Ingredient #1 -->
+                  <div class="ingredient group col-span-12 sm:col-span-6 md:col-span-4 lg:col-span-3 bg-gray-200 flex flex-col relative">
+                    <input class="peer absolute inset-0 z-10 cursor-pointer opacity-0" type="radio" id="bouillon-opt-1" name="bouillon" value="bouillon-opt-1" checked>
+                    <img class="flex-grow p-8 w-full aspect-[5/7] object-contain z-[2]" src="img/ingredients/bouillons/bol-v1-trs.png" alt="">
+                    <label class="font-bold mt-2 bg-green-600 py-1 px-4 text-white text-sm w-fit ml-auto z-[2]" for="bouillon-opt-1">Shoyu - sauce soja</label>
+                    
+                    <!-- Background decoratif au survol et a la selection de l'element -->
+                    <div class="absolute inset-0 z-[1] hidden items-center justify-center group-hover:flex peer-checked:flex">
                       <img class="ingredient__bg-img" src="img/presntation_cards/ingredients-bg-checked.png" alt="">
+                    </div>
+                  </div>
+      
+                  <!-- Ingredient #2 -->
+                  <div class="ingredient group col-span-12 sm:col-span-6 md:col-span-4 lg:col-span-3 bg-gray-200 flex flex-col relative">
+                    <input class="peer absolute inset-0 z-10 cursor-pointer opacity-0" type="radio" id="bouillon-opt-2" name="bouillon" value="bouillon-opt-2">
+                    <img class="flex-grow p-8 w-full aspect-[5/7] object-contain z-[2]" src="img/ingredients/bouillons/bol-v2.-trspng.png" alt="">
+                    <label class="font-bold mt-2 bg-green-600 py-1 px-4 text-white text-sm w-fit ml-auto z-[2]" for="bouillon-opt-2">Tonkotsu - os de porc</label>
+                    
+                    <!-- Background decoratif au survol et a la selection de l'element -->
+                    <div class="absolute inset-0 z-[1] hidden items-center justify-center group-hover:flex peer-checked:flex">
+                      <img class="ingredient__bg-img" src="img/presntation_cards/ingredients-bg-checked.png" alt="">
+                    </div>
+                  </div>
+
+                  <!-- Ingredient #3 -->
+                  <div class="ingredient group col-span-12 sm:col-span-6 md:col-span-4 lg:col-span-3 bg-gray-200 flex flex-col relative">
+                    <input class="peer absolute inset-0 z-10 cursor-pointer opacity-0" type="radio" id="bouillon-opt-3" name="bouillon" value="bouillon-opt-3">
+                    <img class="flex-grow p-8 w-full aspect-[5/7] object-contain z-[2]" src="img/ingredients/bouillons/bol-v3-trs.png" alt="">
+                    <label class="font-bold mt-2 bg-green-600 py-1 px-4 text-white text-sm w-fit ml-auto z-[2]" for="bouillon-opt-3">Shio - sel</label>
+                    
+                    <!-- Background decoratif au survol et a la selection de l'element -->
+                    <div class="absolute inset-0 z-[1] hidden items-center justify-center group-hover:flex peer-checked:flex">
+                      <img class="ingredient__bg-img" src="img/presntation_cards/ingredients-bg-checked.png" alt="">
+                    </div>
+                  </div>
+
+                 <!-- Ingredient #4 -->
+                 <div class="ingredient group col-span-12 sm:col-span-6 md:col-span-4 lg:col-span-3 bg-gray-200 flex flex-col relative">
+                  <input class="peer absolute inset-0 z-10 cursor-pointer opacity-0" type="radio" id="bouillon-opt-4" name="bouillon" value="bouillon-opt-4">
+                  <img class="flex-grow p-8 w-full aspect-[5/7] object-contain z-[2]" src="img/ingredients/bouillons/bol-v4-trs.png" alt="">
+                  <label class="font-bold mt-2 bg-green-600 py-1 px-4 text-white text-sm w-fit ml-auto z-[2]" for="bouillon-opt-4">Shoyu - sauce soja</label>
+                  
+                  <!-- Background decoratif au survol et a la selection de l'element -->
+                  <div class="absolute inset-0 z-[1] hidden items-center justify-center group-hover:flex peer-checked:flex">
+                    <img class="ingredient__bg-img" src="img/presntation_cards/ingredients-bg-checked.png" alt="">
                   </div>
                 </div>
 
-                <!-- ingredient #2 -->
-                <div class="col-span-3 w-11/12 group relative ingredient">
-                  <input class="hidden peer" type="radio" id="bouillon-opt-2" name="bouillon" value="bouillon-opt-2">
-                  <label class="cursor-pointer text-center flex flex-col p-4 justify-center items-center text-sm group-hover:text-white group-hover:peer-checked:text-black" for="bouillon-opt-2">
-                      <img class="w-10 z-[2]" src="img/veggie3.png" alt="">
-                      <span class="z-[2] max-w-[80%] mx-auto">Tonkotsu - os de porc</span>
-                      <!-- background decoratif au survol -->
-                      <div class="absolute inset-0 flex items-center justify-center z-[1]">
-                        <img class="cursor-pointer w-0 h-0 transition-all duration-200 ease-in-out group-hover:w-full group-hover:h-full origin-center" src="img/presntation_cards/ingredeints-bg.png" alt="">
-                    </div>
-                  </label>
-                  <!-- background decoratif au clic -->
-                  <div class="absolute inset-0 hidden peer-checked:flex items-center justify-center z-[1]">
-                    <img class="ingredient__bg-img" src="img/presntation_cards/ingredients-bg-checked.png" alt="">
                 </div>
-                </div>
+              </fieldset>
 
+              <fieldset class="my-4">
+                <legend class="my-2 font-semibold">Choisissez ensuite vos nouilles (1 choix possible)</legend>
+                <!-- Choix des nouilles -->
+                <div class="grid grid-cols-12 gap-4">
 
-                <!-- ingredient #3 -->
-                <div class="col-span-3 w-11/12 group relative ingredient">
-                  <input class="hidden peer" type="radio" id="bouillon-opt-3" name="bouillon" value="bouillon-opt-3">
-                  <label class="cursor-pointer text-center flex flex-col p-4 justify-center items-center text-sm group-hover:text-white group-hover:peer-checked:text-black" for="bouillon-opt-3">
-                      <img class="w-10 z-[2]" src="img/veggie3.png" alt="">
-                      <span class="z-[2] max-w-[80%] mx-auto">Shio - sel</span>
-                      <!-- background decoratif au survol -->
-                      <div class="absolute inset-0 flex items-center justify-center z-[1]">
-                        <img class="cursor-pointer w-0 h-0 transition-all duration-200 ease-in-out group-hover:w-full group-hover:h-full origin-center" src="img/presntation_cards/ingredeints-bg.png" alt="">
+                  <!-- Ingredient #1 -->
+                  <div class="ingredient group col-span-12 sm:col-span-6 md:col-span-4 lg:col-span-3 bg-gray-200 flex flex-col relative">
+                    <input class="peer absolute inset-0 z-10 cursor-pointer opacity-0" type="radio" id="nouilles-opt-1" name="nouilles" value="nouilles-opt-1" checked>
+                    <img class="flex-grow p-8 w-full aspect-[5/7] object-contain z-[2]" src="img/ingredients/nouilles/thin-trs.png" alt="">
+                    <label class="font-bold mt-2 bg-green-600 py-1 px-4 text-white text-sm w-fit ml-auto z-[2]" for="nouilles-opt-1">Hosomen - Nouilles fines</label>
+                    
+                    <!-- Background decoratif au survol et a la selection de l'element -->
+                    <div class="absolute inset-0 z-[1] hidden items-center justify-center group-hover:flex peer-checked:flex">
+                      <img class="ingredient__bg-img" src="img/presntation_cards/ingredients-bg-checked.png" alt="">
                     </div>
-                  </label>
-                  <!-- background decoratif au clic -->
-                  <div class="absolute inset-0 hidden peer-checked:flex items-center justify-center z-[1]">
-                    <img class="ingredient__bg-img" src="img/presntation_cards/ingredients-bg-checked.png" alt="">
-                </div>
-                </div>
+                  </div>    
 
-                 <!-- ingredient #4 -->
-                 <div class="col-span-3 w-11/12 group relative ingredient">
-                  <input class="hidden peer" type="radio" id="bouillon-opt-4" name="bouillon" value="bouillon-opt-4">
-                  <label class="cursor-pointer text-center flex flex-col p-4 justify-center items-center text-sm group-hover:text-white group-hover:peer-checked:text-black" for="bouillon-opt-4">
-                      <img class="w-10 z-[2]" src="img/veggie1.png" alt="">
-                      <span class="z-[2] max-w-[80%] mx-auto">Miso</span>
-                      <!-- background decoratif au survol -->
-                      <div class="absolute inset-0 flex items-center justify-center z-[1]">
-                        <img class="cursor-pointer w-0 h-0 transition-all duration-200 ease-in-out group-hover:w-full group-hover:h-full origin-center" src="img/presntation_cards/ingredeints-bg.png" alt="">
+                  <!-- Ingredient #2 -->
+                  <div class="ingredient group col-span-12 sm:col-span-6 md:col-span-4 lg:col-span-3 bg-gray-200 flex flex-col relative">
+                    <input class="peer absolute inset-0 z-10 cursor-pointer opacity-0" type="radio" id="nouilles-opt-2" name="nouilles" value="nouilles-opt-2">
+                    <img class="flex-grow p-8 w-full aspect-[5/7] object-contain z-[2]" src="img/ingredients/nouilles/thick-trs.png" alt="">
+                    <label class="font-bold mt-2 bg-green-600 py-1 px-4 text-white text-sm w-fit ml-auto z-[2]" for="nouilles-opt-2">Futomen - nouilles epaisses</label>
+                    
+                    <!-- Background decoratif au survol et a la selection de l'element -->
+                    <div class="absolute inset-0 z-[1] hidden items-center justify-center group-hover:flex peer-checked:flex">
+                      <img class="ingredient__bg-img" src="img/presntation_cards/ingredients-bg-checked.png" alt="">
                     </div>
-                  </label>
-                  <!-- background decoratif au clic -->
-                  <div class="absolute inset-0 hidden peer-checked:flex items-center justify-center z-[1]">
-                    <img class="ingredient__bg-img" src="img/presntation_cards/ingredients-bg-checked.png" alt="">
+                  </div> 
+
+                  <!-- Ingredient #3 -->
+                  <div class="ingredient group col-span-12 sm:col-span-6 md:col-span-4 lg:col-span-3 bg-gray-200 flex flex-col relative">
+                    <input class="peer absolute inset-0 z-10 cursor-pointer opacity-0" type="radio" id="nouilles-opt-3" name="nouilles" value="nouilles-opt-3">
+                    <img class="flex-grow p-8 w-full aspect-[5/7] object-contain z-[2]" src="img/ingredients/nouilles/wavy-trs.png" alt="">
+                    <label class="font-bold mt-2 bg-green-600 py-1 px-4 text-white text-sm w-fit ml-auto z-[2]" for="nouilles-opt-3">Chūkamen - nouilles ondulees</label>
+                    
+                    <!-- Background decoratif au survol et a la selection de l'element -->
+                    <div class="absolute inset-0 z-[1] hidden items-center justify-center group-hover:flex peer-checked:flex">
+                      <img class="ingredient__bg-img" src="img/presntation_cards/ingredients-bg-checked.png" alt="">
+                    </div>
+                  </div> 
+                  
+                  <!-- Ingredient #4 -->
+                  <div class="ingredient group col-span-12 sm:col-span-6 md:col-span-4 lg:col-span-3 bg-gray-200 flex flex-col relative">
+                    <input class="peer absolute inset-0 z-10 cursor-pointer opacity-0" type="radio" id="nouilles-opt-4" name="nouilles" value="nouilles-opt-4">
+                    <img class="flex-grow p-8 w-full aspect-[5/7] object-contain z-[2]" src="img/ingredients/nouilles/plates-trs.png" alt="">
+                    <label class="font-bold mt-2 bg-green-600 py-1 px-4 text-white text-sm w-fit ml-auto z-[2]" for="nouilles-opt-4">Hiramen - Nouilles plates</label>
+                    
+                    <!-- Background decoratif au survol et a la selection de l'element -->
+                    <div class="absolute inset-0 z-[1] hidden items-center justify-center group-hover:flex peer-checked:flex">
+                      <img class="ingredient__bg-img" src="img/presntation_cards/ingredients-bg-checked.png" alt="">
+                    </div>
+                  </div> 
+       
                 </div>
+              </fieldset>
+
+              <fieldset class="my-4">
+                <legend class="my-2 font-semibold">Choisissez ensuite votre proteine (1 choix possible)</legend>
+                <!-- Choix de la proteine -->
+                <div class="grid grid-cols-12 gap-4">
+
+                  <!-- Ingredient #1 -->
+                  <div class="ingredient group col-span-12 sm:col-span-6 md:col-span-4 lg:col-span-3 bg-gray-200 flex flex-col relative">
+                    <input class="peer absolute inset-0 z-10 cursor-pointer opacity-0" type="radio" id="proteine-opt-1" name="proteine" value="proteine-opt-1" checked>
+                    <img class="flex-grow p-8 w-full aspect-[5/7] object-contain z-[2]" src="img/ingredients/proteines/porc.png" alt="">
+                    <label class="font-bold mt-2 bg-green-600 py-1 px-4 text-white text-sm w-fit ml-auto z-[2]" for="proteine-opt-1">Porc</label>
+                    
+                    <!-- Background decoratif au survol et a la selection de l'element -->
+                    <div class="absolute inset-0 z-[1] hidden items-center justify-center group-hover:flex peer-checked:flex">
+                      <img class="ingredient__bg-img" src="img/presntation_cards/ingredients-bg-checked.png" alt="">
+                    </div>
+                  </div> 
+      
+                  <!-- Ingredient #2 -->
+                  <div class="ingredient group col-span-12 sm:col-span-6 md:col-span-4 lg:col-span-3 bg-gray-200 flex flex-col relative">
+                    <input class="peer absolute inset-0 z-10 cursor-pointer opacity-0" type="radio" id="proteine-opt-2" name="proteine" value="proteine-opt-2">
+                    <img class="flex-grow p-8 w-full aspect-[5/7] object-contain z-[2]" src="img/ingredients/proteines/boeuf.png" alt="">
+                    <label class="font-bold mt-2 bg-green-600 py-1 px-4 text-white text-sm w-fit ml-auto z-[2]" for="proteine-opt-2">Boeuf</label>
+                    
+                    <!-- Background decoratif au survol et a la selection de l'element -->
+                    <div class="absolute inset-0 z-[1] hidden items-center justify-center group-hover:flex peer-checked:flex">
+                      <img class="ingredient__bg-img" src="img/presntation_cards/ingredients-bg-checked.png" alt="">
+                    </div>
+                  </div> 
+
+                  <!-- Ingredient #3 -->
+                  <div class="ingredient group col-span-12 sm:col-span-6 md:col-span-4 lg:col-span-3 bg-gray-200 flex flex-col relative">
+                    <input class="peer absolute inset-0 z-10 cursor-pointer opacity-0" type="radio" id="proteine-opt-3" name="proteine" value="proteine-opt-3">
+                    <img class="flex-grow p-8 w-full aspect-[5/7] object-contain z-[2]" src="img/ingredients/proteines/poulet.png" alt="">
+                    <label class="font-bold mt-2 bg-green-600 py-1 px-4 text-white text-sm w-fit ml-auto z-[2]" for="proteine-opt-3">Poulet</label>
+                    
+                    <!-- Background decoratif au survol et a la selection de l'element -->
+                    <div class="absolute inset-0 z-[1] hidden items-center justify-center group-hover:flex peer-checked:flex">
+                      <img class="ingredient__bg-img" src="img/presntation_cards/ingredients-bg-checked.png" alt="">
+                    </div>
+                  </div> 
+
+                  <!-- Ingredient #4 -->
+                  <div class="ingredient group col-span-12 sm:col-span-6 md:col-span-4 lg:col-span-3 bg-gray-200 flex flex-col relative">
+                    <input class="peer absolute inset-0 z-10 cursor-pointer opacity-0" type="radio" id="proteine-opt-4" name="proteine" value="proteine-opt-4">
+                    <img class="flex-grow p-8 w-full aspect-[5/7] object-contain z-[2]" src="img/ingredients/proteines/tofu.png" alt="">
+                    <label class="font-bold mt-2 bg-green-600 py-1 px-4 text-white text-sm w-fit ml-auto z-[2]" for="proteine-opt-4">Tofu</label>
+                    
+                    <!-- Background decoratif au survol et a la selection de l'element -->
+                    <div class="absolute inset-0 z-[1] hidden items-center justify-center group-hover:flex peer-checked:flex">
+                      <img class="ingredient__bg-img" src="img/presntation_cards/ingredients-bg-checked.png" alt="">
+                    </div>
+                  </div> 
+
+                  <!-- Ingredient #5 -->
+                  <div class="ingredient group col-span-12 sm:col-span-6 md:col-span-4 lg:col-span-3 bg-gray-200 flex flex-col relative">
+                    <input class="peer absolute inset-0 z-10 cursor-pointer opacity-0" type="radio" id="proteine-opt-5" name="proteine" value="proteine-opt-5">
+                    <img class="flex-grow p-8 w-full aspect-[5/7] object-contain z-[2]" src="img/ingredients/proteines/crevette.png" alt="">
+                    <label class="font-bold mt-2 bg-green-600 py-1 px-4 text-white text-sm w-fit ml-auto z-[2]" for="proteine-opt-5">Crevettes grillees</label>
+                    
+                    <!-- Background decoratif au survol et a la selection de l'element -->
+                    <div class="absolute inset-0 z-[1] hidden items-center justify-center group-hover:flex peer-checked:flex">
+                      <img class="ingredient__bg-img" src="img/presntation_cards/ingredients-bg-checked.png" alt="">
+                    </div>
+                  </div> 
+
+                  <!-- Ingredient #6 -->
+                  <div class="ingredient group col-span-12 sm:col-span-6 md:col-span-4 lg:col-span-3 bg-gray-200 flex flex-col relative">
+                    <input class="peer absolute inset-0 z-10 cursor-pointer opacity-0" type="radio" id="proteine-opt-6" name="proteine" value="proteine-opt-6">
+                    <img class="flex-grow p-8 w-full aspect-[5/7] object-contain z-[2]" src="img/ingredients/proteines/tempura_crevette.png" alt="">
+                    <label class="font-bold mt-2 bg-green-600 py-1 px-4 text-white text-sm w-fit ml-auto z-[2] z-[2]" for="proteine-opt-6">Crevettes tempura</label>
+                    
+                    <!-- Background decoratif au survol et a la selection de l'element -->
+                    <div class="absolute inset-0 z-[1] hidden items-center justify-center group-hover:flex peer-checked:flex">
+                      <img class="ingredient__bg-img" src="img/presntation_cards/ingredients-bg-checked.png" alt="">
+                    </div>
+                  </div> 
+
                 </div>
+              </fieldset>
+
+              <fieldset class="my-4">
+                <legend class="my-2 font-semibold">Choisissez ensuite vos legumes (plusieurs choix possible)</legend>
+                <!-- Choix des legumes -->
+                <div class="grid grid-cols-12 gap-4">
+
+                  <!-- Ingredient #1 -->
+                  <div class="ingredient group col-span-12 sm:col-span-6 md:col-span-4 lg:col-span-3 bg-gray-200 flex flex-col relative">
+                    <input class="peer absolute inset-0 z-10 cursor-pointer opacity-0" type="checkbox" id="legumes-opt-1" name="legumes" value="legumes-opt-1" checked>
+                    <img class="flex-grow p-8 w-full aspect-[5/7] object-contain z-[2]" src="img/ingredients/legumes/bambou.png" alt="">
+                    <label class="font-bold mt-2 bg-green-600 py-1 px-4 text-white text-sm w-fit ml-auto z-[2]" for="legumes-opt-1">Pousses de bambou</label>
+                    
+                    <!-- Background decoratif au survol et a la selection de l'element -->
+                    <div class="absolute inset-0 z-[1] hidden items-center justify-center group-hover:flex peer-checked:flex">
+                      <img class="ingredient__bg-img" src="img/presntation_cards/ingredients-bg-checked.png" alt="">
+                    </div>
+                  </div> 
+      
+                  <!-- Ingredient #2 -->
+                  <div class="ingredient group col-span-12 sm:col-span-6 md:col-span-4 lg:col-span-3 bg-gray-200 flex flex-col relative">
+                    <input class="peer absolute inset-0 z-10 cursor-pointer opacity-0" type="checkbox" id="legumes-opt-2" name="legumes" value="legumes-opt-2">
+                    <img class="flex-grow p-8 w-full aspect-[5/7] object-contain z-[2]" src="img/ingredients/legumes/champignons.png" alt="">
+                    <label class="font-bold mt-2 bg-green-600 py-1 px-4 text-white text-sm w-fit ml-auto z-[2]" for="legumes-opt-2">Champignons</label>
+                    
+                    <!-- Background decoratif au survol et a la selection de l'element -->
+                    <div class="absolute inset-0 z-[1] hidden items-center justify-center group-hover:flex peer-checked:flex">
+                      <img class="ingredient__bg-img" src="img/presntation_cards/ingredients-bg-checked.png" alt="">
+                    </div>
+                  </div> 
+
+                  <!-- Ingredient #3 -->
+                  <div class="ingredient group col-span-12 sm:col-span-6 md:col-span-4 lg:col-span-3 bg-gray-200 flex flex-col relative">
+                    <input class="peer absolute inset-0 z-10 cursor-pointer opacity-0" type="checkbox" id="legumes-opt-3" name="legumes" value="legumes-opt-3">
+                    <img class="flex-grow p-8 w-full aspect-[5/7] object-contain z-[2]" src="img/ingredients/legumes/chou.png" alt="">
+                    <label class="font-bold mt-2 bg-green-600 py-1 px-4 text-white text-sm w-fit ml-auto z-[2]" for="legumes-opt-3">Bokchoi</label>
+                    
+                    <!-- Background decoratif au survol et a la selection de l'element -->
+                    <div class="absolute inset-0 z-[1] hidden items-center justify-center group-hover:flex peer-checked:flex">
+                      <img class="ingredient__bg-img" src="img/presntation_cards/ingredients-bg-checked.png" alt="">
+                    </div>
+                  </div> 
+
+                  <!-- Ingredient #4 -->
+                  <div class="ingredient group col-span-12 sm:col-span-6 md:col-span-4 lg:col-span-3 bg-gray-200 flex flex-col relative">
+                    <input class="peer absolute inset-0 z-10 cursor-pointer opacity-0" type="checkbox" id="legumes-opt-4" name="legumes" value="legumes-opt-4">
+                    <img class="flex-grow p-8 w-full aspect-[5/7] object-contain z-[2]" src="img/ingredients/legumes/epinards.png" alt="">
+                    <label class="font-bold mt-2 bg-green-600 py-1 px-4 text-white text-sm w-fit ml-auto z-[2]" for="legumes-opt-4">Epinards</label>
+                    
+                    <!-- Background decoratif au survol et a la selection de l'element -->
+                    <div class="absolute inset-0 z-[1] hidden items-center justify-center group-hover:flex peer-checked:flex">
+                      <img class="ingredient__bg-img" src="img/presntation_cards/ingredients-bg-checked.png" alt="">
+                    </div>
+                  </div> 
+
+                  <!-- Ingredient #5 -->
+                  <div class="ingredient group col-span-12 sm:col-span-6 md:col-span-4 lg:col-span-3 bg-gray-200 flex flex-col relative">
+                    <input class="peer absolute inset-0 z-10 cursor-pointer opacity-0" type="checkbox" id="legumes-opt-5" name="legumes" value="legumes-opt-5">
+                    <img class="flex-grow p-8 w-full aspect-[5/7] object-contain z-[2]" src="img/ingredients/legumes/mais.png" alt="">
+                    <label class="font-bold mt-2 bg-green-600 py-1 px-4 text-white text-sm w-fit ml-auto z-[2]" for="legumes-opt-5">Mais</label>
+                    
+                    <!-- Background decoratif au survol et a la selection de l'element -->
+                    <div class="absolute inset-0 z-[1] hidden items-center justify-center group-hover:flex peer-checked:flex">
+                      <img class="ingredient__bg-img" src="img/presntation_cards/ingredients-bg-checked.png" alt="">
+                    </div>
+                  </div> 
+
+                  <!-- Ingredient #6 -->
+                  <div class="ingredient group col-span-12 sm:col-span-6 md:col-span-4 lg:col-span-3 bg-gray-200 flex flex-col relative">
+                    <input class="peer absolute inset-0 z-10 cursor-pointer opacity-0" type="checkbox" id="legumes-opt-6" name="legumes" value="legumes-opt-6">
+                    <img class="flex-grow p-8 w-full aspect-[5/7] object-contain z-[2]" src="img/ingredients/legumes/oignons_verts.png" alt="">
+                    <label class="font-bold mt-2 bg-green-600 py-1 px-4 text-white text-sm w-fit ml-auto z-[2]" for="legumes-opt-6">Oignons verts</label>
+                    
+                    <!-- Background decoratif au survol et a la selection de l'element -->
+                    <div class="absolute inset-0 z-[1] hidden items-center justify-center group-hover:flex peer-checked:flex">
+                      <img class="ingredient__bg-img" src="img/presntation_cards/ingredients-bg-checked.png" alt="">
+                    </div>
+                  </div> 
+
+                  <!-- Ingredient #7 -->
+                  <div class="ingredient group col-span-12 sm:col-span-6 md:col-span-4 lg:col-span-3 bg-gray-200 flex flex-col relative">
+                    <input class="peer absolute inset-0 z-10 cursor-pointer opacity-0" type="checkbox" id="legumes-opt-7" name="legumes" value="legumes-opt-7">
+                    <img class="flex-grow p-8 w-full aspect-[5/7] object-contain z-[2]" src="img/ingredients/legumes/poireau.png" alt="">
+                    <label class="font-bold mt-2 bg-green-600 py-1 px-4 text-white text-sm w-fit ml-auto z-[2]" for="legumes-opt-7">Poireau</label>
+                    
+                    <!-- Background decoratif au survol et a la selection de l'element -->
+                    <div class="absolute inset-0 z-[1] hidden items-center justify-center group-hover:flex peer-checked:flex">
+                      <img class="ingredient__bg-img" src="img/presntation_cards/ingredients-bg-checked.png" alt="">
+                    </div>
+                  </div> 
+
+                  <!-- Ingredient #8 -->
+                  <div class="ingredient group col-span-12 sm:col-span-6 md:col-span-4 lg:col-span-3 bg-gray-200 flex flex-col relative">
+                    <input class="peer absolute inset-0 z-10 cursor-pointer opacity-0" type="checkbox" id="legumes-opt-8" name="legumes" value="legumes-opt-8">
+                    <img class="flex-grow p-8 w-full aspect-[5/7] object-contain z-[2]" src="img/ingredients/legumes/pousses_soja.png" alt="">
+                    <label class="font-bold mt-2 bg-green-600 py-1 px-4 text-white text-sm w-fit ml-auto z-[2]" for="legumes-opt-8">Germes de soja</label>
+                    
+                    <!-- Background decoratif au survol et a la selection de l'element -->
+                    <div class="absolute inset-0 z-[1] hidden items-center justify-center group-hover:flex peer-checked:flex">
+                      <img class="ingredient__bg-img" src="img/presntation_cards/ingredients-bg-checked.png" alt="">
+                    </div>
+                  </div> 
+
                 </div>
-    
+              </fieldset>
+
+              <fieldset class="my-4">
+                <legend class="my-2 font-semibold">Choisissez vos toppings (plusieurs choix possible)</legend>
+                <!-- Choix des toppings -->
+                <div class="grid grid-cols-12 gap-4">
+
+                  <!-- Ingredient #1 -->
+                  <div class="ingredient group col-span-12 sm:col-span-6 md:col-span-4 lg:col-span-3 bg-gray-200 flex flex-col relative">
+                    <input class="peer absolute inset-0 z-10 cursor-pointer opacity-0" type="checkbox" id="toppings-opt-1" name="toppings" value="toppings-opt-1" checked>
+                    <img class="flex-grow p-8 w-full aspect-[5/7] object-contain z-[2]" src="img/ingredients/toppings/ail_frit.png" alt="">
+                    <label class="font-bold mt-2 bg-green-600 py-1 px-4 text-white text-sm w-fit ml-auto z-[2]" for="toppings-opt-1">Ail frit</label>
+                    
+                    <!-- Background decoratif au survol et a la selection de l'element -->
+                    <div class="absolute inset-0 z-[1] hidden items-center justify-center group-hover:flex peer-checked:flex">
+                      <img class="ingredient__bg-img" src="img/presntation_cards/ingredients-bg-checked.png" alt="">
+                    </div>
+                  </div> 
+      
+                  <!-- Ingredient #2 -->
+                  <div class="ingredient group col-span-12 sm:col-span-6 md:col-span-4 lg:col-span-3 bg-gray-200 flex flex-col relative">
+                    <input class="peer absolute inset-0 z-10 cursor-pointer opacity-0" type="checkbox" id="toppings-opt-2" name="toppings" value="toppings-opt-2">
+                    <img class="flex-grow p-8 w-full aspect-[5/7] object-contain z-[2]" src="img/ingredients/toppings/algues.png" alt="">
+                    <label class="font-bold mt-2 bg-green-600 py-1 px-4 text-white text-sm w-fit ml-auto z-[2]" for="toppings-opt-2">Algues nori</label>
+                    
+                    <!-- Background decoratif au survol et a la selection de l'element -->
+                    <div class="absolute inset-0 z-[1] hidden items-center justify-center group-hover:flex peer-checked:flex">
+                      <img class="ingredient__bg-img" src="img/presntation_cards/ingredients-bg-checked.png" alt="">
+                    </div>
+                  </div> 
+
+                  <!-- Ingredient #3 -->
+                  <div class="ingredient group col-span-12 sm:col-span-6 md:col-span-4 lg:col-span-3 bg-gray-200 flex flex-col relative">
+                    <input class="peer absolute inset-0 z-10 cursor-pointer opacity-0" type="checkbox" id="toppings-opt-3" name="toppings" value="toppings-opt-3">
+                    <img class="flex-grow p-8 w-full aspect-[5/7] object-contain z-[2]" src="img/ingredients/toppings/beurre.png" alt="">
+                    <label class="font-bold mt-2 bg-green-600 py-1 px-4 text-white text-sm w-fit ml-auto z-[2]" for="toppings-opt-3">Beurre</label>
+                    
+                    <!-- Background decoratif au survol et a la selection de l'element -->
+                    <div class="absolute inset-0 z-[1] hidden items-center justify-center group-hover:flex peer-checked:flex">
+                      <img class="ingredient__bg-img" src="img/presntation_cards/ingredients-bg-checked.png" alt="">
+                    </div>
+                  </div> 
+
+                  <!-- Ingredient #4 -->
+                  <div class="ingredient group col-span-12 sm:col-span-6 md:col-span-4 lg:col-span-3 bg-gray-200 flex flex-col relative">
+                    <input class="peer absolute inset-0 z-10 cursor-pointer opacity-0" type="checkbox" id="toppings-opt-4" name="toppings" value="toppings-opt-4">
+                    <img class="flex-grow p-8 w-full aspect-[5/7] object-contain z-[2]" src="img/ingredients/toppings/dumplings.png" alt="">
+                    <label class="font-bold mt-2 bg-green-600 py-1 px-4 text-white text-sm w-fit ml-auto z-[2]" for="toppings-opt-4">Dumplings</label>
+                    
+                    <!-- Background decoratif au survol et a la selection de l'element -->
+                    <div class="absolute inset-0 z-[1] hidden items-center justify-center group-hover:flex peer-checked:flex">
+                      <img class="ingredient__bg-img" src="img/presntation_cards/ingredients-bg-checked.png" alt="">
+                    </div>
+                  </div> 
+
+                  <!-- Ingredient #5 -->
+                  <div class="ingredient group col-span-12 sm:col-span-6 md:col-span-4 lg:col-span-3 bg-gray-200 flex flex-col relative">
+                    <input class="peer absolute inset-0 z-10 cursor-pointer opacity-0" type="checkbox" id="toppings-opt-5" name="toppings" value="toppings-opt-5">
+                    <img class="flex-grow p-8 w-full aspect-[5/7] object-contain z-[2]" src="img/ingredients/toppings/gingembre.png" alt="">
+                    <label class="font-bold mt-2 bg-green-600 py-1 px-4 text-white text-sm w-fit ml-auto z-[2]" for="toppings-opt-5">Gingembre marine</label>
+                    
+                    <!-- Background decoratif au survol et a la selection de l'element -->
+                    <div class="absolute inset-0 z-[1] hidden items-center justify-center group-hover:flex peer-checked:flex">
+                      <img class="ingredient__bg-img" src="img/presntation_cards/ingredients-bg-checked.png" alt="">
+                    </div>
+                  </div> 
+
+                  <!-- Ingredient #6 -->
+                  <div class="ingredient group col-span-12 sm:col-span-6 md:col-span-4 lg:col-span-3 bg-gray-200 flex flex-col relative">
+                    <input class="peer absolute inset-0 z-10 cursor-pointer opacity-0" type="checkbox" id="toppings-opt-6" name="toppings" value="toppings-opt-6">
+                    <img class="flex-grow p-8 w-full aspect-[5/7] object-contain z-[2]" src="img/ingredients/toppings/narutomaki.png" alt="">
+                    <label class="font-bold mt-2 bg-green-600 py-1 px-4 text-white text-sm w-fit ml-auto z-[2]" for="toppings-opt-6">Narutomaki</label>
+                    
+                    <!-- Background decoratif au survol et a la selection de l'element -->
+                    <div class="absolute inset-0 z-[1] hidden items-center justify-center group-hover:flex peer-checked:flex">
+                      <img class="ingredient__bg-img" src="img/presntation_cards/ingredients-bg-checked.png" alt="">
+                    </div>
+                  </div> 
+
+                  <!-- Ingredient #7 -->
+                  <div class="ingredient group col-span-12 sm:col-span-6 md:col-span-4 lg:col-span-3 bg-gray-200 flex flex-col relative">
+                    <input class="peer absolute inset-0 z-10 cursor-pointer opacity-0" type="checkbox" id="toppings-opt-7" name="toppings" value="toppings-opt-7">
+                    <img class="flex-grow p-8 w-full aspect-[5/7] object-contain z-[2]" src="img/ingredients/toppings/oeuf.png" alt="">
+                    <label class="font-bold mt-2 bg-green-600 py-1 px-4 text-white text-sm w-fit ml-auto z-[2]" for="toppings-opt-7">Oeuf</label>
+                    
+                    <!-- Background decoratif au survol et a la selection de l'element -->
+                    <div class="absolute inset-0 z-[1] hidden items-center justify-center group-hover:flex peer-checked:flex">
+                      <img class="ingredient__bg-img" src="img/presntation_cards/ingredients-bg-checked.png" alt="">
+                    </div>
+                  </div> 
+
+                  <!-- Ingredient #8 -->
+                  <div class="ingredient group col-span-12 sm:col-span-6 md:col-span-4 lg:col-span-3 bg-gray-200 flex flex-col relative">
+                    <input class="peer absolute inset-0 z-10 cursor-pointer opacity-0" type="checkbox" id="toppings-opt-8" name="toppings" value="toppings-opt-8">
+                    <img class="flex-grow p-8 w-full aspect-[5/7] object-contain z-[2]" src="img/ingredients/toppings/sesame.png" alt="">
+                    <label class="font-bold mt-2 bg-green-600 py-1 px-4 text-white text-sm w-fit ml-auto z-[2]" for="toppings-opt-8">Graines de sesame</label>
+                    
+                    <!-- Background decoratif au survol et a la selection de l'element -->
+                    <div class="absolute inset-0 z-[1] hidden items-center justify-center group-hover:flex peer-checked:flex">
+                      <img class="ingredient__bg-img" src="img/presntation_cards/ingredients-bg-checked.png" alt="">
+                    </div>
+                  </div> 
+
+                </div>
+              </fieldset>
+
+              <fieldset class="my-4">
+                <legend class="my-2 font-semibold">Choisissez vos epices (plusieurs choix possible)</legend>
+                <!-- Choix des epices -->
+                <div class="grid grid-cols-12 gap-4">
+
+                  <!-- Ingredient #1 -->
+                  <div class="ingredient group col-span-12 sm:col-span-6 md:col-span-4 lg:col-span-3 bg-gray-200 flex flex-col relative">
+                    <input class="peer absolute inset-0 z-10 cursor-pointer opacity-0" type="checkbox" id="epices-opt-1" name="epices" value="epices-opt-1" checked>
+                    <img class="flex-grow p-8 w-full aspect-[5/7] object-contain z-[2]" src="img/ingredients/epices/shichimi_togarashi.png" alt="">
+                    <label class="font-bold mt-2 bg-green-600 py-1 px-4 text-white text-sm w-fit ml-auto z-[2]" for="epices-opt-1">Shichimi togarashi - epices japonaises</label>
+                    
+                    <!-- Background decoratif au survol et a la selection de l'element -->
+                    <div class="absolute inset-0 z-[1] hidden items-center justify-center group-hover:flex peer-checked:flex">
+                      <img class="ingredient__bg-img" src="img/presntation_cards/ingredients-bg-checked.png" alt="">
+                    </div>
+                  </div> 
+      
+                  <!-- Ingredient #2 -->
+                  <div class="ingredient group col-span-12 sm:col-span-6 md:col-span-4 lg:col-span-3 bg-gray-200 flex flex-col relative">
+                    <input class="peer absolute inset-0 z-10 cursor-pointer opacity-0" type="checkbox" id="epices-opt-2" name="epices" value="epices-opt-2">
+                    <img class="flex-grow p-8 w-full aspect-[5/7] object-contain z-[2]" src="img/ingredients/epices/ail_poudre.png" alt="">
+                    <label class="font-bold mt-2 bg-green-600 py-1 px-4 text-white text-sm w-fit ml-auto z-[2]" for="epices-opt-2">Ail en poudre</label>
+                    
+                    <!-- Background decoratif au survol et a la selection de l'element -->
+                    <div class="absolute inset-0 z-[1] hidden items-center justify-center group-hover:flex peer-checked:flex">
+                      <img class="ingredient__bg-img" src="img/presntation_cards/ingredients-bg-checked.png" alt="">
+                    </div>
+                  </div> 
+
+                  <!-- Ingredient #3 -->
+                  <div class="ingredient group col-span-12 sm:col-span-6 md:col-span-4 lg:col-span-3 bg-gray-200 flex flex-col relative">
+                    <input class="peer absolute inset-0 z-10 cursor-pointer opacity-0" type="checkbox" id="epices-opt-3" name="epices" value="epices-opt-3">
+                    <img class="flex-grow p-8 w-full aspect-[5/7] object-contain z-[2]" src="img/ingredients/epices/yuzu_kosho.png" alt="">
+                    <label class="font-bold mt-2 bg-green-600 py-1 px-4 text-white text-sm w-fit ml-auto z-[2]" for="epices-opt-3">Yuzu kosho - pate de yuzu</label>
+                    
+                    <!-- Background decoratif au survol et a la selection de l'element -->
+                    <div class="absolute inset-0 z-[1] hidden items-center justify-center group-hover:flex peer-checked:flex">
+                      <img class="ingredient__bg-img" src="img/presntation_cards/ingredients-bg-checked.png" alt="">
+                    </div>
+                  </div> 
+
+                  <!-- Ingredient #4 -->
+                  <div class="ingredient group col-span-12 sm:col-span-6 md:col-span-4 lg:col-span-3 bg-gray-200 flex flex-col relative">
+                    <input class="peer absolute inset-0 z-10 cursor-pointer opacity-0" type="checkbox" id="epices-opt-4" name="epices" value="epices-opt-4">
+                    <img class="flex-grow p-8 w-full aspect-[5/7] object-contain z-[2]" src="img/ingredients/epices/gingembre_poudre.png" alt="">
+                    <label class="font-bold mt-2 bg-green-600 py-1 px-4 text-white text-sm w-fit ml-auto z-[2]" for="epices-opt-4">Gingembre en poudre</label>
+                    
+                    <!-- Background decoratif au survol et a la selection de l'element -->
+                    <div class="absolute inset-0 z-[1] hidden items-center justify-center group-hover:flex peer-checked:flex">
+                      <img class="ingredient__bg-img" src="img/presntation_cards/ingredients-bg-checked.png" alt="">
+                    </div>
+                  </div> 
+
+                  <!-- Ingredient #5 -->
+                  <div class="ingredient group col-span-12 sm:col-span-6 md:col-span-4 lg:col-span-3 bg-gray-200 flex flex-col relative">
+                    <input class="peer absolute inset-0 z-10 cursor-pointer opacity-0" type="checkbox" id="epices-opt-5" name="epices" value="epices-opt-5">
+                    <img class="flex-grow p-8 w-full aspect-[5/7] object-contain z-[2]" src="img/ingredients/epices/huile_sesame.png" alt="">
+                    <label class="font-bold mt-2 bg-green-600 py-1 px-4 text-white text-sm w-fit ml-auto z-[2]" for="epices-opt-5">Huile de sesame</label>
+                    
+                    <!-- Background decoratif au survol et a la selection de l'element -->
+                    <div class="absolute inset-0 z-[1] hidden items-center justify-center group-hover:flex peer-checked:flex">
+                      <img class="ingredient__bg-img" src="img/presntation_cards/ingredients-bg-checked.png" alt="">
+                    </div>
+                  </div> 
+
+                  <!-- Ingredient #6 -->
+                  <div class="ingredient group col-span-12 sm:col-span-6 md:col-span-4 lg:col-span-3 bg-gray-200 flex flex-col relative">
+                    <input class="peer absolute inset-0 z-10 cursor-pointer opacity-0" type="checkbox" id="epices-opt-6" name="epices" value="epices-opt-6">
+                    <img class="flex-grow p-8 w-full aspect-[5/7] object-contain z-[2]" src="img/ingredients/epices/poivre_noir.png" alt="">
+                    <label class="font-bold mt-2 bg-green-600 py-1 px-4 text-white text-sm w-fit ml-auto z-[2]" for="epices-opt-6">Poivre noir</label>
+                    
+                    <!-- Background decoratif au survol et a la selection de l'element -->
+                    <div class="absolute inset-0 z-[1] hidden items-center justify-center group-hover:flex peer-checked:flex">
+                      <img class="ingredient__bg-img" src="img/presntation_cards/ingredients-bg-checked.png" alt="">
+                    </div>
+                  </div> 
+
+                  <!-- Ingredient #7 -->
+                  <div class="ingredient group col-span-12 sm:col-span-6 md:col-span-4 lg:col-span-3 bg-gray-200 flex flex-col relative">
+                    <input class="peer absolute inset-0 z-10 cursor-pointer opacity-0" type="checkbox" id="epices-opt-7" name="epices" value="epices-opt-7">
+                    <img class="flex-grow p-8 w-full aspect-[5/7] object-contain z-[2]" src="img/ingredients/epices/kimchi.png" alt="">
+                    <label class="font-bold mt-2 bg-green-600 py-1 px-4 text-white text-sm w-fit ml-auto z-[2]" for="epices-opt-7">Kimchi</label>
+                    
+                    <!-- Background decoratif au survol et a la selection de l'element -->
+                    <div class="absolute inset-0 z-[1] hidden items-center justify-center group-hover:flex peer-checked:flex">
+                      <img class="ingredient__bg-img" src="img/presntation_cards/ingredients-bg-checked.png" alt="">
+                    </div>
+                  </div> 
+
+                  <!-- Ingredient #8 -->
+                  <div class="ingredient group col-span-12 sm:col-span-6 md:col-span-4 lg:col-span-3 bg-gray-200 flex flex-col relative">
+                    <input class="peer absolute inset-0 z-10 cursor-pointer opacity-0" type="checkbox" id="epices-opt-8" name="epices" value="epices-opt-8">
+                    <img class="flex-grow p-8 w-full aspect-[5/7] object-contain z-[2]" src="img/ingredients/epices/piment_poudre.png" alt="">
+                    <label class="font-bold mt-2 bg-green-600 py-1 px-4 text-white text-sm w-fit ml-auto z-[2]" for="epices-opt-8">Piment en poudre</label>
+                    
+                    <!-- Background decoratif au survol et a la selection de l'element -->
+                    <div class="absolute inset-0 z-[1] hidden items-center justify-center group-hover:flex peer-checked:flex">
+                      <img class="ingredient__bg-img" src="img/presntation_cards/ingredients-bg-checked.png" alt="">
+                    </div>
+                  </div> 
+
+                </div>
               </fieldset>
     
             </form>
           </div>
     </section>
+
+    
   </main>
     
   <footer>
