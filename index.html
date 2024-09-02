@@ -14,7 +14,7 @@
   <link rel="icon" type="image/png" href="img/favicon.png">
 </head>
 
-<body class="flex flex-col min-h-screen text-gray-600">
+<body class="flex flex-col min-h-screen text-gray-600 overflow-x-hidden">
   <a class="screen-reader-txt" href="#main-content">Aller au contenu principal</a>
   <!-- A partir du composant 'Simple dark with menu button on left' https://tailwindui.com/components/application-ui/navigation/navbars-->
   <header class="bg-white relative shadow-md">
@@ -46,7 +46,7 @@
 
               <!-- bouton "creer ramen" petits ecrans -->
               <div class="flex items-center md:hidden py-3">
-                  <button class="inline-block py-2 px-4 text-xs font-semibold bg-[#4c71fe] hover:bg-slate-500 rounded-md text-white" aria-label="Créer un nouveau ramen">
+                  <button class="button button--white-bg" aria-label="Créer un nouveau ramen">
                       + Créer
                   </button>
               </div>
@@ -61,7 +61,7 @@
 
             <div class="absolute inset-y-0 right-0 flex items-center pr-2 md:static md:inset-auto md:ml-6 md:pr-0">
                 <!-- bouton "creer ramen" grands ecrans -->
-                <button class="hidden md:inline-block py-2 px-4 text-sm font-semibold bg-[#4c71fe] hover:bg-slate-500 rounded-md text-white">+ Créer un ramen</button>
+                <button class="hidden md:inline-block button button--white-bg">+ Créer un ramen</button>
             </div>
           </div>
         </div>
@@ -84,20 +84,20 @@
                 <img src="img/whatsoup-blue.png" alt="What'soup?">
                 <p>En manque d'inspiration pour le souper ? What'soup est l'application parfaite pour libérer le stress des menus et mettre tout le monde d'accord. Une expérience fun et intéractive qui vous permet de créer votre recette de ramen de manière guidée. So what's(o)up?</p>
                 <div class="flex gap-4 mt-3 justify-center lg:justify-start">
-                    <button class="py-2 px-6 text-xs font-bold border-2 bg-[#4c71fe]  text-white border-[#4c71fe] rounded-md hover:text-[#4c71fe] hover:bg-transparent" >Créer</button>
-                    <button class="py-2 px-6 text-xs font-bold border-2 text-[#4c71fe] border-[#4c71fe] rounded-md hover:text-white hover:bg-[#4c71fe]">S'inspirer</button>
+                    <button class="button button--blue-bg" >Créer</button>
+                    <button class="button button--white-bg">S'inspirer</button>
                 </div>
             </div>
             <div class="col-span-12 lg:col-span-6 w-full lg:w-10/12 mx-auto order-1 lg:order-2 mb-6 lg:m-0 z-[1] relative top-[30px]">
-                <div class="relative w-fit mx-auto">
-                    <div class="w-[90%] lg:w-[100%] aspect-square bg-yellow-400 absolute top-[50%] left-[8%] lg:top-[20%] lg:left-[40%] rounded-full overflow-hidden"></div>
-                    <img id="ramen_bowl" src="img/base_alt.png" class="h-full max-w-full relative top-[5px] lg:top-[-25px] z-[2]" alt="Bol de ramen">
-                    <img src="img/brocoli.png" id="brocoli" alt="" class="absolute top-[45%] lg:top-[36%] left-[38%] z-[5]">
-                    <img id="veggie_1" src="img/veggie1.png" alt="" class="absolute top-[-5px] w-[30%] z-[6]">
-                    <img id="veggie_2" src="img/veggie2.png" alt="" class="absolute top-[-15px] left-[45%] w-[26%] z-[1]">
-                    <img id="veggie_3" src="img/veggie3.png" alt="" class="absolute top-[50px] left-[35%] w-[23%] z-[3]">
-                    <img id="veggie_4" src="img/veggie4.png" alt="" class="absolute top-[-7px] left-[33%] z-[3]">
-                    <img id="veggie_5" src="img/veggie5.png" alt="" class="absolute top-[25%] left-[10%] z-[1]">
+                <div class="relative w-fit mx-auto lg:scale-110">
+                  <div class="w-[90%] lg:w-[100%] aspect-square bg-yellow-400 absolute top-[50%] left-[8%] lg:top-[35%] lg:left-[40%] rounded-full overflow-hidden"></div>
+                    <img id="ramen_bowl" src="img/base_alt.png" class="h-full max-w-full relative top-[5px] lg:top-[50px] z-[2]" alt="Bol de ramen">
+                    <img src="img/brocoli.png" id="brocoli" alt="" class="absolute top-[45%] lg:top-[50%] left-[38%] z-[5]">
+                    <img id="veggie_1" src="img/veggie1.png" alt="" class="absolute top-[10px] left-[-20px] w-[30%] z-[6]">
+                    <img id="veggie_2" src="img/veggie2.png" alt="" class="absolute top-[-15px] left-[37%] w-[26%] z-[1]">
+                    <img id="veggie_3" src="img/veggie3.png" alt="" class="absolute top-[80px] left-[27%] w-[23%] z-[3]">
+                    <img id="veggie_4" src="img/veggie4.png" alt="" class="absolute top-[-7px] left-[27%] z-[3]">
+                    <img id="veggie_5" src="img/veggie5.png" alt="" class="absolute top-[30%] left-[5%] z-[1]">
                 </div>
             </div>
         </div>
@@ -160,18 +160,19 @@
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 220"><path fill="#facc15" fill-opacity="1" d="M0,128L48,122.7C96,117,192,107,288,106.7C384,107,480,117,576,128C672,139,768,149,864,154.7C960,160,1056,160,1152,154.7C1248,149,1344,139,1392,133.3L1440,128L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"></path></svg>
 
     <section class="bg-white relative">
-        <div class="container mx-auto py-8 px-6 md:py-12">
-            <h2>Pret a creer votre ramen ?</h2>
-            <p>C'est tres simple: a chaque etape, choisissez vos ingredients. A la fin du quizz, quand vous etes surs de votre recette, cliquez sur 'cuisiner' et la recette sera alors enregistree !</p>
-            <form action="mes-recettes.html" id="ramen-creation-form" novalidate>
+        <div class="container mx-auto py-8 px-6 md:py-12 space-y-6 text-center">
+            <h2 class="font-bold text-xl">Prêt à créer votre ramen ?</h2>
+            <p>C'est très simple: à chaque étape, choisissez vos ingredients. A la fin du quizz, quand vous etes certain de votre recette, cliquez sur 'Cuisiner' et la recette sera alors enregistrée !</p>
+            <form action="mes-recettes.html" id="ramen-creation-form" class="space-y-20" novalidate>
 
-              <fieldset class="my-4">
-                <legend class="my-2 font-semibold">Choisissez d'abord votre bouillon (1 choix possible)</legend>
+              <fieldset class="flex flex-col relative fieldset">
+                <span class="relative md:absolute md:left-0 md:top-0 bg-[#4c71fe] text-white text-sm font-bold p-2 z-[1] transition-all fieldset__label">Etape 1</span>
+                <legend class="font-semibold bg-gray-200 hover:bg-green-600 hover:text-white py-1 px-6 mx-auto fieldset__legend transition-all">- Choisissez d'abord votre bouillon (1 choix possible) -</legend>
                 <!-- Choix du bouillon -->
-                <div class="grid grid-cols-12 gap-4">
+                <div class="z-[2] grid grid-cols-12 gap-4 border-y-2 border-gray-200 py-6 px-4 hover:border-gray-300 transition-all bg-white">
 
                   <!-- Ingredient #1 -->
-                  <div class="ingredient group col-span-12 sm:col-span-6 md:col-span-4 lg:col-span-3 bg-gray-200 flex flex-col relative">
+                  <div class="ingredient group col-span-12 sm:col-span-6 md:col-span-4 lg:col-span-3 bg-gray-200 flex flex-col relative max-w-[330px] mx-auto">
                     <input class="peer absolute inset-0 z-10 cursor-pointer opacity-0" type="radio" id="bouillon-opt-1" name="bouillon" value="Shoyu - sauce soja" checked>
                     <img class="flex-grow p-8 w-full aspect-[5/7] object-contain z-[2]" src="img/ingredients/bouillons/bol-v1-trs.png" alt="">
                     <label class="font-bold mt-2 bg-green-600 py-1 px-4 text-white text-sm w-fit ml-auto z-[2]" for="bouillon-opt-1">Shoyu - sauce soja</label>
@@ -183,7 +184,7 @@
                   </div>
       
                   <!-- Ingredient #2 -->
-                  <div class="ingredient group col-span-12 sm:col-span-6 md:col-span-4 lg:col-span-3 bg-gray-200 flex flex-col relative">
+                  <div class="ingredient group col-span-12 sm:col-span-6 md:col-span-4 lg:col-span-3 bg-gray-200 flex flex-col relative max-w-[330px] mx-auto">
                     <input class="peer absolute inset-0 z-10 cursor-pointer opacity-0" type="radio" id="bouillon-opt-2" name="bouillon" value="Tonkotsu - os de porc">
                     <img class="flex-grow p-8 w-full aspect-[5/7] object-contain z-[2]" src="img/ingredients/bouillons/bol-v2.-trspng.png" alt="">
                     <label class="font-bold mt-2 bg-green-600 py-1 px-4 text-white text-sm w-fit ml-auto z-[2]" for="bouillon-opt-2">Tonkotsu - os de porc</label>
@@ -195,7 +196,7 @@
                   </div>
 
                   <!-- Ingredient #3 -->
-                  <div class="ingredient group col-span-12 sm:col-span-6 md:col-span-4 lg:col-span-3 bg-gray-200 flex flex-col relative">
+                  <div class="ingredient group col-span-12 sm:col-span-6 md:col-span-4 lg:col-span-3 bg-gray-200 flex flex-col relative max-w-[330px] mx-auto">
                     <input class="peer absolute inset-0 z-10 cursor-pointer opacity-0" type="radio" id="bouillon-opt-3" name="bouillon" value="Shio - sel">
                     <img class="flex-grow p-8 w-full aspect-[5/7] object-contain z-[2]" src="img/ingredients/bouillons/bol-v3-trs.png" alt="">
                     <label class="font-bold mt-2 bg-green-600 py-1 px-4 text-white text-sm w-fit ml-auto z-[2]" for="bouillon-opt-3">Shio - sel</label>
@@ -207,7 +208,7 @@
                   </div>
 
                  <!-- Ingredient #4 -->
-                 <div class="ingredient group col-span-12 sm:col-span-6 md:col-span-4 lg:col-span-3 bg-gray-200 flex flex-col relative">
+                 <div class="ingredient group col-span-12 sm:col-span-6 md:col-span-4 lg:col-span-3 bg-gray-200 flex flex-col relative max-w-[330px] mx-auto">
                   <input class="peer absolute inset-0 z-10 cursor-pointer opacity-0" type="radio" id="bouillon-opt-4" name="bouillon" value="Shoyu - sauce soja">
                   <img class="flex-grow p-8 w-full aspect-[5/7] object-contain z-[2]" src="img/ingredients/bouillons/bol-v4-trs.png" alt="">
                   <label class="font-bold mt-2 bg-green-600 py-1 px-4 text-white text-sm w-fit ml-auto z-[2]" for="bouillon-opt-4">Shoyu - sauce soja</label>
@@ -221,13 +222,14 @@
                 </div>
               </fieldset>
 
-              <fieldset class="my-4">
-                <legend class="my-2 font-semibold">Choisissez ensuite vos nouilles (1 choix possible)</legend>
+              <fieldset class="flex flex-col relative fieldset">
+                <span class="relative md:absolute md:left-0 md:top-0 bg-[#4c71fe] text-white text-sm font-bold p-2 z-[1] transition-all fieldset__label">Etape 2</span>
+                <legend class="font-semibold bg-gray-200 hover:bg-green-600 hover:text-white py-1 px-6 mx-auto fieldset__legend transition-all">- Choisissez ensuite vos nouilles (1 choix possible) -</legend>
                 <!-- Choix des nouilles -->
-                <div class="grid grid-cols-12 gap-4">
+                <div class="z-[2] grid grid-cols-12 gap-4 border-y-2 border-gray-200 py-6 px-4 hover:border-gray-300 transition-all bg-white">
 
                   <!-- Ingredient #1 -->
-                  <div class="ingredient group col-span-12 sm:col-span-6 md:col-span-4 lg:col-span-3 bg-gray-200 flex flex-col relative">
+                  <div class="ingredient group col-span-12 sm:col-span-6 md:col-span-4 lg:col-span-3 bg-gray-200 flex flex-col relative max-w-[330px] mx-auto">
                     <input class="peer absolute inset-0 z-10 cursor-pointer opacity-0" type="radio" id="nouilles-opt-1" name="nouilles" value="Hosomen - Nouilles fines" checked>
                     <img class="flex-grow p-8 w-full aspect-[5/7] object-contain z-[2]" src="img/ingredients/nouilles/thin-trs.png" alt="">
                     <label class="font-bold mt-2 bg-green-600 py-1 px-4 text-white text-sm w-fit ml-auto z-[2]" for="nouilles-opt-1">Hosomen - Nouilles fines</label>
@@ -239,7 +241,7 @@
                   </div>    
 
                   <!-- Ingredient #2 -->
-                  <div class="ingredient group col-span-12 sm:col-span-6 md:col-span-4 lg:col-span-3 bg-gray-200 flex flex-col relative">
+                  <div class="ingredient group col-span-12 sm:col-span-6 md:col-span-4 lg:col-span-3 bg-gray-200 flex flex-col relative max-w-[330px] mx-auto">
                     <input class="peer absolute inset-0 z-10 cursor-pointer opacity-0" type="radio" id="nouilles-opt-2" name="nouilles" value="Futomen - nouilles epaisses">
                     <img class="flex-grow p-8 w-full aspect-[5/7] object-contain z-[2]" src="img/ingredients/nouilles/thick-trs.png" alt="">
                     <label class="font-bold mt-2 bg-green-600 py-1 px-4 text-white text-sm w-fit ml-auto z-[2]" for="nouilles-opt-2">Futomen - nouilles epaisses</label>
@@ -251,7 +253,7 @@
                   </div> 
 
                   <!-- Ingredient #3 -->
-                  <div class="ingredient group col-span-12 sm:col-span-6 md:col-span-4 lg:col-span-3 bg-gray-200 flex flex-col relative">
+                  <div class="ingredient group col-span-12 sm:col-span-6 md:col-span-4 lg:col-span-3 bg-gray-200 flex flex-col relative max-w-[330px] mx-auto">
                     <input class="peer absolute inset-0 z-10 cursor-pointer opacity-0" type="radio" id="nouilles-opt-3" name="nouilles" value="Chūkamen - nouilles ondulees">
                     <img class="flex-grow p-8 w-full aspect-[5/7] object-contain z-[2]" src="img/ingredients/nouilles/wavy-trs.png" alt="">
                     <label class="font-bold mt-2 bg-green-600 py-1 px-4 text-white text-sm w-fit ml-auto z-[2]" for="nouilles-opt-3">Chūkamen - nouilles ondulees</label>
@@ -263,7 +265,7 @@
                   </div> 
                   
                   <!-- Ingredient #4 -->
-                  <div class="ingredient group col-span-12 sm:col-span-6 md:col-span-4 lg:col-span-3 bg-gray-200 flex flex-col relative">
+                  <div class="ingredient group col-span-12 sm:col-span-6 md:col-span-4 lg:col-span-3 bg-gray-200 flex flex-col relative max-w-[330px] mx-auto">
                     <input class="peer absolute inset-0 z-10 cursor-pointer opacity-0" type="radio" id="nouilles-opt-4" name="nouilles" value="Hiramen - Nouilles plates">
                     <img class="flex-grow p-8 w-full aspect-[5/7] object-contain z-[2]" src="img/ingredients/nouilles/plates-trs.png" alt="">
                     <label class="font-bold mt-2 bg-green-600 py-1 px-4 text-white text-sm w-fit ml-auto z-[2]" for="nouilles-opt-4">Hiramen - Nouilles plates</label>
@@ -277,13 +279,14 @@
                 </div>
               </fieldset>
 
-              <fieldset class="my-4">
-                <legend class="my-2 font-semibold">Choisissez ensuite votre proteine (1 choix possible)</legend>
+              <fieldset class="flex flex-col relative fieldset">
+                <span class="relative md:absolute md:left-0 md:top-0 bg-[#4c71fe] text-white text-sm font-bold p-2 z-[1] transition-all fieldset__label">Etape 3</span>
+                <legend class="font-semibold bg-gray-200 hover:bg-green-600 hover:text-white py-1 px-6 mx-auto fieldset__legend transition-all">- Choisissez ensuite votre proteine (1 choix possible) -</legend>
                 <!-- Choix de la proteine -->
-                <div class="grid grid-cols-12 gap-4">
+                <div class="z-[2] grid grid-cols-12 gap-4 border-y-2 border-gray-200 py-6 px-4 hover:border-gray-300 transition-all bg-white">
 
                   <!-- Ingredient #1 -->
-                  <div class="ingredient group col-span-12 sm:col-span-6 md:col-span-4 lg:col-span-3 bg-gray-200 flex flex-col relative">
+                  <div class="ingredient group col-span-12 sm:col-span-6 md:col-span-4 lg:col-span-3 bg-gray-200 flex flex-col relative max-w-[330px] mx-auto">
                     <input class="peer absolute inset-0 z-10 cursor-pointer opacity-0" type="radio" id="proteine-opt-1" name="proteine" value="Porc" checked>
                     <img class="flex-grow p-8 w-full aspect-[5/7] object-contain z-[2]" src="img/ingredients/proteines/porc.png" alt="">
                     <label class="font-bold mt-2 bg-green-600 py-1 px-4 text-white text-sm w-fit ml-auto z-[2]" for="proteine-opt-1">Porc</label>
@@ -295,7 +298,7 @@
                   </div> 
       
                   <!-- Ingredient #2 -->
-                  <div class="ingredient group col-span-12 sm:col-span-6 md:col-span-4 lg:col-span-3 bg-gray-200 flex flex-col relative">
+                  <div class="ingredient group col-span-12 sm:col-span-6 md:col-span-4 lg:col-span-3 bg-gray-200 flex flex-col relative max-w-[330px] mx-auto">
                     <input class="peer absolute inset-0 z-10 cursor-pointer opacity-0" type="radio" id="proteine-opt-2" name="proteine" value="Boeuf">
                     <img class="flex-grow p-8 w-full aspect-[5/7] object-contain z-[2]" src="img/ingredients/proteines/boeuf.png" alt="">
                     <label class="font-bold mt-2 bg-green-600 py-1 px-4 text-white text-sm w-fit ml-auto z-[2]" for="proteine-opt-2">Boeuf</label>
@@ -307,7 +310,7 @@
                   </div> 
 
                   <!-- Ingredient #3 -->
-                  <div class="ingredient group col-span-12 sm:col-span-6 md:col-span-4 lg:col-span-3 bg-gray-200 flex flex-col relative">
+                  <div class="ingredient group col-span-12 sm:col-span-6 md:col-span-4 lg:col-span-3 bg-gray-200 flex flex-col relative max-w-[330px] mx-auto">
                     <input class="peer absolute inset-0 z-10 cursor-pointer opacity-0" type="radio" id="proteine-opt-3" name="proteine" value="Poulet">
                     <img class="flex-grow p-8 w-full aspect-[5/7] object-contain z-[2]" src="img/ingredients/proteines/poulet.png" alt="">
                     <label class="font-bold mt-2 bg-green-600 py-1 px-4 text-white text-sm w-fit ml-auto z-[2]" for="proteine-opt-3">Poulet</label>
@@ -319,7 +322,7 @@
                   </div> 
 
                   <!-- Ingredient #4 -->
-                  <div class="ingredient group col-span-12 sm:col-span-6 md:col-span-4 lg:col-span-3 bg-gray-200 flex flex-col relative">
+                  <div class="ingredient group col-span-12 sm:col-span-6 md:col-span-4 lg:col-span-3 bg-gray-200 flex flex-col relative max-w-[330px] mx-auto">
                     <input class="peer absolute inset-0 z-10 cursor-pointer opacity-0" type="radio" id="proteine-opt-4" name="proteine" value="Tofu">
                     <img class="flex-grow p-8 w-full aspect-[5/7] object-contain z-[2]" src="img/ingredients/proteines/tofu.png" alt="">
                     <label class="font-bold mt-2 bg-green-600 py-1 px-4 text-white text-sm w-fit ml-auto z-[2]" for="proteine-opt-4">Tofu</label>
@@ -331,7 +334,7 @@
                   </div> 
 
                   <!-- Ingredient #5 -->
-                  <div class="ingredient group col-span-12 sm:col-span-6 md:col-span-4 lg:col-span-3 bg-gray-200 flex flex-col relative">
+                  <div class="ingredient group col-span-12 sm:col-span-6 md:col-span-4 lg:col-span-3 bg-gray-200 flex flex-col relative max-w-[330px] mx-auto">
                     <input class="peer absolute inset-0 z-10 cursor-pointer opacity-0" type="radio" id="proteine-opt-5" name="proteine" value="Crevettes grillees">
                     <img class="flex-grow p-8 w-full aspect-[5/7] object-contain z-[2]" src="img/ingredients/proteines/crevette.png" alt="">
                     <label class="font-bold mt-2 bg-green-600 py-1 px-4 text-white text-sm w-fit ml-auto z-[2]" for="proteine-opt-5">Crevettes grillees</label>
@@ -343,7 +346,7 @@
                   </div> 
 
                   <!-- Ingredient #6 -->
-                  <div class="ingredient group col-span-12 sm:col-span-6 md:col-span-4 lg:col-span-3 bg-gray-200 flex flex-col relative">
+                  <div class="ingredient group col-span-12 sm:col-span-6 md:col-span-4 lg:col-span-3 bg-gray-200 flex flex-col relative max-w-[330px] mx-auto">
                     <input class="peer absolute inset-0 z-10 cursor-pointer opacity-0" type="radio" id="proteine-opt-6" name="proteine" value="Crevettes tempura">
                     <img class="flex-grow p-8 w-full aspect-[5/7] object-contain z-[2]" src="img/ingredients/proteines/tempura_crevette.png" alt="">
                     <label class="font-bold mt-2 bg-green-600 py-1 px-4 text-white text-sm w-fit ml-auto z-[2] z-[2]" for="proteine-opt-6">Crevettes tempura</label>
@@ -357,13 +360,14 @@
                 </div>
               </fieldset>
 
-              <fieldset class="my-4">
-                <legend class="my-2 font-semibold">Choisissez ensuite vos legumes (plusieurs choix possible)</legend>
+              <fieldset class="flex flex-col relative fieldset">
+                <span class="relative md:absolute md:left-0 md:top-0 bg-[#4c71fe] text-white text-sm font-bold p-2 z-[1] transition-all fieldset__label">Etape 4</span>
+                <legend class="font-semibold bg-gray-200 hover:bg-green-600 hover:text-white py-1 px-6 mx-auto fieldset__legend transition-all">- Choisissez ensuite vos legumes (plusieurs choix possibles) -</legend>
                 <!-- Choix des legumes -->
-                <div class="grid grid-cols-12 gap-4">
+                <div class="z-[2] grid grid-cols-12 gap-4 border-y-2 border-gray-200 py-6 px-4 hover:border-gray-300 transition-all bg-white">
 
                   <!-- Ingredient #1 -->
-                  <div class="ingredient group col-span-12 sm:col-span-6 md:col-span-4 lg:col-span-3 bg-gray-200 flex flex-col relative">
+                  <div class="ingredient group col-span-12 sm:col-span-6 md:col-span-4 lg:col-span-3 bg-gray-200 flex flex-col relative max-w-[330px] mx-auto">
                     <input class="peer absolute inset-0 z-10 cursor-pointer opacity-0" type="checkbox" id="legumes-opt-1" name="legumes" value="Pousses de bambou" checked>
                     <img class="flex-grow p-8 w-full aspect-[5/7] object-contain z-[2]" src="img/ingredients/legumes/bambou.png" alt="">
                     <label class="font-bold mt-2 bg-green-600 py-1 px-4 text-white text-sm w-fit ml-auto z-[2]" for="legumes-opt-1">Pousses de bambou</label>
@@ -375,7 +379,7 @@
                   </div> 
       
                   <!-- Ingredient #2 -->
-                  <div class="ingredient group col-span-12 sm:col-span-6 md:col-span-4 lg:col-span-3 bg-gray-200 flex flex-col relative">
+                  <div class="ingredient group col-span-12 sm:col-span-6 md:col-span-4 lg:col-span-3 bg-gray-200 flex flex-col relative max-w-[330px] mx-auto">
                     <input class="peer absolute inset-0 z-10 cursor-pointer opacity-0" type="checkbox" id="legumes-opt-2" name="legumes" value="Champignons">
                     <img class="flex-grow p-8 w-full aspect-[5/7] object-contain z-[2]" src="img/ingredients/legumes/champignons.png" alt="">
                     <label class="font-bold mt-2 bg-green-600 py-1 px-4 text-white text-sm w-fit ml-auto z-[2]" for="legumes-opt-2">Champignons</label>
@@ -387,7 +391,7 @@
                   </div> 
 
                   <!-- Ingredient #3 -->
-                  <div class="ingredient group col-span-12 sm:col-span-6 md:col-span-4 lg:col-span-3 bg-gray-200 flex flex-col relative">
+                  <div class="ingredient group col-span-12 sm:col-span-6 md:col-span-4 lg:col-span-3 bg-gray-200 flex flex-col relative max-w-[330px] mx-auto">
                     <input class="peer absolute inset-0 z-10 cursor-pointer opacity-0" type="checkbox" id="legumes-opt-3" name="legumes" value="Bokchoi">
                     <img class="flex-grow p-8 w-full aspect-[5/7] object-contain z-[2]" src="img/ingredients/legumes/chou.png" alt="">
                     <label class="font-bold mt-2 bg-green-600 py-1 px-4 text-white text-sm w-fit ml-auto z-[2]" for="legumes-opt-3">Bokchoi</label>
@@ -399,7 +403,7 @@
                   </div> 
 
                   <!-- Ingredient #4 -->
-                  <div class="ingredient group col-span-12 sm:col-span-6 md:col-span-4 lg:col-span-3 bg-gray-200 flex flex-col relative">
+                  <div class="ingredient group col-span-12 sm:col-span-6 md:col-span-4 lg:col-span-3 bg-gray-200 flex flex-col relative max-w-[330px] mx-auto">
                     <input class="peer absolute inset-0 z-10 cursor-pointer opacity-0" type="checkbox" id="legumes-opt-4" name="legumes" value="Epinards">
                     <img class="flex-grow p-8 w-full aspect-[5/7] object-contain z-[2]" src="img/ingredients/legumes/epinards.png" alt="">
                     <label class="font-bold mt-2 bg-green-600 py-1 px-4 text-white text-sm w-fit ml-auto z-[2]" for="legumes-opt-4">Epinards</label>
@@ -411,7 +415,7 @@
                   </div> 
 
                   <!-- Ingredient #5 -->
-                  <div class="ingredient group col-span-12 sm:col-span-6 md:col-span-4 lg:col-span-3 bg-gray-200 flex flex-col relative">
+                  <div class="ingredient group col-span-12 sm:col-span-6 md:col-span-4 lg:col-span-3 bg-gray-200 flex flex-col relative max-w-[330px] mx-auto">
                     <input class="peer absolute inset-0 z-10 cursor-pointer opacity-0" type="checkbox" id="legumes-opt-5" name="legumes" value="Mais">
                     <img class="flex-grow p-8 w-full aspect-[5/7] object-contain z-[2]" src="img/ingredients/legumes/mais.png" alt="">
                     <label class="font-bold mt-2 bg-green-600 py-1 px-4 text-white text-sm w-fit ml-auto z-[2]" for="legumes-opt-5">Mais</label>
@@ -423,7 +427,7 @@
                   </div> 
 
                   <!-- Ingredient #6 -->
-                  <div class="ingredient group col-span-12 sm:col-span-6 md:col-span-4 lg:col-span-3 bg-gray-200 flex flex-col relative">
+                  <div class="ingredient group col-span-12 sm:col-span-6 md:col-span-4 lg:col-span-3 bg-gray-200 flex flex-col relative max-w-[330px] mx-auto">
                     <input class="peer absolute inset-0 z-10 cursor-pointer opacity-0" type="checkbox" id="legumes-opt-6" name="legumes" value="Oignons verts">
                     <img class="flex-grow p-8 w-full aspect-[5/7] object-contain z-[2]" src="img/ingredients/legumes/oignons_verts.png" alt="">
                     <label class="font-bold mt-2 bg-green-600 py-1 px-4 text-white text-sm w-fit ml-auto z-[2]" for="legumes-opt-6">Oignons verts</label>
@@ -435,7 +439,7 @@
                   </div> 
 
                   <!-- Ingredient #7 -->
-                  <div class="ingredient group col-span-12 sm:col-span-6 md:col-span-4 lg:col-span-3 bg-gray-200 flex flex-col relative">
+                  <div class="ingredient group col-span-12 sm:col-span-6 md:col-span-4 lg:col-span-3 bg-gray-200 flex flex-col relative max-w-[330px] mx-auto">
                     <input class="peer absolute inset-0 z-10 cursor-pointer opacity-0" type="checkbox" id="legumes-opt-7" name="legumes" value="Poireau">
                     <img class="flex-grow p-8 w-full aspect-[5/7] object-contain z-[2]" src="img/ingredients/legumes/poireau.png" alt="">
                     <label class="font-bold mt-2 bg-green-600 py-1 px-4 text-white text-sm w-fit ml-auto z-[2]" for="legumes-opt-7">Poireau</label>
@@ -447,7 +451,7 @@
                   </div> 
 
                   <!-- Ingredient #8 -->
-                  <div class="ingredient group col-span-12 sm:col-span-6 md:col-span-4 lg:col-span-3 bg-gray-200 flex flex-col relative">
+                  <div class="ingredient group col-span-12 sm:col-span-6 md:col-span-4 lg:col-span-3 bg-gray-200 flex flex-col relative max-w-[330px] mx-auto">
                     <input class="peer absolute inset-0 z-10 cursor-pointer opacity-0" type="checkbox" id="legumes-opt-8" name="legumes" value="Germes de soja">
                     <img class="flex-grow p-8 w-full aspect-[5/7] object-contain z-[2]" src="img/ingredients/legumes/pousses_soja.png" alt="">
                     <label class="font-bold mt-2 bg-green-600 py-1 px-4 text-white text-sm w-fit ml-auto z-[2]" for="legumes-opt-8">Germes de soja</label>
@@ -461,13 +465,14 @@
                 </div>
               </fieldset>
 
-              <fieldset class="my-4">
-                <legend class="my-2 font-semibold">Choisissez vos toppings (plusieurs choix possible)</legend>
+              <fieldset class="flex flex-col relative fieldset">
+                <span class="relative md:absolute md:left-0 md:top-0 bg-[#4c71fe] text-white text-sm font-bold p-2 z-[1] transition-all fieldset__label">Etape 5</span>
+                <legend class="font-semibold bg-gray-200 hover:bg-green-600 hover:text-white py-1 px-6 mx-auto fieldset__legend transition-all">- Choisissez vos toppings (plusieurs choix possibles) -</legend>
                 <!-- Choix des toppings -->
-                <div class="grid grid-cols-12 gap-4">
+                <div class="z-[2] grid grid-cols-12 gap-4 border-y-2 border-gray-200 py-6 px-4 hover:border-gray-300 transition-all bg-white">
 
                   <!-- Ingredient #1 -->
-                  <div class="ingredient group col-span-12 sm:col-span-6 md:col-span-4 lg:col-span-3 bg-gray-200 flex flex-col relative">
+                  <div class="ingredient group col-span-12 sm:col-span-6 md:col-span-4 lg:col-span-3 bg-gray-200 flex flex-col relative max-w-[330px] mx-auto">
                     <input class="peer absolute inset-0 z-10 cursor-pointer opacity-0" type="checkbox" id="toppings-opt-1" name="toppings" value="Ail frit" checked>
                     <img class="flex-grow p-8 w-full aspect-[5/7] object-contain z-[2]" src="img/ingredients/toppings/ail_frit.png" alt="">
                     <label class="font-bold mt-2 bg-green-600 py-1 px-4 text-white text-sm w-fit ml-auto z-[2]" for="toppings-opt-1">Ail frit</label>
@@ -479,7 +484,7 @@
                   </div> 
       
                   <!-- Ingredient #2 -->
-                  <div class="ingredient group col-span-12 sm:col-span-6 md:col-span-4 lg:col-span-3 bg-gray-200 flex flex-col relative">
+                  <div class="ingredient group col-span-12 sm:col-span-6 md:col-span-4 lg:col-span-3 bg-gray-200 flex flex-col relative max-w-[330px] mx-auto">
                     <input class="peer absolute inset-0 z-10 cursor-pointer opacity-0" type="checkbox" id="toppings-opt-2" name="toppings" value="Algues nori">
                     <img class="flex-grow p-8 w-full aspect-[5/7] object-contain z-[2]" src="img/ingredients/toppings/algues.png" alt="">
                     <label class="font-bold mt-2 bg-green-600 py-1 px-4 text-white text-sm w-fit ml-auto z-[2]" for="toppings-opt-2">Algues nori</label>
@@ -491,7 +496,7 @@
                   </div> 
 
                   <!-- Ingredient #3 -->
-                  <div class="ingredient group col-span-12 sm:col-span-6 md:col-span-4 lg:col-span-3 bg-gray-200 flex flex-col relative">
+                  <div class="ingredient group col-span-12 sm:col-span-6 md:col-span-4 lg:col-span-3 bg-gray-200 flex flex-col relative max-w-[330px] mx-auto">
                     <input class="peer absolute inset-0 z-10 cursor-pointer opacity-0" type="checkbox" id="toppings-opt-3" name="toppings" value="Beurre">
                     <img class="flex-grow p-8 w-full aspect-[5/7] object-contain z-[2]" src="img/ingredients/toppings/beurre.png" alt="">
                     <label class="font-bold mt-2 bg-green-600 py-1 px-4 text-white text-sm w-fit ml-auto z-[2]" for="toppings-opt-3">Beurre</label>
@@ -503,7 +508,7 @@
                   </div> 
 
                   <!-- Ingredient #4 -->
-                  <div class="ingredient group col-span-12 sm:col-span-6 md:col-span-4 lg:col-span-3 bg-gray-200 flex flex-col relative">
+                  <div class="ingredient group col-span-12 sm:col-span-6 md:col-span-4 lg:col-span-3 bg-gray-200 flex flex-col relative max-w-[330px] mx-auto">
                     <input class="peer absolute inset-0 z-10 cursor-pointer opacity-0" type="checkbox" id="toppings-opt-4" name="toppings" value="Dumplings">
                     <img class="flex-grow p-8 w-full aspect-[5/7] object-contain z-[2]" src="img/ingredients/toppings/dumplings.png" alt="">
                     <label class="font-bold mt-2 bg-green-600 py-1 px-4 text-white text-sm w-fit ml-auto z-[2]" for="toppings-opt-4">Dumplings</label>
@@ -515,7 +520,7 @@
                   </div> 
 
                   <!-- Ingredient #5 -->
-                  <div class="ingredient group col-span-12 sm:col-span-6 md:col-span-4 lg:col-span-3 bg-gray-200 flex flex-col relative">
+                  <div class="ingredient group col-span-12 sm:col-span-6 md:col-span-4 lg:col-span-3 bg-gray-200 flex flex-col relative max-w-[330px] mx-auto">
                     <input class="peer absolute inset-0 z-10 cursor-pointer opacity-0" type="checkbox" id="toppings-opt-5" name="toppings" value="Gingembre marine">
                     <img class="flex-grow p-8 w-full aspect-[5/7] object-contain z-[2]" src="img/ingredients/toppings/gingembre.png" alt="">
                     <label class="font-bold mt-2 bg-green-600 py-1 px-4 text-white text-sm w-fit ml-auto z-[2]" for="toppings-opt-5">Gingembre marine</label>
@@ -527,7 +532,7 @@
                   </div> 
 
                   <!-- Ingredient #6 -->
-                  <div class="ingredient group col-span-12 sm:col-span-6 md:col-span-4 lg:col-span-3 bg-gray-200 flex flex-col relative">
+                  <div class="ingredient group col-span-12 sm:col-span-6 md:col-span-4 lg:col-span-3 bg-gray-200 flex flex-col relative max-w-[330px] mx-auto">
                     <input class="peer absolute inset-0 z-10 cursor-pointer opacity-0" type="checkbox" id="toppings-opt-6" name="toppings" value="Narutomaki">
                     <img class="flex-grow p-8 w-full aspect-[5/7] object-contain z-[2]" src="img/ingredients/toppings/narutomaki.png" alt="">
                     <label class="font-bold mt-2 bg-green-600 py-1 px-4 text-white text-sm w-fit ml-auto z-[2]" for="toppings-opt-6">Narutomaki</label>
@@ -539,7 +544,7 @@
                   </div> 
 
                   <!-- Ingredient #7 -->
-                  <div class="ingredient group col-span-12 sm:col-span-6 md:col-span-4 lg:col-span-3 bg-gray-200 flex flex-col relative">
+                  <div class="ingredient group col-span-12 sm:col-span-6 md:col-span-4 lg:col-span-3 bg-gray-200 flex flex-col relative max-w-[330px] mx-auto">
                     <input class="peer absolute inset-0 z-10 cursor-pointer opacity-0" type="checkbox" id="toppings-opt-7" name="toppings" value="Oeuf">
                     <img class="flex-grow p-8 w-full aspect-[5/7] object-contain z-[2]" src="img/ingredients/toppings/oeuf.png" alt="">
                     <label class="font-bold mt-2 bg-green-600 py-1 px-4 text-white text-sm w-fit ml-auto z-[2]" for="toppings-opt-7">Oeuf</label>
@@ -551,7 +556,7 @@
                   </div> 
 
                   <!-- Ingredient #8 -->
-                  <div class="ingredient group col-span-12 sm:col-span-6 md:col-span-4 lg:col-span-3 bg-gray-200 flex flex-col relative">
+                  <div class="ingredient group col-span-12 sm:col-span-6 md:col-span-4 lg:col-span-3 bg-gray-200 flex flex-col relative max-w-[330px] mx-auto">
                     <input class="peer absolute inset-0 z-10 cursor-pointer opacity-0" type="checkbox" id="toppings-opt-8" name="toppings" value="Graines de sesame">
                     <img class="flex-grow p-8 w-full aspect-[5/7] object-contain z-[2]" src="img/ingredients/toppings/sesame.png" alt="">
                     <label class="font-bold mt-2 bg-green-600 py-1 px-4 text-white text-sm w-fit ml-auto z-[2]" for="toppings-opt-8">Graines de sesame</label>
@@ -565,13 +570,14 @@
                 </div>
               </fieldset>
 
-              <fieldset class="my-4">
-                <legend class="my-2 font-semibold">Choisissez vos epices (plusieurs choix possible)</legend>
+              <fieldset class="flex flex-col relative fieldset">
+                <span class="relative md:absolute md:left-0 md:top-0 bg-[#4c71fe] text-white text-sm font-bold p-2 z-[1] transition-all fieldset__label">Etape 6</span>
+                <legend class="font-semibold bg-gray-200 hover:bg-green-600 hover:text-white py-1 px-6 mx-auto fieldset__legend transition-all">- Choisissez vos epices (plusieurs choix possibles) -</legend>
                 <!-- Choix des epices -->
-                <div class="grid grid-cols-12 gap-4">
+                <div class="z-[2] grid grid-cols-12 gap-4 border-y-2 border-gray-200 py-6 px-4 hover:border-gray-300 transition-all bg-white">
 
                   <!-- Ingredient #1 -->
-                  <div class="ingredient group col-span-12 sm:col-span-6 md:col-span-4 lg:col-span-3 bg-gray-200 flex flex-col relative">
+                  <div class="ingredient group col-span-12 sm:col-span-6 md:col-span-4 lg:col-span-3 bg-gray-200 flex flex-col relative max-w-[330px] mx-auto">
                     <input class="peer absolute inset-0 z-10 cursor-pointer opacity-0" type="checkbox" id="epices-opt-1" name="epices" value="Shichimi togarashi - epices japonaises" checked>
                     <img class="flex-grow p-8 w-full aspect-[5/7] object-contain z-[2]" src="img/ingredients/epices/shichimi_togarashi.png" alt="">
                     <label class="font-bold mt-2 bg-green-600 py-1 px-4 text-white text-sm w-fit ml-auto z-[2]" for="epices-opt-1">Shichimi togarashi - epices japonaises</label>
@@ -583,7 +589,7 @@
                   </div> 
       
                   <!-- Ingredient #2 -->
-                  <div class="ingredient group col-span-12 sm:col-span-6 md:col-span-4 lg:col-span-3 bg-gray-200 flex flex-col relative">
+                  <div class="ingredient group col-span-12 sm:col-span-6 md:col-span-4 lg:col-span-3 bg-gray-200 flex flex-col relative max-w-[330px] mx-auto">
                     <input class="peer absolute inset-0 z-10 cursor-pointer opacity-0" type="checkbox" id="epices-opt-2" name="epices" value="Ail en poudre">
                     <img class="flex-grow p-8 w-full aspect-[5/7] object-contain z-[2]" src="img/ingredients/epices/ail_poudre.png" alt="">
                     <label class="font-bold mt-2 bg-green-600 py-1 px-4 text-white text-sm w-fit ml-auto z-[2]" for="epices-opt-2">Ail en poudre</label>
@@ -595,7 +601,7 @@
                   </div> 
 
                   <!-- Ingredient #3 -->
-                  <div class="ingredient group col-span-12 sm:col-span-6 md:col-span-4 lg:col-span-3 bg-gray-200 flex flex-col relative">
+                  <div class="ingredient group col-span-12 sm:col-span-6 md:col-span-4 lg:col-span-3 bg-gray-200 flex flex-col relative max-w-[330px] mx-auto">
                     <input class="peer absolute inset-0 z-10 cursor-pointer opacity-0" type="checkbox" id="epices-opt-3" name="epices" value="Yuzu kosho - pate de yuzu">
                     <img class="flex-grow p-8 w-full aspect-[5/7] object-contain z-[2]" src="img/ingredients/epices/yuzu_kosho.png" alt="">
                     <label class="font-bold mt-2 bg-green-600 py-1 px-4 text-white text-sm w-fit ml-auto z-[2]" for="epices-opt-3">Yuzu kosho - pate de yuzu</label>
@@ -607,7 +613,7 @@
                   </div> 
 
                   <!-- Ingredient #4 -->
-                  <div class="ingredient group col-span-12 sm:col-span-6 md:col-span-4 lg:col-span-3 bg-gray-200 flex flex-col relative">
+                  <div class="ingredient group col-span-12 sm:col-span-6 md:col-span-4 lg:col-span-3 bg-gray-200 flex flex-col relative max-w-[330px] mx-auto">
                     <input class="peer absolute inset-0 z-10 cursor-pointer opacity-0" type="checkbox" id="epices-opt-4" name="epices" value="Gingembre en poudre">
                     <img class="flex-grow p-8 w-full aspect-[5/7] object-contain z-[2]" src="img/ingredients/epices/gingembre_poudre.png" alt="">
                     <label class="font-bold mt-2 bg-green-600 py-1 px-4 text-white text-sm w-fit ml-auto z-[2]" for="epices-opt-4">Gingembre en poudre</label>
@@ -619,7 +625,7 @@
                   </div> 
 
                   <!-- Ingredient #5 -->
-                  <div class="ingredient group col-span-12 sm:col-span-6 md:col-span-4 lg:col-span-3 bg-gray-200 flex flex-col relative">
+                  <div class="ingredient group col-span-12 sm:col-span-6 md:col-span-4 lg:col-span-3 bg-gray-200 flex flex-col relative max-w-[330px] mx-auto">
                     <input class="peer absolute inset-0 z-10 cursor-pointer opacity-0" type="checkbox" id="epices-opt-5" name="epices" value="Huile de sesame">
                     <img class="flex-grow p-8 w-full aspect-[5/7] object-contain z-[2]" src="img/ingredients/epices/huile_sesame.png" alt="">
                     <label class="font-bold mt-2 bg-green-600 py-1 px-4 text-white text-sm w-fit ml-auto z-[2]" for="epices-opt-5">Huile de sesame</label>
@@ -631,7 +637,7 @@
                   </div> 
 
                   <!-- Ingredient #6 -->
-                  <div class="ingredient group col-span-12 sm:col-span-6 md:col-span-4 lg:col-span-3 bg-gray-200 flex flex-col relative">
+                  <div class="ingredient group col-span-12 sm:col-span-6 md:col-span-4 lg:col-span-3 bg-gray-200 flex flex-col relative max-w-[330px] mx-auto">
                     <input class="peer absolute inset-0 z-10 cursor-pointer opacity-0" type="checkbox" id="epices-opt-6" name="epices" value="Poivre noir">
                     <img class="flex-grow p-8 w-full aspect-[5/7] object-contain z-[2]" src="img/ingredients/epices/poivre_noir.png" alt="">
                     <label class="font-bold mt-2 bg-green-600 py-1 px-4 text-white text-sm w-fit ml-auto z-[2]" for="epices-opt-6">Poivre noir</label>
@@ -643,7 +649,7 @@
                   </div> 
 
                   <!-- Ingredient #7 -->
-                  <div class="ingredient group col-span-12 sm:col-span-6 md:col-span-4 lg:col-span-3 bg-gray-200 flex flex-col relative">
+                  <div class="ingredient group col-span-12 sm:col-span-6 md:col-span-4 lg:col-span-3 bg-gray-200 flex flex-col relative max-w-[330px] mx-auto">
                     <input class="peer absolute inset-0 z-10 cursor-pointer opacity-0" type="checkbox" id="epices-opt-7" name="epices" value="Kimchi">
                     <img class="flex-grow p-8 w-full aspect-[5/7] object-contain z-[2]" src="img/ingredients/epices/kimchi.png" alt="">
                     <label class="font-bold mt-2 bg-green-600 py-1 px-4 text-white text-sm w-fit ml-auto z-[2]" for="epices-opt-7">Kimchi</label>
@@ -655,7 +661,7 @@
                   </div> 
 
                   <!-- Ingredient #8 -->
-                  <div class="ingredient group col-span-12 sm:col-span-6 md:col-span-4 lg:col-span-3 bg-gray-200 flex flex-col relative">
+                  <div class="ingredient group col-span-12 sm:col-span-6 md:col-span-4 lg:col-span-3 bg-gray-200 flex flex-col relative max-w-[330px] mx-auto">
                     <input class="peer absolute inset-0 z-10 cursor-pointer opacity-0" type="checkbox" id="epices-opt-8" name="epices" value="Piment en poudre">
                     <img class="flex-grow p-8 w-full aspect-[5/7] object-contain z-[2]" src="img/ingredients/epices/piment_poudre.png" alt="">
                     <label class="font-bold mt-2 bg-green-600 py-1 px-4 text-white text-sm w-fit ml-auto z-[2]" for="epices-opt-8">Piment en poudre</label>
@@ -669,7 +675,7 @@
                 </div>
               </fieldset>
     
-              <input class="cursor-pointer py-1 px-4 bg-blue-600 text-white font-bold" type="submit" value="Cuisiner">
+              <button class="button button--white-bg" type="submit">Cuisiner</button>
             </form>
           </div>
     </section>
