@@ -7,6 +7,7 @@ class RamenRecipe {
         this.toppings = toppings;
         this.epices = epices;
         this.ingredientsImgs = ingredientsImgs
+        this.id = null;
       }
     
       // Sauvegarde la recette dans le localStorage
@@ -26,6 +27,10 @@ class RamenRecipe {
     
       // Affiche une recette dans le DOM
       display(container) {
+        const titre = document.createElement('h2');
+        titre.textContent = `Recette #${this.id}`;
+        container.appendChild(titre);
+
         const bouillon = document.createElement('p');
         bouillon.textContent = `Bouillon: ${this.bouillon}`;
         container.appendChild(bouillon);
