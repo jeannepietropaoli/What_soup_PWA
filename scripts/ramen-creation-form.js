@@ -19,16 +19,6 @@ form.addEventListener('submit', function(event) {
     const epicesImgs = Array.from(document.querySelectorAll('input[name="epices"]:checked')).map(epice => epice.nextElementSibling.src);
 
     const ingredientsImgs = [bouillonImg, nouillesImg, proteineImg, ...legumesImgs, ...toppingsImgs, ...epicesImgs];
-
-    /* 
-    const formData = new FormData(event.target);
-    const bouillon = formData.get('bouillon');
-    const nouilles = formData.get('nouilles');
-    const proteine = formData.get('proteine');
-    const legumes = formData.get('legumes');
-    const toppings = formData.getAll('toppings');
-    const epices = formData.get('epices');
-    */
   
     const ramenRecipe = new RamenRecipe(bouillon, nouilles, proteine, legumes, toppings, epices, ingredientsImgs);
     RamenRecipe.save(ramenRecipe);
