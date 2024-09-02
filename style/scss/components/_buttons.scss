@@ -1,0 +1,26 @@
+@use '../helpers/mixins.scss' as *;
+@use '../helpers/colors.scss' as *;
+
+.button {
+    display: inline-block;
+    cursor: pointer;
+    min-width: max-content;
+    position: relative;
+    z-index: 1;
+    padding: 0.4rem 1.5rem;
+    border: 2px solid $blue;
+    font-weight: 700;
+    font-size: 0.75rem;
+    margin: 0.1rem;
+    border-radius: 0.3rem;
+
+    &--blue-bg {
+        @include colorBtn($blue, white);
+        @include fillOnHover(white, $blue);
+    }
+
+    &--white-bg {
+        @include colorBtn(white, $blue);
+        @include fillOnHover($blue, white);
+    }
+}
