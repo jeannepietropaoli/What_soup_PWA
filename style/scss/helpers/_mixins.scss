@@ -1,0 +1,29 @@
+@mixin fillOnHover($bgColor, $txtColor) {
+    &::after {
+        content: '';
+        position: absolute;
+        width: 0%;
+        height: 100%;
+        top: 50%;
+        left: 0%;
+        transform: translateY(-50%);
+        background-color: $bgColor;
+        z-index: -1;
+        transition: width 0.3s;
+        transform-origin: left center;
+        border-radius: 0.2rem;
+    }
+
+    &:hover {
+        color: $txtColor;
+
+        &::after {
+            width: 100%;
+        }
+    }
+}
+
+@mixin colorBtn($bgColor, $txtColor) {
+    background-color: $bgColor;
+    color: $txtColor;
+}
