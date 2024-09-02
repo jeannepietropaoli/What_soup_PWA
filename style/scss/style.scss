@@ -1,3 +1,6 @@
 @use 'general.scss';
 @use 'helpers/fonts.scss';
-@use 'layout/formulaire-creation-ramen.scss'
+@use 'layout/formulaire-creation-ramen.scss';
+@use 'components/forms.scss';
+@use 'components/buttons.scss';
+@use 'helpers/colors.scss' as *;
