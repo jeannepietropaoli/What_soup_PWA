@@ -6,9 +6,8 @@
   <title>Ramen ton bol</title>
   <link rel="stylesheet" href="style/css/style.css">
   <script src="scripts/mobile_menu.js" defer></script>
-  <script src="scripts/paralax.js" defer></script>
   <script src="https://cdn.tailwindcss.com"></script>
-  <script src="scripts/recipe-display.js" type="module" defer></script>
+  <script src="scripts/recipe-display.js" type="module"></script>
   <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
   <script src="https://kit.fontawesome.com/c777fc19af.js" crossorigin="anonymous"></script>
 </head>
@@ -16,57 +15,62 @@
 <body class="flex flex-col min-h-screen">
   <a class="screen-reader-txt" href="#main-content">Aller au contenu principal</a>
   <!-- A partir du composant 'Simple dark with menu button on left' https://tailwindui.com/components/application-ui/navigation/navbars-->
-  <header>
-    <nav class="bg-zinc-800">
-        <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
-          <div class="relative flex h-16 items-center justify-between">
-            <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
+  <header class="bg-white relative shadow-md">
+    <nav>
+        <div class="container mx-auto px-6 pb-0 md:pb-0">
+          <div class="relative flex items-center justify-between">
+            <div class="flex flex-1 items-center justify-between md:justify-start">
+
               <!-- button menu mobile -->
-              <button id="mobile-menu-btn" type="button" class="relative inline-flex items-center justify-center rounded-md p-2 text-gray-200 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" aria-controls="mobile-menu" aria-expanded="false">
-                <span class="absolute -inset-0.5"></span>
-                <span class="sr-only">Open main menu</span>
-                <!--
-                    Icon quand menu est ferme - Ajout / retrait classes dans le fichier mobile_menu.js -> Menu ouvert: "hidden", Menu ferme: "block"
-                -->
-                <svg id="open-mobile-menu-btn" class="block h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-                </svg>
-                <!--
-                    Icon quand menu est ouvert - Ajout / retrait classes dans le fichier mobile_menu.js -> Menu ouvert: "block", Menu ferme: "hidden"
-                -->
-                <svg id="close-mobile-menu-btn" class="hidden h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-                </svg>
-              </button>
-            </div>
-            <div class="flex flex-1 items-center justify-center sm:justify-start">
-              <div class="flex items-center">
-                <img class="w-[14%] sm:w-16 sm:p-1 h-auto mx-auto" src="img/logo_ramen_6.png" alt="Logo">
+              <div class="flex items-center md:hidden py-3">
+                  <button id="mobile-menu-btn" type="button" class="relative inline-flex items-center justify-center rounded-md p-2 text-[#4C71FE] hover:bg-slate-500 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" aria-controls="mobile-menu" aria-expanded="false">
+                      <span class="sr-only">Open main menu</span>
+                      <!-- Icon quand menu est ferme -->
+                      <svg id="open-mobile-menu-btn" class="block h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                      </svg>
+                      <!-- Icon quand menu est ouvert -->
+                      <svg id="close-mobile-menu-btn" class="hidden h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                      </svg>
+                  </button>
               </div>
-              <div class="hidden sm:ml-6 sm:block">
-                <div class="flex space-x-4">
-                  <a href="#" class="rounded-md bg-gray-900 px-3 py-2 text-sm font-medium text-white" aria-current="page">Accueil</a>
-                  <a href="#" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Inspiration</a>
-                  <a href="#" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Mes recettes</a>
-                </div>
+
+              <!-- Logo -->
+              <div class="flex items-center justify-center flex-1 md:flex-none relative">
+                  <img class="w-14 p-1 h-auto mx-auto" src="img/logo.png" alt="Logo">
+                  <a class="absolute inset-0 left-0 right-0" href="index.html"></a>
+              </div>
+
+              <!-- bouton "creer ramen" petits ecrans -->
+              <div class="flex items-center md:hidden py-3">
+                  <button class="inline-block py-2 px-4 text-xs font-semibold bg-[#4c71fe] hover:bg-slate-500 rounded-md text-white" aria-label="Créer un nouveau ramen">
+                      + Créer
+                  </button>
+              </div>
+
+              <!-- Menu grands ecrans -->
+              <div class="hidden md:ml-6 md:flex">
+                  <a class="w-max inline-block p-5 mr-6 border-b-4 border-transparent m-0 hover:cursor-pointer text-sm hover:border-[#4c71fe]" href="#">Accueil</a>
+                  <a class="w-max inline-block p-5 mr-6 border-b-4 border-transparent m-0 hover:cursor-pointer hover:border-[#4c71fe] text-sm" href="#">Inspiration</a>
+                  <a class="w-max inline-block p-5 mr-6 border-b-4 border-[#4c71fe] m-0 hover:cursor-pointer text-sm" href="#" aria-current="page">Mes recettes</a>
               </div>
             </div>
-            <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-                <button class="hidden sm:inline-block py-2 px-4 text-sm font-semibold bg-[#4c71fe] hover:bg-slate-500 rounded-md text-white">+ Créer un ramen</button>
-                <button class="relative inline-block sm:hidden py-2 px-4 text-xs font-semibold bg-[#4c71fe] hover:bg-slate-500 rounded-md text-white" aria-label="Créer un nouveau ramen">
-                    + Créer
-                </button>
+
+            <div class="absolute inset-y-0 right-0 flex items-center pr-2 md:static md:inset-auto md:ml-6 md:pr-0">
+                <!-- bouton "creer ramen" grands ecrans -->
+                <button class="hidden md:inline-block py-2 px-4 text-sm font-semibold bg-[#4c71fe] hover:bg-slate-500 rounded-md text-white">+ Créer un ramen</button>
             </div>
           </div>
         </div>
-      
-         <!-- Menu mobile: ouvre le menu au clic de open-mobile-menu-btn / ferme le menu au clic de close-mobile-menu-btn -> voir mobile_menu.js -->
-        <div class="hidden sm:hidden" id="mobile-menu">
-          <div class="space-y-1 px-2 pb-3 pt-2">
-            <a href="#" class="block rounded-md bg-gray-900 px-3 py-2 text-base font-medium text-white" aria-current="page">Accueil</a>
-            <a href="#" class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Inspiration</a>
-            <a href="#" class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Mes recettes</a>
-          </div>
+
+        <!-- Menu mobile: ouvre le menu au clic de open-mobile-menu-btn / ferme le menu au clic de close-mobile-menu-btn -->
+        <div class="hidden md:hidden" id="mobile-menu">
+            <div class="px-2 pt-2">
+              <a href="#" class="block border-b-4 border-transparent px-3 py-2 text-base font-medium hover:bg-slate-100 hover:border-[#4c71fe]" aria-current="page">Accueil</a>
+              <a href="#" class="block border-b-4 border-transparent px-3 py-2 text-base font-medium hover:bg-slate-100 hover:border-[#4c71fe]">Inspiration</a>
+              <a href="#" class="block border-b-4 border-[#4c71fe] px-3 py-2 text-base font-medium hover:bg-slate-100">Mes recettes</a>
+            </div>
         </div>
       </nav>
   </header>
