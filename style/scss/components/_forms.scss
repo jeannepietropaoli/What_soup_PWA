@@ -1,0 +1,14 @@
+@media screen and (min-width: 768px) {
+    .fieldset {
+        &:hover {
+            .fieldset__label {
+                transform: translateY(-100%);
+            }
+    
+            .fieldset__legend {
+                background-color: #16a34a;
+                color: white;
+            }
+        }
+    }
+}
