@@ -9,6 +9,7 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
   <script src="https://kit.fontawesome.com/c777fc19af.js" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@material-tailwind/html@latest/scripts/collapse.js" defer></script>
   <link rel="icon" type="image/png" href="img/favicon.png">
 </head>
 
@@ -83,48 +84,14 @@
         <p class="text-center">Vous etes au bon endroit !</p>
 
         <div class=" mx-auto grid grid-cols-12">
+
           <!-- Recette #1 -->
-          <div class="bg-white border border-slate-200 p-10 shadow-sm relative text-sm rounded-md col-span-12 md:col-span-6 xl:col-span-4 w-11/12 my-6 hover:bg-slate-50">
+          <div class="bg-white hover:bg-slate-50 border border-slate-200 shadow-md relative text-sm rounded-md col-span-12 md:col-span-6 xl:col-span-4 w-11/12 my-6 p-10">
             <div class="absolute right-[40px] flex gap-2">
-              <span class="text-[0.7rem] font-semibold px-2 py-0 text-white bg-indigo-700 rounded-full">traditionnel</span>
+                <span class="text-[0.7rem] font-semibold px-2 py-0 text-white bg-green-500 rounded-full">vege</span>
+                <span class="text-[0.7rem] font-semibold px-2 py-0 text-white bg-orange-500 rounded-full">original</span>
             </div>
-            <h3 class="text-lg font-medium text-gray-800">Ramen #1</h3>
-            <!-- Description-->
-            <p class="text-sm font-light text-gray-600 my-3">
-            Le ramen traditionnel, un classique qui ne se demode pas.
-            </p>
-            <!-- Liste des ingredients-->
-            <ul class="list-disc pl-10 space-y-2">
-                <li><span class="font-bold">Bouillon</span>: Shio - sel</li>
-                <li><span class="font-bold">Nouilles</span>: Hiramen - nouilles plates</li>
-                <li><span class="font-bold">Proteine</span>: Tofu</li>
-                <li><span class="font-bold">Legumes</span>: Oignons verts, champignons</li>
-                <li><span class="font-bold">Toppings</span>: oeuf</li>
-                <li><span class="font-bold">Epices</span>: pate de yuzu, poivre noir</li>
-            </ul>
-            <!-- Accordeon-->
-            <div class="transition hover:bg-indigo-50 border-t-2 my-5 border-indigo-700">
-                <!-- header accordeon-->
-                <div class="accordion-header cursor-pointer transition flex space-x-5 px-5 items-center h-16">
-                    <i class="fas fa-plus text-indigo-700"></i>
-                    <h3>Voir tous les ingredients</h3>
-                </div>
-                <!-- contenu accordeon -->
-                <div class="accordion-content transition-all ease-out duration-300 px-5 pt-0 overflow-hidden max-h-0 flex flex-wrap">
-                    <img class="h-20 p-2" src="img/ingredients/proteines/tofu.png" alt="test">
-                    <img class="h-20 p-2" src="img/ingredients/legumes/champignons.png" alt="">
-                    <img class="h-20 p-2" src="img/ingredients/epices/shichimi_togarashi.png" alt="">
-                </div>
-            </div>
-          </div>
-          
-          <!-- Recette #2 -->
-          <div class="bg-white border border-slate-200 p-10 shadow-sm relative text-sm rounded-md col-span-12 md:col-span-6 xl:col-span-4 w-11/12 my-6 hover:bg-slate-50">
-            <div class="absolute right-[40px] flex gap-2">
-                <span class="text-[0.7rem] font-semibold px-2 py-0 text-white bg-indigo-700 rounded-full">traditionnel</span>
-                <span class="text-[0.7rem] font-semibold px-2 py-0 text-white bg-red-400 rounded-full">spicy</span>
-            </div>
-            <h3 class="text-lg font-medium text-gray-800">Ramen #2</h3>
+            <h3 class="text-lg font-medium">Ramen #1</h3>
             <!-- Description-->
             <p class="text-sm font-light text-gray-600 my-3">Le ramen traditionnel, un classique qui ne se demode pas.</p>
             <!-- Liste des ingredients-->
@@ -137,89 +104,173 @@
               <li><span class="font-bold">Epices</span>: pate de yuzu, poivre noir</li>
             </ul>
             <!-- Accordeon-->
-            <div class="transition hover:bg-indigo-50 border-t-2 my-5 border-indigo-700">
+            <div class="transition hover:bg-slate-200 border-t-2 border-indigo-700 my-5">
               <!-- header accordeon-->
-              <div class="accordion-header cursor-pointer transition flex space-x-5 px-5 items-center h-16">
-                  <i class="fas fa-plus text-indigo-700"></i>
-                  <h3>Voir tous les ingredients</h3>
+              <div class="relative cursor-pointer transition flex px-5 items-center h-16 group" data-collapse-target="animated-collapse-1" role="button">
+                <span class="text-indigo-700 font-semibold text-xl inline-block absolute left-0 group-open:hidden">+</span>
+                <span class="text-indigo-700 font-semibold text-xl absolute left-[3px] hidden group-open:inline-block">-</span>
+                <h3>Voir tous les ingredients</h3>
               </div>
+
               <!-- contenu accordeon -->
-              <div class="accordion-content transition-all ease-out duration-300 px-5 pt-0 overflow-hidden max-h-0 flex flex-wrap">
+              <div class="h-0 overflow-hidden transition-all ease-out duration-300 px-5 pt-0 flex flex-wrap" data-collapse="animated-collapse-1">
                   <img class="h-20 p-2" src="img/ingredients/proteines/tofu.png" alt="test">
                   <img class="h-20 p-2" src="img/ingredients/legumes/champignons.png" alt="">
                   <img class="h-20 p-2" src="img/ingredients/epices/shichimi_togarashi.png" alt="">
               </div>
             </div>
           </div>
+          <!-- Fin recette #1 -->
 
-        <!-- Recette #3 -->
-        <div class="bg-white border border-slate-200 p-10 shadow-sm relative text-sm rounded-md col-span-12 md:col-span-6 xl:col-span-4 w-11/12 my-6 hover:bg-slate-50">
-          <div class="absolute right-[40px] flex gap-2">
-              <span class="text-[0.7rem] font-semibold px-2 py-0 text-white bg-green-500 rounded-full">vege</span>
-              <span class="text-[0.7rem] font-semibold px-2 py-0 text-white bg-pink-600 rounded-full">fusion</span>
-          </div>
-          <h3 class="text-lg font-medium text-gray-800">Ramen #3</h3>
-          <!-- Description-->
-          <p class="text-sm font-light text-gray-600 my-3">Le ramen traditionnel, un classique qui ne se demode pas.</p>
-          <!-- Liste des ingredients-->
-          <ul class="list-disc pl-10 space-y-2">
-            <li><span class="font-bold">Bouillon</span>: Shio - sel</li>
-            <li><span class="font-bold">Nouilles</span>: Hiramen - nouilles plates</li>
-            <li><span class="font-bold">Proteine</span>: Tofu</li>
-            <li><span class="font-bold">Legumes</span>: Oignons verts, champignons</li>
-            <li><span class="font-bold">Toppings</span>: oeuf</li>
-            <li><span class="font-bold">Epices</span>: pate de yuzu, poivre noir</li>
-          </ul>
-          <!-- Accordeon-->
-          <div class="transition hover:bg-indigo-50 border-t-2 my-5 border-indigo-700">
-            <!-- header accordeon-->
-            <div class="accordion-header cursor-pointer transition flex space-x-5 px-5 items-center h-16">
-                <i class="fas fa-plus text-indigo-700"></i>
+          <!-- Recette #2 -->
+          <div class="bg-white hover:bg-slate-50 border border-slate-200 shadow-md relative text-sm rounded-md col-span-12 md:col-span-6 xl:col-span-4 w-11/12 my-6 p-10">
+            <div class="absolute right-[40px] flex gap-2">
+                <span class="text-[0.7rem] font-semibold px-2 py-0 text-white bg-green-500 rounded-full">vege</span>
+                <span class="text-[0.7rem] font-semibold px-2 py-0 text-white bg-orange-500 rounded-full">original</span>
+            </div>
+            <h3 class="text-lg font-medium">Ramen #2</h3>
+            <!-- Description-->
+            <p class="text-sm font-light text-gray-600 my-3">Le ramen traditionnel, un classique qui ne se demode pas.</p>
+            <!-- Liste des ingredients-->
+            <ul class="list-disc pl-10 space-y-2">
+              <li><span class="font-bold">Bouillon</span>: Shio - sel</li>
+              <li><span class="font-bold">Nouilles</span>: Hiramen - nouilles plates</li>
+              <li><span class="font-bold">Proteine</span>: Tofu</li>
+              <li><span class="font-bold">Legumes</span>: Oignons verts, champignons</li>
+              <li><span class="font-bold">Toppings</span>: oeuf</li>
+              <li><span class="font-bold">Epices</span>: pate de yuzu, poivre noir</li>
+            </ul>
+            <!-- Accordeon-->
+            <div class="transition hover:bg-slate-200 border-t-2 border-indigo-700 my-5">
+              <!-- header accordeon-->
+              <div class="relative cursor-pointer transition flex px-5 items-center h-16 group" data-collapse-target="animated-collapse-2" role="button">
+                <span class="text-indigo-700 font-semibold text-xl inline-block absolute left-0 group-open:hidden">+</span>
+                <span class="text-indigo-700 font-semibold text-xl absolute left-[3px] hidden group-open:inline-block">-</span>
                 <h3>Voir tous les ingredients</h3>
-            </div>
-            <!-- contenu accordeon -->
-            <div class="accordion-content transition-all ease-out duration-300 px-5 pt-0 overflow-hidden max-h-0 flex flex-wrap">
-                <img class="h-20 p-2" src="img/ingredients/proteines/tofu.png" alt="test">
-                <img class="h-20 p-2" src="img/ingredients/legumes/champignons.png" alt="">
-                <img class="h-20 p-2" src="img/ingredients/epices/shichimi_togarashi.png" alt="">
-            </div>
-          </div>
-        </div>
+              </div>
 
-        <!-- Recette #4 -->
-        <div class="bg-white border border-slate-200 p-10 shadow-sm relative text-sm rounded-md col-span-12 md:col-span-6 xl:col-span-4 w-11/12 my-6 hover:bg-slate-50">
-          <div class="absolute right-[40px] flex gap-2">
-              <span class="text-[0.7rem] font-semibold px-2 py-0 text-white bg-green-500 rounded-full">vege</span>
-              <span class="text-[0.7rem] font-semibold px-2 py-0 text-white bg-orange-500 rounded-full">original</span>
+              <!-- contenu accordeon -->
+              <div class="h-0 overflow-hidden transition-all ease-out duration-300 px-5 pt-0 flex flex-wrap" data-collapse="animated-collapse-2">
+                  <img class="h-20 p-2" src="img/ingredients/proteines/tofu.png" alt="test">
+                  <img class="h-20 p-2" src="img/ingredients/legumes/champignons.png" alt="">
+                  <img class="h-20 p-2" src="img/ingredients/epices/shichimi_togarashi.png" alt="">
+              </div>
+            </div>
           </div>
-          <h3 class="text-lg font-medium text-gray-800">Ramen #4</h3>
-          <!-- Description-->
-          <p class="text-sm font-light text-gray-600 my-3">Le ramen traditionnel, un classique qui ne se demode pas.</p>
-          <!-- Liste des ingredients-->
-          <ul class="list-disc pl-10 space-y-2">
-            <li><span class="font-bold">Bouillon</span>: Shio - sel</li>
-            <li><span class="font-bold">Nouilles</span>: Hiramen - nouilles plates</li>
-            <li><span class="font-bold">Proteine</span>: Tofu</li>
-            <li><span class="font-bold">Legumes</span>: Oignons verts, champignons</li>
-            <li><span class="font-bold">Toppings</span>: oeuf</li>
-            <li><span class="font-bold">Epices</span>: pate de yuzu, poivre noir</li>
-          </ul>
-          <!-- Accordeon-->
-          <div class="transition hover:bg-indigo-50 border-t-2 my-5 border-indigo-700">
-            <!-- header accordeon-->
-            <div class="accordion-header cursor-pointer transition flex space-x-5 px-5 items-center h-16">
-                <i class="fas fa-plus text-indigo-700"></i>
+          <!-- Fin recette #2 -->
+
+          <!-- Recette #3 -->
+          <div class="bg-white hover:bg-slate-50 border border-slate-200 shadow-md relative text-sm rounded-md col-span-12 md:col-span-6 xl:col-span-4 w-11/12 my-6 p-10">
+            <div class="absolute right-[40px] flex gap-2">
+                <span class="text-[0.7rem] font-semibold px-2 py-0 text-white bg-green-500 rounded-full">vege</span>
+                <span class="text-[0.7rem] font-semibold px-2 py-0 text-white bg-orange-500 rounded-full">original</span>
+            </div>
+            <h3 class="text-lg font-medium">Ramen #3</h3>
+            <!-- Description-->
+            <p class="text-sm font-light text-gray-600 my-3">Le ramen traditionnel, un classique qui ne se demode pas.</p>
+            <!-- Liste des ingredients-->
+            <ul class="list-disc pl-10 space-y-2">
+              <li><span class="font-bold">Bouillon</span>: Shio - sel</li>
+              <li><span class="font-bold">Nouilles</span>: Hiramen - nouilles plates</li>
+              <li><span class="font-bold">Proteine</span>: Tofu</li>
+              <li><span class="font-bold">Legumes</span>: Oignons verts, champignons</li>
+              <li><span class="font-bold">Toppings</span>: oeuf</li>
+              <li><span class="font-bold">Epices</span>: pate de yuzu, poivre noir</li>
+            </ul>
+            <!-- Accordeon-->
+            <div class="transition hover:bg-slate-200 border-t-2 border-indigo-700 my-5">
+              <!-- header accordeon-->
+              <div class="relative cursor-pointer transition flex px-5 items-center h-16 group" data-collapse-target="animated-collapse-3" role="button">
+                <span class="text-indigo-700 font-semibold text-xl inline-block absolute left-0 group-open:hidden">+</span>
+                <span class="text-indigo-700 font-semibold text-xl absolute left-[3px] hidden group-open:inline-block">-</span>
                 <h3>Voir tous les ingredients</h3>
-            </div>
-            <!-- contenu accordeon -->
-            <div class="accordion-content transition-all ease-out duration-300 px-5 pt-0 overflow-hidden max-h-0 flex flex-wrap">
-                <img class="h-20 p-2" src="img/ingredients/proteines/tofu.png" alt="test">
-                <img class="h-20 p-2" src="img/ingredients/legumes/champignons.png" alt="">
-                <img class="h-20 p-2" src="img/ingredients/epices/shichimi_togarashi.png" alt="">
+              </div>
+
+              <!-- contenu accordeon -->
+              <div class="h-0 overflow-hidden transition-all ease-out duration-300 px-5 pt-0 flex flex-wrap" data-collapse="animated-collapse-3">
+                  <img class="h-20 p-2" src="img/ingredients/proteines/tofu.png" alt="test">
+                  <img class="h-20 p-2" src="img/ingredients/legumes/champignons.png" alt="">
+                  <img class="h-20 p-2" src="img/ingredients/epices/shichimi_togarashi.png" alt="">
+              </div>
             </div>
           </div>
-        </div>
+          <!-- Fin recette #3 -->
 
+          <!-- Recette #4 -->
+          <div class="bg-white hover:bg-slate-50 border border-slate-200 shadow-md relative text-sm rounded-md col-span-12 md:col-span-6 xl:col-span-4 w-11/12 my-6 p-10">
+            <div class="absolute right-[40px] flex gap-2">
+                <span class="text-[0.7rem] font-semibold px-2 py-0 text-white bg-green-500 rounded-full">vege</span>
+                <span class="text-[0.7rem] font-semibold px-2 py-0 text-white bg-orange-500 rounded-full">original</span>
+            </div>
+            <h3 class="text-lg font-medium">Ramen #4</h3>
+            <!-- Description-->
+            <p class="text-sm font-light text-gray-600 my-3">Le ramen traditionnel, un classique qui ne se demode pas.</p>
+            <!-- Liste des ingredients-->
+            <ul class="list-disc pl-10 space-y-2">
+              <li><span class="font-bold">Bouillon</span>: Shio - sel</li>
+              <li><span class="font-bold">Nouilles</span>: Hiramen - nouilles plates</li>
+              <li><span class="font-bold">Proteine</span>: Tofu</li>
+              <li><span class="font-bold">Legumes</span>: Oignons verts, champignons</li>
+              <li><span class="font-bold">Toppings</span>: oeuf</li>
+              <li><span class="font-bold">Epices</span>: pate de yuzu, poivre noir</li>
+            </ul>
+            <!-- Accordeon-->
+            <div class="transition hover:bg-slate-200 border-t-2 border-indigo-700 my-5">
+              <!-- header accordeon-->
+              <div class="relative cursor-pointer transition flex px-5 items-center h-16 group" data-collapse-target="animated-collapse-4" role="button">
+                <span class="text-indigo-700 font-semibold text-xl inline-block absolute left-0 group-open:hidden">+</span>
+                <span class="text-indigo-700 font-semibold text-xl absolute left-[3px] hidden group-open:inline-block">-</span>
+                <h3>Voir tous les ingredients</h3>
+              </div>
+
+              <!-- contenu accordeon -->
+              <div class="h-0 overflow-hidden transition-all ease-out duration-300 px-5 pt-0 flex flex-wrap" data-collapse="animated-collapse-4">
+                  <img class="h-20 p-2" src="img/ingredients/proteines/tofu.png" alt="test">
+                  <img class="h-20 p-2" src="img/ingredients/legumes/champignons.png" alt="">
+                  <img class="h-20 p-2" src="img/ingredients/epices/shichimi_togarashi.png" alt="">
+              </div>
+            </div>
+          </div>
+          <!-- Fin recette #4 -->
+
+          <!-- Recette #5 -->
+          <div class="bg-white hover:bg-slate-50 border border-slate-200 shadow-md relative text-sm rounded-md col-span-12 md:col-span-6 xl:col-span-4 w-11/12 my-6 p-10">
+            <div class="absolute right-[40px] flex gap-2">
+                <span class="text-[0.7rem] font-semibold px-2 py-0 text-white bg-green-500 rounded-full">vege</span>
+                <span class="text-[0.7rem] font-semibold px-2 py-0 text-white bg-orange-500 rounded-full">original</span>
+            </div>
+            <h3 class="text-lg font-medium">Ramen #5</h3>
+            <!-- Description-->
+            <p class="text-sm font-light text-gray-600 my-3">Le ramen traditionnel, un classique qui ne se demode pas.</p>
+            <!-- Liste des ingredients-->
+            <ul class="list-disc pl-10 space-y-2">
+              <li><span class="font-bold">Bouillon</span>: Shio - sel</li>
+              <li><span class="font-bold">Nouilles</span>: Hiramen - nouilles plates</li>
+              <li><span class="font-bold">Proteine</span>: Tofu</li>
+              <li><span class="font-bold">Legumes</span>: Oignons verts, champignons</li>
+              <li><span class="font-bold">Toppings</span>: oeuf</li>
+              <li><span class="font-bold">Epices</span>: pate de yuzu, poivre noir</li>
+            </ul>
+            <!-- Accordeon-->
+            <div class="transition hover:bg-slate-200 border-t-2 border-indigo-700 my-5">
+              <!-- header accordeon-->
+              <div class="relative cursor-pointer transition flex px-5 items-center h-16 group" data-collapse-target="animated-collapse-5" role="button">
+                <span class="text-indigo-700 font-semibold text-xl inline-block absolute left-0 group-open:hidden">+</span>
+                <span class="text-indigo-700 font-semibold text-xl absolute left-[3px] hidden group-open:inline-block">-</span>
+                <h3>Voir tous les ingredients</h3>
+              </div>
+
+              <!-- contenu accordeon -->
+              <div class="h-0 overflow-hidden transition-all ease-out duration-300 px-5 pt-0 flex flex-wrap" data-collapse="animated-collapse-5">
+                  <img class="h-20 p-2" src="img/ingredients/proteines/tofu.png" alt="test">
+                  <img class="h-20 p-2" src="img/ingredients/legumes/champignons.png" alt="">
+                  <img class="h-20 p-2" src="img/ingredients/epices/shichimi_togarashi.png" alt="">
+              </div>
+            </div>
+          </div>
+          <!-- Fin recette #5 -->
+
+        </div>
       </div>
     </section>
 
@@ -242,7 +293,7 @@
               <span class="text-[0.7rem] font-semibold px-2 py-0 text-white bg-green-500 rounded-full">vege</span>
               <span class="text-[0.7rem] font-semibold px-2 py-0 text-white bg-orange-500 rounded-full">original</span>
           </div>
-          <h3 class="text-lg font-medium text-gray-800">Ramen #4</h3>
+          <h3 class="text-lg font-medium">Ramen de la semaine</h3>
           <!-- Description-->
           <p class="text-sm font-light text-gray-600 my-3">Le ramen traditionnel, un classique qui ne se demode pas.</p>
           <!-- Liste des ingredients-->
@@ -255,20 +306,23 @@
             <li><span class="font-bold">Epices</span>: pate de yuzu, poivre noir</li>
           </ul>
           <!-- Accordeon-->
-          <div class="transition hover:bg-indigo-50 border-t-2 my-5 border-indigo-700">
+          <div class="transition hover:bg-slate-200 border-t-2 border-indigo-700 my-5">
             <!-- header accordeon-->
-            <div class="accordion-header cursor-pointer transition flex space-x-5 px-5 items-center h-16">
-                <i class="fas fa-plus text-indigo-700"></i>
-                <h3>Voir tous les ingredients</h3>
+            <div class="relative cursor-pointer transition flex px-5 items-center h-16 group" data-collapse-target="animated-collapse-7" role="button">
+              <span class="text-indigo-700 font-semibold text-xl inline-block absolute left-0 group-open:hidden">+</span>
+              <span class="text-indigo-700 font-semibold text-xl absolute left-[3px] hidden group-open:inline-block">-</span>
+              <h3>Voir tous les ingredients</h3>
             </div>
+
             <!-- contenu accordeon -->
-            <div class="accordion-content transition-all ease-out duration-300 px-5 pt-0 overflow-hidden max-h-0 flex flex-wrap">
+            <div class="h-0 overflow-hidden transition-all ease-out duration-300 px-5 pt-0 flex flex-wrap" data-collapse="animated-collapse-7">
                 <img class="h-20 p-2" src="img/ingredients/proteines/tofu.png" alt="test">
                 <img class="h-20 p-2" src="img/ingredients/legumes/champignons.png" alt="">
                 <img class="h-20 p-2" src="img/ingredients/epices/shichimi_togarashi.png" alt="">
             </div>
           </div>
         </div>
+        <!-- Fin recette de la semaine -->
 
       </div>
     </section>
@@ -287,7 +341,7 @@
         <form action="confirmation-concours.html" class="grid grid-cols-12 my-10" >
           <fieldset class="relative col-span-12 lg:col-span-6 w-11/12 mx-auto">
             <legend class="font-bold w-max bg-[#4c71fe] text-white text-sm mx-auto py-2 px-6">Recette rundown</legend>
-            <div class="border-2 border-slate-400 py-4 px-10 flex flex-col ">
+            <div class="border-2 border-slate-400 hover:border-[#4c71fe] transition-all py-4 px-10 flex flex-col ">
               <div class="flex flex-col mb-4 space-y-1">
                 <label for="ramen-id" class="font-semibold">Id du ramen</label>
                 <input class="border border-slate-400" type="number" id="ramen-id" name="ramen-id">
@@ -341,7 +395,7 @@
 
           <fieldset class="relative col-span-12 lg:col-span-6 w-11/12 mx-auto">
                 <legend class="font-bold w-max bg-[#4c71fe] text-white text-sm mx-auto py-2 px-6">Les caprices du chef</legend>
-                <div class="border-2 border-slate-400 py-4 px-10 flex flex-col ">
+                <div class="border-2 border-slate-400 hover:border-[#4c71fe] transition-all py-4 px-10 flex flex-col ">
                   <label for="comments">Un mot du chef</label>
                   <textarea class="border border-slate-400" name="comments" id="comments" cols="30" rows="10"></textarea>
                   <label for="email">Courriel</label>
