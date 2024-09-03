@@ -1,19 +1,15 @@
 import RamenRecipe from './RamenRecipe.js';
+import { attachAccordionListeners } from './accordion.js';
 
 window.addEventListener('load', function() {
     const recipes = RamenRecipe.loadAll();
-  
+    const recipesContainer = document.getElementById('recipes-container');
     if (recipes.length > 0) {
-      const recipeContainer = document.createElement('div');
-      
       recipes.forEach(recipe => {
-        const recipeDiv = document.createElement('div');
-        recipe.display(recipeDiv);
-        recipeContainer.appendChild(recipeDiv);
+        recipe.display(recipesContainer);
+        attachAccordionListeners();
       });
-  
-      document.body.appendChild(recipeContainer);
     } else {
-      document.body.textContent = 'No recipes yet!';
+      recipesContainer.textContent = 'No recipes yet!';
     }
-  });
+});

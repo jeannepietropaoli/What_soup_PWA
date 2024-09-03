@@ -1,73 +1,194 @@
 class RamenRecipe {
-    constructor(bouillon, nouilles, proteine, legumes, toppings, epices, ingredientsImgs) {
-        this.bouillon = bouillon;
-        this.nouilles = nouilles;
-        this.proteine = proteine;
-        this.legumes = legumes;
-        this.toppings = toppings;
-        this.epices = epices;
-        this.ingredientsImgs = ingredientsImgs
-        this.id = null;
-      }
-    
-      // Sauvegarde la recette dans le localStorage
-      static save(newRecipe) {
-        console.log('saving');
-        const ramenRecipes = JSON.parse(localStorage.getItem('ramenRecipes')) || [];
-        newRecipe.id = ramenRecipes.length + 1;
-        ramenRecipes.push(newRecipe);
-        localStorage.setItem('ramenRecipes', JSON.stringify(ramenRecipes));
-      }
-    
-      // recupère toutes les recettes du localStorage
-      static loadAll() {
-        const recipes = JSON.parse(localStorage.getItem('ramenRecipes')) || [];
-        return recipes.map(recipe => Object.assign(new RamenRecipe(), recipe));
-      }
-    
-      // Affiche une recette dans le DOM
-      display(container) {
-        const titre = document.createElement('h2');
-        titre.textContent = `Recette #${this.id}`;
-        container.appendChild(titre);
+  constructor(
+    bouillon,
+    nouilles,
+    proteine,
+    legumes,
+    toppings,
+    epices,
+    ingredientsImgs
+  ) {
+    this.bouillon = bouillon;
+    this.nouilles = nouilles;
+    this.proteine = proteine;
+    this.legumes = legumes;
+    this.toppings = toppings;
+    this.epices = epices;
+    this.ingredientsImgs = ingredientsImgs;
+    this.id = null;
+    this.labels = ["a tester"];
+  }
 
-        const bouillon = document.createElement('p');
-        bouillon.textContent = `Bouillon: ${this.bouillon}`;
-        container.appendChild(bouillon);
-    
-        const nouilles = document.createElement('p');
-        nouilles.textContent = `Nouilles: ${this.nouilles}`;
-        container.appendChild(nouilles);
-    
-        const proteine = document.createElement('p');
-        proteine.textContent = `Protéine: ${this.proteine}`;
-        container.appendChild(proteine);
-    
-        const legumes = document.createElement('p');
-        legumes.textContent = `Légumes: ${this.legumes}`;
-        container.appendChild(legumes);
-    
-        const toppings = document.createElement('p');
-        toppings.textContent = `Toppings: ${this.toppings}`;
-        container.appendChild(toppings);
-    
-        const epices = document.createElement('p');
-        epices.textContent = `Épices: ${this.epices}`;
-        container.appendChild(epices);
+  // Sauvegarde la recette dans le localStorage
+  static save(newRecipe) {
+    console.log("saving");
+    const ramenRecipes = JSON.parse(localStorage.getItem("ramenRecipes")) || [];
+    newRecipe.id = ramenRecipes.length + 1;
+    ramenRecipes.push(newRecipe);
+    localStorage.setItem("ramenRecipes", JSON.stringify(ramenRecipes));
+  }
 
-        const ingredientsImgContainer = document.createElement('div');
-        ingredientsImgContainer.classList.add('flex', 'flex-wrap');
-        container.appendChild(ingredientsImgContainer);
+  // recupère toutes les recettes du localStorage
+  static loadAll() {
+    const recipes = JSON.parse(localStorage.getItem("ramenRecipes")) || [];
+    return recipes.map((recipe) => Object.assign(new RamenRecipe(), recipe));
+  }
 
-        this.ingredientsImgs.forEach(imgSrc => {
-            const img = document.createElement('img');
-            img.src = imgSrc;
-            img.classList.add('w-10', 'h-10', 'm-2');
-            ingredientsImgContainer.appendChild(img);
-          });
-      }
+  createCard() {
+    const card = document.createElement("div");
+    card.classList.add(
+      "bg-white",
+      "border",
+      "border-slate-200",
+      "p-10",
+      "shadow-sm",
+      "relative",
+      "text-sm",
+      "rounded-md",
+      "col-span-12",
+      "md:col-span-6",
+      "xl:col-span-4",
+      "w-11/12",
+      "my-6",
+      "hover:bg-slate-50"
+    );
+    return card;
+  }
+
+  createLabels() {
+    const labels = document.createElement("div");
+    labels.classList.add("absolute", "right-[40px]", "flex", "flex-wrap");
+    this.labels.forEach((label) => {
+      const labelSpan = document.createElement("span");
+      labelSpan.classList.add(
+        "text-[0.7rem]",
+        "font-semibold",
+        "px-2",
+        "py-1",
+        "text-white",
+        "bg-indigo-700",
+        "rounded-full",
+        "mr-2"
+      );
+      labelSpan.textContent = label;
+      labels.appendChild(labelSpan);
+    });
+    return labels;
+  }
+
+  createTitle() {
+    const title = document.createElement("h3");
+    title.classList.add("text-lg", "font-medium", "text-gray-800");
+    title.textContent = `Recette #${this.id}`;
+    return title;
+  }
+
+  createDescription() {
+    const description = document.createElement("p");
+    description.classList.add("text-sm", "font-light", "text-gray-600", "my-3");
+    description.textContent = "Aucune description pour le moment.";
+    return description;
+  }
+
+  createIngredientsList(ingredients) {
+    const ingredientsList = document.createElement("ul");
+    ingredientsList.classList.add("list-disc", "pl-10", "space-y-2");
+    ingredients.forEach((ingredient) => {
+      const li = document.createElement("li");
+      li.innerHTML = `<span class="font-bold">${ingredient.label}</span>: ${ingredient.value} `;
+      ingredientsList.appendChild(li);
+    });
+    return ingredientsList;
+  }
+
+  createAccordionContainer() {
+    const accordion = document.createElement("div");
+    accordion.classList.add(
+      "transition",
+      "hover:bg-indigo-50",
+      "border-t-2",
+      "my-5",
+      "border-indigo-700"
+    );
+    return accordion;
+  }
+
+  createAccordionHeader() {
+    const accordionHeader = document.createElement("div");
+    accordionHeader.classList.add(
+      "accordion-header",
+      "cursor-pointer",
+      "transition",
+      "flex",
+      "space-x-5",
+      "px-5",
+      "items-center",
+      "h-16"
+    );
+    const icon = document.createElement("i");
+    icon.classList.add("fas", "fa-plus", "text-indigo-700");
+    accordionHeader.appendChild(icon);
+
+    const accordionTitle = document.createElement("h3");
+    accordionTitle.textContent = "Voir tous les ingredients";
+    accordionHeader.appendChild(accordionTitle);
+
+    return accordionHeader;
+  }
+
+  createAccordionContent() {
+    const accordionContent = document.createElement("div");
+    accordionContent.classList.add(
+      "accordion-content",
+      "transition-all",
+      "ease-out",
+      "duration-300",
+      "px-5",
+      "pt-0",
+      "overflow-hidden",
+      "max-h-0",
+      "flex",
+      "flex-wrap"
+    );
+
+    this.ingredientsImgs.forEach((imgSrc) => {
+      const img = document.createElement("img");
+      img.src = imgSrc;
+      img.classList.add("h-20", "p-2");
+      accordionContent.appendChild(img);
+    });
+
+    return accordionContent;
+  }
+
+  createAccordion() {
+    const accordion = this.createAccordionContainer();
+    accordion.appendChild(this.createAccordionHeader());
+    accordion.appendChild(this.createAccordionContent());
+    return accordion;
+  }
+
+  // Affiche une recette dans le DOM
+  display(container) {
+    const card = this.createCard();
+    card.appendChild(this.createLabels());
+    card.appendChild(this.createTitle(this.id));
+    card.appendChild(this.createDescription());
+
+    const ingredients = [
+      { label: "Bouillon", value: this.bouillon },
+      { label: "Nouilles", value: this.nouilles },
+      { label: "Protéine", value: this.proteine },
+      { label: "Légumes", value: String(this.legumes).split(',').join(', ') },
+      { label: "Toppings", value: String(this.toppings).split(',').join(', ') },
+      { label: "Épices", value: String(this.epices).split(',').join(', ') },
+    ];
+
+    card.appendChild(this.createIngredientsList(ingredients));
+    card.appendChild(this.createAccordion());
+
+    container.appendChild(card);
+  }
 }
-
-
 
 export default RamenRecipe;
