@@ -78,197 +78,804 @@
 
   <main class="grow" id="main-content">
    
+    <!-- section recettes les plus populaire (en cartes) -->
     <section>
       <div class="container mx-auto py-8 px-6 md:py-12 pb-0 md:pb-0">
-        <h1 class="text-center">En panne d'idees ou vous ne vous sentez pas de vous lancer par peur d'offusquer les maitres Ramens avec vos recettes farfelues ?</h1>
-        <p class="text-center">Vous etes au bon endroit !</p>
+        <h1 class="text-center oleo_font text-4xl text-[#4c71fe] underline underline-offset-4 mb-4">Inspiration</h1>
+        <p class="text-center">En panne d'idees ou vous ne vous sentez pas de vous lancer par peur d'offusquer les maitres Ramens avec vos recettes farfelues ?</p>
+        <p class="text-center">Vous etes au bon endroit ! Voici nos recettes les plus populaires.</p>
 
         <div class=" mx-auto grid grid-cols-12">
 
           <!-- Recette #1 -->
-          <div class="bg-white hover:bg-slate-50 border border-slate-200 shadow-md relative text-sm rounded-md col-span-12 md:col-span-6 xl:col-span-4 w-11/12 my-6 p-10">
+          <div class="bg-white hover:bg-slate-50 border border-slate-200 shadow-md relative text-sm rounded-md col-span-12 md:col-span-6 xl:col-span-4 w-11/12 my-6 p-10 mx-auto">
+            <!-- Etiquettes -->
             <div class="absolute right-[40px] flex gap-2">
-                <span class="text-[0.7rem] font-semibold px-2 py-0 text-white bg-green-500 rounded-full">vege</span>
-                <span class="text-[0.7rem] font-semibold px-2 py-0 text-white bg-orange-500 rounded-full">original</span>
+                <span class="text-[0.7rem] font-semibold px-2 py-0 text-white bg-green-500 rounded-full">traditionnel</span>
+                <span class="text-[0.7rem] font-semibold px-2 py-0 text-white bg-orange-500 rounded-full">gras</span>
             </div>
+            <!-- Titre -->
             <h3 class="text-lg font-medium">Ramen #1</h3>
             <!-- Description-->
-            <p class="text-sm font-light text-gray-600 my-3">Le ramen traditionnel, un classique qui ne se demode pas.</p>
+            <p class="text-sm font-light text-gray-600 my-3">Ramen Tonkotsu Traditionnel</p>
             <!-- Liste des ingredients-->
             <ul class="list-disc pl-10 space-y-2">
-              <li><span class="font-bold">Bouillon</span>: Shio - sel</li>
-              <li><span class="font-bold">Nouilles</span>: Hiramen - nouilles plates</li>
-              <li><span class="font-bold">Proteine</span>: Tofu</li>
-              <li><span class="font-bold">Legumes</span>: Oignons verts, champignons</li>
-              <li><span class="font-bold">Toppings</span>: oeuf</li>
-              <li><span class="font-bold">Epices</span>: pate de yuzu, poivre noir</li>
+              <li><span class="font-bold">Bouillon</span>: Tonkotsu</li>
+              <li><span class="font-bold">Nouilles</span>: Futomen - nouilles épaisses</li>
+              <li><span class="font-bold">Proteine</span>: Porc</li>
+              <li><span class="font-bold">Legumes</span>: Pousses de bambou, Champignons, Oignons verts</li>
+              <li><span class="font-bold">Toppings</span>: Narutomaki, Œuf, Algues nori</li>
+              <li><span class="font-bold">Epices</span>: Ail en poudre, Huile de sésame</li>
             </ul>
-            <!-- Accordeon-->
-            <div class="transition hover:bg-slate-200 border-t-2 border-indigo-700 my-5">
-              <!-- header accordeon-->
-              <div class="relative cursor-pointer transition flex px-5 items-center h-16 group" data-collapse-target="animated-collapse-1" role="button">
-                <span class="text-indigo-700 font-semibold text-xl inline-block absolute left-0 group-open:hidden">+</span>
-                <span class="text-indigo-700 font-semibold text-xl absolute left-[3px] hidden group-open:inline-block">-</span>
-                <h3>Voir tous les ingredients</h3>
-              </div>
 
-              <!-- contenu accordeon -->
-              <div class="h-0 overflow-hidden transition-all ease-out duration-300 px-5 pt-0 flex flex-wrap" data-collapse="animated-collapse-1">
-                  <img class="h-20 p-2" src="img/ingredients/proteines/tofu.png" alt="test">
-                  <img class="h-20 p-2" src="img/ingredients/legumes/champignons.png" alt="">
-                  <img class="h-20 p-2" src="img/ingredients/epices/shichimi_togarashi.png" alt="">
+            <!-- Accordeon (des images des ingredients) -->
+            <div class="my-4">
+              <!-- accordeon header -->
+              <header class="bg-white mb-0 transition-all relative z-[1] border-t-2 border-indigo-600">
+                <div class="group flex items-center w-full p-4 text-left transition-all cursor-pointer" data-collapse-target="animated-collapse-1" role="button">
+                  <h4>Voir les ingredients</h4>
+                  <i class="absolute right-0 pt-1 m-4 text-indigo-600 group-hover:text-black transition-all fa fa-chevron-down group-open:rotate-180"></i>
+                </div>
+              </header>
+              <!-- accordeon contenu -->
+              <div data-collapse="animated-collapse-1" class="h-0 overflow-hidden transition-all z-[2]">
+                <div class="flex flex-wrap items-center">
+                  <!-- ingredient 1 -->
+                  <figure class="relative group">
+                    <img class="w-20 p-2" src="img/ingredients/bouillons/bol-v2.-trspng.png" alt="bouillon tonkotsu">
+                    <!-- tooltip avec nom ingredient au survol -->
+                    <figcaption class="w-full mx-auto z-10 absolute bottom-0 translate-y-[75%] left-0 flex flex-col items-center opacity-0 group-hover:opacity-100 transition-all text-center">
+                      <span class="w-3 h-3 -mb-2 rotate-45 bg-gray-800"></span> <!-- fleche decorative en haut du tooltip -->
+                      <span class="relative z-10 p-2 text-[0.7rem] leading-none whitespace-no-wrap text-white bg-gray-800">tonkotsu</span>
+                    </figcaption>
+                  </figure>
+                  <!-- ingredient 2 -->
+                  <figure class="relative group">
+                    <img class="w-20 p-2" src="img/ingredients/nouilles/thick-trs.png" alt="Futomen - nouilles épaisses">
+                    <!-- tooltip avec nom ingredient au survol -->
+                    <figcaption class="w-full mx-auto z-10 absolute bottom-0 translate-y-[75%] left-0 flex flex-col items-center opacity-0 group-hover:opacity-100 transition-all text-center">
+                      <span class="w-3 h-3 -mb-2 rotate-45 bg-gray-800"></span> <!-- fleche decorative en haut du tooltip -->
+                      <span class="relative z-10 p-2 text-[0.7rem] leading-none whitespace-no-wrap text-white bg-gray-800">futomen</span>
+                    </figcaption>
+                  </figure>
+                  <figure class="relative group">
+                    <img class="w-20 p-2" src="img/ingredients/proteines/porc.png" alt="porc">
+                    <!-- tooltip avec nom ingredient au survol -->
+                    <figcaption class="w-full mx-auto z-10 absolute bottom-0 translate-y-[75%] left-0 flex flex-col items-center opacity-0 group-hover:opacity-100 transition-all text-center">
+                      <span class="w-3 h-3 -mb-2 rotate-45 bg-gray-800"></span> <!-- fleche decorative en haut du tooltip -->
+                      <span class="relative z-10 p-2 text-[0.7rem] leading-none whitespace-no-wrap text-white bg-gray-800">porc</span>
+                    </figcaption>
+                  </figure>
+                  <figure class="relative group">
+                    <img class="w-20 p-2" src="img/ingredients/legumes/bambou.png" alt="Pousses de bambou">
+                    <!-- tooltip avec nom ingredient au survol -->
+                    <figcaption class="w-full mx-auto z-10 absolute bottom-0 translate-y-[75%] left-0 flex flex-col items-center opacity-0 group-hover:opacity-100 transition-all text-center">
+                      <span class="w-3 h-3 -mb-2 rotate-45 bg-gray-800"></span> <!-- fleche decorative en haut du tooltip -->
+                      <span class="relative z-10 p-2 text-[0.7rem] leading-none whitespace-no-wrap text-white bg-gray-800">bambou</span>
+                    </figcaption>
+                  </figure>
+                  <figure class="relative group">
+                    <img class="w-20 p-2" src="img/ingredients/legumes/champignons.png" alt="Champingons">
+                    <!-- tooltip avec nom ingredient au survol -->
+                    <figcaption class="w-full mx-auto z-10 absolute bottom-0 translate-y-[75%] left-0 flex flex-col items-center opacity-0 group-hover:opacity-100 transition-all text-center">
+                      <span class="w-3 h-3 -mb-2 rotate-45 bg-gray-800"></span> <!-- fleche decorative en haut du tooltip -->
+                      <span class="relative z-10 p-2 text-[0.7rem] leading-none whitespace-no-wrap text-white bg-gray-800">champingons</span>
+                    </figcaption>
+                  </figure>
+                  <figure class="relative group">
+                    <img class="w-20 p-2" src="img/ingredients/legumes/oignons_verts.png" alt="Oignons verts">
+                    <!-- tooltip avec nom ingredient au survol -->
+                    <figcaption class="w-full mx-auto z-10 absolute bottom-0 translate-y-[75%] left-0 flex flex-col items-center opacity-0 group-hover:opacity-100 transition-all text-center">
+                      <span class="w-3 h-3 -mb-2 rotate-45 bg-gray-800"></span> <!-- fleche decorative en haut du tooltip -->
+                      <span class="relative z-10 p-2 text-[0.7rem] leading-none whitespace-no-wrap text-white bg-gray-800">oignons verts</span>
+                    </figcaption>
+                  </figure>
+                  <figure class="relative group">
+                    <img class="w-20 p-2" src="img/ingredients/toppings/narutomaki.png" alt="Narutomaki">
+                    <!-- tooltip avec nom ingredient au survol -->
+                    <figcaption class="w-full mx-auto z-10 absolute bottom-0 translate-y-[75%] left-0 flex flex-col items-center opacity-0 group-hover:opacity-100 transition-all text-center">
+                      <span class="w-3 h-3 -mb-2 rotate-45 bg-gray-800"></span> <!-- fleche decorative en haut du tooltip -->
+                      <span class="relative z-10 p-2 text-[0.7rem] leading-none whitespace-no-wrap text-white bg-gray-800">narutomaki</span>
+                    </figcaption>
+                  </figure>
+                    <figure class="relative group">
+                      <img class="w-20 p-2" src="img/ingredients/toppings/oeuf.png" alt="Oeuf">
+                      <!-- tooltip avec nom ingredient au survol -->
+                      <figcaption class="w-full mx-auto z-10 absolute bottom-0 translate-y-[75%] left-0 flex flex-col items-center opacity-0 group-hover:opacity-100 transition-all text-center">
+                        <span class="w-3 h-3 -mb-2 rotate-45 bg-gray-800"></span> <!-- fleche decorative en haut du tooltip -->
+                        <span class="relative z-10 p-2 text-[0.7rem] leading-none whitespace-no-wrap text-white bg-gray-800">oeuf</span>
+                      </figcaption>
+                    </figure>
+
+                  <!-- Rendu a ce point la je songe a une reorientation professionnelle. Ou en tout cas je comprend la puissance des frameworks comme React -->
+
+                  <figure class="relative group">
+                    <img class="w-20 p-2" src="img/ingredients/toppings/algues.png" alt="Algues nori">
+                    <!-- tooltip avec nom ingredient au survol -->
+                    <figcaption class="w-full mx-auto z-10 absolute bottom-0 translate-y-[75%] left-0 flex flex-col items-center opacity-0 group-hover:opacity-100 transition-all text-center">
+                      <span class="w-3 h-3 -mb-2 rotate-45 bg-gray-800"></span> <!-- fleche decorative en haut du tooltip -->
+                      <span class="relative z-10 p-2 text-[0.7rem] leading-none whitespace-no-wrap text-white bg-gray-800">algues nori</span>
+                    </figcaption>
+                  </figure>
+                  <figure class="relative group">
+                    <img class="w-20 p-2" src="img/ingredients/epices/ail_poudre.png" alt="Ail en poudre">
+                    <!-- tooltip avec nom ingredient au survol -->
+                    <figcaption class="w-full mx-auto z-10 absolute bottom-0 translate-y-[75%] left-0 flex flex-col items-center opacity-0 group-hover:opacity-100 transition-all text-center">
+                      <span class="w-3 h-3 -mb-2 rotate-45 bg-gray-800"></span> <!-- fleche decorative en haut du tooltip -->
+                      <span class="relative z-10 p-2 text-[0.7rem] leading-none whitespace-no-wrap text-white bg-gray-800">ail en poudre</span>
+                    </figcaption>
+                  </figure>
+                <figure class="relative group">
+                  <img class="w-20 p-2" src="img/ingredients/epices/huile_sesame.png" alt="Huile de sesame">
+                  <!-- tooltip avec nom ingredient au survol -->
+                  <figcaption class="w-full mx-auto z-10 absolute bottom-0 translate-y-[75%] left-0 flex flex-col items-center opacity-0 group-hover:opacity-100 transition-all text-center">
+                    <span class="w-3 h-3 -mb-2 rotate-45 bg-gray-800"></span> <!-- fleche decorative en haut du tooltip -->
+                    <span class="relative z-10 p-2 text-[0.7rem] leading-none whitespace-no-wrap text-white bg-gray-800">huile de sesame</span>
+                  </figcaption>
+                </figure>
+                </div>
               </div>
-            </div>
+            </div>    
           </div>
           <!-- Fin recette #1 -->
 
           <!-- Recette #2 -->
-          <div class="bg-white hover:bg-slate-50 border border-slate-200 shadow-md relative text-sm rounded-md col-span-12 md:col-span-6 xl:col-span-4 w-11/12 my-6 p-10">
+          <div class="bg-white hover:bg-slate-50 border border-slate-200 shadow-md relative text-sm rounded-md col-span-12 md:col-span-6 xl:col-span-4 w-11/12 my-6 p-10 mx-auto">
+            <!-- Etiquettes -->
             <div class="absolute right-[40px] flex gap-2">
                 <span class="text-[0.7rem] font-semibold px-2 py-0 text-white bg-green-500 rounded-full">vege</span>
-                <span class="text-[0.7rem] font-semibold px-2 py-0 text-white bg-orange-500 rounded-full">original</span>
+                <span class="text-[0.7rem] font-semibold px-2 py-0 text-white bg-orange-500 rounded-full">leger</span>
             </div>
+            <!-- Titre -->
             <h3 class="text-lg font-medium">Ramen #2</h3>
             <!-- Description-->
-            <p class="text-sm font-light text-gray-600 my-3">Le ramen traditionnel, un classique qui ne se demode pas.</p>
+            <p class="text-sm font-light text-gray-600 my-3">Ramen Shoyu Végé</p>
             <!-- Liste des ingredients-->
             <ul class="list-disc pl-10 space-y-2">
-              <li><span class="font-bold">Bouillon</span>: Shio - sel</li>
+              <li><span class="font-bold">Bouillon</span>: Shoyu</li>
               <li><span class="font-bold">Nouilles</span>: Hiramen - nouilles plates</li>
               <li><span class="font-bold">Proteine</span>: Tofu</li>
-              <li><span class="font-bold">Legumes</span>: Oignons verts, champignons</li>
-              <li><span class="font-bold">Toppings</span>: oeuf</li>
-              <li><span class="font-bold">Epices</span>: pate de yuzu, poivre noir</li>
+              <li><span class="font-bold">Legumes</span>: Bok choy, Germes de soja, Mais</li>
+              <li><span class="font-bold">Toppings</span>: Ail frit, Algues nori, Graines de sésame</li>
+              <li><span class="font-bold">Epices</span>: Poivre noir, Gingembre en poudre</li>
             </ul>
-            <!-- Accordeon-->
-            <div class="transition hover:bg-slate-200 border-t-2 border-indigo-700 my-5">
-              <!-- header accordeon-->
-              <div class="relative cursor-pointer transition flex px-5 items-center h-16 group" data-collapse-target="animated-collapse-2" role="button">
-                <span class="text-indigo-700 font-semibold text-xl inline-block absolute left-0 group-open:hidden">+</span>
-                <span class="text-indigo-700 font-semibold text-xl absolute left-[3px] hidden group-open:inline-block">-</span>
-                <h3>Voir tous les ingredients</h3>
-              </div>
 
-              <!-- contenu accordeon -->
-              <div class="h-0 overflow-hidden transition-all ease-out duration-300 px-5 pt-0 flex flex-wrap" data-collapse="animated-collapse-2">
-                  <img class="h-20 p-2" src="img/ingredients/proteines/tofu.png" alt="test">
-                  <img class="h-20 p-2" src="img/ingredients/legumes/champignons.png" alt="">
-                  <img class="h-20 p-2" src="img/ingredients/epices/shichimi_togarashi.png" alt="">
+            <!-- Accordeon (des images des ingredients) -->
+            <div class="my-4">
+              <!-- accordeon header -->
+              <header class="bg-white mb-0 transition-all relative z-[1] border-t-2 border-indigo-600">
+                <div class="group flex items-center w-full p-4 text-left transition-all cursor-pointer" data-collapse-target="animated-collapse-2" role="button">
+                  <h4>Voir les ingredients</h4>
+                  <i class="absolute right-0 pt-1 m-4 text-indigo-600 group-hover:text-black transition-all fa fa-chevron-down group-open:rotate-180"></i>
+                </div>
+              </header>
+              <!-- accordeon contenu -->
+              <div data-collapse="animated-collapse-2" class="h-0 overflow-hidden transition-all z-[2]">
+                <div class="flex flex-wrap items-center">
+                  <!-- ingredient 1 -->
+                  <figure class="relative group">
+                    <img class="w-20 p-2" src="img/ingredients/bouillons/bol-v1-trs.png" alt="bouillon shoyu">
+                    <!-- tooltip avec nom ingredient au survol -->
+                    <figcaption class="w-full mx-auto z-10 absolute bottom-0 translate-y-[75%] left-0 flex flex-col items-center opacity-0 group-hover:opacity-100 transition-all text-center">
+                      <span class="w-3 h-3 -mb-2 rotate-45 bg-gray-800"></span> <!-- fleche decorative en haut du tooltip -->
+                      <span class="relative z-10 p-2 text-[0.7rem] leading-none whitespace-no-wrap text-white bg-gray-800">shoyu</span>
+                    </figcaption>
+                  </figure>
+                  <!-- ingredient 2 -->
+                  <figure class="relative group">
+                    <img class="w-20 p-2" src="img/ingredients/nouilles/plates-trs.png" alt="Hiramen - nouilles plates">
+                    <!-- tooltip avec nom ingredient au survol -->
+                    <figcaption class="w-full mx-auto z-10 absolute bottom-0 translate-y-[75%] left-0 flex flex-col items-center opacity-0 group-hover:opacity-100 transition-all text-center">
+                      <span class="w-3 h-3 -mb-2 rotate-45 bg-gray-800"></span> <!-- fleche decorative en haut du tooltip -->
+                      <span class="relative z-10 p-2 text-[0.7rem] leading-none whitespace-no-wrap text-white bg-gray-800">hiramen</span>
+                    </figcaption>
+                  </figure>
+                  <figure class="relative group">
+                    <img class="w-20 p-2" src="img/ingredients/proteines/tofu.png" alt="tofu">
+                    <!-- tooltip avec nom ingredient au survol -->
+                    <figcaption class="w-full mx-auto z-10 absolute bottom-0 translate-y-[75%] left-0 flex flex-col items-center opacity-0 group-hover:opacity-100 transition-all text-center">
+                      <span class="w-3 h-3 -mb-2 rotate-45 bg-gray-800"></span> <!-- fleche decorative en haut du tooltip -->
+                      <span class="relative z-10 p-2 text-[0.7rem] leading-none whitespace-no-wrap text-white bg-gray-800">tofu</span>
+                    </figcaption>
+                  </figure>
+                  <figure class="relative group">
+                    <img class="w-20 p-2" src="img/ingredients/legumes/chou.png" alt="Bokchoi">
+                    <!-- tooltip avec nom ingredient au survol -->
+                    <figcaption class="w-full mx-auto z-10 absolute bottom-0 translate-y-[75%] left-0 flex flex-col items-center opacity-0 group-hover:opacity-100 transition-all text-center">
+                      <span class="w-3 h-3 -mb-2 rotate-45 bg-gray-800"></span> <!-- fleche decorative en haut du tooltip -->
+                      <span class="relative z-10 p-2 text-[0.7rem] leading-none whitespace-no-wrap text-white bg-gray-800">bokchoi</span>
+                    </figcaption>
+                  </figure>
+                  <figure class="relative group">
+                    <img class="w-20 p-2" src="img/ingredients/legumes/pousses_soja.png" alt="Germes de soja">
+                    <!-- tooltip avec nom ingredient au survol -->
+                    <figcaption class="w-full mx-auto z-10 absolute bottom-0 translate-y-[75%] left-0 flex flex-col items-center opacity-0 group-hover:opacity-100 transition-all text-center">
+                      <span class="w-3 h-3 -mb-2 rotate-45 bg-gray-800"></span> <!-- fleche decorative en haut du tooltip -->
+                      <span class="relative z-10 p-2 text-[0.7rem] leading-none whitespace-no-wrap text-white bg-gray-800">germes de soja</span>
+                    </figcaption>
+                  </figure>
+                  <figure class="relative group">
+                    <img class="w-20 p-2" src="img/ingredients/legumes/mais.png" alt="Mais">
+                    <!-- tooltip avec nom ingredient au survol -->
+                    <figcaption class="w-full mx-auto z-10 absolute bottom-0 translate-y-[75%] left-0 flex flex-col items-center opacity-0 group-hover:opacity-100 transition-all text-center">
+                      <span class="w-3 h-3 -mb-2 rotate-45 bg-gray-800"></span> <!-- fleche decorative en haut du tooltip -->
+                      <span class="relative z-10 p-2 text-[0.7rem] leading-none whitespace-no-wrap text-white bg-gray-800">mais</span>
+                    </figcaption>
+                  </figure>
+                  <figure class="relative group">
+                    <img class="w-20 p-2" src="img/ingredients/toppings/ail_frit.png" alt="Ail frit">
+                    <!-- tooltip avec nom ingredient au survol -->
+                    <figcaption class="w-full mx-auto z-10 absolute bottom-0 translate-y-[75%] left-0 flex flex-col items-center opacity-0 group-hover:opacity-100 transition-all text-center">
+                      <span class="w-3 h-3 -mb-2 rotate-45 bg-gray-800"></span> <!-- fleche decorative en haut du tooltip -->
+                      <span class="relative z-10 p-2 text-[0.7rem] leading-none whitespace-no-wrap text-white bg-gray-800">ail frit</span>
+                    </figcaption>
+                  </figure>
+                    <figure class="relative group">
+                      <img class="w-20 p-2" src="img/ingredients/toppings/algues.png" alt="Algues nori">
+                      <!-- tooltip avec nom ingredient au survol -->
+                      <figcaption class="w-full mx-auto z-10 absolute bottom-0 translate-y-[75%] left-0 flex flex-col items-center opacity-0 group-hover:opacity-100 transition-all text-center">
+                        <span class="w-3 h-3 -mb-2 rotate-45 bg-gray-800"></span> <!-- fleche decorative en haut du tooltip -->
+                        <span class="relative z-10 p-2 text-[0.7rem] leading-none whitespace-no-wrap text-white bg-gray-800">algues nori</span>
+                      </figcaption>
+                    </figure>
+
+                  <figure class="relative group">
+                    <img class="w-20 p-2" src="img/ingredients/toppings/sesame.png" alt="Sesame">
+                    <!-- tooltip avec nom ingredient au survol -->
+                    <figcaption class="w-full mx-auto z-10 absolute bottom-0 translate-y-[75%] left-0 flex flex-col items-center opacity-0 group-hover:opacity-100 transition-all text-center">
+                      <span class="w-3 h-3 -mb-2 rotate-45 bg-gray-800"></span> <!-- fleche decorative en haut du tooltip -->
+                      <span class="relative z-10 p-2 text-[0.7rem] leading-none whitespace-no-wrap text-white bg-gray-800">sesame</span>
+                    </figcaption>
+                  </figure>
+                  <figure class="relative group">
+                    <img class="w-20 p-2" src="img/ingredients/epices/gingembre_poudre.png" alt="Gingembre en poudre">
+                    <!-- tooltip avec nom ingredient au survol -->
+                    <figcaption class="w-full mx-auto z-10 absolute bottom-0 translate-y-[75%] left-0 flex flex-col items-center opacity-0 group-hover:opacity-100 transition-all text-center">
+                      <span class="w-3 h-3 -mb-2 rotate-45 bg-gray-800"></span> <!-- fleche decorative en haut du tooltip -->
+                      <span class="relative z-10 p-2 text-[0.7rem] leading-none whitespace-no-wrap text-white bg-gray-800">gingembre en poudre</span>
+                    </figcaption>
+                  </figure>
+                </div>
               </div>
-            </div>
+            </div>    
           </div>
           <!-- Fin recette #2 -->
 
           <!-- Recette #3 -->
-          <div class="bg-white hover:bg-slate-50 border border-slate-200 shadow-md relative text-sm rounded-md col-span-12 md:col-span-6 xl:col-span-4 w-11/12 my-6 p-10">
+          <div class="bg-white hover:bg-slate-50 border border-slate-200 shadow-md relative text-sm rounded-md col-span-12 md:col-span-6 xl:col-span-4 w-11/12 my-6 p-10 mx-auto">
+            <!-- Etiquettes -->
             <div class="absolute right-[40px] flex gap-2">
-                <span class="text-[0.7rem] font-semibold px-2 py-0 text-white bg-green-500 rounded-full">vege</span>
+                <span class="text-[0.7rem] font-semibold px-2 py-0 text-white bg-green-500 rounded-full">spicy</span>
                 <span class="text-[0.7rem] font-semibold px-2 py-0 text-white bg-orange-500 rounded-full">original</span>
             </div>
+            <!-- Titre -->
             <h3 class="text-lg font-medium">Ramen #3</h3>
             <!-- Description-->
-            <p class="text-sm font-light text-gray-600 my-3">Le ramen traditionnel, un classique qui ne se demode pas.</p>
+            <p class="text-sm font-light text-gray-600 my-3">Ramen Miso Epicé</p>
             <!-- Liste des ingredients-->
             <ul class="list-disc pl-10 space-y-2">
-              <li><span class="font-bold">Bouillon</span>: Shio - sel</li>
-              <li><span class="font-bold">Nouilles</span>: Hiramen - nouilles plates</li>
-              <li><span class="font-bold">Proteine</span>: Tofu</li>
-              <li><span class="font-bold">Legumes</span>: Oignons verts, champignons</li>
-              <li><span class="font-bold">Toppings</span>: oeuf</li>
-              <li><span class="font-bold">Epices</span>: pate de yuzu, poivre noir</li>
+              <li><span class="font-bold">Bouillon</span>: Miso</li>
+              <li><span class="font-bold">Nouilles</span>: Hosomen - nouilles fines</li>
+              <li><span class="font-bold">Proteine</span>: Poulet</li>
+              <li><span class="font-bold">Legumes</span>: Champignons, Oignons verts, Poireau</li>
+              <li><span class="font-bold">Toppings</span>: Gingembre mariné, Narutomaki, Œuf</li>
+              <li><span class="font-bold">Epices</span>: Shichimi togarashi, Piment en poudre, Huile de sésame</li>
             </ul>
-            <!-- Accordeon-->
-            <div class="transition hover:bg-slate-200 border-t-2 border-indigo-700 my-5">
-              <!-- header accordeon-->
-              <div class="relative cursor-pointer transition flex px-5 items-center h-16 group" data-collapse-target="animated-collapse-3" role="button">
-                <span class="text-indigo-700 font-semibold text-xl inline-block absolute left-0 group-open:hidden">+</span>
-                <span class="text-indigo-700 font-semibold text-xl absolute left-[3px] hidden group-open:inline-block">-</span>
-                <h3>Voir tous les ingredients</h3>
-              </div>
 
-              <!-- contenu accordeon -->
-              <div class="h-0 overflow-hidden transition-all ease-out duration-300 px-5 pt-0 flex flex-wrap" data-collapse="animated-collapse-3">
-                  <img class="h-20 p-2" src="img/ingredients/proteines/tofu.png" alt="test">
-                  <img class="h-20 p-2" src="img/ingredients/legumes/champignons.png" alt="">
-                  <img class="h-20 p-2" src="img/ingredients/epices/shichimi_togarashi.png" alt="">
+            <!-- Accordeon (des images des ingredients) -->
+            <div class="my-4">
+              <!-- accordeon header -->
+              <header class="bg-white mb-0 transition-all relative z-[1] border-t-2 border-indigo-600">
+                <div class="group flex items-center w-full p-4 text-left transition-all cursor-pointer" data-collapse-target="animated-collapse-3" role="button">
+                  <h4>Voir les ingredients</h4>
+                  <i class="absolute right-0 pt-1 m-4 text-indigo-600 group-hover:text-black transition-all fa fa-chevron-down group-open:rotate-180"></i>
+                </div>
+              </header>
+              <!-- accordeon contenu -->
+              <div data-collapse="animated-collapse-3" class="h-0 overflow-hidden transition-all z-[2]">
+                <div class="flex flex-wrap items-center">
+                  <!-- ingredient 1 -->
+                  <figure class="relative group">
+                    <img class="w-20 p-2" src="img/ingredients/bouillons/bol-v4-trs.png" alt="bouillon miso">
+                    <!-- tooltip avec nom ingredient au survol -->
+                    <figcaption class="w-full mx-auto z-10 absolute bottom-0 translate-y-[75%] left-0 flex flex-col items-center opacity-0 group-hover:opacity-100 transition-all text-center">
+                      <span class="w-3 h-3 -mb-2 rotate-45 bg-gray-800"></span> <!-- fleche decorative en haut du tooltip -->
+                      <span class="relative z-10 p-2 text-[0.7rem] leading-none whitespace-no-wrap text-white bg-gray-800">miso</span>
+                    </figcaption>
+                  </figure>
+                  <!-- ingredient 2 -->
+                  <figure class="relative group">
+                    <img class="w-20 p-2" src="img/ingredients/nouilles/thin-trs.png" alt="Hosomen - nouilles fines">
+                    <!-- tooltip avec nom ingredient au survol -->
+                    <figcaption class="w-full mx-auto z-10 absolute bottom-0 translate-y-[75%] left-0 flex flex-col items-center opacity-0 group-hover:opacity-100 transition-all text-center">
+                      <span class="w-3 h-3 -mb-2 rotate-45 bg-gray-800"></span> <!-- fleche decorative en haut du tooltip -->
+                      <span class="relative z-10 p-2 text-[0.7rem] leading-none whitespace-no-wrap text-white bg-gray-800">hosomen</span>
+                    </figcaption>
+                  </figure>
+                  <figure class="relative group">
+                    <img class="w-20 p-2" src="img/ingredients/proteines/poulet.png" alt="poulet">
+                    <!-- tooltip avec nom ingredient au survol -->
+                    <figcaption class="w-full mx-auto z-10 absolute bottom-0 translate-y-[75%] left-0 flex flex-col items-center opacity-0 group-hover:opacity-100 transition-all text-center">
+                      <span class="w-3 h-3 -mb-2 rotate-45 bg-gray-800"></span> <!-- fleche decorative en haut du tooltip -->
+                      <span class="relative z-10 p-2 text-[0.7rem] leading-none whitespace-no-wrap text-white bg-gray-800">poulet</span>
+                    </figcaption>
+                  </figure>
+                  <figure class="relative group">
+                    <img class="w-20 p-2" src="img/ingredients/legumes/champignons.png" alt="Champignons">
+                    <!-- tooltip avec nom ingredient au survol -->
+                    <figcaption class="w-full mx-auto z-10 absolute bottom-0 translate-y-[75%] left-0 flex flex-col items-center opacity-0 group-hover:opacity-100 transition-all text-center">
+                      <span class="w-3 h-3 -mb-2 rotate-45 bg-gray-800"></span> <!-- fleche decorative en haut du tooltip -->
+                      <span class="relative z-10 p-2 text-[0.7rem] leading-none whitespace-no-wrap text-white bg-gray-800">champignons</span>
+                    </figcaption>
+                  </figure>
+                  <figure class="relative group">
+                    <img class="w-20 p-2" src="img/ingredients/legumes/oignons_verts.png" alt="Oingons verts">
+                    <!-- tooltip avec nom ingredient au survol -->
+                    <figcaption class="w-full mx-auto z-10 absolute bottom-0 translate-y-[75%] left-0 flex flex-col items-center opacity-0 group-hover:opacity-100 transition-all text-center">
+                      <span class="w-3 h-3 -mb-2 rotate-45 bg-gray-800"></span> <!-- fleche decorative en haut du tooltip -->
+                      <span class="relative z-10 p-2 text-[0.7rem] leading-none whitespace-no-wrap text-white bg-gray-800">oignons verts</span>
+                    </figcaption>
+                  </figure>
+                  <figure class="relative group">
+                    <img class="w-20 p-2" src="img/ingredients/legumes/poireau.png" alt="Poireau">
+                    <!-- tooltip avec nom ingredient au survol -->
+                    <figcaption class="w-full mx-auto z-10 absolute bottom-0 translate-y-[75%] left-0 flex flex-col items-center opacity-0 group-hover:opacity-100 transition-all text-center">
+                      <span class="w-3 h-3 -mb-2 rotate-45 bg-gray-800"></span> <!-- fleche decorative en haut du tooltip -->
+                      <span class="relative z-10 p-2 text-[0.7rem] leading-none whitespace-no-wrap text-white bg-gray-800">poireau</span>
+                    </figcaption>
+                  </figure>
+                  <figure class="relative group">
+                    <img class="w-20 p-2" src="img/ingredients/toppings/gingembre.png" alt="Gingembre marine">
+                    <!-- tooltip avec nom ingredient au survol -->
+                    <figcaption class="w-full mx-auto z-10 absolute bottom-0 translate-y-[75%] left-0 flex flex-col items-center opacity-0 group-hover:opacity-100 transition-all text-center">
+                      <span class="w-3 h-3 -mb-2 rotate-45 bg-gray-800"></span> <!-- fleche decorative en haut du tooltip -->
+                      <span class="relative z-10 p-2 text-[0.7rem] leading-none whitespace-no-wrap text-white bg-gray-800">gingembre marine</span>
+                    </figcaption>
+                  </figure>
+                    <figure class="relative group">
+                      <img class="w-20 p-2" src="img/ingredients/toppings/narutomaki.png" alt="Narutomaki">
+                      <!-- tooltip avec nom ingredient au survol -->
+                      <figcaption class="w-full mx-auto z-10 absolute bottom-0 translate-y-[75%] left-0 flex flex-col items-center opacity-0 group-hover:opacity-100 transition-all text-center">
+                        <span class="w-3 h-3 -mb-2 rotate-45 bg-gray-800"></span> <!-- fleche decorative en haut du tooltip -->
+                        <span class="relative z-10 p-2 text-[0.7rem] leading-none whitespace-no-wrap text-white bg-gray-800">narutomaki</span>
+                      </figcaption>
+                    </figure>
+
+                  <figure class="relative group">
+                    <img class="w-20 p-2" src="img/ingredients/toppings/oeuf.png" alt="Oeuf">
+                    <!-- tooltip avec nom ingredient au survol -->
+                    <figcaption class="w-full mx-auto z-10 absolute bottom-0 translate-y-[75%] left-0 flex flex-col items-center opacity-0 group-hover:opacity-100 transition-all text-center">
+                      <span class="w-3 h-3 -mb-2 rotate-45 bg-gray-800"></span> <!-- fleche decorative en haut du tooltip -->
+                      <span class="relative z-10 p-2 text-[0.7rem] leading-none whitespace-no-wrap text-white bg-gray-800">oeuf</span>
+                    </figcaption>
+                  </figure>
+                  <figure class="relative group">
+                    <img class="w-20 p-2" src="img/ingredients/epices/shichimi_togarashi.png" alt="Shichimi togarashi">
+                    <!-- tooltip avec nom ingredient au survol -->
+                    <figcaption class="w-full mx-auto z-10 absolute bottom-0 translate-y-[75%] left-0 flex flex-col items-center opacity-0 group-hover:opacity-100 transition-all text-center">
+                      <span class="w-3 h-3 -mb-2 rotate-45 bg-gray-800"></span> <!-- fleche decorative en haut du tooltip -->
+                      <span class="relative z-10 p-2 text-[0.7rem] leading-none whitespace-no-wrap text-white bg-gray-800">shichimi togarashi</span>
+                    </figcaption>
+                  </figure>
+                  <figure class="relative group">
+                    <img class="w-20 p-2" src="img/ingredients/epices/piment_poudre.png" alt="Piment en poudre">
+                    <!-- tooltip avec nom ingredient au survol -->
+                    <figcaption class="w-full mx-auto z-10 absolute bottom-0 translate-y-[75%] left-0 flex flex-col items-center opacity-0 group-hover:opacity-100 transition-all text-center">
+                      <span class="w-3 h-3 -mb-2 rotate-45 bg-gray-800"></span> <!-- fleche decorative en haut du tooltip -->
+                      <span class="relative z-10 p-2 text-[0.7rem] leading-none whitespace-no-wrap text-white bg-gray-800">piment en poudre</span>
+                    </figcaption>
+                  </figure>
+                  <figure class="relative group">
+                    <img class="w-20 p-2" src="img/ingredients/epices/huile_sesame.png" alt="Huile de sesame">
+                    <!-- tooltip avec nom ingredient au survol -->
+                    <figcaption class="w-full mx-auto z-10 absolute bottom-0 translate-y-[75%] left-0 flex flex-col items-center opacity-0 group-hover:opacity-100 transition-all text-center">
+                      <span class="w-3 h-3 -mb-2 rotate-45 bg-gray-800"></span> <!-- fleche decorative en haut du tooltip -->
+                      <span class="relative z-10 p-2 text-[0.7rem] leading-none whitespace-no-wrap text-white bg-gray-800">huile de sesame</span>
+                    </figcaption>
+                  </figure>
+                </div>
               </div>
-            </div>
+            </div>    
           </div>
           <!-- Fin recette #3 -->
 
           <!-- Recette #4 -->
-          <div class="bg-white hover:bg-slate-50 border border-slate-200 shadow-md relative text-sm rounded-md col-span-12 md:col-span-6 xl:col-span-4 w-11/12 my-6 p-10">
+          <div class="bg-white hover:bg-slate-50 border border-slate-200 shadow-md relative text-sm rounded-md col-span-12 md:col-span-6 xl:col-span-4 w-11/12 my-6 p-10 mx-auto">
+            <!-- Etiquettes -->
             <div class="absolute right-[40px] flex gap-2">
-                <span class="text-[0.7rem] font-semibold px-2 py-0 text-white bg-green-500 rounded-full">vege</span>
+                <span class="text-[0.7rem] font-semibold px-2 py-0 text-white bg-green-500 rounded-full">leger</span>
                 <span class="text-[0.7rem] font-semibold px-2 py-0 text-white bg-orange-500 rounded-full">original</span>
             </div>
+            <!-- Titre -->
             <h3 class="text-lg font-medium">Ramen #4</h3>
             <!-- Description-->
-            <p class="text-sm font-light text-gray-600 my-3">Le ramen traditionnel, un classique qui ne se demode pas.</p>
+            <p class="text-sm font-light text-gray-600 my-3">Ramen Shio Leger</p>
             <!-- Liste des ingredients-->
             <ul class="list-disc pl-10 space-y-2">
-              <li><span class="font-bold">Bouillon</span>: Shio - sel</li>
-              <li><span class="font-bold">Nouilles</span>: Hiramen - nouilles plates</li>
-              <li><span class="font-bold">Proteine</span>: Tofu</li>
-              <li><span class="font-bold">Legumes</span>: Oignons verts, champignons</li>
-              <li><span class="font-bold">Toppings</span>: oeuf</li>
-              <li><span class="font-bold">Epices</span>: pate de yuzu, poivre noir</li>
+              <li><span class="font-bold">Bouillon</span>: Shio</li>
+              <li><span class="font-bold">Nouilles</span>: Chukamen - nouilles ondulées</li>
+              <li><span class="font-bold">Proteine</span>: Crevettes grillées</li>
+              <li><span class="font-bold">Legumes</span>: Bok choy, Germes de soja, Mais</li>
+              <li><span class="font-bold">Toppings</span>: Ail frit, Beurre, Graines de sésame</li>
+              <li><span class="font-bold">Epices</span>: Yuzu kosho, Poivre noir</li>
             </ul>
-            <!-- Accordeon-->
-            <div class="transition hover:bg-slate-200 border-t-2 border-indigo-700 my-5">
-              <!-- header accordeon-->
-              <div class="relative cursor-pointer transition flex px-5 items-center h-16 group" data-collapse-target="animated-collapse-4" role="button">
-                <span class="text-indigo-700 font-semibold text-xl inline-block absolute left-0 group-open:hidden">+</span>
-                <span class="text-indigo-700 font-semibold text-xl absolute left-[3px] hidden group-open:inline-block">-</span>
-                <h3>Voir tous les ingredients</h3>
-              </div>
 
-              <!-- contenu accordeon -->
-              <div class="h-0 overflow-hidden transition-all ease-out duration-300 px-5 pt-0 flex flex-wrap" data-collapse="animated-collapse-4">
-                  <img class="h-20 p-2" src="img/ingredients/proteines/tofu.png" alt="test">
-                  <img class="h-20 p-2" src="img/ingredients/legumes/champignons.png" alt="">
-                  <img class="h-20 p-2" src="img/ingredients/epices/shichimi_togarashi.png" alt="">
+            <!-- Accordeon (des images des ingredients) -->
+            <div class="my-4">
+              <!-- accordeon header -->
+              <header class="bg-white mb-0 transition-all relative z-[1] border-t-2 border-indigo-600">
+                <div class="group flex items-center w-full p-4 text-left transition-all cursor-pointer" data-collapse-target="animated-collapse-4" role="button">
+                  <h4>Voir les ingredients</h4>
+                  <i class="absolute right-0 pt-1 m-4 text-indigo-600 group-hover:text-black transition-all fa fa-chevron-down group-open:rotate-180"></i>
+                </div>
+              </header>
+              <!-- accordeon contenu -->
+              <div data-collapse="animated-collapse-4" class="h-0 overflow-hidden transition-all z-[2]">
+                <div class="flex flex-wrap items-center">
+                  <!-- ingredient 1 -->
+                  <figure class="relative group">
+                    <img class="w-20 p-2" src="img/ingredients/bouillons/bol-v3-trs.png" alt="bouillon shio">
+                    <!-- tooltip avec nom ingredient au survol -->
+                    <figcaption class="w-full mx-auto z-10 absolute bottom-0 translate-y-[75%] left-0 flex flex-col items-center opacity-0 group-hover:opacity-100 transition-all text-center">
+                      <span class="w-3 h-3 -mb-2 rotate-45 bg-gray-800"></span> <!-- fleche decorative en haut du tooltip -->
+                      <span class="relative z-10 p-2 text-[0.7rem] leading-none whitespace-no-wrap text-white bg-gray-800">shio</span>
+                    </figcaption>
+                  </figure>
+                  <!-- ingredient 2 -->
+                  <figure class="relative group">
+                    <img class="w-20 p-2" src="img/ingredients/nouilles/wavy-trs.png" alt="Chukamen - nouilles ondulées">
+                    <!-- tooltip avec nom ingredient au survol -->
+                    <figcaption class="w-full mx-auto z-10 absolute bottom-0 translate-y-[75%] left-0 flex flex-col items-center opacity-0 group-hover:opacity-100 transition-all text-center">
+                      <span class="w-3 h-3 -mb-2 rotate-45 bg-gray-800"></span> <!-- fleche decorative en haut du tooltip -->
+                      <span class="relative z-10 p-2 text-[0.7rem] leading-none whitespace-no-wrap text-white bg-gray-800">chukamen</span>
+                    </figcaption>
+                  </figure>
+                  <figure class="relative group">
+                    <img class="w-20 p-2" src="img/ingredients/proteines/crevette.png" alt="Crevettes grillees">
+                    <!-- tooltip avec nom ingredient au survol -->
+                    <figcaption class="w-full mx-auto z-10 absolute bottom-0 translate-y-[75%] left-0 flex flex-col items-center opacity-0 group-hover:opacity-100 transition-all text-center">
+                      <span class="w-3 h-3 -mb-2 rotate-45 bg-gray-800"></span> <!-- fleche decorative en haut du tooltip -->
+                      <span class="relative z-10 p-2 text-[0.7rem] leading-none whitespace-no-wrap text-white bg-gray-800">crevettes grillees</span>
+                    </figcaption>
+                  </figure>
+                  <figure class="relative group">
+                    <img class="w-20 p-2" src="img/ingredients/legumes/chou.png" alt="Bokchoi">
+                    <!-- tooltip avec nom ingredient au survol -->
+                    <figcaption class="w-full mx-auto z-10 absolute bottom-0 translate-y-[75%] left-0 flex flex-col items-center opacity-0 group-hover:opacity-100 transition-all text-center">
+                      <span class="w-3 h-3 -mb-2 rotate-45 bg-gray-800"></span> <!-- fleche decorative en haut du tooltip -->
+                      <span class="relative z-10 p-2 text-[0.7rem] leading-none whitespace-no-wrap text-white bg-gray-800">bokchoi</span>
+                    </figcaption>
+                  </figure>
+                  <figure class="relative group">
+                    <img class="w-20 p-2" src="img/ingredients/legumes/pousses_soja.png" alt="Gernes de soja">
+                    <!-- tooltip avec nom ingredient au survol -->
+                    <figcaption class="w-full mx-auto z-10 absolute bottom-0 translate-y-[75%] left-0 flex flex-col items-center opacity-0 group-hover:opacity-100 transition-all text-center">
+                      <span class="w-3 h-3 -mb-2 rotate-45 bg-gray-800"></span> <!-- fleche decorative en haut du tooltip -->
+                      <span class="relative z-10 p-2 text-[0.7rem] leading-none whitespace-no-wrap text-white bg-gray-800">germes de soja</span>
+                    </figcaption>
+                  </figure>
+                  <figure class="relative group">
+                    <img class="w-20 p-2" src="img/ingredients/legumes/mais.png" alt="Mais">
+                    <!-- tooltip avec nom ingredient au survol -->
+                    <figcaption class="w-full mx-auto z-10 absolute bottom-0 translate-y-[75%] left-0 flex flex-col items-center opacity-0 group-hover:opacity-100 transition-all text-center">
+                      <span class="w-3 h-3 -mb-2 rotate-45 bg-gray-800"></span> <!-- fleche decorative en haut du tooltip -->
+                      <span class="relative z-10 p-2 text-[0.7rem] leading-none whitespace-no-wrap text-white bg-gray-800">mais</span>
+                    </figcaption>
+                  </figure>
+                  <figure class="relative group">
+                    <img class="w-20 p-2" src="img/ingredients/toppings/ail_frit.png" alt="Ail frit">
+                    <!-- tooltip avec nom ingredient au survol -->
+                    <figcaption class="w-full mx-auto z-10 absolute bottom-0 translate-y-[75%] left-0 flex flex-col items-center opacity-0 group-hover:opacity-100 transition-all text-center">
+                      <span class="w-3 h-3 -mb-2 rotate-45 bg-gray-800"></span> <!-- fleche decorative en haut du tooltip -->
+                      <span class="relative z-10 p-2 text-[0.7rem] leading-none whitespace-no-wrap text-white bg-gray-800">ail frit</span>
+                    </figcaption>
+                  </figure>
+                    <figure class="relative group">
+                      <img class="w-20 p-2" src="img/ingredients/toppings/beurre.png" alt="Beurre">
+                      <!-- tooltip avec nom ingredient au survol -->
+                      <figcaption class="w-full mx-auto z-10 absolute bottom-0 translate-y-[75%] left-0 flex flex-col items-center opacity-0 group-hover:opacity-100 transition-all text-center">
+                        <span class="w-3 h-3 -mb-2 rotate-45 bg-gray-800"></span> <!-- fleche decorative en haut du tooltip -->
+                        <span class="relative z-10 p-2 text-[0.7rem] leading-none whitespace-no-wrap text-white bg-gray-800">beurre</span>
+                      </figcaption>
+                    </figure>
+
+                  <figure class="relative group">
+                    <img class="w-20 p-2" src="img/ingredients/toppings/sesame.png" alt="Graines de sesame">
+                    <!-- tooltip avec nom ingredient au survol -->
+                    <figcaption class="w-full mx-auto z-10 absolute bottom-0 translate-y-[75%] left-0 flex flex-col items-center opacity-0 group-hover:opacity-100 transition-all text-center">
+                      <span class="w-3 h-3 -mb-2 rotate-45 bg-gray-800"></span> <!-- fleche decorative en haut du tooltip -->
+                      <span class="relative z-10 p-2 text-[0.7rem] leading-none whitespace-no-wrap text-white bg-gray-800">sesame</span>
+                    </figcaption>
+                  </figure>
+                  <figure class="relative group">
+                    <img class="w-20 p-2" src="img/ingredients/epices/yuzu_kosho.png" alt="Yuzu kosho">
+                    <!-- tooltip avec nom ingredient au survol -->
+                    <figcaption class="w-full mx-auto z-10 absolute bottom-0 translate-y-[75%] left-0 flex flex-col items-center opacity-0 group-hover:opacity-100 transition-all text-center">
+                      <span class="w-3 h-3 -mb-2 rotate-45 bg-gray-800"></span> <!-- fleche decorative en haut du tooltip -->
+                      <span class="relative z-10 p-2 text-[0.7rem] leading-none whitespace-no-wrap text-white bg-gray-800">yuzu kosho</span>
+                    </figcaption>
+                  </figure>
+                  <figure class="relative group">
+                    <img class="w-20 p-2" src="img/ingredients/epices/poivre_noir.png" alt="Poivre noir">
+                    <!-- tooltip avec nom ingredient au survol -->
+                    <figcaption class="w-full mx-auto z-10 absolute bottom-0 translate-y-[75%] left-0 flex flex-col items-center opacity-0 group-hover:opacity-100 transition-all text-center">
+                      <span class="w-3 h-3 -mb-2 rotate-45 bg-gray-800"></span> <!-- fleche decorative en haut du tooltip -->
+                      <span class="relative z-10 p-2 text-[0.7rem] leading-none whitespace-no-wrap text-white bg-gray-800">poivre noir</span>
+                    </figcaption>
+                  </figure>
+                </div>
               </div>
-            </div>
+            </div>    
           </div>
           <!-- Fin recette #4 -->
 
           <!-- Recette #5 -->
-          <div class="bg-white hover:bg-slate-50 border border-slate-200 shadow-md relative text-sm rounded-md col-span-12 md:col-span-6 xl:col-span-4 w-11/12 my-6 p-10">
+          <div class="bg-white hover:bg-slate-50 border border-slate-200 shadow-md relative text-sm rounded-md col-span-12 md:col-span-6 xl:col-span-4 w-11/12 my-6 p-10 mx-auto">
+            <!-- Etiquettes -->
             <div class="absolute right-[40px] flex gap-2">
-                <span class="text-[0.7rem] font-semibold px-2 py-0 text-white bg-green-500 rounded-full">vege</span>
-                <span class="text-[0.7rem] font-semibold px-2 py-0 text-white bg-orange-500 rounded-full">original</span>
+                <span class="text-[0.7rem] font-semibold px-2 py-0 text-white bg-green-500 rounded-full">gras</span>
+                <span class="text-[0.7rem] font-semibold px-2 py-0 text-white bg-orange-500 rounded-full">reconfortant</span>
             </div>
+            <!-- Titre -->
             <h3 class="text-lg font-medium">Ramen #5</h3>
             <!-- Description-->
-            <p class="text-sm font-light text-gray-600 my-3">Le ramen traditionnel, un classique qui ne se demode pas.</p>
+            <p class="text-sm font-light text-gray-600 my-3">Ramen Miso Confort</p>
             <!-- Liste des ingredients-->
             <ul class="list-disc pl-10 space-y-2">
-              <li><span class="font-bold">Bouillon</span>: Shio - sel</li>
-              <li><span class="font-bold">Nouilles</span>: Hiramen - nouilles plates</li>
-              <li><span class="font-bold">Proteine</span>: Tofu</li>
-              <li><span class="font-bold">Legumes</span>: Oignons verts, champignons</li>
-              <li><span class="font-bold">Toppings</span>: oeuf</li>
-              <li><span class="font-bold">Epices</span>: pate de yuzu, poivre noir</li>
+              <li><span class="font-bold">Bouillon</span>: Miso</li>
+              <li><span class="font-bold">Nouilles</span>: Futomen - nouilles épaisses</li>
+              <li><span class="font-bold">Proteine</span>: Boeuf</li>
+              <li><span class="font-bold">Legumes</span>: Champignons, Épinards, Oignons verts</li>
+              <li><span class="font-bold">Toppings</span>: Dumpling, Beurre, Œuf</li>
+              <li><span class="font-bold">Epices</span>: Ail en poudre, Huile de sésame, Gingembre en poudre</li>
             </ul>
-            <!-- Accordeon-->
-            <div class="transition hover:bg-slate-200 border-t-2 border-indigo-700 my-5">
-              <!-- header accordeon-->
-              <div class="relative cursor-pointer transition flex px-5 items-center h-16 group" data-collapse-target="animated-collapse-5" role="button">
-                <span class="text-indigo-700 font-semibold text-xl inline-block absolute left-0 group-open:hidden">+</span>
-                <span class="text-indigo-700 font-semibold text-xl absolute left-[3px] hidden group-open:inline-block">-</span>
-                <h3>Voir tous les ingredients</h3>
-              </div>
 
-              <!-- contenu accordeon -->
-              <div class="h-0 overflow-hidden transition-all ease-out duration-300 px-5 pt-0 flex flex-wrap" data-collapse="animated-collapse-5">
-                  <img class="h-20 p-2" src="img/ingredients/proteines/tofu.png" alt="test">
-                  <img class="h-20 p-2" src="img/ingredients/legumes/champignons.png" alt="">
-                  <img class="h-20 p-2" src="img/ingredients/epices/shichimi_togarashi.png" alt="">
+            <!-- Accordeon (des images des ingredients) -->
+            <div class="my-4">
+              <!-- accordeon header -->
+              <header class="bg-white mb-0 transition-all relative z-[1] border-t-2 border-indigo-600">
+                <div class="group flex items-center w-full p-4 text-left transition-all cursor-pointer" data-collapse-target="animated-collapse-5" role="button">
+                  <h4>Voir les ingredients</h4>
+                  <i class="absolute right-0 pt-1 m-4 text-indigo-600 group-hover:text-black transition-all fa fa-chevron-down group-open:rotate-180"></i>
+                </div>
+              </header>
+              <!-- accordeon contenu -->
+              <div data-collapse="animated-collapse-5" class="h-0 overflow-hidden transition-all z-[2]">
+                <div class="flex flex-wrap items-center">
+                  <!-- ingredient 1 -->
+                  <figure class="relative group">
+                    <img class="w-20 p-2" src="img/ingredients/bouillons/bol-v4-trs.png" alt="bouillon miso">
+                    <!-- tooltip avec nom ingredient au survol -->
+                    <figcaption class="w-full mx-auto z-10 absolute bottom-0 translate-y-[75%] left-0 flex flex-col items-center opacity-0 group-hover:opacity-100 transition-all text-center">
+                      <span class="w-3 h-3 -mb-2 rotate-45 bg-gray-800"></span> <!-- fleche decorative en haut du tooltip -->
+                      <span class="relative z-10 p-2 text-[0.7rem] leading-none whitespace-no-wrap text-white bg-gray-800">miso</span>
+                    </figcaption>
+                  </figure>
+                  <!-- ingredient 2 -->
+                  <figure class="relative group">
+                    <img class="w-20 p-2" src="img/ingredients/nouilles/thick-trs.png" alt="Futomen - nouilles epaisses">
+                    <!-- tooltip avec nom ingredient au survol -->
+                    <figcaption class="w-full mx-auto z-10 absolute bottom-0 translate-y-[75%] left-0 flex flex-col items-center opacity-0 group-hover:opacity-100 transition-all text-center">
+                      <span class="w-3 h-3 -mb-2 rotate-45 bg-gray-800"></span> <!-- fleche decorative en haut du tooltip -->
+                      <span class="relative z-10 p-2 text-[0.7rem] leading-none whitespace-no-wrap text-white bg-gray-800">futomen</span>
+                    </figcaption>
+                  </figure>
+                  <figure class="relative group">
+                    <img class="w-20 p-2" src="img/ingredients/proteines/boeuf.png" alt="Boeuf">
+                    <!-- tooltip avec nom ingredient au survol -->
+                    <figcaption class="w-full mx-auto z-10 absolute bottom-0 translate-y-[75%] left-0 flex flex-col items-center opacity-0 group-hover:opacity-100 transition-all text-center">
+                      <span class="w-3 h-3 -mb-2 rotate-45 bg-gray-800"></span> <!-- fleche decorative en haut du tooltip -->
+                      <span class="relative z-10 p-2 text-[0.7rem] leading-none whitespace-no-wrap text-white bg-gray-800">boeuf</span>
+                    </figcaption>
+                  </figure>
+                  <figure class="relative group">
+                    <img class="w-20 p-2" src="img/ingredients/legumes/champignons.png" alt="Champignons">
+                    <!-- tooltip avec nom ingredient au survol -->
+                    <figcaption class="w-full mx-auto z-10 absolute bottom-0 translate-y-[75%] left-0 flex flex-col items-center opacity-0 group-hover:opacity-100 transition-all text-center">
+                      <span class="w-3 h-3 -mb-2 rotate-45 bg-gray-800"></span> <!-- fleche decorative en haut du tooltip -->
+                      <span class="relative z-10 p-2 text-[0.7rem] leading-none whitespace-no-wrap text-white bg-gray-800">champignons</span>
+                    </figcaption>
+                  </figure>
+                  <figure class="relative group">
+                    <img class="w-20 p-2" src="img/ingredients/legumes/epinards.png" alt="Epinards">
+                    <!-- tooltip avec nom ingredient au survol -->
+                    <figcaption class="w-full mx-auto z-10 absolute bottom-0 translate-y-[75%] left-0 flex flex-col items-center opacity-0 group-hover:opacity-100 transition-all text-center">
+                      <span class="w-3 h-3 -mb-2 rotate-45 bg-gray-800"></span> <!-- fleche decorative en haut du tooltip -->
+                      <span class="relative z-10 p-2 text-[0.7rem] leading-none whitespace-no-wrap text-white bg-gray-800">epinards</span>
+                    </figcaption>
+                  </figure>
+                  <figure class="relative group">
+                    <img class="w-20 p-2" src="img/ingredients/legumes/oignons_verts.png" alt="Oingons verts">
+                    <!-- tooltip avec nom ingredient au survol -->
+                    <figcaption class="w-full mx-auto z-10 absolute bottom-0 translate-y-[75%] left-0 flex flex-col items-center opacity-0 group-hover:opacity-100 transition-all text-center">
+                      <span class="w-3 h-3 -mb-2 rotate-45 bg-gray-800"></span> <!-- fleche decorative en haut du tooltip -->
+                      <span class="relative z-10 p-2 text-[0.7rem] leading-none whitespace-no-wrap text-white bg-gray-800">oignons verts</span>
+                    </figcaption>
+                  </figure>
+                  <figure class="relative group">
+                    <img class="w-20 p-2" src="img/ingredients/toppings/dumplings.png" alt="Dumplings">
+                    <!-- tooltip avec nom ingredient au survol -->
+                    <figcaption class="w-full mx-auto z-10 absolute bottom-0 translate-y-[75%] left-0 flex flex-col items-center opacity-0 group-hover:opacity-100 transition-all text-center">
+                      <span class="w-3 h-3 -mb-2 rotate-45 bg-gray-800"></span> <!-- fleche decorative en haut du tooltip -->
+                      <span class="relative z-10 p-2 text-[0.7rem] leading-none whitespace-no-wrap text-white bg-gray-800">dumplings</span>
+                    </figcaption>
+                  </figure>
+                    <figure class="relative group">
+                      <img class="w-20 p-2" src="img/ingredients/toppings/beurre.png" alt="Beurre">
+                      <!-- tooltip avec nom ingredient au survol -->
+                      <figcaption class="w-full mx-auto z-10 absolute bottom-0 translate-y-[75%] left-0 flex flex-col items-center opacity-0 group-hover:opacity-100 transition-all text-center">
+                        <span class="w-3 h-3 -mb-2 rotate-45 bg-gray-800"></span> <!-- fleche decorative en haut du tooltip -->
+                        <span class="relative z-10 p-2 text-[0.7rem] leading-none whitespace-no-wrap text-white bg-gray-800">beurre</span>
+                      </figcaption>
+                    </figure>
+
+                  <figure class="relative group">
+                    <img class="w-20 p-2" src="img/ingredients/toppings/oeuf.png" alt="Oeuf">
+                    <!-- tooltip avec nom ingredient au survol -->
+                    <figcaption class="w-full mx-auto z-10 absolute bottom-0 translate-y-[75%] left-0 flex flex-col items-center opacity-0 group-hover:opacity-100 transition-all text-center">
+                      <span class="w-3 h-3 -mb-2 rotate-45 bg-gray-800"></span> <!-- fleche decorative en haut du tooltip -->
+                      <span class="relative z-10 p-2 text-[0.7rem] leading-none whitespace-no-wrap text-white bg-gray-800">oeuf</span>
+                    </figcaption>
+                  </figure>
+                  <figure class="relative group">
+                    <img class="w-20 p-2" src="img/ingredients/epices/ail_poudre.png" alt="Ail en poudre">
+                    <!-- tooltip avec nom ingredient au survol -->
+                    <figcaption class="w-full mx-auto z-10 absolute bottom-0 translate-y-[75%] left-0 flex flex-col items-center opacity-0 group-hover:opacity-100 transition-all text-center">
+                      <span class="w-3 h-3 -mb-2 rotate-45 bg-gray-800"></span> <!-- fleche decorative en haut du tooltip -->
+                      <span class="relative z-10 p-2 text-[0.7rem] leading-none whitespace-no-wrap text-white bg-gray-800">ail en poudre</span>
+                    </figcaption>
+                  </figure>
+                  <figure class="relative group">
+                    <img class="w-20 p-2" src="img/ingredients/epices/huile_sesame.png" alt="Huile de sesame">
+                    <!-- tooltip avec nom ingredient au survol -->
+                    <figcaption class="w-full mx-auto z-10 absolute bottom-0 translate-y-[75%] left-0 flex flex-col items-center opacity-0 group-hover:opacity-100 transition-all text-center">
+                      <span class="w-3 h-3 -mb-2 rotate-45 bg-gray-800"></span> <!-- fleche decorative en haut du tooltip -->
+                      <span class="relative z-10 p-2 text-[0.7rem] leading-none whitespace-no-wrap text-white bg-gray-800">huile de sesame</span>
+                    </figcaption>
+                  </figure>
+                  <figure class="relative group">
+                    <img class="w-20 p-2" src="img/ingredients/epices/gingembre_poudre.png" alt="Gingembre en poudre">
+                    <!-- tooltip avec nom ingredient au survol -->
+                    <figcaption class="w-full mx-auto z-10 absolute bottom-0 translate-y-[75%] left-0 flex flex-col items-center opacity-0 group-hover:opacity-100 transition-all text-center">
+                      <span class="w-3 h-3 -mb-2 rotate-45 bg-gray-800"></span> <!-- fleche decorative en haut du tooltip -->
+                      <span class="relative z-10 p-2 text-[0.7rem] leading-none whitespace-no-wrap text-white bg-gray-800">gingembre en poudre</span>
+                    </figcaption>
+                  </figure>
+                </div>
               </div>
-            </div>
+            </div>    
           </div>
           <!-- Fin recette #5 -->
+
+          <!-- Recette #6 -->
+          <div class="bg-white hover:bg-slate-50 border border-slate-200 shadow-md relative text-sm rounded-md col-span-12 md:col-span-6 xl:col-span-4 w-11/12 my-6 p-10 mx-auto">
+            <!-- Etiquettes -->
+            <div class="absolute right-[40px] flex gap-2">
+                <span class="text-[0.7rem] font-semibold px-2 py-0 text-white bg-green-500 rounded-full">leger</span>
+                <span class="text-[0.7rem] font-semibold px-2 py-0 text-white bg-blue-500 rounded-full">marin</span>
+            </div>
+            <!-- Titre -->
+            <h3 class="text-lg font-medium">Ramen #6</h3>
+            <!-- Description-->
+            <p class="text-sm font-light text-gray-600 my-3">Ramen Shio Marin</p>
+            <!-- Liste des ingredients-->
+            <ul class="list-disc pl-10 space-y-2">
+              <li><span class="font-bold">Bouillon</span>: Shio</li>
+              <li><span class="font-bold">Nouilles</span>: Hiramen - nouilles plates</li>
+              <li><span class="font-bold">Proteine</span>: Crevettes tempura</li>
+              <li><span class="font-bold">Legumes</span>: Pousses de bambou, Poireau, Mais</li>
+              <li><span class="font-bold">Toppings</span>: Gingembre mariné, Algues nori, Graines de sésame</li>
+              <li><span class="font-bold">Epices</span>: Kimchi, Yuzu kosho</li>
+            </ul>
+
+            <!-- Accordeon (des images des ingredients) -->
+            <div class="my-4">
+              <!-- accordeon header -->
+              <header class="bg-white mb-0 transition-all relative z-[1] border-t-2 border-indigo-600">
+                <div class="group flex items-center w-full p-4 text-left transition-all cursor-pointer" data-collapse-target="animated-collapse-6" role="button">
+                  <h4>Voir les ingredients</h4>
+                  <i class="absolute right-0 pt-1 m-4 text-indigo-600 group-hover:text-black transition-all fa fa-chevron-down group-open:rotate-180"></i>
+                </div>
+              </header>
+              <!-- accordeon contenu -->
+              <div data-collapse="animated-collapse-6" class="h-0 overflow-hidden transition-all z-[2]">
+                <div class="flex flex-wrap items-center">
+                  <!-- ingredient 1 -->
+                  <figure class="relative group">
+                    <img class="w-20 p-2" src="img/ingredients/bouillons/bol-v3-trs.png" alt="bouillon shio">
+                    <!-- tooltip avec nom ingredient au survol -->
+                    <figcaption class="w-full mx-auto z-10 absolute bottom-0 translate-y-[75%] left-0 flex flex-col items-center opacity-0 group-hover:opacity-100 transition-all text-center">
+                      <span class="w-3 h-3 -mb-2 rotate-45 bg-gray-800"></span> <!-- fleche decorative en haut du tooltip -->
+                      <span class="relative z-10 p-2 text-[0.7rem] leading-none whitespace-no-wrap text-white bg-gray-800">shio</span>
+                    </figcaption>
+                  </figure>
+                  <!-- ingredient 2 -->
+                  <figure class="relative group">
+                    <img class="w-20 p-2" src="img/ingredients/nouilles/plates-trs.png" alt="Hiramen - nouilles plates">
+                    <!-- tooltip avec nom ingredient au survol -->
+                    <figcaption class="w-full mx-auto z-10 absolute bottom-0 translate-y-[75%] left-0 flex flex-col items-center opacity-0 group-hover:opacity-100 transition-all text-center">
+                      <span class="w-3 h-3 -mb-2 rotate-45 bg-gray-800"></span> <!-- fleche decorative en haut du tooltip -->
+                      <span class="relative z-10 p-2 text-[0.7rem] leading-none whitespace-no-wrap text-white bg-gray-800">hiramen</span>
+                    </figcaption>
+                  </figure>
+                  <figure class="relative group">
+                    <img class="w-20 p-2" src="img/ingredients/proteines/tempura_crevette.png" alt="Crevettes tempura">
+                    <!-- tooltip avec nom ingredient au survol -->
+                    <figcaption class="w-full mx-auto z-10 absolute bottom-0 translate-y-[75%] left-0 flex flex-col items-center opacity-0 group-hover:opacity-100 transition-all text-center">
+                      <span class="w-3 h-3 -mb-2 rotate-45 bg-gray-800"></span> <!-- fleche decorative en haut du tooltip -->
+                      <span class="relative z-10 p-2 text-[0.7rem] leading-none whitespace-no-wrap text-white bg-gray-800">crevettes tempura</span>
+                    </figcaption>
+                  </figure>
+                  <figure class="relative group">
+                    <img class="w-20 p-2" src="img/ingredients/legumes/bambou.png" alt="Pousses de bambou">
+                    <!-- tooltip avec nom ingredient au survol -->
+                    <figcaption class="w-full mx-auto z-10 absolute bottom-0 translate-y-[75%] left-0 flex flex-col items-center opacity-0 group-hover:opacity-100 transition-all text-center">
+                      <span class="w-3 h-3 -mb-2 rotate-45 bg-gray-800"></span> <!-- fleche decorative en haut du tooltip -->
+                      <span class="relative z-10 p-2 text-[0.7rem] leading-none whitespace-no-wrap text-white bg-gray-800">bambou</span>
+                    </figcaption>
+                  </figure>
+                  <figure class="relative group">
+                    <img class="w-20 p-2" src="img/ingredients/legumes/poireau.png" alt="Poireau">
+                    <!-- tooltip avec nom ingredient au survol -->
+                    <figcaption class="w-full mx-auto z-10 absolute bottom-0 translate-y-[75%] left-0 flex flex-col items-center opacity-0 group-hover:opacity-100 transition-all text-center">
+                      <span class="w-3 h-3 -mb-2 rotate-45 bg-gray-800"></span> <!-- fleche decorative en haut du tooltip -->
+                      <span class="relative z-10 p-2 text-[0.7rem] leading-none whitespace-no-wrap text-white bg-gray-800">poireau</span>
+                    </figcaption>
+                  </figure>
+                  <figure class="relative group">
+                    <img class="w-20 p-2" src="img/ingredients/legumes/mais.png" alt="Mais">
+                    <!-- tooltip avec nom ingredient au survol -->
+                    <figcaption class="w-full mx-auto z-10 absolute bottom-0 translate-y-[75%] left-0 flex flex-col items-center opacity-0 group-hover:opacity-100 transition-all text-center">
+                      <span class="w-3 h-3 -mb-2 rotate-45 bg-gray-800"></span> <!-- fleche decorative en haut du tooltip -->
+                      <span class="relative z-10 p-2 text-[0.7rem] leading-none whitespace-no-wrap text-white bg-gray-800">mais</span>
+                    </figcaption>
+                  </figure>
+                  <figure class="relative group">
+                    <img class="w-20 p-2" src="img/ingredients/toppings/gingembre.png" alt="Gingembre marine">
+                    <!-- tooltip avec nom ingredient au survol -->
+                    <figcaption class="w-full mx-auto z-10 absolute bottom-0 translate-y-[75%] left-0 flex flex-col items-center opacity-0 group-hover:opacity-100 transition-all text-center">
+                      <span class="w-3 h-3 -mb-2 rotate-45 bg-gray-800"></span> <!-- fleche decorative en haut du tooltip -->
+                      <span class="relative z-10 p-2 text-[0.7rem] leading-none whitespace-no-wrap text-white bg-gray-800">gingembre marine</span>
+                    </figcaption>
+                  </figure>
+                    <figure class="relative group">
+                      <img class="w-20 p-2" src="img/ingredients/toppings/algues.png" alt="Algues nori">
+                      <!-- tooltip avec nom ingredient au survol -->
+                      <figcaption class="w-full mx-auto z-10 absolute bottom-0 translate-y-[75%] left-0 flex flex-col items-center opacity-0 group-hover:opacity-100 transition-all text-center">
+                        <span class="w-3 h-3 -mb-2 rotate-45 bg-gray-800"></span> <!-- fleche decorative en haut du tooltip -->
+                        <span class="relative z-10 p-2 text-[0.7rem] leading-none whitespace-no-wrap text-white bg-gray-800">algues nori</span>
+                      </figcaption>
+                    </figure>
+
+                  <figure class="relative group">
+                    <img class="w-20 p-2" src="img/ingredients/toppings/sesame.png" alt="Graines de sesame">
+                    <!-- tooltip avec nom ingredient au survol -->
+                    <figcaption class="w-full mx-auto z-10 absolute bottom-0 translate-y-[75%] left-0 flex flex-col items-center opacity-0 group-hover:opacity-100 transition-all text-center">
+                      <span class="w-3 h-3 -mb-2 rotate-45 bg-gray-800"></span> <!-- fleche decorative en haut du tooltip -->
+                      <span class="relative z-10 p-2 text-[0.7rem] leading-none whitespace-no-wrap text-white bg-gray-800">sesame</span>
+                    </figcaption>
+                  </figure>
+                  <figure class="relative group">
+                    <img class="w-20 p-2" src="img/ingredients/epices/kimchi.png" alt="Kimchi">
+                    <!-- tooltip avec nom ingredient au survol -->
+                    <figcaption class="w-full mx-auto z-10 absolute bottom-0 translate-y-[75%] left-0 flex flex-col items-center opacity-0 group-hover:opacity-100 transition-all text-center">
+                      <span class="w-3 h-3 -mb-2 rotate-45 bg-gray-800"></span> <!-- fleche decorative en haut du tooltip -->
+                      <span class="relative z-10 p-2 text-[0.7rem] leading-none whitespace-no-wrap text-white bg-gray-800">kimchi</span>
+                    </figcaption>
+                  </figure>
+                  <figure class="relative group">
+                    <img class="w-20 p-2" src="img/ingredients/epices/yuzu_kosho.png" alt="Yuzu kosho">
+                    <!-- tooltip avec nom ingredient au survol -->
+                    <figcaption class="w-full mx-auto z-10 absolute bottom-0 translate-y-[75%] left-0 flex flex-col items-center opacity-0 group-hover:opacity-100 transition-all text-center">
+                      <span class="w-3 h-3 -mb-2 rotate-45 bg-gray-800"></span> <!-- fleche decorative en haut du tooltip -->
+                      <span class="relative z-10 p-2 text-[0.7rem] leading-none whitespace-no-wrap text-white bg-gray-800">yuzu kosho</span>
+                    </figcaption>
+                  </figure>
+                </div>
+              </div>
+            </div>    
+          </div>
+          <!-- Fin recette #6 -->
 
         </div>
       </div>
@@ -282,47 +889,201 @@
     <section class="bg-slate-800 relative">
       <div class="container border-2 border-transparent mx-auto pb-8 px-6 md:pb-12">
         <div class="text-slate-300 text-center">
-          <h2 class="font-bold text-xl mb-4">Ramen de la semaine</h2>
+          <h2 class="text-center oleo_font text-4xl text-slate-300 underline-offset-4 mb-4">Ramen de la semaine</h2>
           <p>Chaque semaine l'equipe de What'soup organise un concours pour elire le meilleur ramen pami les propositions des utilisteurs !</p>
           <p>Cette semaine c'est Heloise Roy qui ramen son grain de sel et remporte le prix ! On vous partage sa recette. 🍜😊</p>
         </div>
 
-        <!-- Recette de la semaine -->
-        <div class="mx-auto bg-white border border-slate-200 p-10 shadow-sm relative text-sm rounded-md col-span-12 md:col-span-6 xl:col-span-4 w-11/12 my-6 hover:bg-slate-50">
-          <div class="absolute right-[40px] flex gap-2">
-              <span class="text-[0.7rem] font-semibold px-2 py-0 text-white bg-green-500 rounded-full">vege</span>
-              <span class="text-[0.7rem] font-semibold px-2 py-0 text-white bg-orange-500 rounded-full">original</span>
-          </div>
-          <h3 class="text-lg font-medium">Ramen de la semaine</h3>
-          <!-- Description-->
-          <p class="text-sm font-light text-gray-600 my-3">Le ramen traditionnel, un classique qui ne se demode pas.</p>
-          <!-- Liste des ingredients-->
-          <ul class="list-disc pl-10 space-y-2">
-            <li><span class="font-bold">Bouillon</span>: Shio - sel</li>
-            <li><span class="font-bold">Nouilles</span>: Hiramen - nouilles plates</li>
-            <li><span class="font-bold">Proteine</span>: Tofu</li>
-            <li><span class="font-bold">Legumes</span>: Oignons verts, champignons</li>
-            <li><span class="font-bold">Toppings</span>: oeuf</li>
-            <li><span class="font-bold">Epices</span>: pate de yuzu, poivre noir</li>
-          </ul>
-          <!-- Accordeon-->
-          <div class="transition hover:bg-slate-200 border-t-2 border-indigo-700 my-5">
-            <!-- header accordeon-->
-            <div class="relative cursor-pointer transition flex px-5 items-center h-16 group" data-collapse-target="animated-collapse-7" role="button">
-              <span class="text-indigo-700 font-semibold text-xl inline-block absolute left-0 group-open:hidden">+</span>
-              <span class="text-indigo-700 font-semibold text-xl absolute left-[3px] hidden group-open:inline-block">-</span>
-              <h3>Voir tous les ingredients</h3>
+        <div class="grid grid-cols-12 mt-12 space-y-12 lg:space-y-0">
+          <!-- Recette de la semaine -->
+          <div class="bg-white hover:bg-slate-50 border border-slate-200 shadow-md relative text-sm rounded-md col-span-12 lg:col-span-7 w-11/12 p-10 mx-auto">
+            <!-- Etiquettes -->
+            <div class="absolute top-[20px] sm:top-[40px] right-[40px] flex gap-2">
+              <span class="text-[0.7rem] font-semibold px-2 py-0 text-white bg-yellow-600 rounded-full">favoris</span>
+                <span class="text-[0.7rem] font-semibold px-2 py-0 text-white bg-green-500 rounded-full">gras</span>
+                <span class="text-[0.7rem] font-semibold px-2 py-0 text-white bg-blue-500 rounded-full">reconfortant</span>
+            </div>
+            <!-- Titre -->
+            <h3 class="text-lg font-medium">Ramen Of the Week</h3>
+            <!-- Description-->
+            <p class="text-sm font-light text-gray-600 my-3">Ramen Tonkotsu aux Crevettes Tempura</p>
+            <!-- Liste des ingredients-->
+            <ul class="list-disc pl-10 space-y-2">
+              <li><span class="font-bold">Bouillon</span>: Tonkotsu</li>
+              <li><span class="font-bold">Nouilles</span>: Futomen nouilles epaisses</li>
+              <li><span class="font-bold">Proteine</span>: Crevettes tempura</li>
+              <li><span class="font-bold">Legumes</span>: Pousses de bambou, Germes de soja, Epinards, Mais</li>
+              <li><span class="font-bold">Toppings</span>: Gingembre mariné, Algues nori, Oeuf</li>
+              <li><span class="font-bold">Epices</span>: Shichimi togarashi, Huile de sesame, Yuzu kosho</li>
+            </ul>
+
+            <div class="border-t-2 border-indigo-600 my-4">
+              <p class="text-sm font-light text-gray-600 my-3">Caprices du Chef</p>
+              <ul class="list-disc pl-10 space-y-2">
+                <li><span class="font-bold">Superpouvoir du ramen</span>: Instant Happiness</li>
+                <li><span class="font-bold">Ustensiles indispensables</span>: Baguettes, Fourchette geante</li>
+                <li><span class="font-bold">Emojis</span>: 🔥🍤🍜</li>
+              </ul>
             </div>
 
-            <!-- contenu accordeon -->
-            <div class="h-0 overflow-hidden transition-all ease-out duration-300 px-5 pt-0 flex flex-wrap" data-collapse="animated-collapse-7">
-                <img class="h-20 p-2" src="img/ingredients/proteines/tofu.png" alt="test">
-                <img class="h-20 p-2" src="img/ingredients/legumes/champignons.png" alt="">
-                <img class="h-20 p-2" src="img/ingredients/epices/shichimi_togarashi.png" alt="">
+            <!-- Accordeon (des images des ingredients) -->
+            <div class="my-4">
+              <!-- accordeon header -->
+              <header class="bg-white mb-0 transition-all relative z-[1] border-t-2 border-indigo-600">
+                <div class="group flex items-center w-full p-4 text-left transition-all cursor-pointer" data-collapse-target="animated-collapse-6" role="button">
+                  <h4 class="text-sm font-light text-gray-600 my-3">Ingredients</h4>
+                  <i class="absolute right-0 pt-1 m-4 text-indigo-600 group-hover:text-black transition-all fa fa-chevron-down group-open:rotate-180"></i>
+                </div>
+              </header>
+              <!-- accordeon contenu -->
+              <div data-collapse="animated-collapse-6" class="h-0 overflow-hidden transition-all z-[2]">
+                <div class="flex flex-wrap items-center">
+                  <!-- ingredient 1 -->
+                  <figure class="relative group">
+                    <img class="w-20 p-2" src="img/ingredients/bouillons/bol-v1-trs.png" alt="bouillon Tonkotsu">
+                    <!-- tooltip avec nom ingredient au survol -->
+                    <figcaption class="w-full mx-auto z-10 absolute bottom-0 translate-y-[75%] left-0 flex flex-col items-center opacity-0 group-hover:opacity-100 transition-all text-center">
+                      <span class="w-3 h-3 -mb-2 rotate-45 bg-gray-800"></span> <!-- fleche decorative en haut du tooltip -->
+                      <span class="relative z-10 p-2 text-[0.7rem] leading-none whitespace-no-wrap text-white bg-gray-800">tonkotsu</span>
+                    </figcaption>
+                  </figure>
+                  <!-- ingredient 2 -->
+                  <figure class="relative group">
+                    <img class="w-20 p-2" src="img/ingredients/nouilles/thick-trs.png" alt="Futomen - nouilles epaisses">
+                    <!-- tooltip avec nom ingredient au survol -->
+                    <figcaption class="w-full mx-auto z-10 absolute bottom-0 translate-y-[75%] left-0 flex flex-col items-center opacity-0 group-hover:opacity-100 transition-all text-center">
+                      <span class="w-3 h-3 -mb-2 rotate-45 bg-gray-800"></span> <!-- fleche decorative en haut du tooltip -->
+                      <span class="relative z-10 p-2 text-[0.7rem] leading-none whitespace-no-wrap text-white bg-gray-800">futomen</span>
+                    </figcaption>
+                  </figure>
+                  <figure class="relative group">
+                    <img class="w-20 p-2" src="img/ingredients/proteines/tempura_crevette.png" alt="Crevettes tempura">
+                    <!-- tooltip avec nom ingredient au survol -->
+                    <figcaption class="w-full mx-auto z-10 absolute bottom-0 translate-y-[75%] left-0 flex flex-col items-center opacity-0 group-hover:opacity-100 transition-all text-center">
+                      <span class="w-3 h-3 -mb-2 rotate-45 bg-gray-800"></span> <!-- fleche decorative en haut du tooltip -->
+                      <span class="relative z-10 p-2 text-[0.7rem] leading-none whitespace-no-wrap text-white bg-gray-800">crevettes tempura</span>
+                    </figcaption>
+                  </figure>
+                  <figure class="relative group">
+                    <img class="w-20 p-2" src="img/ingredients/legumes/bambou.png" alt="Pousses de bambou">
+                    <!-- tooltip avec nom ingredient au survol -->
+                    <figcaption class="w-full mx-auto z-10 absolute bottom-0 translate-y-[75%] left-0 flex flex-col items-center opacity-0 group-hover:opacity-100 transition-all text-center">
+                      <span class="w-3 h-3 -mb-2 rotate-45 bg-gray-800"></span> <!-- fleche decorative en haut du tooltip -->
+                      <span class="relative z-10 p-2 text-[0.7rem] leading-none whitespace-no-wrap text-white bg-gray-800">bambou</span>
+                    </figcaption>
+                  </figure>
+                  <figure class="relative group">
+                    <img class="w-20 p-2" src="img/ingredients/legumes/epinards.png" alt="Epinards">
+                    <!-- tooltip avec nom ingredient au survol -->
+                    <figcaption class="w-full mx-auto z-10 absolute bottom-0 translate-y-[75%] left-0 flex flex-col items-center opacity-0 group-hover:opacity-100 transition-all text-center">
+                      <span class="w-3 h-3 -mb-2 rotate-45 bg-gray-800"></span> <!-- fleche decorative en haut du tooltip -->
+                      <span class="relative z-10 p-2 text-[0.7rem] leading-none whitespace-no-wrap text-white bg-gray-800">epinards</span>
+                    </figcaption>
+                  </figure>
+                  <figure class="relative group">
+                    <img class="w-20 p-2" src="img/ingredients/legumes/mais.png" alt="Mais">
+                    <!-- tooltip avec nom ingredient au survol -->
+                    <figcaption class="w-full mx-auto z-10 absolute bottom-0 translate-y-[75%] left-0 flex flex-col items-center opacity-0 group-hover:opacity-100 transition-all text-center">
+                      <span class="w-3 h-3 -mb-2 rotate-45 bg-gray-800"></span> <!-- fleche decorative en haut du tooltip -->
+                      <span class="relative z-10 p-2 text-[0.7rem] leading-none whitespace-no-wrap text-white bg-gray-800">mais</span>
+                    </figcaption>
+                  </figure>
+                  <figure class="relative group">
+                    <img class="w-20 p-2" src="img/ingredients/legumes/pousses_soja.png" alt="Germes de soja">
+                    <!-- tooltip avec nom ingredient au survol -->
+                    <figcaption class="w-full mx-auto z-10 absolute bottom-0 translate-y-[75%] left-0 flex flex-col items-center opacity-0 group-hover:opacity-100 transition-all text-center">
+                      <span class="w-3 h-3 -mb-2 rotate-45 bg-gray-800"></span> <!-- fleche decorative en haut du tooltip -->
+                      <span class="relative z-10 p-2 text-[0.7rem] leading-none whitespace-no-wrap text-white bg-gray-800">germes de soja</span>
+                    </figcaption>
+                  </figure>
+                    <figure class="relative group">
+                      <img class="w-20 p-2" src="img/ingredients/toppings/gingembre.png" alt="Gingembre marine">
+                      <!-- tooltip avec nom ingredient au survol -->
+                      <figcaption class="w-full mx-auto z-10 absolute bottom-0 translate-y-[75%] left-0 flex flex-col items-center opacity-0 group-hover:opacity-100 transition-all text-center">
+                        <span class="w-3 h-3 -mb-2 rotate-45 bg-gray-800"></span> <!-- fleche decorative en haut du tooltip -->
+                        <span class="relative z-10 p-2 text-[0.7rem] leading-none whitespace-no-wrap text-white bg-gray-800">gingembre marine</span>
+                      </figcaption>
+                    </figure>
+                  <figure class="relative group">
+                    <img class="w-20 p-2" src="img/ingredients/toppings/algues.png" alt="Algues nori">
+                    <!-- tooltip avec nom ingredient au survol -->
+                    <figcaption class="w-full mx-auto z-10 absolute bottom-0 translate-y-[75%] left-0 flex flex-col items-center opacity-0 group-hover:opacity-100 transition-all text-center">
+                      <span class="w-3 h-3 -mb-2 rotate-45 bg-gray-800"></span> <!-- fleche decorative en haut du tooltip -->
+                      <span class="relative z-10 p-2 text-[0.7rem] leading-none whitespace-no-wrap text-white bg-gray-800">algues nori</span>
+                    </figcaption>
+                  </figure>
+                  <figure class="relative group">
+                    <img class="w-20 p-2" src="img/ingredients/toppings/oeuf.png" alt="Oeuf">
+                    <!-- tooltip avec nom ingredient au survol -->
+                    <figcaption class="w-full mx-auto z-10 absolute bottom-0 translate-y-[75%] left-0 flex flex-col items-center opacity-0 group-hover:opacity-100 transition-all text-center">
+                      <span class="w-3 h-3 -mb-2 rotate-45 bg-gray-800"></span> <!-- fleche decorative en haut du tooltip -->
+                      <span class="relative z-10 p-2 text-[0.7rem] leading-none whitespace-no-wrap text-white bg-gray-800">oeuf</span>
+                    </figcaption>
+                  </figure>
+                  <figure class="relative group">
+                    <img class="w-20 p-2" src="img/ingredients/epices/shichimi_togarashi.png" alt="Shichimi togarashi">
+                    <!-- tooltip avec nom ingredient au survol -->
+                    <figcaption class="w-full mx-auto z-10 absolute bottom-0 translate-y-[75%] left-0 flex flex-col items-center opacity-0 group-hover:opacity-100 transition-all text-center">
+                      <span class="w-3 h-3 -mb-2 rotate-45 bg-gray-800"></span> <!-- fleche decorative en haut du tooltip -->
+                      <span class="relative z-10 p-2 text-[0.7rem] leading-none whitespace-no-wrap text-white bg-gray-800">shichimi togarashispan>
+                    </figcaption>
+                  </figure>
+                  <figure class="relative group">
+                    <img class="w-20 p-2" src="img/ingredients/epices/huile_sesame.png" alt="Huile de sesame">
+                    <!-- tooltip avec nom ingredient au survol -->
+                    <figcaption class="w-full mx-auto z-10 absolute bottom-0 translate-y-[75%] left-0 flex flex-col items-center opacity-0 group-hover:opacity-100 transition-all text-center">
+                      <span class="w-3 h-3 -mb-2 rotate-45 bg-gray-800"></span> <!-- fleche decorative en haut du tooltip -->
+                      <span class="relative z-10 p-2 text-[0.7rem] leading-none whitespace-no-wrap text-white bg-gray-800">huile de sesame</span>
+                    </figcaption>
+                  </figure>
+                  <figure class="relative group">
+                    <img class="w-20 p-2" src="img/ingredients/epices/yuzu_kosho.png" alt="Yuzu kosho">
+                    <!-- tooltip avec nom ingredient au survol -->
+                    <figcaption class="w-full mx-auto z-10 absolute bottom-0 translate-y-[75%] left-0 flex flex-col items-center opacity-0 group-hover:opacity-100 transition-all text-center">
+                      <span class="w-3 h-3 -mb-2 rotate-45 bg-gray-800"></span> <!-- fleche decorative en haut du tooltip -->
+                      <span class="relative z-10 p-2 text-[0.7rem] leading-none whitespace-no-wrap text-white bg-gray-800">yuzu kosho</span>
+                    </figcaption>
+                  </figure>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Fin recette de la semaine -->
+
+          <div class="col-span-12 lg:col-span-5 w-11/12 mx-auto space-y-6">
+            <div class="grid w-full place-items-center overflow-x-scroll rounded-lg lg:overflow-visible">
+              <figure class="relative max-w-[800px] group">
+                <img class="object-cover object-center w-full rounded-xl"
+                  src="img/ramen-semaine.png"
+                  alt="Photo du ramen de la semaine" />
+                <figcaption
+                  class="absolute bottom-8 left-2/4 flex w-[calc(100%-4rem)] -translate-x-2/4 justify-between rounded-xl border border-white bg-white/75 group-hover:bg-white/95 transition-all py-2 px-4 shadow-lg shadow-black/5 saturate-200 backdrop-blur-sm">
+                  <div>
+                    <h5
+                      class="block font-sans text-base antialiased font-semibold leading-snug tracking-normal text-blue-gray-900">
+                      Heloise Roy
+                    </h5>
+                    <p class="block mt-2 font-sans text-sm antialiased font-normal leading-relaxed text-gray-500">
+                      10 septembre 2024
+                    </p>
+                  </div>
+                  <h5 class="block font-sans text-xl antialiased font-semibold leading-snug tracking-normal text-[#4c71fe]">
+                    8.9/10
+                  </h5>
+                </figcaption>
+              </figure>
+            </div>
+
+            <div class="text-slate-300 w-full">
+              <ul class="border-l-2 border-indigo-600 pl-4">
+                <li class="">
+                  <span class="font-bold">Mot du Chef:</span>
+                  Ce ramen est comme un câlin épicé de la mer, avec un petit coup de pied qui vous rappelle que la vie est trop courte pour ne pas manger de tempura dans un bouillon riche. 
+                </li>
+              </ul>
             </div>
           </div>
         </div>
-        <!-- Fin recette de la semaine -->
 
       </div>
     </section>
@@ -332,7 +1093,7 @@
     <section class="bg-white relative">
       <div class="container border-2 border-transparent mx-auto pb-8 px-6 md:pb-12">
         <div class="text-center">
-          <h2 class="font-bold text-xl mb-4">Participer au prochain concours</h2>
+          <h2 class="text-center oleo_font text-4xl text-[#4c71fe] underline-offset-4 mb-4">Participer au prochain concours</h2>
           <p>Vous avez une recette de ramen qui dechire et vous voulez la partager ?</p>
           <p>Envoyez-nous votre recette et tentez de remporter le titre de meilleur ramen de la semaine !</p>
           <p>Vous aurez besoin d'avoir deja votre recette de ramen cree et enregistree dans la page "mes recettes". Il vous suffit d'entrer le numero (apres le #) du ramen dans le formulaire suivant.</p>
