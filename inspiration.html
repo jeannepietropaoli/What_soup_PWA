@@ -889,7 +889,7 @@
     <section class="bg-slate-800 relative">
       <div class="container border-2 border-transparent mx-auto pb-8 px-6 md:pb-12">
         <div class="text-slate-300 text-center">
-          <h2 class="text-center oleo_font text-4xl text-slate-300 underline-offset-4 mb-4">Ramen de la semaine</h2>
+          <h2 class="text-center oleo_font text-4xl text-[#4c71fe] underline-offset-4 mb-4">Ramen de la semaine</h2>
           <p>Chaque semaine l'equipe de What'soup organise un concours pour elire le meilleur ramen pami les propositions des utilisteurs !</p>
           <p>Cette semaine c'est Heloise Roy qui ramen son grain de sel et remporte le prix ! On vous partage sa recette. 🍜😊</p>
         </div>
@@ -1099,10 +1099,10 @@
           <p>Vous aurez besoin d'avoir deja votre recette de ramen cree et enregistree dans la page "mes recettes". Il vous suffit d'entrer le numero (apres le #) du ramen dans le formulaire suivant.</p>
         </div>
 
-        <form action="confirmation-concours.html" class="grid grid-cols-12 my-10" >
-          <fieldset class="relative col-span-12 lg:col-span-6 w-11/12 mx-auto">
+        <form action="confirmation-concours.html" class="grid grid-cols-12 my-10 text-center sm:text-left" novalidate >
+          <fieldset class="relative col-span-12 lg:col-span-6 w-11/12 mx-auto flex flex-col">
             <legend class="font-bold w-max bg-[#4c71fe] text-white text-sm mx-auto py-2 px-6">Recette rundown</legend>
-            <div class="border-2 border-slate-400 hover:border-[#4c71fe] transition-all py-4 px-10 flex flex-col ">
+            <div class="border-2 border-slate-400 hover:border-[#4c71fe] transition-all py-4 px-10 flex-grow">
               <div class="flex flex-col mb-4 space-y-1">
                 <label for="ramen-id" class="font-semibold">Id du ramen</label>
                 <input class="border border-slate-400" type="number" id="ramen-id" name="ramen-id">
@@ -1110,64 +1110,169 @@
               <div class="flex flex-col mb-4 space-y-1">
                 <label for="name" class="font-semibold">Nom de la recette</label>
                 <input class="border border-slate-400" type="text" id="name" name="name">
+              </div>
+              <div class="flex flex-col mb-4 space-y-1">
+                  <label for="description" class="font-semibold">Description</label>
+                  <textarea class="border border-slate-400" name="description" id="description" cols="30" rows="10"></textarea>
+              </div>
+              <div class="flex flex-col mb-4">
+                <fieldset class="space-y-1">
+                  <legend class="font-semibold">Etiquettes</legend>
+                  <div class="flex flex-wrap gap-2">
+                    <div class="group w-max relative">
+                      <input class="peer absolute inset-0 z-10 cursor-pointer opacity-0" type="checkbox" id="labels-opt-1" name="labels" value="vege">
+                      <label class="font-semibold bg-gray-200 peer-hover:bg-[#4c71fe] peer-hover:text-white transition-all text-gray-600 hover:text-gray-600 py-[0.15rem] px-4 rounded-full text-sm z-[2] peer-checked:bg-[#4c71fe] peer-checked:text-white" for="labels-opt-1">vege</label>
+                    </div>
+                    <div class="group w-max relative">
+                      <input class="peer absolute inset-0 z-10 cursor-pointer opacity-0" type="checkbox" id="labels-opt-2" name="labels" value="traditionnel">
+                      <label class="font-semibold bg-gray-200 peer-hover:bg-[#4c71fe] peer-hover:text-white transition-all text-gray-600 hover:text-gray-600 py-[0.15rem] px-4 rounded-full text-sm z-[2] peer-checked:bg-[#4c71fe] peer-checked:text-white" for="labels-opt-2">traditionnel</label>
+                    </div>
+                    <div class="group w-max relative">
+                      <input class="peer absolute inset-0 z-10 cursor-pointer opacity-0" type="checkbox" id="labels-opt-3" name="labels" value="original">
+                      <label class="font-semibold bg-gray-200 peer-hover:bg-[#4c71fe] peer-hover:text-white transition-all text-gray-600 hover:text-gray-600 py-[0.15rem] px-4 rounded-full text-sm z-[2] peer-checked:bg-[#4c71fe] peer-checked:text-white" for="labels-opt-3">original</label>
+                    </div>
+                    <div class="group w-max relative">
+                      <input class="peer absolute inset-0 z-10 cursor-pointer opacity-0" type="checkbox" id="labels-opt-4" name="labels" value="spicy">
+                      <label class="font-semibold bg-gray-200 peer-hover:bg-[#4c71fe] peer-hover:text-white transition-all text-gray-600 hover:text-gray-600 py-[0.15rem] px-4 rounded-full text-sm z-[2] peer-checked:bg-[#4c71fe] peer-checked:text-white" for="labels-opt-4">spicy</label>
+                    </div>
+                    <div class="group w-max relative">
+                      <input class="peer absolute inset-0 z-10 cursor-pointer opacity-0" type="checkbox" id="labels-opt-5" name="labels" value="fusion">
+                      <label class="font-semibold bg-gray-200 peer-hover:bg-[#4c71fe] peer-hover:text-white transition-all text-gray-600 hover:text-gray-600 py-[0.15rem] px-4 rounded-full text-sm z-[2] peer-checked:bg-[#4c71fe] peer-checked:text-white" for="labels-opt-5">fusion</label>
+                    </div>
+                  </div>
+
+                </fieldset>
+              </div>
+              <div class="flex flex-col mb-4 space-y-1">
+                <label for="chef-name" class="font-semibold">Nom du chef</label>
+                <input class="border border-slate-400" type="text" id="chef-name" name="chef-name">
+              </div>
+              <div class="flex flex-col mb-4 space-y-1">
+                <label for="chef-email" class="font-semibold">Courriel du chef</label>
+                <input class="border border-slate-400" type="email" id="chef-email" name="chef-email">
+              </div>
             </div>
-            <div class="flex flex-col mb-4 space-y-1">
-                <label for="description" class="font-semibold">Description</label>
-                <textarea class="border border-slate-400" name="description" id="description" cols="30" rows="10"></textarea>
+          </fieldset>
+
+          <fieldset class="relative col-span-12 lg:col-span-6 w-11/12 mx-auto flex flex-col">
+            <legend class="font-bold w-max bg-[#4c71fe] text-white text-sm mx-auto py-2 px-6">Caprices du Chef</legend>
+            <div class="border-2 border-slate-400 hover:border-[#4c71fe] transition-all py-4 px-10 flex-grow">
+              <div class="flex flex-col mb-4 space-y-1">
+                <label for="comments" class="font-semibold">Mot du Chef</label>
+                <textarea class="border border-slate-400" tname="comments" id="comments" cols="30" rows="10"></textarea>
+              </div>
+              <div class="flex flex-col mb-4 space-y-1">
+                <label for="name" class="font-semibold">Superpouvoir du ramen</label>
+                <input class="border border-slate-400" type="text" id="name" name="name">
             </div>
+            
             <div class="flex flex-col mb-4">
               <fieldset class="space-y-1">
-                <legend class="font-semibold">Etiquettes</legend>
+                <legend class="font-semibold">Ustensiles indispensables</legend>
                 <div class="flex flex-wrap gap-2">
                   <div class="group w-max relative">
-                    <input class="peer absolute inset-0 z-10 cursor-pointer opacity-0" type="checkbox" id="labels-opt-1" name="labels" value="vege">
-                    <label class="font-semibold bg-gray-200 peer-hover:bg-gray-300 text-gray-600 py-[0.15rem] px-4 rounded-full text-sm z-[2] peer-checked:bg-[#4c71fe] peer-checked:text-white" for="labels-opt-1">vege</label>
+                    <input class="peer absolute inset-0 z-10 cursor-pointer opacity-0" type="checkbox" id="ustensils-opt-1" name="ustensils" value="fourchette-geante">
+                    <label class="font-semibold bg-gray-200 peer-hover:bg-[#4c71fe] peer-hover:text-white transition-all text-gray-600 hover:text-gray-600 py-[0.15rem] px-4 rounded-full text-sm z-[2] peer-checked:bg-[#4c71fe] peer-checked:text-white" for="labels-opt-1">fourchette geante</label>
                   </div>
                   <div class="group w-max relative">
-                    <input class="peer absolute inset-0 z-10 cursor-pointer opacity-0" type="checkbox" id="labels-opt-2" name="labels" value="traditionnel">
-                    <label class="font-semibold bg-gray-200 peer-hover:bg-gray-300 text-gray-600 py-[0.15rem] px-4 rounded-full text-sm z-[2] peer-checked:bg-[#4c71fe] peer-checked:text-white" for="labels-opt-2">traditionnel</label>
+                    <input class="peer absolute inset-0 z-10 cursor-pointer opacity-0" type="checkbox" id="ustensils-opt-2" name="ustensils" value="traditionnel">
+                    <label class="font-semibold bg-gray-200 peer-hover:bg-[#4c71fe] peer-hover:text-white transition-all text-gray-600 hover:text-gray-600 py-[0.15rem] px-4 rounded-full text-sm z-[2] peer-checked:bg-[#4c71fe] peer-checked:text-white" for="labels-opt-2">baguettes</label>
                   </div>
                   <div class="group w-max relative">
-                    <input class="peer absolute inset-0 z-10 cursor-pointer opacity-0" type="checkbox" id="labels-opt-3" name="labels" value="original">
-                    <label class="font-semibold bg-gray-200 peer-hover:bg-gray-300 text-gray-600 py-[0.15rem] px-4 rounded-full text-sm z-[2] peer-checked:bg-[#4c71fe] peer-checked:text-white" for="labels-opt-3">original</label>
+                    <input class="peer absolute inset-0 z-10 cursor-pointer opacity-0" type="checkbox" id="ustensils-opt-3" name="ustensils" value="original">
+                    <label class="font-semibold bg-gray-200 peer-hover:bg-[#4c71fe] peer-hover:text-white transition-all text-gray-600 hover:text-gray-600 py-[0.15rem] px-4 rounded-full text-sm z-[2] peer-checked:bg-[#4c71fe] peer-checked:text-white" for="labels-opt-3">cuillere a soupe</label>
                   </div>
                   <div class="group w-max relative">
-                    <input class="peer absolute inset-0 z-10 cursor-pointer opacity-0" type="checkbox" id="labels-opt-4" name="labels" value="spicy">
-                    <label class="font-semibold bg-gray-200 peer-hover:bg-gray-300 text-gray-600 py-[0.15rem] px-4 rounded-full text-sm z-[2] peer-checked:bg-[#4c71fe] peer-checked:text-white" for="labels-opt-4">spicy</label>
+                    <input class="peer absolute inset-0 z-10 cursor-pointer opacity-0" type="checkbox" id="ustensils-opt-4" name="ustensils" value="spicy">
+                    <label class="font-semibold bg-gray-200 peer-hover:bg-[#4c71fe] peer-hover:text-white transition-all text-gray-600 hover:text-gray-600 py-[0.15rem] px-4 rounded-full text-sm z-[2] peer-checked:bg-[#4c71fe] peer-checked:text-white" for="labels-opt-4">nos mains</label>
                   </div>
                   <div class="group w-max relative">
-                    <input class="peer absolute inset-0 z-10 cursor-pointer opacity-0" type="checkbox" id="labels-opt-5" name="labels" value="fusion">
-                    <label class="font-semibold bg-gray-200 peer-hover:bg-gray-300 text-gray-600 py-[0.15rem] px-4 rounded-full text-sm z-[2] peer-checked:bg-[#4c71fe] peer-checked:text-white" for="labels-opt-5">fusion</label>
+                    <input class="peer absolute inset-0 z-10 cursor-pointer opacity-0" type="checkbox" id="ustensils-opt-5" name="ustensils" value="fusion">
+                    <label class="font-semibold bg-gray-200 peer-hover:bg-[#4c71fe] peer-hover:text-white transition-all text-gray-600 hover:text-gray-600 py-[0.15rem] px-4 rounded-full text-sm z-[2] peer-checked:bg-[#4c71fe] peer-checked:text-white" for="labels-opt-5">paille a soupe</label>
+                  </div>
+                  <div class="group w-max relative">
+                    <input class="peer absolute inset-0 z-10 cursor-pointer opacity-0" type="checkbox" id="ustensils-opt-6" name="ustensils" value="fusion">
+                    <label class="font-semibold bg-gray-200 peer-hover:bg-[#4c71fe] peer-hover:text-white transition-all text-gray-600 hover:text-gray-600 py-[0.15rem] px-4 rounded-full text-sm z-[2] peer-checked:bg-[#4c71fe] peer-checked:text-white" for="labels-opt-6">epuisette</label>
                   </div>
                 </div>
 
               </fieldset>
             </div>
-            <div class="flex flex-col mb-4 space-y-1">
-              <label for="chef-name" class="font-semibold">Nom du chef</label>
-              <input class="border border-slate-400" type="text" id="chef-name" name="chef-name">
-            </div>
-            <div class="flex flex-col mb-4 space-y-1">
-              <label for="chef-email" class="font-semibold">Courriel du chef</label>
-              <input class="border border-slate-400" type="email" id="chef-email" name="chef-email">
-            </div>
-          </div>
-          </fieldset>
 
-          <fieldset class="relative col-span-12 lg:col-span-6 w-11/12 mx-auto">
-                <legend class="font-bold w-max bg-[#4c71fe] text-white text-sm mx-auto py-2 px-6">Les caprices du chef</legend>
-                <div class="border-2 border-slate-400 hover:border-[#4c71fe] transition-all py-4 px-10 flex flex-col ">
-                  <label for="comments">Un mot du chef</label>
-                  <textarea class="border border-slate-400" name="comments" id="comments" cols="30" rows="10"></textarea>
-                  <label for="email">Courriel</label>
-                  <input class="border border-slate-400" type="email" id="email" name="email">
-                  <div>
-                      <input type="checkbox" name="newsletter" id="newsletter">
-                      <label for="newsletter">Souhaitez-vous vous abonner à notre infolettre ?</label>
+            <div class="flex flex-col mb-4">
+              <fieldset class="space-y-1">
+                <legend class="font-semibold">Emojis decrivant la recette</legend>
+                <div class="flex flex-wrap gap-2">
+                  <div class="group w-max relative">
+                    <input class="peer absolute inset-0 z-10 cursor-pointer opacity-0" type="checkbox" id="emojis-opt-1" name="emojis" value="fourchette-geante">
+                    <label class="font-semibold bg-gray-200 peer-hover:bg-[#4c71fe] peer-hover:text-white transition-all text-gray-600 py-[0.15rem] px-4 rounded-full text-sm z-[2] border-2 border-transparent peer-checked:border-[#4c71fe]" for="labels-opt-1">🌶️</label>
+                  </div>
+                  <div class="group w-max relative">
+                    <input class="peer absolute inset-0 z-10 cursor-pointer opacity-0" type="checkbox" id="emojis-opt-2" name="emojis" value="fourchette-geante">
+                    <label class="font-semibold bg-gray-200 peer-hover:bg-[#4c71fe] peer-hover:text-white transition-all text-gray-600 py-[0.15rem] px-4 rounded-full text-sm z-[2] border-2 border-transparent peer-checked:border-[#4c71fe]" for="labels-opt-2">🌽</label>
+                  </div>
+                  <div class="group w-max relative">
+                    <input class="peer absolute inset-0 z-10 cursor-pointer opacity-0" type="checkbox" id="emojis-opt-3" name="emojis" value="fourchette-geante">
+                    <label class="font-semibold bg-gray-200 peer-hover:bg-[#4c71fe] peer-hover:text-white transition-all text-gray-600 py-[0.15rem] px-4 rounded-full text-sm z-[2] border-2 border-transparent peer-checked:border-[#4c71fe]" for="labels-opt-3">🍜</label>
+                  </div>
+                  <div class="group w-max relative">
+                    <input class="peer absolute inset-0 z-10 cursor-pointer opacity-0" type="checkbox" id="emojis-opt-4" name="emojis" value="fourchette-geante">
+                    <label class="font-semibold bg-gray-200 peer-hover:bg-[#4c71fe] peer-hover:text-white transition-all text-gray-600 py-[0.15rem] px-4 rounded-full text-sm z-[2] border-2 border-transparent peer-checked:border-[#4c71fe]" for="labels-opt-4">🥩</label>
+                  </div>
+                  <div class="group w-max relative">
+                    <input class="peer absolute inset-0 z-10 cursor-pointer opacity-0" type="checkbox" id="emojis-opt-5" name="emojis" value="fourchette-geante">
+                    <label class="font-semibold bg-gray-200 peer-hover:bg-[#4c71fe] peer-hover:text-white transition-all text-gray-600 py-[0.15rem] px-4 rounded-full text-sm z-[2] border-2 border-transparent peer-checked:border-[#4c71fe]" for="labels-opt-5">🍤</label>
+                  </div>
+                  <div class="group w-max relative">
+                    <input class="peer absolute inset-0 z-10 cursor-pointer opacity-0" type="checkbox" id="emojis-opt-6" name="emojis" value="fourchette-geante">
+                    <label class="font-semibold bg-gray-200 peer-hover:bg-[#4c71fe] peer-hover:text-white transition-all text-gray-600 py-[0.15rem] px-4 rounded-full text-sm z-[2] border-2 border-transparent peer-checked:border-[#4c71fe]" for="labels-opt-6">🍄</label>
+                  </div>
+                  <div class="group w-max relative">
+                    <input class="peer absolute inset-0 z-10 cursor-pointer opacity-0" type="checkbox" id="emojis-opt-7" name="emojis" value="fourchette-geante">
+                    <label class="font-semibold bg-gray-200 peer-hover:bg-[#4c71fe] peer-hover:text-white transition-all text-gray-600 py-[0.15rem] px-4 rounded-full text-sm z-[2] border-2 border-transparent peer-checked:border-[#4c71fe]" for="labels-opt-7">🥬</label>
+                  </div>
+                  <div class="group w-max relative">
+                    <input class="peer absolute inset-0 z-10 cursor-pointer opacity-0" type="checkbox" id="emojis-opt-8" name="emojis" value="fourchette-geante">
+                    <label class="font-semibold bg-gray-200 peer-hover:bg-[#4c71fe] peer-hover:text-white transition-all text-gray-600 py-[0.15rem] px-4 rounded-full text-sm z-[2] border-2 border-transparent peer-checked:border-[#4c71fe]" for="labels-opt-8">🧙‍♂️</label>
+                  </div>
+                  <div class="group w-max relative">
+                    <input class="peer absolute inset-0 z-10 cursor-pointer opacity-0" type="checkbox" id="emojis-opt-9" name="emojis" value="fourchette-geante">
+                    <label class="font-semibold bg-gray-200 peer-hover:bg-[#4c71fe] peer-hover:text-white transition-all text-gray-600 py-[0.15rem] px-4 rounded-full text-sm z-[2] border-2 border-transparent peer-checked:border-[#4c71fe]" for="labels-opt-9">🔥</label>
+                  </div>
+                  <div class="group w-max relative">
+                    <input class="peer absolute inset-0 z-10 cursor-pointer opacity-0" type="checkbox" id="emojis-opt-10" name="emojis" value="fourchette-geante">
+                    <label class="font-semibold bg-gray-200 peer-hover:bg-[#4c71fe] peer-hover:text-white transition-all text-gray-600 py-[0.15rem] px-4 rounded-full text-sm z-[2] border-2 border-transparent peer-checked:border-[#4c71fe]" for="labels-opt-10">🚀</label>
+                  </div>
+                  <div class="group w-max relative">
+                    <input class="peer absolute inset-0 z-10 cursor-pointer opacity-0" type="checkbox" id="emojis-opt-11" name="emojis" value="fourchette-geante">
+                    <label class="font-semibold bg-gray-200 peer-hover:bg-[#4c71fe] peer-hover:text-white transition-all text-gray-600 py-[0.15rem] px-4 rounded-full text-sm z-[2] border-2 border-transparent peer-checked:border-[#4c71fe]" for="labels-opt-11">🎩</label>
+                  </div>
+                  <div class="group w-max relative">
+                    <input class="peer absolute inset-0 z-10 cursor-pointer opacity-0" type="checkbox" id="emojis-opt-12" name="emojis" value="fourchette-geante">
+                    <label class="font-semibold bg-gray-200 peer-hover:bg-[#4c71fe] peer-hover:text-white transition-all text-gray-600 py-[0.15rem] px-4 rounded-full text-sm z-[2] border-2 border-transparent peer-checked:border-[#4c71fe]" for="labels-opt-12">🌊</label>
+                  </div>
+                  <div class="group w-max relative">
+                    <input class="peer absolute inset-0 z-10 cursor-pointer opacity-0" type="checkbox" id="emojis-opt-13" name="emojis" value="fourchette-geante">
+                    <label class="font-semibold bg-gray-200 peer-hover:bg-[#4c71fe] peer-hover:text-white transition-all text-gray-600 py-[0.15rem] px-4 rounded-full text-sm z-[2] border-2 border-transparent peer-checked:border-[#4c71fe]" for="labels-opt-13">😍</label>
+                  </div>
+                  <div class="group w-max relative">
+                    <input class="peer absolute inset-0 z-10 cursor-pointer opacity-0" type="checkbox" id="emojis-opt-14" name="emojis" value="fourchette-geante">
+                    <label class="font-semibold bg-gray-200 peer-hover:bg-[#4c71fe] peer-hover:text-white transition-all text-gray-600 py-[0.15rem] px-4 rounded-full text-sm z-[2] border-2 border-transparent peer-checked:border-[#4c71fe]" for="labels-opt-14">😋</label>
+                  </div>
+                  <div class="group w-max relative">
+                    <input class="peer absolute inset-0 z-10 cursor-pointer opacity-0" type="checkbox" id="emojis-opt-15" name="emojis" value="fourchette-geante">
+                    <label class="font-semibold bg-gray-200 peer-hover:bg-[#4c71fe] peer-hover:text-white transition-all text-gray-600 py-[0.15rem] px-4 rounded-full text-sm z-[2] border-2 border-transparent peer-checked:border-[#4c71fe]" for="labels-opt-15">🥵</label>
                   </div>
                 </div>
-            </fieldset>
 
+              </fieldset>
+            </div>
+
+            <div class="flex flex-col mb-4 space-y-1">
+              <label for="miamometer" class="font-semibold">Miam-o-metre</label>
+              <input class="border border-slate-400" type="range" id="miamometer" name="miamometer">
+          </div>
+          </fieldset>
       </form>
       </div>
     </section>
