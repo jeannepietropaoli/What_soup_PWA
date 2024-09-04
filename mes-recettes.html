@@ -7,8 +7,7 @@
   <link rel="stylesheet" href="style/css/style.css">
   <script src="scripts/mobile_menu.js" defer></script>
   <script src="https://cdn.tailwindcss.com"></script>
-  <script src="scripts/recipe-display.js" type="module" defer></script>
-  <script src="scripts/accordion.js" type="module" defer></script>
+  <script src="scripts/recipe-display.js" type="module"></script>
   <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
   <script src="https://kit.fontawesome.com/c777fc19af.js" crossorigin="anonymous"></script>
   <link rel="icon" type="image/png" href="img/favicon.png">
@@ -80,7 +79,8 @@
   <main class="grow" id="main-content">
    
     <section>
-      <div class="container mx-auto grid grid-cols-12" id="recipes-container">
+      <div class="container mx-auto grid grid-cols-12 py-8 px-6 md:py-12 pb-0 md:pb-0" id="recipes-container">
+        <a href="index.html" class="button button--blue-bg col-span-12 mx-auto">Creer une recette</a>
         <!-- Les recettes sont crees dynamiquement -->
       </div>
     </section>
