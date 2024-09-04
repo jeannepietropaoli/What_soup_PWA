@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="fr-CA">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ramen ton bol</title>
+  <link rel="stylesheet" href="style/css/style.css">
+  <script src="scripts/mobile_menu.js" defer></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
+  <script src="https://kit.fontawesome.com/c777fc19af.js" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@material-tailwind/html@latest/scripts/collapse.js" defer></script>
+  <link rel="icon" type="image/png" href="img/favicon.png">
+</head>
+
+<body class="flex flex-col min-h-screen">
+  <a class="screen-reader-txt" href="#main-content">Aller au contenu principal</a>
+  <!-- A partir du composant 'Simple dark with menu button on left' https://tailwindui.com/components/application-ui/navigation/navbars-->
+  <!-- A partir du composant 'Simple dark with menu button on left' https://tailwindui.com/components/application-ui/navigation/navbars-->
+  <header class="bg-white relative shadow-md">
+    <nav>
+        <div class="container mx-auto px-6 pb-0 md:pb-0">
+          <div class="relative flex items-center justify-between">
+            <div class="flex flex-1 items-center justify-between md:justify-start">
+
+              <!-- button menu mobile -->
+              <div class="flex items-center md:hidden py-3">
+                  <button id="mobile-menu-btn" type="button" class="relative inline-flex items-center justify-center rounded-md p-2 text-[#4C71FE] hover:bg-slate-500 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" aria-controls="mobile-menu" aria-expanded="false">
+                      <span class="sr-only">Open main menu</span>
+                      <!-- Icon quand menu est ferme -->
+                      <svg id="open-mobile-menu-btn" class="block h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                      </svg>
+                      <!-- Icon quand menu est ouvert -->
+                      <svg id="close-mobile-menu-btn" class="hidden h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                      </svg>
+                  </button>
+              </div>
+
+              <!-- Logo -->
+              <div class="flex items-center justify-center flex-1 md:flex-none relative">
+                  <img class="h-16 p-1 mx-auto" src="img/whatsoup-blue.png" alt="Logo">
+                  <a class="absolute inset-0 left-0 right-0" href="index.html"></a>
+              </div>
+
+              <!-- bouton "creer ramen" petits ecrans -->
+              <div class="flex items-center md:hidden py-3">
+                  <button class="button button--white-bg" aria-label="Créer un nouveau ramen">
+                      + Créer
+                  </button>
+              </div>
+
+              <!-- Menu grands ecrans -->
+              <div class="hidden md:ml-6 md:flex">
+                  <a class="w-max inline-block p-5 mr-6 border-b-4 border-[#4c71fe] m-0 hover:cursor-pointer text-sm" href="index.html" aria-current="page">Accueil</a>
+                  <a class="w-max inline-block p-5 mr-6 border-b-4 border-transparent m-0 hover:cursor-pointer hover:border-[#4c71fe] text-sm" href="inspiration.html">Inspiration</a>
+                  <a class="w-max inline-block p-5 mr-6 border-b-4 border-transparent m-0 hover:cursor-pointer hover:border-[#4c71fe] text-sm" href="mes-recettes.html">Mes recettes</a>
+              </div>
+            </div>
+
+            <div class="absolute inset-y-0 right-0 flex items-center pr-2 md:static md:inset-auto md:ml-6 md:pr-0">
+                <!-- bouton "creer ramen" grands ecrans -->
+                <button class="hidden md:inline-block button button--white-bg">+ Créer un ramen</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Menu mobile: ouvre le menu au clic de open-mobile-menu-btn / ferme le menu au clic de close-mobile-menu-btn -->
+        <div class="hidden md:hidden" id="mobile-menu">
+            <div class="px-2 pt-2">
+              <a href="index.html" class="block border-b-4 border-[#4c71fe] px-3 py-2 text-base font-medium hover:bg-slate-100" aria-current="page">Accueil</a>
+              <a href="inspiration.html" class="block border-b-4 border-transparent px-3 py-2 text-base font-medium hover:bg-slate-100 hover:border-[#4c71fe]">Inspiration</a>
+              <a href="mes-recettes.html" class="block border-b-4 border-transparent px-3 py-2 text-base font-medium hover:bg-slate-100 hover:border-[#4c71fe]">Mes recettes</a>
+            </div>
+        </div>
+      </nav>
+  </header>
+
+  <main class="grow" id="main-content">
+    <!-- Bouillon -->
+    <section class="bg-white">
+        <div class="container mx-auto py-8 px-6 md:py-12 space-y-8">
+            <div class="text-center">
+            <h1 class="oleo_font text-4xl text-[#4c71fe] underline-offset-4 mb-4">Etape 1: Le Bouillon</h1>
+            <p>Maintenant que vous avez votre recette en tete, il est temps de cuisiner !</p>
+            <p>Vous trouverez sur cette page les etapes generales de la preparation des ramens. Et on commence par le bouillon.</p>
+            </div>
+
+        <!-- Container des cartes de recettes bouillon -->
+        <div class="space-y-10">
+
+            <!-- Carte 1 - Bouillon Shoyu -->
+            <div class="my-4">
+                <!-- accordeon header -->
+                <header class="bg-white mb-0 transition-all relative z-[1] border-2 border-gray-200 p-6 items-center rounded-md hover:bg-slate-50">
+                  <div class="group flex items-center w-full p-4 text-left transition-all cursor-pointer" data-collapse-target="animated-collapse-1" role="button">
+                    <h4>Bouillon Shoyu</h4>
+                    <i class="absolute right-0 pt-1 m-4 text-indigo-600 group-hover:text-black transition-all fa fa-chevron-down group-open:rotate-180"></i>
+                  </div>
+                </header>
+                <!-- accordeon contenu -->
+                <div data-collapse="animated-collapse-1" class="h-0 overflow-hidden transition-all duration-500 z-[2]">
+                  <!-- Carte detaillee -->
+                    <div class="grid grid-cols-12 border-2 border-gray-200 p-6 items-center rounded-md hover:bg-slate-50 relative">       
+                        <!--  Bloc 1 - Image - hidden sur ecrans <1024px -->        
+                        <div class="col-span-6 hidden lg:block w-11/12 mx-auto h-full">
+                            <img class="w-full h-full object-cover" src="img/etapes/bouillon_shoyu_avec_bg.png" alt="Bouillon Shoyu">
+                        </div>
+
+                        <!-- Bloc 2 - Infos -->
+                        <div class="col-span-12 lg:col-span-6 w-11/12 mx-auto">
+                            <!-- Infos generales -->
+                            <div class="mb-4">
+                                <h3 class="text-2xl text-[#4c71fe] font-bold">Bouillon Shoyu</h3>
+                                <div>
+                                    <i class="fa-solid fa-circle text-green-600 text-xs"></i>
+                                    <span class="text-slate-400">Sauce soja</span>
+                                </div>
+                                <div class="absolute top-6 right-6">
+                                    <div>
+                                        <i class="fa-regular fa-clock text-[#4c71fe]"></i>
+                                        <span class="text-slate-400">30 min</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!--  Image - visible uniquement sur ecrans <1024px -->
+                            <div class="block lg:hidden">
+                                <img class="w-full h-full object-cover" src="img/etapes/bouillon_shoyu_avec_bg.png" alt="Bouillon Shoyu">
+                            </div>
+
+                            <!-- Ingredients et etapes -->
+                            <div class="mt-2">
+                                <div class="border-t-2 border-[#4c71fe] py-3 space-y-3">
+                                    <h4 class="font-bold">Ingredients :</h4>
+                                    <ul class="list-disc marker:text-[#4c71fe] pl-5 space-y-2">
+                                        <li>1 litre de bouillon de poulet (ou bouillon dashi pour un goût plus léger)</li>
+                                        <li>4 cuillères à soupe de sauce soja</li>
+                                        <li>1 cuillère à soupe de mirin</li>
+                                        <li>1 cuillère à soupe de saké</li>
+                                        <li>1 cuillère à soupe d'huile de sésame</li>
+                                        <li>1 morceau de kombu (algue) de 10 cm</li>
+                                        <li>1 gousse d'ail, émincée</li>
+                                        <li>1 morceau de gingembre, émincé</li>
+                                    </ul>
+                                </div>
+                                <div class="border-t-2 border-[#4c71fe] mt-6 py-3 space-y-3">
+                                    <h4 class="font-bold">Etapes :</h4>
+                                    <ol class="list-decimal marker:text-[#4c71fe] marker:font-semibold pl-5 space-y-3">
+                                        <li>Dans une casserole, combinez le bouillon de poulet, le kombu, l'ail et le gingembre. Chauffez doucement sans faire bouillir. Retirez le kombu après 10 minutes.</li>
+                                        <li>Ajoutez la sauce soja, le mirin, le saké et l'huile de sésame au bouillon.</li>
+                                        <li>Laissez mijoter à feu doux pendant environ 10-15 minutes pour permettre aux saveurs de bien se mélanger.</li>
+                                        <li>Filtrez le bouillon pour retirer l'ail et le gingembre si désiré.</li>
+                                    </ol>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                  
+                </div>
+            </div>
+
+            <!-- Carte 2 - Bouillon Tonkotsu -->
+            <div class="my-4">
+                <!-- accordeon header -->
+                <header class="bg-white mb-0 transition-all relative z-[1] border-2 border-gray-200 p-6 items-center rounded-md hover:bg-slate-50">
+                  <div class="group flex items-center w-full p-4 text-left transition-all cursor-pointer" data-collapse-target="animated-collapse-2" role="button">
+                    <h4>Bouillon Tonkotsu</h4>
+                    <i class="absolute right-0 pt-1 m-4 text-indigo-600 group-hover:text-black transition-all fa fa-chevron-down group-open:rotate-180"></i>
+                  </div>
+                </header>
+                <!-- accordeon contenu -->
+                <div data-collapse="animated-collapse-2" class="h-0 overflow-hidden transition-all duration-500 z-[2]">
+                    <!-- Carte detaillee -->
+                    <div class="grid grid-cols-12 border-2 border-gray-200 p-6 items-center rounded-md hover:bg-slate-50 relative">       
+                        <!--  Bloc 1 - Image - hidden sur ecrans <1024px -->        
+                        <div class="col-span-6 hidden lg:block w-11/12 mx-auto h-full">
+                            <img class="w-full h-full object-cover" src="img/etapes/bouillon_tonkotsu_avec_bg.png" alt="Bouillon Tonkotsu">
+                        </div>
+
+                        <!-- Bloc 2 - Infos -->
+                        <div class="col-span-12 lg:col-span-6 w-11/12 mx-auto">
+                            <!-- Infos generales -->
+                            <div class="mb-4">
+                                <h3 class="text-2xl text-[#4c71fe] font-bold">Bouillon Tonkotsu</h3>
+                                <div>
+                                    <i class="fa-solid fa-circle text-yellow-500 text-xs"></i>
+                                    <span class="text-slate-400">Sauce porc</span>
+                                </div>
+                                <div class="absolute top-6 right-6">
+                                    <div>
+                                        <i class="fa-regular fa-clock text-[#4c71fe]"></i>
+                                        <span class="text-slate-400">60 min</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!--  Image - visible uniquement sur ecrans <1024px -->
+                            <div class="block lg:hidden">
+                                <img class="w-full h-full object-cover" src="img/etapes/bouillon_tonkotsu_avec_bg.png" alt="Bouillon Tonkotsu">
+                            </div>
+
+                            <!-- Ingredients et etapes -->
+                            <div class="mt-2">
+                                <div class="border-t-2 border-[#4c71fe] py-3 space-y-3">
+                                    <h4 class="font-bold">Ingredients :</h4>
+                                    <ul class="list-disc marker:text-[#4c71fe] pl-5 space-y-2">
+                                        <li>2 kg d'os de porc (idéalement des os à moelle et des pieds de porc)</li>
+                                        <li>2 litres d'eau</li>
+                                        <li>1 oignon, coupé en deux</li>
+                                        <li>1 tête d'ail, coupée en deux</li>
+                                        <li>1 morceau de gingembre, coupé en tranches</li>
+                                        <li>2 cuillères à soupe de sauce soja</li>
+                                        <li>2 cuillères à soupe de mirin</li>
+                                        <li>1 cuillère à soupe de sel</li>
+                                    </ul>
+                                </div>
+                                <div class="border-t-2 border-[#4c71fe] mt-6 py-3 space-y-3">
+                                    <h4 class="font-bold">Etapes :</h4>
+                                    <ol class="list-decimal marker:text-[#4c71fe] marker:font-semibold pl-5 space-y-3">
+                                        <li>Rincez les os de porc à l'eau froide pour éliminer le sang et les impuretés. Placez-les ensuite dans une grande casserole, couvrez d'eau et portez à ébullition pendant 10 minutes.</li>
+                                        <li>Égouttez les os et rincez-les sous l'eau froide. Remettez les os dans la casserole propre, ajoutez 2 litres d'eau propre, l'oignon, l'ail et le gingembre.</li>
+                                        <li>Portez à ébullition, puis réduisez le feu et laissez mijoter à feu moyen pendant 6 à 12 heures. Plus longtemps le bouillon cuit, plus il sera épais et crémeux.</li>
+                                        <li>Filtrez le bouillon pour retirer les os et les légumes. Ajoutez la sauce soja, le mirin et le sel.</li>
+                                    </ol>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Carte 3 - Bouillon Shio -->
+            <div class="my-4">
+                <!-- accordeon header -->
+                <header class="bg-white mb-0 transition-all relative z-[1] border-2 border-gray-200 p-6 items-center rounded-md hover:bg-slate-50">
+                <div class="group flex items-center w-full p-4 text-left transition-all cursor-pointer" data-collapse-target="animated-collapse-3" role="button">
+                    <h4>Bouillon Shio</h4>
+                    <i class="absolute right-0 pt-1 m-4 text-indigo-600 group-hover:text-black transition-all fa fa-chevron-down group-open:rotate-180"></i>
+                </div>
+                </header>
+                <!-- accordeon contenu -->
+                <div data-collapse="animated-collapse-3" class="h-0 overflow-hidden transition-all duration-500 z-[2]">
+                     <!-- Carte detaillee -->
+                    <div class="grid grid-cols-12 border-2 border-gray-200 p-6 items-center rounded-md hover:bg-slate-50 relative">       
+                        <!--  Bloc 1 - Image - hidden sur ecrans <1024px -->        
+                        <div class="col-span-6 hidden lg:block w-11/12 mx-auto h-full">
+                            <img class="w-full h-full object-cover" src="img/etapes/bouillon_shio_avec_bg.png" alt="Bouillon Shio">
+                        </div>
+
+                        <!-- Bloc 2 - Infos -->
+                        <div class="col-span-12 lg:col-span-6 w-11/12 mx-auto">
+                            <!-- Infos generales -->
+                            <div class="mb-4">
+                                <h3 class="text-2xl text-[#4c71fe] font-bold">Bouillon Shio</h3>
+                                <div>
+                                    <i class="fa-solid fa-circle text-slate-500 text-xs"></i>
+                                    <span class="text-slate-400">Sauce sel</span>
+                                </div>
+                                <div class="absolute top-6 right-6">
+                                    <div>
+                                        <i class="fa-regular fa-clock text-[#4c71fe]"></i>
+                                        <span class="text-slate-400">60 min</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!--  Image - visible uniquement sur ecrans <1024px -->
+                            <div class="block lg:hidden">
+                                <img class="w-full h-full object-cover" src="img/etapes/bouillon_shio_avec_bg.png" alt="Bouillon Shio">
+                            </div>
+
+                            <!-- Ingredients et etapes -->
+                            <div class="mt-2">
+                                <div class="border-t-2 border-[#4c71fe] py-3 space-y-3">
+                                    <h4 class="font-bold">Ingredients :</h4>
+                                    <ul class="list-disc marker:text-[#4c71fe] pl-5 space-y-2">
+                                        <li>1 litre de bouillon de poulet (ou bouillon dashi pour un goût plus traditionnel)</li>
+                                        <li>2 cuillères à soupe de sel de mer</li>
+                                        <li>1 cuillère à soupe de saké</li>
+                                        <li>1 cuillère à soupe de mirin</li>
+                                        <li>1 cuillère à café d'huile de sésame</li>
+                                        <li>1 morceau de kombu (algue) de 10 cm</li>
+                                        <li>1 poignée de bonite séchée (katsuobushi)</li>
+                                    </ul>
+                                </div>
+                                <div class="border-t-2 border-[#4c71fe] mt-6 py-3 space-y-3">
+                                    <h4 class="font-bold">Etapes :</h4>
+                                    <ol class="list-decimal marker:text-[#4c71fe] marker:font-semibold pl-5 space-y-3">
+                                        <li>Dans une casserole, ajoutez le bouillon de poulet et le kombu. Chauffez doucement jusqu'à ce que des petites bulles commencent à apparaître (ne pas bouillir). Retirez le kombu.</li>
+                                        <li>Ajoutez la bonite séchée au bouillon. Laissez infuser pendant 5 minutes puis filtrez le bouillon pour retirer les flocons de bonite.</li>
+                                        <li>Ajoutez le sel, le saké, le mirin et l'huile de sésame au bouillon. Mélangez bien.</li>
+                                        <li>Faites chauffer doucement le bouillon à feu doux pour que les saveurs se mélangent bien. Ajustez le sel si nécessaire.</li>
+                                    </ol>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Carte 4 - Bouillon Miso -->
+            <div class="my-4">
+                <!-- accordeon header -->
+                <header class="bg-white mb-0 transition-all relative z-[1] border-2 border-gray-200 p-6 items-center rounded-md hover:bg-slate-50">
+                <div class="group flex items-center w-full p-4 text-left transition-all cursor-pointer" data-collapse-target="animated-collapse-4" role="button">
+                    <h4>Bouillon Shio</h4>
+                    <i class="absolute right-0 pt-1 m-4 text-indigo-600 group-hover:text-black transition-all fa fa-chevron-down group-open:rotate-180"></i>
+                </div>
+                </header>
+                <!-- accordeon contenu -->
+                <div data-collapse="animated-collapse-4" class="h-0 overflow-hidden transition-all duration-500 z-[2]">
+                     <!-- Carte detaillee -->
+                    <div class="grid grid-cols-12 border-2 border-gray-200 p-6 items-center rounded-md hover:bg-slate-50 relative">       
+                        <!--  Bloc 1 - Image - hidden sur ecrans <1024px -->        
+                        <div class="col-span-6 hidden lg:block w-11/12 mx-auto h-full">
+                            <img class="w-full h-full object-cover" src="img/etapes/bouillon_miso_avec_bg.png" alt="Bouillon Miso">
+                        </div>
+
+                        <!-- Bloc 2 - Infos -->
+                        <div class="col-span-12 lg:col-span-6 w-11/12 mx-auto">
+                            <!-- Infos generales -->
+                            <div class="mb-4">
+                                <h3 class="text-2xl text-[#4c71fe] font-bold">Bouillon Miso</h3>
+                                <div>
+                                    <i class="fa-solid fa-circle text-slate-500 text-xs"></i>
+                                    <span class="text-slate-400">Sauce sel</span>
+                                </div>
+                                <div class="absolute top-6 right-6">
+                                    <div>
+                                        <i class="fa-regular fa-clock text-[#4c71fe]"></i>
+                                        <span class="text-slate-400">60 min</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!--  Image - visible uniquement sur ecrans <1024px -->
+                            <div class="block lg:hidden">
+                                <img class="w-full h-full object-cover" src="img/etapes/bouillon_miso_avec_bg.png" alt="Bouillon Miso">
+                            </div>
+
+                            <!-- Ingredients et etapes -->
+                            <div class="mt-2">
+                                <div class="border-t-2 border-[#4c71fe] py-3 space-y-3">
+                                    <h4 class="font-bold">Ingredients :</h4>
+                                    <ul class="list-disc marker:text-[#4c71fe] pl-5 space-y-2">
+                                        <li>1 litre de bouillon dashi</li>
+                                        <li>3 cuillères à soupe de pâte de miso (blanc, rouge ou mixte selon votre préférence)</li>
+                                        <li>1 cuillère à soupe de mirin</li>
+                                        <li>1 cuillère à soupe de saké</li>
+                                        <li>1 cuillère à soupe de sauce soja</li>
+                                        <li>1 morceau de kombu (algue) de 10 cm</li>
+                                        <li>1 gousse d'ail, émincée</li>
+                                        <li>1 cuillère à soupe d'huile de sésame</li>
+                                    </ul>
+                                </div>
+                                <div class="border-t-2 border-[#4c71fe] mt-6 py-3 space-y-3">
+                                    <h4 class="font-bold">Etapes :</h4>
+                                    <ol class="list-decimal marker:text-[#4c71fe] marker:font-semibold pl-5 space-y-3">
+                                        <li>Dans une casserole, combinez le bouillon dashi, le kombu et l'ail. Chauffez doucement jusqu'à ce que le kombu commence à se dilater, puis retirez-le.</li>
+                                        <li>Ajoutez le mirin, le saké, et la sauce soja. Faites chauffer à feu doux.</li>
+                                        <li>Dissolvez la pâte de miso dans une petite quantité de bouillon chaud, puis ajoutez-la au bouillon principal. Ne faites pas bouillir une fois le miso ajouté, pour éviter de détruire ses arômes délicats.</li>
+                                        <li>Ajoutez l'huile de sésame et ajustez les assaisonnements au goût.</li>
+                                    </ol>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- separation de section en curve -->
+    <svg class="relative top-[2px]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+        <path fill="#1E293B" fill-opacity="1" d="M0,64L60,64C120,64,240,64,360,74.7C480,85,600,107,720,138.7C840,171,960,213,1080,224C1200,235,1320,213,1380,202.7L1440,192L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"></path>
+      </svg>
+
+    <!-- Nouilles -->
+    <section class="bg-slate-800 text-slate-300">
+        <div class="container mx-auto py-0 px-6 space-y-8">
+            <div class="text-center">
+            <h1 class="oleo_font text-4xl text-[#4c71fe] underline-offset-4 mb-4">Etape 2: Les Nouilles</h1>
+            <p>Maintenant que votre bouillon est pret, place aux nouilles !</p>
+            </div>
+
+            <div class="flex flex-col lg:flex-row mx-auto justify-center max-w-full">
+                <div class="flex-grow flex flex-col items-center text-slate-300 text-sm group">
+                    <img class="w-full h-auto max-w-72 lg:max-w-none group-hover:scale-105 transition-all" src="img/etapes/nouillles.png" alt="Casserole d'eau bouillante">
+                    <span class="transition-all w-3 h-3 -mb-2 rotate-45 bg-slate-700 border-t-2 border-l-2 group-hover:border-[#4c71fe]"></span>
+                    <span class="transition-all bg-slate-700 rounded-md p-6 border-2 group-hover:border-[#4c71fe]">Choisissez vos types de nouilles. Elle s'achetent generalement deshydratees. </span>
+                </div>
+                <i class="fa-solid fa-plus text-[#4c71fe] text-3xl w-max mx-4 self-center mt-6 lg:mt-0"></i>
+                <div class="flex-grow flex flex-col items-center text-slate-300 text-sm group">
+                    <img class="w-full h-auto max-w-72 lg:max-w-none group-hover:scale-105 transition-all" src="img/etapes/casserole.png" alt="Casserole d'eau bouillante">
+                    <span class="transition-all w-3 h-3 -mb-2 rotate-45 bg-slate-700 border-t-2 border-l-2 group-hover:border-[#4c71fe]"></span>
+                    <span class="transition-all bg-slate-700 rounded-md p-6 border-2 group-hover:border-[#4c71fe]">Faites cuire les nouilles dans une grande casserole d'eau bouillante salée selon les instructions du paquet. En général, cela prend 2 à 4 minutes.</span>
+                </div>
+                <i class="fa-solid fa-plus text-[#4c71fe] text-3xl w-max mx-4 self-center mt-6 lg:mt-0"></i>
+                <div class="flex-grow flex flex-col items-center text-slate-300 text-sm group">
+                    <img class="w-full h-auto max-w-72 lg:max-w-none group-hover:scale-105 transition-all" src="img/etapes/passoire.png" alt="Passoire">
+                    <span class="transition-all w-3 h-3 -mb-2 rotate-45 bg-slate-700 border-t-2 border-l-2 group-hover:border-[#4c71fe]"></span>
+                    <span class="transition-all bg-slate-700 rounded-md p-6 border-2 group-hover:border-[#4c71fe]">Égouttez les nouilles et rincez-les rapidement à l'eau froide pour stopper la cuisson. Secouez pour enlever l'excès d'eau.</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 220"><path fill="#1E293B" fill-opacity="1" d="M0,128L48,122.7C96,117,192,107,288,106.7C384,107,480,117,576,128C672,139,768,149,864,154.7C960,160,1056,160,1152,154.7C1248,149,1344,139,1392,133.3L1440,128L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"></path></svg>
+
+
+    <!-- Garnitures -->
+    <section class="bg-white">
+        <div class="container mx-auto py-8 px-6 md:py-12 space-y-8">
+            <div class="text-center">
+                <h1 class="oleo_font text-4xl text-[#4c71fe] underline-offset-4 mb-4">Etape 3: Les Garnitures</h1>
+                <p>Il faut maintenant preparer et faire cuire les garnitures.</p>
+            </div>
+
+            <div class="space-y-6">
+
+                <div class="grid grid-cols-12 border-2 border-slate-200 p-4 hover:border-[#4c71fe] transition-all">
+                    <img class="col-span-5 w-11/12 bg-slate-50 h-60 object-contain p-4" src="img/ingredients/proteines/porc.png" alt="Proteines">
+                    <div class="col-span-7 w-11/12 flex flex-col justify-center">
+                        <h2 class="text-2xl text-[#4c71fe] font-bold mb-2">Proteines</h2>
+                        <h3 class="font-bold text-slate-600">Instructions: </h3>
+                        <p>Faites cuire vos protéines (porc, poulet, tofu, crevettes, etc.). Vous pouvez griller, braiser, poêler ou frire selon la recette.</p>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-12 border-2 border-slate-200 p-4 hover:border-[#4c71fe] transition-all">
+                    <img class="col-span-5 w-11/12 bg-slate-50 h-60 object-contain p-4" src="img/ingredients/legumes/chou.png" alt="Legumes">
+                    <div class="col-span-7 w-11/12 flex flex-col justify-center">
+                        <h2 class="text-2xl text-[#4c71fe] font-bold mb-2">Legumes</h2>
+                        <h3 class="font-bold text-slate-600">Instructions: </h3>
+                        <p>Préparez les légumes en les coupant et en les cuisant légèrement à la vapeur ou en les sautant rapidement.</p>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-12 border-2 border-slate-200 p-4 hover:border-[#4c71fe] transition-all">
+                    <img class="col-span-5 w-11/12 bg-slate-50 h-60 object-contain p-4" src="img/ingredients/toppings/oeuf.png" alt="Toppings">
+                    <div class="col-span-7 w-11/12 flex flex-col justify-center">
+                        <h2 class="text-2xl text-[#4c71fe] font-bold mb-2">Toppings</h2>
+                        <h3 class="font-bold text-slate-600">Instructions: </h3>
+                        <p>Préparez les toppings comme les œufs marinés, les algues nori, les graines de sésame, le gingembre mariné, etc.</p>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-12 border-2 border-slate-200 p-4 hover:border-[#4c71fe] transition-all">
+                    <img class="col-span-5 w-11/12 bg-slate-50 h-60 object-contain p-4" src="img/ingredients/epices/yuzu_kosho.png" alt="Epices">
+                    <div class="col-span-7 w-11/12 flex flex-col justify-center">
+                        <h2 class="text-2xl text-[#4c71fe] font-bold mb-2">Epices</h2>
+                        <h3 class="font-bold text-slate-600">Instructions: </h3>
+                        <p>Mettez de cote vos épices comme le Shichimi togarashi, l'ail en poudre, le piment en poudre, etc, on va en avoir besoin juste apres !</p>
+                    </div>
+                </div>
+
+            </div>
+      </div>
+    </section>
+
+      <!-- separation de section en curve -->
+      <svg class="relative top-[2px]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 280">
+        <path fill="#1E293B" fill-opacity="1" d="M0,64L60,64C120,64,240,64,360,74.7C480,85,600,107,720,138.7C840,171,960,213,1080,224C1200,235,1320,213,1380,202.7L1440,192L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"></path>
+      </svg>
+
+     <!-- Assemblage -->
+     <section class="bg-slate-800 text-slate-300">
+        <div class="container mx-auto px-6 space-y-8 pb-16">
+            <div class="text-center">
+            <h1 class="oleo_font text-4xl text-[#4c71fe] underline-offset-4 mb-4">Etape 4: L'Assemblage</h1>
+            <p>C'est le temps de tout garocher dans un bol, mais pas nimporte comment !</p>
+            </div>
+
+            <div class="container mx-auto flex flex-col p-6">
+                <div class="divide-y-2 divide-[#4c71fe]">
+                    <div class="grid justify-center grid-cols-4 p-8 mx-auto space-y-8 lg:space-y-0 group">
+                        <div class="flex items-center justify-center lg:col-span-1 col-span-full">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 transition-all group-hover:fill-[#4c71fe]" viewBox="0 -960 960 960" fill="rgb(203,213,225)"><path d="M400-160h160v-44l50-20q65-26 110.5-72.5T786-400H174q20 57 65 103.5T350-224l50 20v44Zm-80 80v-70q-107-42-173.5-130T80-480h80v-320l720-80v60l-460 52v68h460v60H420v160h460q0 112-66.5 200T640-150v70H320Zm0-620h40v-62l-40 5v57Zm-100 0h40v-50l-40 4v46Zm100 220h40v-160h-40v160Zm-100 0h40v-160h-40v160Zm260 80Z"/></svg>
+                        </div>
+                        <div class="flex flex-col justify-center max-w-3xl text-center col-span-full lg:col-span-3 lg:text-left">
+                            <span class="text-xs tracking-wider uppercase text-[#4c71fe]">Step 1</span>
+                            <span class="text-xl font-bold md:text-2xl">Les nouilles</span>
+                            <span class="mt-4 dark:text-gray-700">Disposez une portion de nouilles cuites dans chaque bol. Vous pouvez former une spirale avec les nouilles pour une présentation plus soignée. Les nouilles doivent être bien égouttées avant de les placer dans le bol pour éviter de diluer le bouillon.</span>
+                        </div>
+                    </div>
+                    <div class="grid justify-center grid-cols-4 p-8 mx-auto space-y-8 lg:space-y-0 group">
+                        <div class="flex items-center justify-center lg:col-span-1 col-span-full">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="currentColor" class="w-16 h-16 transition-all group-hover:fill-[#4c71fe]">
+                                <path d="M412.284,294.37l-12.5,15.642c-8.354,10.454-50.027,64.208-50.027,95.883,0,36.451,28.049,66.105,62.526,66.105s62.527-29.654,62.527-66.105c0-31.675-41.673-85.429-50.028-95.883Zm0,145.63c-16.832,0-30.526-15.3-30.526-34.105,0-11.662,15.485-37.883,30.531-59.2,15.043,21.3,30.522,47.509,30.522,59.2C442.811,424.7,429.116,440,412.284,440Z"></path>
+                                <path d="M122.669,51.492,96.133,124.4,30.092,97.205,17.908,126.8l67.271,27.7L26.9,314.606a48.056,48.056,0,0,0,28.689,61.523l184.719,67.232a48,48,0,0,0,61.523-28.688L397.6,151.56Zm149.1,352.236a16,16,0,0,1-20.508,9.563L66.537,346.059a16,16,0,0,1-9.563-20.507L73.553,280H316.8ZM85.2,248l29.594-81.311,36.333,14.961a32.644,32.644,0,1,0,11.236-29.98l-36.615-15.077,16.046-44.085,214.79,78.177L328,249.219V248Z"></path>
+                            </svg>
+                        </div>
+                        <div class="flex flex-col justify-center max-w-3xl text-center col-span-full lg:col-span-3 lg:text-left">
+                            <span class="text-xs tracking-wider uppercase text-[#4c71fe]">Step 2</span>
+                            <span class="text-xl font-bold md:text-2xl">Le bouillon</span>
+                            <span class="mt-4 dark:text-gray-700">Versez délicatement le bouillon chaud sur les nouilles, en veillant à ce que les nouilles soient complètement submergées.</span>
+                        </div>
+                    </div>
+                    <div class="grid justify-center grid-cols-4 p-8 mx-auto space-y-8 lg:space-y-0 group">
+                        <div class="flex items-center justify-center lg:col-span-1 col-span-full">
+                            <i class="fa-solid fa-drumstick-bite text-5xl transition-all group-hover:text-[#4c71fe]"></i>
+                        </div>
+                        <div class="flex flex-col justify-center max-w-3xl text-center col-span-full lg:col-span-3 lg:text-left">
+                            <span class="text-xs tracking-wider uppercase text-[#4c71fe]">Step 3</span>
+                            <span class="text-xl font-bold md:text-2xl">Proteines</span>
+                            <span class="mt-4 dark:bg-gray-100 dark:text-gray-700">Deposer les proteintes sur le dessus. La viande et le tofu doivent etre coupes en tranches. A vous de les deposer delicatemment pour rendre le tout appetissant !</span>
+                        </div>
+                    </div>
+                    <div class="grid justify-center grid-cols-4 p-8 mx-auto space-y-8 lg:space-y-0 group">
+                        <div class="flex items-center justify-center lg:col-span-1 col-span-full">
+                            <i class="fa-solid fa-carrot text-5xl transition-all group-hover:text-[#4c71fe]"></i>
+                        </div>
+                        <div class="flex flex-col justify-center max-w-3xl text-center col-span-full lg:col-span-3 lg:text-left">
+                            <span class="text-xs tracking-wider uppercase text-[#4c71fe]">Step 4</span>
+                            <span class="text-xl font-bold md:text-2xl">Garniture</span>
+                            <span class="mt-4 dark:text-gray-700">Ajoutez la garniture (legumes et toppings) sur le dessus. Essayez de ne pas surcharger le bol, chaque ingrédient doit être visible et facilement accessible.</span>
+                        </div>
+                    </div>
+                    <div class="grid justify-center grid-cols-4 p-8 mx-auto space-y-8 lg:space-y-0 group">
+                        <div class="flex items-center justify-center lg:col-span-1 col-span-full">
+                            <i class="fa-solid fa-pepper-hot text-5xl transition-all group-hover:text-[#4c71fe]"></i>
+                        </div>
+                        <div class="flex flex-col justify-center max-w-3xl text-center col-span-full lg:col-span-3 lg:text-left">
+                            <span class="text-xs tracking-wider uppercase text-[#4c71fe]">Step 5</span>
+                            <span class="text-xl font-bold md:text-2xl">Touche finale</span>
+                            <span class="mt-4 dark:text-gray-700">Ajoutez les epices et huiles au gout. C'est pret, bon appetit: <span class="font-bold">'Itadakimasu'</span> !</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Accordeon d'images -->
+            <div class="group flex max-md:flex-col justify-center gap-2">
+                <article class="group/article relative w-full rounded-xl overflow-hidden md:group-hover:[&:not(:hover)]:w-[20%] md:group-focus-within:[&:not(:focus-within):not(:hover)]:w-[20%] transition-all duration-300 ease-[cubic-bezier(.5,.85,.25,1.15)] before:absolute before:inset-x-0 before:bottom-0 before:h-1/3 before:bg-gradient-to-t before:from-black/50 before:transition-opacity md:before:opacity-0 md:hover:before:opacity-100 focus-within:before:opacity-100 after:opacity-0 md:group-hover:[&:not(:hover)]:after:opacity-100 md:group-focus-within:[&:not(:focus-within):not(:hover)]:after:opacity-100 after:absolute after:inset-0 after:bg-white/30 after:backdrop-blur after:transition-all focus-within:ring focus-within:ring-indigo-300">
+                    <a class="absolute inset-0 text-white z-10" href="#0">
+                        <span class="absolute inset-x-0 bottom-0 text-lg font-medium p-6 md:px-12 md:py-8 md:opacity-0 group-hover/article:opacity-100 group-focus-within/article:opacity-100 md:translate-y-2 group-hover/article:translate-y-0 group-focus-within/article:translate-y-0 transition duration-200 ease-[cubic-bezier(.5,.85,.25,1.8)] group-hover/article:delay-300 group-focus-within/article:delay-300"><span class="text-[#4c71fe]">#1</span> Nouilles</span>
+                    </a>
+                    <img class="object-cover h-72 md:h-[480px] md:w-auto min-w-full" src="img/etapes/nouilles-photo.jpg" width="960" height="480" alt="Image 01">
+                </article>
+                <article class="group/article relative w-full rounded-xl overflow-hidden md:group-hover:[&:not(:hover)]:w-[20%] md:group-focus-within:[&:not(:focus-within):not(:hover)]:w-[20%] transition-all duration-300 ease-[cubic-bezier(.5,.85,.25,1.15)] before:absolute before:inset-x-0 before:bottom-0 before:h-1/3 before:bg-gradient-to-t before:from-black/50 before:transition-opacity md:before:opacity-0 md:hover:before:opacity-100 focus-within:before:opacity-100 after:opacity-0 md:group-hover:[&:not(:hover)]:after:opacity-100 md:group-focus-within:[&:not(:focus-within):not(:hover)]:after:opacity-100 after:absolute after:inset-0 after:bg-white/30 after:backdrop-blur after:transition-all focus-within:ring focus-within:ring-indigo-300">
+                    <a class="absolute inset-0 text-white z-10" href="#0">
+                        <span class="absolute inset-x-0 bottom-0 text-lg font-medium p-6 md:px-12 md:py-8 md:opacity-0 group-hover/article:opacity-100 group-focus-within/article:opacity-100 md:translate-y-2 group-hover/article:translate-y-0 group-focus-within/article:translate-y-0 transition duration-200 ease-[cubic-bezier(.5,.85,.25,1.8)] group-hover/article:delay-300 group-focus-within/article:delay-300"><span class="text-[#4c71fe]">#2</span> Bouillon</span>
+                    </a>                    
+                    <img class="object-cover h-72 md:h-[480px] md:w-auto min-w-full" src="img/etapes/bouillon-photo-2.jpg" width="960" height="480" alt="Image 02">
+                </article>
+                <article class="group/article relative w-full rounded-xl overflow-hidden md:group-hover:[&:not(:hover)]:w-[20%] md:group-focus-within:[&:not(:focus-within):not(:hover)]:w-[20%] transition-all duration-300 ease-[cubic-bezier(.5,.85,.25,1.15)] before:absolute before:inset-x-0 before:bottom-0 before:h-1/3 before:bg-gradient-to-t before:from-black/50 before:transition-opacity md:before:opacity-0 md:hover:before:opacity-100 focus-within:before:opacity-100 after:opacity-0 md:group-hover:[&:not(:hover)]:after:opacity-100 md:group-focus-within:[&:not(:focus-within):not(:hover)]:after:opacity-100 after:absolute after:inset-0 after:bg-white/30 after:backdrop-blur after:transition-all focus-within:ring focus-within:ring-indigo-300">
+                    <a class="absolute inset-0 text-white z-10" href="#0">
+                        <span class="absolute inset-x-0 bottom-0 text-lg font-medium p-6 md:px-12 md:py-8 md:opacity-0 group-hover/article:opacity-100 group-focus-within/article:opacity-100 md:translate-y-2 group-hover/article:translate-y-0 group-focus-within/article:translate-y-0 transition duration-200 ease-[cubic-bezier(.5,.85,.25,1.8)] group-hover/article:delay-300 group-focus-within/article:delay-300"><span class="text-[#4c71fe]">#3</span> Garnitures et epices</span>
+                    </a>                    
+                    <img class="object-cover h-72 md:h-[480px] md:w-auto min-w-full" src="img/etapes/toppings-photo.jpg" width="960" height="480" alt="Image 03">
+                </article>                                
+            </div>
+            <!-- Fin accordeon d'images -->
+                       
+            
+        </div>
+    </section>
+    
+  </main>
+
+  <footer class="bg-slate-800 text-slate-300 relative">
+    <div class="container border-t-4 border-[#4c71fe] mx-auto px-6 pb-0 md:pb-0 grid grid-cols-12 items-center">
+        <div class="footer__copyright col-span-12 lg:col-span-5 mx-auto order-2 lg:order-1">
+          <p class="text-sm">© 2024 Integration Web 2. Jeanne Pietropaoli.</p>
+        </div>
+        <div class="footer__logo my-2 mx-auto col-span-12 lg:col-span-2 order-1 lg:order-2">
+          <img class="h-12" src="img/whatsoup-blue.png" alt="Logo de l'application">
+        </div>
+        <div class="footer__links space-x-2 col-span-12 lg:col-span-5 mx-auto lg:ml-auto order-3 my-2 lg:my-0">
+          <a href="https://www.facebook.com/" target="_blank" aria-label="Aller sur notre page Facebook">
+            <i class="fab fa-facebook-f text-slate-300 transition-all duration-150 text-lg hover:scale-105 hover:text-[#4c71fe] cursor-pointer"></i>
+          </a>
+          <a href="https://www.linkedin.com/" target="_blank" aria-label="Aller sur notre page Linkedin">
+            <i class="fab fa-linkedin-in text-slate-300 transition-all duration-150 text-lg hover:scale-105 hover:text-[#4c71fe] cursor-pointer"></i>
+          </a>
+          <a href="https://twitter.com/" target="_blank" aria-label="Aller sur notre page Twitter">
+            <i class="fab fa-twitter text-slate-300 text-lg  transition-all duration-150 hover:scale-105 hover:text-[#4c71fe] cursor-pointer"></i>
+          </a>
+          <a href="https://www.instagram.com/" target="_blank" aria-label="Aller sur notre page Instagram">
+            <i class="fab fa-instagram text-slate-300 text-lg  transition-all duration-15 hover:scale-105 hover:text-[#4c71fe] cursor-pointer"></i>
+          </a>
+        </div>
+    </div>
+  </footer>
+    
+</body>
+</html> 
