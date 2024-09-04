@@ -101,52 +101,15 @@ class RamenRecipe {
     return ingredientsList;
   }
 
-  createAccordionContainer() {
-    const accordion = document.createElement("div");
-    accordion.classList.add(
-      "transition",
-      "hover:bg-indigo-50",
+  createIngredientsImgList() {
+    const ingredientsList = document.createElement("div");
+    ingredientsList.classList.add(
+      "hover:bg-slate-200",
       "border-t-2",
+      "border-indigo-700",
       "my-5",
-      "border-indigo-700"
-    );
-    return accordion;
-  }
-
-  createAccordionHeader() {
-    const accordionHeader = document.createElement("div");
-    accordionHeader.classList.add(
-      "accordion-header",
-      "cursor-pointer",
-      "transition",
-      "flex",
-      "space-x-5",
-      "px-5",
-      "items-center",
-      "h-16"
-    );
-    const icon = document.createElement("i");
-    icon.classList.add("fas", "fa-plus", "text-indigo-700");
-    accordionHeader.appendChild(icon);
-
-    const accordionTitle = document.createElement("h3");
-    accordionTitle.textContent = "Voir tous les ingredients";
-    accordionHeader.appendChild(accordionTitle);
-
-    return accordionHeader;
-  }
-
-  createAccordionContent() {
-    const accordionContent = document.createElement("div");
-    accordionContent.classList.add(
-      "accordion-content",
-      "transition-all",
-      "ease-out",
-      "duration-300",
       "px-5",
       "pt-0",
-      "overflow-hidden",
-      "max-h-0",
       "flex",
       "flex-wrap"
     );
@@ -154,18 +117,11 @@ class RamenRecipe {
     this.ingredientsImgs.forEach((imgSrc) => {
       const img = document.createElement("img");
       img.src = imgSrc;
-      img.classList.add("h-20", "p-2");
-      accordionContent.appendChild(img);
+      img.classList.add("h-14", "p-2");
+      ingredientsList.appendChild(img);
     });
 
-    return accordionContent;
-  }
-
-  createAccordion() {
-    const accordion = this.createAccordionContainer();
-    accordion.appendChild(this.createAccordionHeader());
-    accordion.appendChild(this.createAccordionContent());
-    return accordion;
+    return ingredientsList;
   }
 
   // Affiche une recette dans le DOM
@@ -185,7 +141,7 @@ class RamenRecipe {
     ];
 
     card.appendChild(this.createIngredientsList(ingredients));
-    card.appendChild(this.createAccordion());
+    card.appendChild(this.createIngredientsImgList());
 
     container.appendChild(card);
   }

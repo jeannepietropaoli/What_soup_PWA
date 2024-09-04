@@ -1,5 +1,4 @@
 import RamenRecipe from './RamenRecipe.js';
-import { attachAccordionListeners } from './accordion.js';
 
 window.addEventListener('load', function() {
     const recipes = RamenRecipe.loadAll();
@@ -7,7 +6,6 @@ window.addEventListener('load', function() {
     if (recipes.length > 0) {
       recipes.forEach(recipe => {
         recipe.display(recipesContainer);
-        attachAccordionListeners();
       });
     } else {
       recipesContainer.textContent = 'No recipes yet!';
