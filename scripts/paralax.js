@@ -37,7 +37,7 @@ const movingVeggies = [
     {
         name: 'veggie_4',
         DOMElement: document.getElementById('veggie_4'),
-        offsetYRate: 0.5,
+        offsetYRate: 0.4,
         offsetXRate: 0.15,
         rotateRate: 0.4
     },
@@ -47,7 +47,14 @@ const movingVeggies = [
         offsetYRate: 0.5,
         offsetXRate: 0.15,
         rotateRate: 0.1
-    }
+    },
+    {
+        name: 'veggie_6',
+        DOMElement: document.getElementById('veggie_6'),
+        offsetYRate: 0.4,
+        offsetXRate: 0.25,
+        rotateRate: 0.4
+    },
 ]
 
 window.addEventListener('scroll', () => {
