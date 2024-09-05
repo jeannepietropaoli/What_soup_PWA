@@ -20,3 +20,13 @@ https://www.material-tailwind.com/docs/html/image
 
 
       https://mambaui.com/components/steps
+
+
+
+      reste a faire: 
+
+      PWA
+      refacto /w3c
+      ajuster fichiers photos
+      refacto JS
+      page confirmation envoi form
