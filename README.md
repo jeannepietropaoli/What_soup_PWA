@@ -25,8 +25,5 @@ https://www.material-tailwind.com/docs/html/image Image with Blurred Caption
       reste a faire: 
 
       PWA
-      refacto /w3c
       ajuster fichiers photos
-      refacto JS
-      page confirmation envoi form
       readme
