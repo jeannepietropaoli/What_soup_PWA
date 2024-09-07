@@ -1,4 +1,4 @@
-const movingVeggies = [
+const movingItems = [
     {
         name: 'ramen_bowl',
         DOMElement: document.getElementById('ramen_bowl'),
@@ -58,11 +58,11 @@ const movingVeggies = [
 ]
 
 window.addEventListener('scroll', () => {
-    movingVeggies.forEach(veggie => {
+    movingItems.forEach(item => {
         let scrollPosition = window.scrollY;
-        let offsetY = scrollPosition * veggie.offsetYRate;
-        let offsetX = scrollPosition * veggie.offsetXRate;
-        let rotateRate = scrollPosition * veggie.rotateRate;
-        veggie.DOMElement.style.transform = `translateY(${offsetY}px) translateX(${offsetX}px) rotate(${rotateRate}deg)`;
+        let offsetY = scrollPosition * item.offsetYRate;
+        let offsetX = scrollPosition * item.offsetXRate;
+        let rotateRate = scrollPosition * item.rotateRate;
+        item.DOMElement.style.transform = `translateY(${offsetY}px) translateX(${offsetX}px) rotate(${rotateRate}deg)`;
     })
 })
