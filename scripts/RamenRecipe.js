@@ -21,7 +21,6 @@ class RamenRecipe {
 
   // Sauvegarde la recette dans le localStorage
   static save(newRecipe) {
-    console.log("saving");
     const ramenRecipes = JSON.parse(localStorage.getItem("ramenRecipes")) || [];
     newRecipe.id = ramenRecipes.length + 1;
     ramenRecipes.push(newRecipe);
