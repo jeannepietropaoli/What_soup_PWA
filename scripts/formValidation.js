@@ -122,6 +122,12 @@ const inputs = [
     error_msg: "Vous devez creer un nom de chef contenant au moins 2 caracteres."
   },
   {
+    id: "chef-email",
+    element: document.getElementById("chef-email"),
+    validationFunc: isEmailValid,
+    error_msg: "Vous devez entrer un courriel valide (au moins 3 caractères et contenant un '@')."
+  },
+  {
     id: "comments",
     element: document.getElementById("comments"),
     validationFunc: isWordFromChefValid,
