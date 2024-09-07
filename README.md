@@ -10,13 +10,12 @@ accordeon dans page mes_recettes.html https://www.creative-tim.com/twcomponents/
       tooltip   https://codepen.io/robstinson/pen/oNxPbRL
 
 
-https://www.material-tailwind.com/docs/html/image
-      Image with Blurred Caption
+https://www.material-tailwind.com/docs/html/image Image with Blurred Caption
 
 
       https://codepen.io/numerical/pen/MWpZwxB
 
-      https://codepen.io/cruip/pen/LYobVRg
+   qccordeon d'images   https://codepen.io/cruip/pen/LYobVRg
 
 
       https://mambaui.com/components/steps
