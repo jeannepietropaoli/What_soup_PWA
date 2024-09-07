@@ -7,8 +7,10 @@
   <link rel="stylesheet" href="style/css/style.css">
   <script src="scripts/mobile_menu.js" defer></script>
   <script src="https://cdn.tailwindcss.com"></script>
+  <script src="scripts/formValidation.js" defer></script>
   <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
   <script src="https://kit.fontawesome.com/c777fc19af.js" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@material-tailwind/html@latest/scripts/collapse.js" defer></script>
   <link rel="icon" type="image/png" href="img/favicon.png">
 </head>
 
@@ -79,12 +81,12 @@
 
   <main class="grow" id="main-content">
    
-    <!-- section recettes les plus populaire (en cartes) -->
+    <!-- SECTION 1: RECETTES LES PLUS POPULAIRES -->
     <section>
       <div class="container mx-auto py-8 px-6 md:py-12 pb-0 md:pb-0">
         <h1 class="text-center oleo_font text-4xl text-[#4c71fe] underline underline-offset-4 mb-4">Inspiration</h1>
-        <p class="text-center">En panne d'idees ou vous ne vous sentez pas de vous lancer par peur d'offusquer les maitres Ramens avec vos recettes farfelues ?</p>
-        <p class="text-center">Vous etes au bon endroit ! Voici nos recettes les plus populaires.</p>
+        <p class="text-center">En panne d'idées ou vous ne vous sentez pas de vous lancer par peur d'offusquer les maÏtres Ramens avec vos recettes farfelues ?</p>
+        <p class="text-center">Vous êtes au bon endroit ! Voici nos recettes les plus populaires.</p>
 
         <div class=" mx-auto grid grid-cols-12">
 
@@ -92,8 +94,8 @@
           <div class="bg-white hover:bg-slate-50 border border-slate-200 shadow-md relative text-sm rounded-md col-span-12 md:col-span-6 xl:col-span-4 w-11/12 my-6 p-10 mx-auto">
             <!-- Etiquettes -->
             <div class="absolute right-[40px] flex gap-2">
-                <span class="text-[0.7rem] font-semibold px-2 py-0 text-white bg-green-500 rounded-full">traditionnel</span>
-                <span class="text-[0.7rem] font-semibold px-2 py-0 text-white bg-orange-500 rounded-full">gras</span>
+                <span class="text-[0.7rem] font-semibold px-2 py-0 text-white bg-yellow-500 rounded-full">traditionnel</span>
+                <span class="text-[0.7rem] font-semibold px-2 py-0 text-white bg-blue-700 rounded-full">gras</span>
             </div>
             <!-- Titre -->
             <h3 class="text-lg font-medium">Ramen #1</h3>
@@ -109,12 +111,12 @@
               <li><span class="font-bold">Epices</span>: Ail en poudre, Huile de sésame</li>
             </ul>
 
-            <!-- Accordeon (des images des ingredients) -->
+            <!-- Accordeon (des images des ingredients) - composant de base: https://www.material-tailwind.com/docs/html/accordion -->
             <div class="my-4">
               <!-- accordeon header -->
               <header class="bg-white mb-0 transition-all relative z-[1] border-t-2 border-indigo-600">
                 <div class="group flex items-center w-full p-4 text-left transition-all cursor-pointer" data-collapse-target="animated-collapse-1" role="button">
-                  <h4>Voir les ingredients</h4>
+                  <h4>Voir les ingrédients</h4>
                   <i class="absolute right-0 pt-1 m-4 text-indigo-600 group-hover:text-black transition-all fa fa-chevron-down group-open:rotate-180"></i>
                 </div>
               </header>
@@ -124,7 +126,7 @@
                   <!-- ingredient 1 -->
                   <figure class="relative group">
                     <img class="w-20 p-2" src="img/ingredients/bouillons/bol-v2.-trspng.png" alt="bouillon tonkotsu">
-                    <!-- tooltip avec nom ingredient au survol -->
+                    <!-- tooltip avec nom ingredient au survol (composant de base: https://codepen.io/robstinson/pen/oNxPbRL) -->
                     <figcaption class="w-full mx-auto z-10 absolute bottom-0 translate-y-[75%] left-0 flex flex-col items-center opacity-0 group-hover:opacity-100 transition-all text-center">
                       <span class="w-3 h-3 -mb-2 rotate-45 bg-gray-800"></span> <!-- fleche decorative en haut du tooltip -->
                       <span class="relative z-10 p-2 text-[0.7rem] leading-none whitespace-no-wrap text-white bg-gray-800">tonkotsu</span>
@@ -224,8 +226,8 @@
           <div class="bg-white hover:bg-slate-50 border border-slate-200 shadow-md relative text-sm rounded-md col-span-12 md:col-span-6 xl:col-span-4 w-11/12 my-6 p-10 mx-auto">
             <!-- Etiquettes -->
             <div class="absolute right-[40px] flex gap-2">
-                <span class="text-[0.7rem] font-semibold px-2 py-0 text-white bg-green-500 rounded-full">vege</span>
-                <span class="text-[0.7rem] font-semibold px-2 py-0 text-white bg-orange-500 rounded-full">leger</span>
+                <span class="text-[0.7rem] font-semibold px-2 py-0 text-white bg-green-500 rounded-full">végé</span>
+                <span class="text-[0.7rem] font-semibold px-2 py-0 text-white bg-orange-500 rounded-full">léger</span>
             </div>
             <!-- Titre -->
             <h3 class="text-lg font-medium">Ramen #2</h3>
@@ -246,7 +248,7 @@
               <!-- accordeon header -->
               <header class="bg-white mb-0 transition-all relative z-[1] border-t-2 border-indigo-600">
                 <div class="group flex items-center w-full p-4 text-left transition-all cursor-pointer" data-collapse-target="animated-collapse-2" role="button">
-                  <h4>Voir les ingredients</h4>
+                  <h4>Voir les ingrédients</h4>
                   <i class="absolute right-0 pt-1 m-4 text-indigo-600 group-hover:text-black transition-all fa fa-chevron-down group-open:rotate-180"></i>
                 </div>
               </header>
@@ -346,8 +348,8 @@
           <div class="bg-white hover:bg-slate-50 border border-slate-200 shadow-md relative text-sm rounded-md col-span-12 md:col-span-6 xl:col-span-4 w-11/12 my-6 p-10 mx-auto">
             <!-- Etiquettes -->
             <div class="absolute right-[40px] flex gap-2">
-                <span class="text-[0.7rem] font-semibold px-2 py-0 text-white bg-green-500 rounded-full">spicy</span>
-                <span class="text-[0.7rem] font-semibold px-2 py-0 text-white bg-orange-500 rounded-full">original</span>
+                <span class="text-[0.7rem] font-semibold px-2 py-0 text-white bg-red-600 rounded-full">spicy</span>
+                <span class="text-[0.7rem] font-semibold px-2 py-0 text-white bg-yellow-500 rounded-full">original</span>
             </div>
             <!-- Titre -->
             <h3 class="text-lg font-medium">Ramen #3</h3>
@@ -368,7 +370,7 @@
               <!-- accordeon header -->
               <header class="bg-white mb-0 transition-all relative z-[1] border-t-2 border-indigo-600">
                 <div class="group flex items-center w-full p-4 text-left transition-all cursor-pointer" data-collapse-target="animated-collapse-3" role="button">
-                  <h4>Voir les ingredients</h4>
+                  <h4>Voir les ingrédients</h4>
                   <i class="absolute right-0 pt-1 m-4 text-indigo-600 group-hover:text-black transition-all fa fa-chevron-down group-open:rotate-180"></i>
                 </div>
               </header>
@@ -484,8 +486,8 @@
           <div class="bg-white hover:bg-slate-50 border border-slate-200 shadow-md relative text-sm rounded-md col-span-12 md:col-span-6 xl:col-span-4 w-11/12 my-6 p-10 mx-auto">
             <!-- Etiquettes -->
             <div class="absolute right-[40px] flex gap-2">
-                <span class="text-[0.7rem] font-semibold px-2 py-0 text-white bg-green-500 rounded-full">leger</span>
-                <span class="text-[0.7rem] font-semibold px-2 py-0 text-white bg-orange-500 rounded-full">original</span>
+                <span class="text-[0.7rem] font-semibold px-2 py-0 text-white bg-orange-500 rounded-full">léger</span>
+                <span class="text-[0.7rem] font-semibold px-2 py-0 text-white bg-yellow-500 rounded-full">original</span>
             </div>
             <!-- Titre -->
             <h3 class="text-lg font-medium">Ramen #4</h3>
@@ -506,7 +508,7 @@
               <!-- accordeon header -->
               <header class="bg-white mb-0 transition-all relative z-[1] border-t-2 border-indigo-600">
                 <div class="group flex items-center w-full p-4 text-left transition-all cursor-pointer" data-collapse-target="animated-collapse-4" role="button">
-                  <h4>Voir les ingredients</h4>
+                  <h4>Voir les ingrédients</h4>
                   <i class="absolute right-0 pt-1 m-4 text-indigo-600 group-hover:text-black transition-all fa fa-chevron-down group-open:rotate-180"></i>
                 </div>
               </header>
@@ -614,8 +616,8 @@
           <div class="bg-white hover:bg-slate-50 border border-slate-200 shadow-md relative text-sm rounded-md col-span-12 md:col-span-6 xl:col-span-4 w-11/12 my-6 p-10 mx-auto">
             <!-- Etiquettes -->
             <div class="absolute right-[40px] flex gap-2">
-                <span class="text-[0.7rem] font-semibold px-2 py-0 text-white bg-green-500 rounded-full">gras</span>
-                <span class="text-[0.7rem] font-semibold px-2 py-0 text-white bg-orange-500 rounded-full">reconfortant</span>
+                <span class="text-[0.7rem] font-semibold px-2 py-0 text-white bg-blue-600 rounded-full">gras</span>
+                <span class="text-[0.7rem] font-semibold px-2 py-0 text-white bg-teal-600 rounded-full">réconfortant</span>
             </div>
             <!-- Titre -->
             <h3 class="text-lg font-medium">Ramen #5</h3>
@@ -636,7 +638,7 @@
               <!-- accordeon header -->
               <header class="bg-white mb-0 transition-all relative z-[1] border-t-2 border-indigo-600">
                 <div class="group flex items-center w-full p-4 text-left transition-all cursor-pointer" data-collapse-target="animated-collapse-5" role="button">
-                  <h4>Voir les ingredients</h4>
+                  <h4>Voir les ingrédients</h4>
                   <i class="absolute right-0 pt-1 m-4 text-indigo-600 group-hover:text-black transition-all fa fa-chevron-down group-open:rotate-180"></i>
                 </div>
               </header>
@@ -752,8 +754,8 @@
           <div class="bg-white hover:bg-slate-50 border border-slate-200 shadow-md relative text-sm rounded-md col-span-12 md:col-span-6 xl:col-span-4 w-11/12 my-6 p-10 mx-auto">
             <!-- Etiquettes -->
             <div class="absolute right-[40px] flex gap-2">
-                <span class="text-[0.7rem] font-semibold px-2 py-0 text-white bg-green-500 rounded-full">leger</span>
-                <span class="text-[0.7rem] font-semibold px-2 py-0 text-white bg-blue-500 rounded-full">marin</span>
+                <span class="text-[0.7rem] font-semibold px-2 py-0 text-white bg-orange-500 rounded-full">léger</span>
+                <span class="text-[0.7rem] font-semibold px-2 py-0 text-white bg-blue-400 rounded-full">marin</span>
             </div>
             <!-- Titre -->
             <h3 class="text-lg font-medium">Ramen #6</h3>
@@ -774,7 +776,7 @@
               <!-- accordeon header -->
               <header class="bg-white mb-0 transition-all relative z-[1] border-t-2 border-indigo-600">
                 <div class="group flex items-center w-full p-4 text-left transition-all cursor-pointer" data-collapse-target="animated-collapse-6" role="button">
-                  <h4>Voir les ingredients</h4>
+                  <h4>Voir les ingrédients</h4>
                   <i class="absolute right-0 pt-1 m-4 text-indigo-600 group-hover:text-black transition-all fa fa-chevron-down group-open:rotate-180"></i>
                 </div>
               </header>
@@ -887,22 +889,24 @@
       <path fill="#1E293B" fill-opacity="1" d="M0,64L60,64C120,64,240,64,360,74.7C480,85,600,107,720,138.7C840,171,960,213,1080,224C1200,235,1320,213,1380,202.7L1440,192L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"></path>
     </svg>
 
+    <!-- SECTION 2: RECETTE DE LA SEMAINE -->
     <section class="bg-slate-800 relative">
       <div class="container border-2 border-transparent mx-auto pb-8 px-6 md:pb-12">
         <div class="text-slate-300 text-center">
-          <h2 class="text-center oleo_font text-4xl text-[#4c71fe] underline-offset-4 mb-4">Ramen de la semaine</h2>
-          <p>Chaque semaine l'equipe de What'soup organise un concours pour elire le meilleur ramen pami les propositions des utilisteurs !</p>
-          <p>Cette semaine c'est Heloise Roy qui ramen son grain de sel et remporte le prix ! On vous partage sa recette. 🍜😊</p>
+          <h2 class="text-center oleo_font text-4xl text-[#4c71fe] underline-offset-4 mb-6">Ramen de la semaine</h2>
+          <p>Chaque semaine l'équipe de What'soup organise un concours pour élire le meilleur ramen pami les propositions des utilisateurs !</p>
+          <p>Cette semaine c'est Héloïse Roy qui ramen son grain de sel et remporte le prix ! On vous partage sa recette. 🍜😊</p>
         </div>
 
         <div class="grid grid-cols-12 mt-12 space-y-12 lg:space-y-0">
+
           <!-- Recette de la semaine -->
           <div class="bg-white hover:bg-slate-50 border border-slate-200 shadow-md relative text-sm rounded-md col-span-12 lg:col-span-7 w-11/12 p-10 mx-auto">
             <!-- Etiquettes -->
             <div class="absolute top-[20px] sm:top-[40px] right-[40px] flex gap-2">
               <span class="text-[0.7rem] font-semibold px-2 py-0 text-white bg-yellow-600 rounded-full">favoris</span>
                 <span class="text-[0.7rem] font-semibold px-2 py-0 text-white bg-green-500 rounded-full">gras</span>
-                <span class="text-[0.7rem] font-semibold px-2 py-0 text-white bg-blue-500 rounded-full">reconfortant</span>
+                <span class="text-[0.7rem] font-semibold px-2 py-0 text-white bg-blue-500 rounded-full">réconfortant</span>
             </div>
             <!-- Titre -->
             <h3 class="text-lg font-medium">Ramen Of the Week</h3>
@@ -913,16 +917,16 @@
               <li><span class="font-bold">Bouillon</span>: Tonkotsu</li>
               <li><span class="font-bold">Nouilles</span>: Futomen nouilles epaisses</li>
               <li><span class="font-bold">Proteine</span>: Crevettes tempura</li>
-              <li><span class="font-bold">Legumes</span>: Pousses de bambou, Germes de soja, Epinards, Mais</li>
+              <li><span class="font-bold">Legumes</span>: Pousses de bambou, Germes de soja, Epinards, Maïs</li>
               <li><span class="font-bold">Toppings</span>: Gingembre mariné, Algues nori, Oeuf</li>
-              <li><span class="font-bold">Epices</span>: Shichimi togarashi, Huile de sesame, Yuzu kosho</li>
+              <li><span class="font-bold">Epices</span>: Shichimi togarashi, Huile de sésame, Yuzu kosho</li>
             </ul>
 
             <div class="border-t-2 border-indigo-600 my-4">
               <p class="text-sm font-light text-gray-600 my-3">Caprices du Chef</p>
               <ul class="list-disc pl-10 space-y-2">
                 <li><span class="font-bold">Superpouvoir du ramen</span>: Instant Happiness</li>
-                <li><span class="font-bold">Ustensiles indispensables</span>: Baguettes, Fourchette geante</li>
+                <li><span class="font-bold">Ustensiles indispensables</span>: Baguettes, Fourchette géante</li>
                 <li><span class="font-bold">Emojis</span>: 🔥🍤🍜</li>
               </ul>
             </div>
@@ -932,7 +936,7 @@
               <!-- accordeon header -->
               <header class="bg-white mb-0 transition-all relative z-[1] border-t-2 border-indigo-600">
                 <div class="group flex items-center w-full p-4 text-left transition-all cursor-pointer" data-collapse-target="animated-collapse-6" role="button">
-                  <h4 class="text-sm font-light text-gray-600 my-3">Ingredients</h4>
+                  <h4 class="text-sm font-light text-gray-600 my-3">Ingrédients</h4>
                   <i class="absolute right-0 pt-1 m-4 text-indigo-600 group-hover:text-black transition-all fa fa-chevron-down group-open:rotate-180"></i>
                 </div>
               </header>
@@ -978,7 +982,7 @@
                     <!-- tooltip avec nom ingredient au survol -->
                     <figcaption class="w-full mx-auto z-10 absolute bottom-0 translate-y-[75%] left-0 flex flex-col items-center opacity-0 group-hover:opacity-100 transition-all text-center">
                       <span class="w-3 h-3 -mb-2 rotate-45 bg-gray-800"></span> <!-- fleche decorative en haut du tooltip -->
-                      <span class="relative z-10 p-2 text-[0.7rem] leading-none whitespace-no-wrap text-white bg-gray-800">epinards</span>
+                      <span class="relative z-10 p-2 text-[0.7rem] leading-none whitespace-no-wrap text-white bg-gray-800">épinards</span>
                     </figcaption>
                   </figure>
                   <figure class="relative group">
@@ -1026,7 +1030,7 @@
                     <!-- tooltip avec nom ingredient au survol -->
                     <figcaption class="w-full mx-auto z-10 absolute bottom-0 translate-y-[75%] left-0 flex flex-col items-center opacity-0 group-hover:opacity-100 transition-all text-center">
                       <span class="w-3 h-3 -mb-2 rotate-45 bg-gray-800"></span> <!-- fleche decorative en haut du tooltip -->
-                      <span class="relative z-10 p-2 text-[0.7rem] leading-none whitespace-no-wrap text-white bg-gray-800">shichimi togarashispan>
+                      <span class="relative z-10 p-2 text-[0.7rem] leading-none whitespace-no-wrap text-white bg-gray-800">shichimi togarashispan</span>
                     </figcaption>
                   </figure>
                   <figure class="relative group">
@@ -1034,7 +1038,7 @@
                     <!-- tooltip avec nom ingredient au survol -->
                     <figcaption class="w-full mx-auto z-10 absolute bottom-0 translate-y-[75%] left-0 flex flex-col items-center opacity-0 group-hover:opacity-100 transition-all text-center">
                       <span class="w-3 h-3 -mb-2 rotate-45 bg-gray-800"></span> <!-- fleche decorative en haut du tooltip -->
-                      <span class="relative z-10 p-2 text-[0.7rem] leading-none whitespace-no-wrap text-white bg-gray-800">huile de sesame</span>
+                      <span class="relative z-10 p-2 text-[0.7rem] leading-none whitespace-no-wrap text-white bg-gray-800">huile de sésame</span>
                     </figcaption>
                   </figure>
                   <figure class="relative group">
@@ -1051,6 +1055,7 @@
           </div>
           <!-- Fin recette de la semaine -->
 
+          <!-- Photo et commentaires -->
           <div class="col-span-12 lg:col-span-5 w-11/12 mx-auto space-y-6">
             <div class="grid w-full place-items-center overflow-x-scroll rounded-lg lg:overflow-visible">
               <figure class="relative max-w-[800px] group">
@@ -1062,7 +1067,7 @@
                   <div>
                     <h5
                       class="block font-sans text-base antialiased font-semibold leading-snug tracking-normal text-blue-gray-900">
-                      Heloise Roy
+                      Héloïse Roy
                     </h5>
                     <p class="block mt-2 font-sans text-sm antialiased font-normal leading-relaxed text-gray-500">
                       10 septembre 2024
@@ -1089,39 +1094,49 @@
       </div>
     </section>
 
+    <!-- separation de section en curve -->
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 220"><path fill="#1E293B" fill-opacity="1" d="M0,128L48,122.7C96,117,192,107,288,106.7C384,107,480,117,576,128C672,139,768,149,864,154.7C960,160,1056,160,1152,154.7C1248,149,1344,139,1392,133.3L1440,128L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"></path></svg>
 
+    <!-- SECTION 3: PARTICIPER AU CONCOURS -->
     <section class="bg-white relative">
       <div class="container border-2 border-transparent mx-auto pb-8 px-6 md:pb-12">
         <div class="text-center">
           <h2 class="text-center oleo_font text-4xl text-[#4c71fe] underline-offset-4 mb-4">Participer au prochain concours</h2>
-          <p>Vous avez une recette de ramen qui dechire et vous voulez la partager ?</p>
+          <p>Vous avez une recette de ramen qui déchire et vous voulez la partager ?</p>
           <p>Envoyez-nous votre recette et tentez de remporter le titre de meilleur ramen de la semaine !</p>
-          <p>Vous aurez besoin d'avoir deja votre recette de ramen cree et enregistree dans la page "mes recettes". Il vous suffit d'entrer le numero (apres le #) du ramen dans le formulaire suivant.</p>
+          <p>Vous aurez besoin d'avoir déjà votre recette de ramen créée et enregistrée dans la page "mes recettes". Il vous suffit d'entrer l'identifiant du ramen (apres le #) dans le formulaire suivant.</p>
         </div>
 
-        <form action="confirmation-concours.html" class="grid grid-cols-12 my-10 text-center sm:text-left" onsubmit="return isFormReadyToSend()" novalidate >
+        <!-- Formulaire de participation -->
+        <form action="confirmation-concours.html" class="grid grid-cols-12 mt-10 text-center sm:text-left" onsubmit="return isFormReadyToSend()" novalidate >
+
+          <!--PARTIE 1: Recette Rundown -->
           <fieldset class="relative col-span-12 lg:col-span-6 w-11/12 mx-auto flex flex-col">
             <legend class="font-bold w-max bg-[#4c71fe] text-white text-sm mx-auto py-2 px-6">Recette rundown</legend>
             <div class="border-2 border-slate-400 hover:border-[#4c71fe] transition-all py-4 px-10 flex-grow">
+              <!-- Id du ramen -->
               <div class="flex flex-col mb-4 space-y-1 input-control">
                 <label for="ramen-id" class="font-semibold">Id du ramen</label>
                 <input class="border border-slate-400" type="number" min="1" id="ramen-id" name="ramen-id" required>
                 <div class="input-control__error-msg block w-full"></div>
               </div>
+              <!-- Nom de la recette -->
               <div class="flex flex-col mb-4 space-y-1 input-control">
                 <label for="recipe-name" class="font-semibold">Nom de la recette</label>
                 <input class="border border-slate-400" type="text" id="recipe-name" name="recipe-name" minlength="3" maxlength="50" required>
                 <div class="input-control__error-msg block w-full"></div>
               </div>
+              <!-- Description -->
               <div class="flex flex-col mb-4 space-y-1 input-control">
                   <label for="description" class="font-semibold">Description</label>
                   <textarea class="border border-slate-400" name="description" id="description" cols="30" rows="10" minlength="4" maxlength="300" required></textarea>
                   <div class="input-control__error-msg block w-full"></div>
               </div>
+              <!-- Choix des étiquettes -->
               <div class="flex flex-col mb-4">
                 <fieldset class="space-y-1">
                   <legend class="font-semibold">Etiquettes</legend>
+                  <span class="text-xs">Choisir entre 1 et 3 étiquettes</span>
                   <div class="flex flex-wrap gap-2 input-control">
                     <div class="group w-max relative">
                       <input class="peer absolute inset-0 z-10 cursor-pointer opacity-0" type="checkbox" id="labels-opt-1" name="labels" value="vege" required>
@@ -1145,14 +1160,15 @@
                     </div>
                     <div class="input-control__error-msg block w-full"></div>
                   </div>
-
                 </fieldset>
               </div>
+              <!-- Nom du chef -->
               <div class="flex flex-col mb-4 space-y-1 input-control">
                 <label for="chef-name" class="font-semibold">Nom du chef</label>
                 <input class="border border-slate-400" type="text" id="chef-name" name="chef-name" minlength="2" maxlength="50" required>
                 <div class="input-control__error-msg block w-full"></div>
               </div>
+              <!-- Courriel du chef -->
               <div class="flex flex-col mb-4 space-y-1 input-control">
                 <label for="chef-email" class="font-semibold">Courriel du chef</label>
                 <input class="border border-slate-400" type="email" id="chef-email" name="chef-email">
@@ -1162,134 +1178,140 @@
           </fieldset>
 
 
-          
-<fieldset class="relative col-span-12 lg:col-span-6 w-11/12 mx-auto flex flex-col">
-  <legend class="font-bold w-max bg-[#4c71fe] text-white text-sm mx-auto py-2 px-6">Caprices du Chef</legend>
-  <div class="border-2 border-slate-400 hover:border-[#4c71fe] transition-all py-4 px-10 flex-grow">
-    <div class="flex flex-col mb-4 space-y-1 input-control">
-      <label for="comments" class="font-semibold">Mot du Chef</label>
-      <textarea class="border border-slate-400" tname="comments" id="comments" cols="30" rows="10" minlength="4" maxlength="300" required></textarea>
-      <div class="input-control__error-msg block w-full"></div>
-    </div>
-    <div class="flex flex-col mb-4 space-y-1 input-control">
-      <label for="superpower" class="font-semibold">Superpouvoir du ramen</label>
-      <input class="border border-slate-400" type="text" id="superpower" name="superpower" minlength="2" maxlength="60" required>
-      <div class="input-control__error-msg block w-full"></div>
-  </div>
-  
-  <div class="flex flex-col mb-4">
-    <fieldset class="space-y-1">
-      <legend class="font-semibold">Ustensiles indispensables</legend>
-      <div class="flex flex-wrap gap-2 input-control">
-        <div class="group w-max relative">
-          <input class="peer absolute inset-0 z-10 cursor-pointer opacity-0" type="checkbox" id="ustensils-opt-1" name="ustensils" value="fourchette-geante" required>
-          <label class="font-semibold bg-gray-200 peer-hover:bg-[#4c71fe] peer-hover:text-white transition-all text-gray-600 hover:text-gray-600 py-[0.15rem] px-4 rounded-full text-sm z-[2] peer-checked:bg-[#4c71fe] peer-checked:text-white" for="labels-opt-1">fourchette geante</label>
-        </div>
-        <div class="group w-max relative">
-          <input class="peer absolute inset-0 z-10 cursor-pointer opacity-0" type="checkbox" id="ustensils-opt-2" name="ustensils" value="baguettes" required>
-          <label class="font-semibold bg-gray-200 peer-hover:bg-[#4c71fe] peer-hover:text-white transition-all text-gray-600 hover:text-gray-600 py-[0.15rem] px-4 rounded-full text-sm z-[2] peer-checked:bg-[#4c71fe] peer-checked:text-white" for="labels-opt-2">baguettes</label>
-        </div>
-        <div class="group w-max relative">
-          <input class="peer absolute inset-0 z-10 cursor-pointer opacity-0" type="checkbox" id="ustensils-opt-3" name="ustensils" value="cuillere-a-soupe" required>
-          <label class="font-semibold bg-gray-200 peer-hover:bg-[#4c71fe] peer-hover:text-white transition-all text-gray-600 hover:text-gray-600 py-[0.15rem] px-4 rounded-full text-sm z-[2] peer-checked:bg-[#4c71fe] peer-checked:text-white" for="labels-opt-3">cuillere a soupe</label>
-        </div>
-        <div class="group w-max relative">
-          <input class="peer absolute inset-0 z-10 cursor-pointer opacity-0" type="checkbox" id="ustensils-opt-4" name="ustensils" value="mains" required>
-          <label class="font-semibold bg-gray-200 peer-hover:bg-[#4c71fe] peer-hover:text-white transition-all text-gray-600 hover:text-gray-600 py-[0.15rem] px-4 rounded-full text-sm z-[2] peer-checked:bg-[#4c71fe] peer-checked:text-white" for="labels-opt-4">nos mains</label>
-        </div>
-        <div class="group w-max relative">
-          <input class="peer absolute inset-0 z-10 cursor-pointer opacity-0" type="checkbox" id="ustensils-opt-5" name="ustensils" value="paille-a-soupe" required>
-          <label class="font-semibold bg-gray-200 peer-hover:bg-[#4c71fe] peer-hover:text-white transition-all text-gray-600 hover:text-gray-600 py-[0.15rem] px-4 rounded-full text-sm z-[2] peer-checked:bg-[#4c71fe] peer-checked:text-white" for="labels-opt-5">paille a soupe</label>
-        </div>
-        <div class="group w-max relative">
-          <input class="peer absolute inset-0 z-10 cursor-pointer opacity-0" type="checkbox" id="ustensils-opt-6" name="ustensils" value="epuisette" required>
-          <label class="font-semibold bg-gray-200 peer-hover:bg-[#4c71fe] peer-hover:text-white transition-all text-gray-600 hover:text-gray-600 py-[0.15rem] px-4 rounded-full text-sm z-[2] peer-checked:bg-[#4c71fe] peer-checked:text-white" for="labels-opt-6">epuisette</label>
-        </div>
-        <div class="input-control__error-msg block w-full"></div>
-      </div>
-    </fieldset>
-  </div>
+            <!--PARTIE 2: Caprices du chef -->
+          <fieldset class="relative col-span-12 lg:col-span-6 w-11/12 mx-auto flex flex-col">
+            <legend class="font-bold w-max bg-[#4c71fe] text-white text-sm mx-auto py-2 px-6">Caprices du Chef</legend>
+            <div class="border-2 border-slate-400 hover:border-[#4c71fe] transition-all py-4 px-10 flex-grow">
+              <!-- Mot du chef -->
+              <div class="flex flex-col mb-4 space-y-1 input-control">
+                <label for="comments" class="font-semibold">Mot du Chef</label>
+                <textarea class="border border-slate-400" name="comments" id="comments" cols="30" rows="10" minlength="4" maxlength="300" required></textarea>
+                <div class="input-control__error-msg block w-full"></div>
+              </div>
+              <!-- Superpouvoir du ramen -->
+              <div class="flex flex-col mb-4 space-y-1 input-control">
+                <label for="superpower" class="font-semibold">Superpouvoir du ramen</label>
+                <input class="border border-slate-400" type="text" id="superpower" name="superpower" minlength="2" maxlength="60" required>
+                <div class="input-control__error-msg block w-full"></div>
+              </div>
+            
+              <!-- Ustensiles indispensables -->
+              <div class="flex flex-col mb-4">
+                <fieldset class="space-y-1">
+                  <legend class="font-semibold">Ustensiles indispensables</legend>
+                  <span class="text-xs">Choisir entre 1 et 3 ustensiles</span>
+                  <div class="flex flex-wrap gap-2 input-control">
+                    <div class="group w-max relative">
+                      <input class="peer absolute inset-0 z-10 cursor-pointer opacity-0" type="checkbox" id="ustensils-opt-1" name="ustensils" value="fourchette-geante" required>
+                      <label class="font-semibold bg-gray-200 peer-hover:bg-[#4c71fe] peer-hover:text-white transition-all text-gray-600 hover:text-gray-600 py-[0.15rem] px-4 rounded-full text-sm z-[2] peer-checked:bg-[#4c71fe] peer-checked:text-white" for="ustensils-opt-1">fourchette geante</label>
+                    </div>
+                    <div class="group w-max relative">
+                      <input class="peer absolute inset-0 z-10 cursor-pointer opacity-0" type="checkbox" id="ustensils-opt-2" name="ustensils" value="baguettes" required>
+                      <label class="font-semibold bg-gray-200 peer-hover:bg-[#4c71fe] peer-hover:text-white transition-all text-gray-600 hover:text-gray-600 py-[0.15rem] px-4 rounded-full text-sm z-[2] peer-checked:bg-[#4c71fe] peer-checked:text-white" for="ustensils-opt-2">baguettes</label>
+                    </div>
+                    <div class="group w-max relative">
+                      <input class="peer absolute inset-0 z-10 cursor-pointer opacity-0" type="checkbox" id="ustensils-opt-3" name="ustensils" value="cuillere-a-soupe" required>
+                      <label class="font-semibold bg-gray-200 peer-hover:bg-[#4c71fe] peer-hover:text-white transition-all text-gray-600 hover:text-gray-600 py-[0.15rem] px-4 rounded-full text-sm z-[2] peer-checked:bg-[#4c71fe] peer-checked:text-white" for="ustensils-opt-3">cuillere a soupe</label>
+                    </div>
+                    <div class="group w-max relative">
+                      <input class="peer absolute inset-0 z-10 cursor-pointer opacity-0" type="checkbox" id="ustensils-opt-4" name="ustensils" value="mains" required>
+                      <label class="font-semibold bg-gray-200 peer-hover:bg-[#4c71fe] peer-hover:text-white transition-all text-gray-600 hover:text-gray-600 py-[0.15rem] px-4 rounded-full text-sm z-[2] peer-checked:bg-[#4c71fe] peer-checked:text-white" for="ustensils-opt-4">nos mains</label>
+                    </div>
+                    <div class="group w-max relative">
+                      <input class="peer absolute inset-0 z-10 cursor-pointer opacity-0" type="checkbox" id="ustensils-opt-5" name="ustensils" value="paille-a-soupe" required>
+                      <label class="font-semibold bg-gray-200 peer-hover:bg-[#4c71fe] peer-hover:text-white transition-all text-gray-600 hover:text-gray-600 py-[0.15rem] px-4 rounded-full text-sm z-[2] peer-checked:bg-[#4c71fe] peer-checked:text-white" for="ustensils-opt-5">paille a soupe</label>
+                    </div>
+                    <div class="group w-max relative">
+                      <input class="peer absolute inset-0 z-10 cursor-pointer opacity-0" type="checkbox" id="ustensils-opt-6" name="ustensils" value="epuisette" required>
+                      <label class="font-semibold bg-gray-200 peer-hover:bg-[#4c71fe] peer-hover:text-white transition-all text-gray-600 hover:text-gray-600 py-[0.15rem] px-4 rounded-full text-sm z-[2] peer-checked:bg-[#4c71fe] peer-checked:text-white" for="ustensils-opt-6">epuisette</label>
+                    </div>
+                    <div class="input-control__error-msg block w-full"></div>
+                  </div>
+                </fieldset>
+              </div>
 
-  <div class="flex flex-col mb-4">
-    <fieldset class="space-y-1">
-      <legend class="font-semibold">Emojis decrivant la recette</legend>
-      <div class="flex flex-wrap gap-2 input-control">
-        <div class="group w-max relative">
-          <input class="peer absolute inset-0 z-10 cursor-pointer opacity-0" type="checkbox" id="emojis-opt-1" name="emojis" value="spicy-emoji" required>
-          <label class="font-semibold bg-gray-200 peer-hover:bg-[#4c71fe] peer-hover:text-white transition-all text-gray-600 py-[0.15rem] px-4 rounded-full text-sm z-[2] border-2 border-transparent peer-checked:border-[#4c71fe]" for="labels-opt-1">🌶️</label>
-        </div>
-        <div class="group w-max relative">
-          <input class="peer absolute inset-0 z-10 cursor-pointer opacity-0" type="checkbox" id="emojis-opt-2" name="emojis" value="corn-emoji" required>
-          <label class="font-semibold bg-gray-200 peer-hover:bg-[#4c71fe] peer-hover:text-white transition-all text-gray-600 py-[0.15rem] px-4 rounded-full text-sm z-[2] border-2 border-transparent peer-checked:border-[#4c71fe]" for="labels-opt-2">🌽</label>
-        </div>
-        <div class="group w-max relative">
-          <input class="peer absolute inset-0 z-10 cursor-pointer opacity-0" type="checkbox" id="emojis-opt-3" name="emojis" value="ramen-emoji" required>
-          <label class="font-semibold bg-gray-200 peer-hover:bg-[#4c71fe] peer-hover:text-white transition-all text-gray-600 py-[0.15rem] px-4 rounded-full text-sm z-[2] border-2 border-transparent peer-checked:border-[#4c71fe]" for="labels-opt-3">🍜</label>
-        </div>
-        <div class="group w-max relative">
-          <input class="peer absolute inset-0 z-10 cursor-pointer opacity-0" type="checkbox" id="emojis-opt-4" name="emojis" value="meat-emoji" required>
-          <label class="font-semibold bg-gray-200 peer-hover:bg-[#4c71fe] peer-hover:text-white transition-all text-gray-600 py-[0.15rem] px-4 rounded-full text-sm z-[2] border-2 border-transparent peer-checked:border-[#4c71fe]" for="labels-opt-4">🥩</label>
-        </div>
-        <div class="group w-max relative">
-          <input class="peer absolute inset-0 z-10 cursor-pointer opacity-0" type="checkbox" id="emojis-opt-5" name="emojis" value="shrimp-emoji" required>
-          <label class="font-semibold bg-gray-200 peer-hover:bg-[#4c71fe] peer-hover:text-white transition-all text-gray-600 py-[0.15rem] px-4 rounded-full text-sm z-[2] border-2 border-transparent peer-checked:border-[#4c71fe]" for="labels-opt-5">🍤</label>
-        </div>
-        <div class="group w-max relative">
-          <input class="peer absolute inset-0 z-10 cursor-pointer opacity-0" type="checkbox" id="emojis-opt-6" name="emojis" value="fungi-emoji" required>
-          <label class="font-semibold bg-gray-200 peer-hover:bg-[#4c71fe] peer-hover:text-white transition-all text-gray-600 py-[0.15rem] px-4 rounded-full text-sm z-[2] border-2 border-transparent peer-checked:border-[#4c71fe]" for="labels-opt-6">🍄</label>
-        </div>
-        <div class="group w-max relative">
-          <input class="peer absolute inset-0 z-10 cursor-pointer opacity-0" type="checkbox" id="emojis-opt-7" name="emojis" value="vegie-emoji" required>
-          <label class="font-semibold bg-gray-200 peer-hover:bg-[#4c71fe] peer-hover:text-white transition-all text-gray-600 py-[0.15rem] px-4 rounded-full text-sm z-[2] border-2 border-transparent peer-checked:border-[#4c71fe]" for="labels-opt-7">🥬</label>
-        </div>
-        <div class="group w-max relative">
-          <input class="peer absolute inset-0 z-10 cursor-pointer opacity-0" type="checkbox" id="emojis-opt-8" name="emojis" value="magician-emoji" required>
-          <label class="font-semibold bg-gray-200 peer-hover:bg-[#4c71fe] peer-hover:text-white transition-all text-gray-600 py-[0.15rem] px-4 rounded-full text-sm z-[2] border-2 border-transparent peer-checked:border-[#4c71fe]" for="labels-opt-8">🧙‍♂️</label>
-        </div>
-        <div class="group w-max relative">
-          <input class="peer absolute inset-0 z-10 cursor-pointer opacity-0" type="checkbox" id="emojis-opt-9" name="emojis" value="fire-emoji" required>
-          <label class="font-semibold bg-gray-200 peer-hover:bg-[#4c71fe] peer-hover:text-white transition-all text-gray-600 py-[0.15rem] px-4 rounded-full text-sm z-[2] border-2 border-transparent peer-checked:border-[#4c71fe]" for="labels-opt-9">🔥</label>
-        </div>
-        <div class="group w-max relative">
-          <input class="peer absolute inset-0 z-10 cursor-pointer opacity-0" type="checkbox" id="emojis-opt-10" name="emojis" value="rocket-emoji" required>
-          <label class="font-semibold bg-gray-200 peer-hover:bg-[#4c71fe] peer-hover:text-white transition-all text-gray-600 py-[0.15rem] px-4 rounded-full text-sm z-[2] border-2 border-transparent peer-checked:border-[#4c71fe]" for="labels-opt-10">🚀</label>
-        </div>
-        <div class="group w-max relative">
-          <input class="peer absolute inset-0 z-10 cursor-pointer opacity-0" type="checkbox" id="emojis-opt-11" name="emojis" value="elegant-emoji" required>
-          <label class="font-semibold bg-gray-200 peer-hover:bg-[#4c71fe] peer-hover:text-white transition-all text-gray-600 py-[0.15rem] px-4 rounded-full text-sm z-[2] border-2 border-transparent peer-checked:border-[#4c71fe]" for="labels-opt-11">🎩</label>
-        </div>
-        <div class="group w-max relative">
-          <input class="peer absolute inset-0 z-10 cursor-pointer opacity-0" type="checkbox" id="emojis-opt-12" name="emojis" value="wave-emoji" required>
-          <label class="font-semibold bg-gray-200 peer-hover:bg-[#4c71fe] peer-hover:text-white transition-all text-gray-600 py-[0.15rem] px-4 rounded-full text-sm z-[2] border-2 border-transparent peer-checked:border-[#4c71fe]" for="labels-opt-12">🌊</label>
-        </div>
-        <div class="group w-max relative">
-          <input class="peer absolute inset-0 z-10 cursor-pointer opacity-0" type="checkbox" id="emojis-opt-13" name="emojis" value="wow-emoji" required>
-          <label class="font-semibold bg-gray-200 peer-hover:bg-[#4c71fe] peer-hover:text-white transition-all text-gray-600 py-[0.15rem] px-4 rounded-full text-sm z-[2] border-2 border-transparent peer-checked:border-[#4c71fe]" for="labels-opt-13">😍</label>
-        </div>
-        <div class="group w-max relative">
-          <input class="peer absolute inset-0 z-10 cursor-pointer opacity-0" type="checkbox" id="emojis-opt-14" name="emojis" value="miam-emoji" required>
-          <label class="font-semibold bg-gray-200 peer-hover:bg-[#4c71fe] peer-hover:text-white transition-all text-gray-600 py-[0.15rem] px-4 rounded-full text-sm z-[2] border-2 border-transparent peer-checked:border-[#4c71fe]" for="labels-opt-14">😋</label>
-        </div>
-        <div class="group w-max relative">
-          <input class="peer absolute inset-0 z-10 cursor-pointer opacity-0" type="checkbox" id="emojis-opt-15" name="emojis" value="hot-emoji" required>
-          <label class="font-semibold bg-gray-200 peer-hover:bg-[#4c71fe] peer-hover:text-white transition-all text-gray-600 py-[0.15rem] px-4 rounded-full text-sm z-[2] border-2 border-transparent peer-checked:border-[#4c71fe]" for="labels-opt-15">🥵</label>
-        </div>
-        <div class="input-control__error-msg block w-full"></div>
-      </div>
+              <!-- Emojis -->
+              <div class="flex flex-col mb-4">
+                <fieldset class="space-y-1">
+                  <legend class="font-semibold">Emojis decrivant la recette</legend>
+                  <span class="text-xs">Choisir entre 1 et 3 émojis</span>
+                  <div class="flex flex-wrap gap-2 input-control">
+                    <div class="group w-max relative">
+                      <input class="peer absolute inset-0 z-10 cursor-pointer opacity-0" type="checkbox" id="emojis-opt-1" name="emojis" value="spicy-emoji" required>
+                      <label class="font-semibold bg-gray-200 peer-hover:bg-[#4c71fe] peer-hover:text-white transition-all text-gray-600 py-[0.15rem] px-4 rounded-full text-sm z-[2] border-2 border-transparent peer-checked:border-[#4c71fe]" for="emojis-opt-1">🌶️</label>
+                    </div>
+                    <div class="group w-max relative">
+                      <input class="peer absolute inset-0 z-10 cursor-pointer opacity-0" type="checkbox" id="emojis-opt-2" name="emojis" value="corn-emoji" required>
+                      <label class="font-semibold bg-gray-200 peer-hover:bg-[#4c71fe] peer-hover:text-white transition-all text-gray-600 py-[0.15rem] px-4 rounded-full text-sm z-[2] border-2 border-transparent peer-checked:border-[#4c71fe]" for="emojis-opt-2">🌽</label>
+                    </div>
+                    <div class="group w-max relative">
+                      <input class="peer absolute inset-0 z-10 cursor-pointer opacity-0" type="checkbox" id="emojis-opt-3" name="emojis" value="ramen-emoji" required>
+                      <label class="font-semibold bg-gray-200 peer-hover:bg-[#4c71fe] peer-hover:text-white transition-all text-gray-600 py-[0.15rem] px-4 rounded-full text-sm z-[2] border-2 border-transparent peer-checked:border-[#4c71fe]" for="emojis-opt-3">🍜</label>
+                    </div>
+                    <div class="group w-max relative">
+                      <input class="peer absolute inset-0 z-10 cursor-pointer opacity-0" type="checkbox" id="emojis-opt-4" name="emojis" value="meat-emoji" required>
+                      <label class="font-semibold bg-gray-200 peer-hover:bg-[#4c71fe] peer-hover:text-white transition-all text-gray-600 py-[0.15rem] px-4 rounded-full text-sm z-[2] border-2 border-transparent peer-checked:border-[#4c71fe]" for="emojis-opt-4">🥩</label>
+                    </div>
+                    <div class="group w-max relative">
+                      <input class="peer absolute inset-0 z-10 cursor-pointer opacity-0" type="checkbox" id="emojis-opt-5" name="emojis" value="shrimp-emoji" required>
+                      <label class="font-semibold bg-gray-200 peer-hover:bg-[#4c71fe] peer-hover:text-white transition-all text-gray-600 py-[0.15rem] px-4 rounded-full text-sm z-[2] border-2 border-transparent peer-checked:border-[#4c71fe]" for="emojis-opt-5">🍤</label>
+                    </div>
+                    <div class="group w-max relative">
+                      <input class="peer absolute inset-0 z-10 cursor-pointer opacity-0" type="checkbox" id="emojis-opt-6" name="emojis" value="fungi-emoji" required>
+                      <label class="font-semibold bg-gray-200 peer-hover:bg-[#4c71fe] peer-hover:text-white transition-all text-gray-600 py-[0.15rem] px-4 rounded-full text-sm z-[2] border-2 border-transparent peer-checked:border-[#4c71fe]" for="emojis-opt-6">🍄</label>
+                    </div>
+                    <div class="group w-max relative">
+                      <input class="peer absolute inset-0 z-10 cursor-pointer opacity-0" type="checkbox" id="emojis-opt-7" name="emojis" value="vegie-emoji" required>
+                      <label class="font-semibold bg-gray-200 peer-hover:bg-[#4c71fe] peer-hover:text-white transition-all text-gray-600 py-[0.15rem] px-4 rounded-full text-sm z-[2] border-2 border-transparent peer-checked:border-[#4c71fe]" for="emojis-opt-7">🥬</label>
+                    </div>
+                    <div class="group w-max relative">
+                      <input class="peer absolute inset-0 z-10 cursor-pointer opacity-0" type="checkbox" id="emojis-opt-8" name="emojis" value="magician-emoji" required>
+                      <label class="font-semibold bg-gray-200 peer-hover:bg-[#4c71fe] peer-hover:text-white transition-all text-gray-600 py-[0.15rem] px-4 rounded-full text-sm z-[2] border-2 border-transparent peer-checked:border-[#4c71fe]" for="emojis-opt-8">🧙‍♂️</label>
+                    </div>
+                    <div class="group w-max relative">
+                      <input class="peer absolute inset-0 z-10 cursor-pointer opacity-0" type="checkbox" id="emojis-opt-9" name="emojis" value="fire-emoji" required>
+                      <label class="font-semibold bg-gray-200 peer-hover:bg-[#4c71fe] peer-hover:text-white transition-all text-gray-600 py-[0.15rem] px-4 rounded-full text-sm z-[2] border-2 border-transparent peer-checked:border-[#4c71fe]" for="emojis-opt-9">🔥</label>
+                    </div>
+                    <div class="group w-max relative">
+                      <input class="peer absolute inset-0 z-10 cursor-pointer opacity-0" type="checkbox" id="emojis-opt-10" name="emojis" value="rocket-emoji" required>
+                      <label class="font-semibold bg-gray-200 peer-hover:bg-[#4c71fe] peer-hover:text-white transition-all text-gray-600 py-[0.15rem] px-4 rounded-full text-sm z-[2] border-2 border-transparent peer-checked:border-[#4c71fe]" for="emojis-opt-10">🚀</label>
+                    </div>
+                    <div class="group w-max relative">
+                      <input class="peer absolute inset-0 z-10 cursor-pointer opacity-0" type="checkbox" id="emojis-opt-11" name="emojis" value="elegant-emoji" required>
+                      <label class="font-semibold bg-gray-200 peer-hover:bg-[#4c71fe] peer-hover:text-white transition-all text-gray-600 py-[0.15rem] px-4 rounded-full text-sm z-[2] border-2 border-transparent peer-checked:border-[#4c71fe]" for="emojis-opt-11">🎩</label>
+                    </div>
+                    <div class="group w-max relative">
+                      <input class="peer absolute inset-0 z-10 cursor-pointer opacity-0" type="checkbox" id="emojis-opt-12" name="emojis" value="wave-emoji" required>
+                      <label class="font-semibold bg-gray-200 peer-hover:bg-[#4c71fe] peer-hover:text-white transition-all text-gray-600 py-[0.15rem] px-4 rounded-full text-sm z-[2] border-2 border-transparent peer-checked:border-[#4c71fe]" for="emojis-opt-12">🌊</label>
+                    </div>
+                    <div class="group w-max relative">
+                      <input class="peer absolute inset-0 z-10 cursor-pointer opacity-0" type="checkbox" id="emojis-opt-13" name="emojis" value="wow-emoji" required>
+                      <label class="font-semibold bg-gray-200 peer-hover:bg-[#4c71fe] peer-hover:text-white transition-all text-gray-600 py-[0.15rem] px-4 rounded-full text-sm z-[2] border-2 border-transparent peer-checked:border-[#4c71fe]" for="emojis-opt-13">😍</label>
+                    </div>
+                    <div class="group w-max relative">
+                      <input class="peer absolute inset-0 z-10 cursor-pointer opacity-0" type="checkbox" id="emojis-opt-14" name="emojis" value="miam-emoji" required>
+                      <label class="font-semibold bg-gray-200 peer-hover:bg-[#4c71fe] peer-hover:text-white transition-all text-gray-600 py-[0.15rem] px-4 rounded-full text-sm z-[2] border-2 border-transparent peer-checked:border-[#4c71fe]" for="emojis-opt-14">😋</label>
+                    </div>
+                    <div class="group w-max relative">
+                      <input class="peer absolute inset-0 z-10 cursor-pointer opacity-0" type="checkbox" id="emojis-opt-15" name="emojis" value="hot-emoji" required>
+                      <label class="font-semibold bg-gray-200 peer-hover:bg-[#4c71fe] peer-hover:text-white transition-all text-gray-600 py-[0.15rem] px-4 rounded-full text-sm z-[2] border-2 border-transparent peer-checked:border-[#4c71fe]" for="emojis-opt-15">🥵</label>
+                    </div>
+                    <div class="input-control__error-msg block w-full"></div>
+                  </div>
+                </fieldset>
+              </div>
 
-    </fieldset>
-  </div>
+              <!-- Miam-o-metre -->
+              <div class="flex flex-col mb-4 space-y-1 input-control">
+                <label for="miamometer" class="font-semibold">Miam-o-metre</label>
+                <input class="border border-slate-400" type="range" id="miamometer" name="miamometer" min="0" max="100">
+                <div class="input-control__error-msg block w-full"></div>
+              </div>
+            </div>
+          </fieldset>
 
-  <div class="flex flex-col mb-4 space-y-1 input-control">
-    <label for="miamometer" class="font-semibold">Miam-o-metre</label>
-    <input class="border border-slate-400" type="range" id="miamometer" name="miamometer" min="0" max="100" required>
-    <div class="input-control__error-msg block w-full"></div>
-</div>
-</fieldset>
-
-        
           <button class="button button--white-bg col-span-12 w-max mx-auto mt-6" type="submit">Envoyer ma recette</button>
-      </form>
+        </form>
       </div>
     </section>
     
