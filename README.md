@@ -30,3 +30,4 @@ https://www.material-tailwind.com/docs/html/image
       ajuster fichiers photos
       refacto JS
       page confirmation envoi form
+      readme
