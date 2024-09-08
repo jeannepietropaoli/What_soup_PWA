@@ -1,4 +1,4 @@
-const CACHE_NAME = "static-cache-v11";
+const CACHE_NAME = "static-cache-v12";
 
 //Add list of files to cache here.
 const FILES_TO_CACHE = [
@@ -8,7 +8,6 @@ const FILES_TO_CACHE = [
   "mes-recettes.html",
   "preparation.html",
   "style/css/style.css",
-  "https://cdn.tailwindcss.com",
   "fontawesome-free-6.6.0-web/css/all.min.css",
   "scripts/collapse.js",
   "scripts/mobile_menu.js",
