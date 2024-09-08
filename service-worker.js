@@ -1,4 +1,4 @@
-const CACHE_NAME = "static-cache-v9";
+const CACHE_NAME = "static-cache-v10";
 
 //Add list of files to cache here.
 const FILES_TO_CACHE = [
@@ -48,14 +48,15 @@ self.addEventListener("fetch", (evt) => {
       caches.match(evt.request).then((cachedResponse) => {
         // Fetch the image from the network in the background
         const fetchPromise = fetch(evt.request).then((networkResponse) => {
+          const clonedResponse = networkResponse.clone(); // Clone the response
           caches.open(CACHE_NAME).then((cache) => {
-            cache.put(evt.request, networkResponse.clone()); // Update the cache with the new image
+            cache.put(evt.request, clonedResponse); // Use cloned response for cache
           });
-          return networkResponse;
-        });
-        // Return the cached image if available, else wait for network response
+          return networkResponse; // Return the original response to the browser
+        }).catch(err => console.error("Fetch failed for image", err)); // Catch fetch errors
+        // Return the cached image if available, else wait for the network response
         return cachedResponse || fetchPromise;
-      })
+      }).catch(err => console.error("Cache match failed", err)) // Catch cache match errors
     );
     return; // Exit the fetch event handler after processing images
   }
@@ -66,7 +67,7 @@ self.addEventListener("fetch", (evt) => {
       fetch(evt.request).catch(() => {
         return caches.open(CACHE_NAME).then((cache) => {
           return cache.match("offline.html");
-        });
+        }).catch(err => console.error("Cache match for offline.html failed", err)); // Catch errors
       })
     );
     return;
