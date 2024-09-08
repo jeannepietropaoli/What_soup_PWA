@@ -26,3 +26,5 @@ https://www.material-tailwind.com/docs/html/image Image with Blurred Caption
 
       PWA
       readme
+
+      images Bing image creator
