@@ -168,8 +168,18 @@ const checkboxesGroups = [
   }
 ]
 
+function isOnline() {
+  return navigator.onLine;
+}
+
 function validateForm() {
   let noError = true;
+
+  // bloque l'envoi du formulaire si l'utilisateur n'a pas de connexion internet
+  if (!isOnline()) {
+    alert("No internet connection. Please check your connection and try again.");
+    noError = false;
+  }
 
   inputs.forEach((input) => {
     const inputValue = getInputValue(input.element);
