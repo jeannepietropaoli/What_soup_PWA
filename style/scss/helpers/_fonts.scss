@@ -1,4 +1,17 @@
-@import url('https://fonts.googleapis.com/css2?family=Oleo+Script:wght@400;700&display=swap');
+@font-face {
+    font-family: 'Oleo Script';
+    font-style: normal;
+    font-weight: normal;
+    src: url('../../../fonts/oleo/OleoScript-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Oleo Script';
+    font-style: normal;
+    font-weight: bold;
+    src: url('../../../fonts/oleo/OleoScript-Bold.ttf') format('truetype');
+}
+
 
 .oleo_font {
     font-family: "Oleo Script", system-ui;
