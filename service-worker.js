@@ -1,8 +1,10 @@
-// Mettre a jour la cache a chaque fois qu'un fichier de la cache change pour etre pris en compte
-const CACHE_NAME = "static-cache-v8";
+const CACHE_NAME = "static-cache-v9";
 
 //Add list of files to cache here.
-const FILES_TO_CACHE = ["offline.html"];
+const FILES_TO_CACHE = [
+  "offline.html",
+  "style/style.css",
+];
 
 // Installation - fait seulement une fois, premiere ouverture du site (installation du service worker)
 self.addEventListener("install", (evt) => {
@@ -17,9 +19,9 @@ self.addEventListener("install", (evt) => {
   console.log("[ServiceWorker] Install");
 });
 
-// Activation -  a chaque ouverture du site / app
+// Activation - a chaque ouverture du site / app
 self.addEventListener("activate", (evt) => {
-  //Remove previous cached data from disk.
+  // Remove previous cached data from disk.
   evt.waitUntil(
     caches.keys().then((keyList) => {
       return Promise.all(
@@ -36,19 +38,37 @@ self.addEventListener("activate", (evt) => {
   console.log("[ServiceWorker] Activate");
 });
 
-//Acces aux ressources
+// Fetch event - Acces aux ressources
 self.addEventListener("fetch", (evt) => {
   console.log("[ServiceWorker] Fetch", evt.request.url);
-  //Add fetch event handler here.
-  if (evt.request.mode !== "navigate") {
-    // Not a page navigation, bail.
+
+  // Handle image requests with stale-while-revalidate strategy
+  if (evt.request.url.includes('/img/')) {
+    evt.respondWith(
+      caches.match(evt.request).then((cachedResponse) => {
+        // Fetch the image from the network in the background
+        const fetchPromise = fetch(evt.request).then((networkResponse) => {
+          caches.open(CACHE_NAME).then((cache) => {
+            cache.put(evt.request, networkResponse.clone()); // Update the cache with the new image
+          });
+          return networkResponse;
+        });
+        // Return the cached image if available, else wait for network response
+        return cachedResponse || fetchPromise;
+      })
+    );
+    return; // Exit the fetch event handler after processing images
+  }
+
+  // Handle navigation requests (e.g., pages)
+  if (evt.request.mode === "navigate") {
+    evt.respondWith(
+      fetch(evt.request).catch(() => {
+        return caches.open(CACHE_NAME).then((cache) => {
+          return cache.match("offline.html");
+        });
+      })
+    );
     return;
   }
-  evt.respondWith(
-    fetch(evt.request).catch(() => {
-      return caches.open(CACHE_NAME).then((cache) => {
-        return cache.match("jeannepietropaoli.github.io/Integration_web_PWA_Jeanne_Pietropaoli/offline.html");
-      });
-    })
-  );
 });
