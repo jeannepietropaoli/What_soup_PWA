@@ -76,7 +76,7 @@ class RamenRecipe {
   }
 
   createTitle() {
-    const title = document.createElement("h3");
+    const title = document.createElement("p");
     title.classList.add("text-lg", "font-medium", "text-gray-800");
     title.textContent = `Recette #${this.id}`;
     return title;
@@ -113,9 +113,10 @@ class RamenRecipe {
       "flex-wrap"
     );
 
-    this.ingredientsImgs.forEach((imgSrc) => {
+    this.ingredientsImgs.forEach((imgElement) => {
       const img = document.createElement("img");
-      img.src = imgSrc;
+      img.src = imgElement.src;
+      img.alt = imgElement.alt;
       img.classList.add("h-14", "p-2");
       ingredientsList.appendChild(img);
     });

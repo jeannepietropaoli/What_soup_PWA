@@ -12,12 +12,12 @@ form.addEventListener('submit', function() {
   const epices = Array.from(document.querySelectorAll('input[name="epices"]:checked')).map(epice => epice.value);
 
   // récupération des images des ingrédients pour les afficher dans la carte de la recette
-  const bouillonImg = document.querySelector('input[name="bouillon"]:checked').nextElementSibling.src;
-  const nouillesImg = document.querySelector('input[name="nouilles"]:checked').nextElementSibling.src;
-  const proteineImg = document.querySelector('input[name="proteine"]:checked').nextElementSibling.src;
-  const legumesImgs = Array.from(document.querySelectorAll('input[name="legumes"]:checked')).map(legume => legume.nextElementSibling.src);
-  const toppingsImgs = Array.from(document.querySelectorAll('input[name="toppings"]:checked')).map(topping => topping.nextElementSibling.src);
-  const epicesImgs = Array.from(document.querySelectorAll('input[name="epices"]:checked')).map(epice => epice.nextElementSibling.src);
+  const bouillonImg = { src: document.querySelector('input[name="bouillon"]:checked').nextElementSibling.src, alt: document.querySelector('input[name="bouillon"]:checked').nextElementSibling.alt};
+  const nouillesImg = { src: document.querySelector('input[name="nouilles"]:checked').nextElementSibling.src, alt: document.querySelector('input[name="nouilles"]:checked').nextElementSibling.alt};
+  const proteineImg = { src: document.querySelector('input[name="proteine"]:checked').nextElementSibling.src, alt: document.querySelector('input[name="proteine"]:checked').nextElementSibling.alt};
+  const legumesImgs = Array.from(document.querySelectorAll('input[name="legumes"]:checked')).map(legume => ({ src: legume.nextElementSibling.src, alt: legume.nextElementSibling.alt }));
+  const toppingsImgs = Array.from(document.querySelectorAll('input[name="toppings"]:checked')).map(topping => ({ src: topping.nextElementSibling.src, alt: topping.nextElementSibling.alt }));
+  const epicesImgs = Array.from(document.querySelectorAll('input[name="epices"]:checked')).map(epice => ({ src: epice.nextElementSibling.src, alt: epice.nextElementSibling.alt }));
 
   const ingredientsImgs = [bouillonImg, nouillesImg, proteineImg, ...legumesImgs, ...toppingsImgs, ...epicesImgs];
 
