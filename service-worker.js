@@ -1,4 +1,4 @@
-const CACHE_NAME = "static-cache-v13";
+const CACHE_NAME = "static-cache-v14";
 
 //Add list of files to cache here.
 const FILES_TO_CACHE = [
@@ -17,6 +17,7 @@ const FILES_TO_CACHE = [
   "scripts/collapse.js",
   "scripts/mobile_menu.js",
   "scripts/paralax.js",
+  "scripts/formValidation.js",
   "scripts/ramen-creation-form.js",
   "scripts/RamenRecipe.js",
   "scripts/recipe-display.js"
