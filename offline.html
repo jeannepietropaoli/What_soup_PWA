@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="fr-CA">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>What'soup - Inscription concours</title>
+  <link rel="stylesheet" href="style/css/style.css">
+  <script src="scripts/mobile_menu.js" defer></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
+  <script src="https://kit.fontawesome.com/c777fc19af.js" crossorigin="anonymous"></script>
+  <link rel="icon" type="image/png" href="img/favicon.png">
+</head>
+
+<body class="flex flex-col min-h-screen text-gray-600 overflow-x-hidden">
+    <a class="screen-reader-txt" href="#main-content">Aller au contenu principal</a>
+    <!-- A partir du composant 'Simple dark with menu button on left' https://tailwindui.com/components/application-ui/navigation/navbars -->
+    <header class="bg-white relative shadow-md">
+      <nav>
+          <div class="container mx-auto px-6 pb-0 lg:pb-0">
+            <div class="relative flex items-center justify-between">
+              <div class="flex flex-1 items-center justify-between lg:justify-start">
+  
+                <!-- button menu mobile -->
+                <div class="flex items-center lg:hidden py-3">
+                    <button id="mobile-menu-btn" type="button" class="relative inline-flex items-center justify-center rounded-md p-2 text-[#4C71FE] hover:bg-slate-500 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" aria-controls="mobile-menu" aria-expanded="false">
+                        <span class="sr-only">Open main menu</span>
+                        <!-- Icon quand menu est fermé -->
+                        <svg id="open-mobile-menu-btn" class="block h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                        </svg>
+                        <!-- Icon quand menu est ouvert -->
+                        <svg id="close-mobile-menu-btn" class="hidden h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+  
+                <!-- Logo -->
+                <a href="index.html" aria-label="Aller a l'accueil"><img class="h-16 p-1 mx-auto" src="img/whatsoup-blue.png" alt="Logo"></a>
+  
+                <!-- bouton "creer ramen" petits écrans -->
+                <div class="flex items-center lg:hidden py-3">
+                    <a class="button button--white-bg" aria-label="Créer un nouveau ramen" role="button" href="index.html#section_creation">
+                        + Créer
+                    </a>
+                </div>
+  
+                <!-- Menu grands écrans -->
+                <div class="hidden lg:ml-6 lg:flex">
+                    <a class="w-max inline-block p-5 mr-6 border-b-4 border-transparent m-0 hover:cursor-pointer hover:border-[#4c71fe] text-sm transition-all" href="index.html">Accueil</a>
+                    <a class="w-max inline-block p-5 mr-6 border-b-4 border-transparent m-0 hover:cursor-pointer hover:border-[#4c71fe] text-sm transition-all" href="mes-recettes.html">Mes recettes</a>
+                    <a class="w-max inline-block p-5 mr-6 border-b-4 border-transparent m-0 hover:cursor-pointer hover:border-[#4c71fe] text-sm transition-all" href="inspiration.html">Inspiration</a>
+                    <a class="w-max inline-block p-5 mr-6 border-b-4 border-transparent m-0 hover:cursor-pointer hover:border-[#4c71fe] text-sm transition-all" href="preparation.html">Préparation</a>
+                </div>
+              </div>
+  
+              <div class="absolute inset-y-0 right-0 flex items-center pr-2 lg:static lg:inset-auto lg:ml-6 lg:pr-0">
+                  <!-- bouton "creer ramen" grands ecrans -->
+                  <a class="hidden lg:inline-block button button--white-bg" aria-label="Créer un nouveau ramen" role="button" href="index.html#section_creation">+ Créer un ramen</a>
+              </div>
+            </div>
+          </div>
+  
+          <!-- Menu mobile- ouvre le menu au clic de open-mobile-menu-btn / ferme le menu au clic de close-mobile-menu-btn -->
+          <div class="hidden lg:hidden" id="mobile-menu">
+              <div class="px-2 pt-2">
+                <a href="index.html" class="block border-b-4 border-transparent px-3 py-2 text-sm font-medium hover:bg-slate-100 hover:border-[#4c71fe] transition-all">Accueil</a>
+                <a href="mes-recettes.html" class="block border-b-4 border-transparent px-3 py-2 text-sm font-medium hover:bg-slate-100 hover:border-[#4c71fe] transition-all">Mes recettes</a>
+                <a href="inspiration.html" class="block border-b-4 border-transparent px-3 py-2 text-sm font-medium hover:bg-slate-100 hover:border-[#4c71fe] transition-all">Inspiration</a>
+                <a href="preparation.html" class="block border-b-4 border-transparent px-3 py-2 text-sm font-medium hover:bg-slate-100 hover:border-[#4c71fe] transition-all">Préparation</a>
+  
+              </div>
+          </div>
+        </nav>
+    </header>
+
+    <main class="grow" id="main-content">
+        <!-- SECTION CONFIRMATION DE PARTICIPATION AU CONCOURS DE LA SEMAINE -->
+        <section>
+          <div class="container mx-auto py-8 px-6 md:py-12 pb-0 md:pb-0 flex flex-col">
+            <h1 class="font-semibold text-center">Oops, votre connexion internet  a été interrompue.</h1>
+            <a href="index.html" class="button button--blue-bg w-max mx-auto my-4">Retourner à l'accueil</a>
+          </div>
+        </section>
+        
+      </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-800 text-slate-300 relative">
+        <div class="container border-t-4 border-[#4c71fe] mx-auto px-6 pb-0 md:pb-0 grid grid-cols-12 items-center">
+        <!-- Copyright -->
+        <div class="footer__copyright col-span-12 lg:col-span-5 mx-auto order-2 lg:order-1">
+            <p class="text-sm">© 2024 Integration Web 2. Jeanne Pietropaoli.</p>
+        </div>
+        <!-- Logo -->
+        <div class="my-2 mx-auto col-span-12 lg:col-span-2 order-1 lg:order-2 relative">
+          <a href="index.html" aria-label="Aller a l'accueil"><img class="h-16 p-1 mx-auto" src="img/whatsoup-blue.png" alt="Logo de l'application"></a>
+        </div>
+        <!-- Réseaux sociaux -->
+        <div class="footer__links space-x-2 col-span-12 lg:col-span-5 mx-auto lg:ml-auto order-3 my-2 lg:my-0">
+            <a href="https://www.facebook.com/" target="_blank" aria-label="Aller sur notre page Facebook">
+            <i class="fab fa-facebook-f text-slate-300 transition-all duration-150 text-lg hover:scale-105 hover:text-[#4c71fe] cursor-pointer"></i>
+            </a>
+            <a href="https://www.linkedin.com/" target="_blank" aria-label="Aller sur notre page Linkedin">
+            <i class="fab fa-linkedin-in text-slate-300 transition-all duration-150 text-lg hover:scale-105 hover:text-[#4c71fe] cursor-pointer"></i>
+            </a>
+            <a href="https://twitter.com/" target="_blank" aria-label="Aller sur notre page Twitter">
+            <i class="fab fa-twitter text-slate-300 text-lg  transition-all duration-150 hover:scale-105 hover:text-[#4c71fe] cursor-pointer"></i>
+            </a>
+            <a href="https://www.instagram.com/" target="_blank" aria-label="Aller sur notre page Instagram">
+            <i class="fab fa-instagram text-slate-300 text-lg  transition-all duration-15 hover:scale-105 hover:text-[#4c71fe] cursor-pointer"></i>
+            </a>
+        </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>
