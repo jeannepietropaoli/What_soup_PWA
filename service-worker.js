@@ -1,5 +1,5 @@
 // Mettre a jour la cache a chaque fois qu'un fichier de la cache change pour etre pris en compte
-const CACHE_NAME = "static-cache-v2";
+const CACHE_NAME = "static-cache-v3";
 
 //Add list of files to cache here.
 const FILES_TO_CACHE = ["offline.html"];
@@ -47,7 +47,7 @@ self.addEventListener("fetch", (evt) => {
   evt.respondWith(
     fetch(evt.request).catch(() => {
       return caches.open(CACHE_NAME).then((cache) => {
-        return cache.match("offline.html");
+        return cache.match("jeannepietropaoli.github.io/Integration_web_PWA_Jeanne_Pietropaoli/offline.html");
       });
     })
   );
