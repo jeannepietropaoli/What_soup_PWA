@@ -47,7 +47,7 @@ self.addEventListener("fetch", (evt) => {
   evt.respondWith(
     fetch(evt.request).catch(() => {
       return caches.open(CACHE_NAME).then((cache) => {
-        return cache.match("jeannepietropaoli.github.io/Integration_web_PWA_Jeanne_Pietropaoli/offline.html");
+        return cache.match("/TP1_Integration_Web_2/offline.html");
       });
     })
   );
