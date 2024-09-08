@@ -1,6 +1,6 @@
 {
     "name": "What'soup - Ramen",
-    "short_name": "Alpine",
+    "short_name": "What'soup - Ramen",
     "icons": [{
         "src": "img/icons/maskable_icon_x48.png",
         "sizes": "48x48",
@@ -43,9 +43,58 @@
         "type": "image/png",
         "purpose": "any maskable"
     }],
+    "screenshots": [
+        {
+         "src": "img/screenshots/screenshot-1.png",
+          "sizes": "1266x804",
+          "type": "image/png",
+          "form_factor": "wide"
+        },
+        {
+          "src": "img/screenshots/screenshot-2.png",
+          "sizes": "1266x804",
+          "type": "image/png",
+          "form_factor": "wide"
+        },
+        {
+          "src": "img/screenshots/screenshot-3.png",
+          "sizes": "1266x804",
+          "type": "image/png",
+          "form_factor": "wide"
+        },
+        {
+          "src": "img/screenshots/screenshot-4.png",
+          "sizes": "1266x804",
+          "type": "image/png",
+          "form_factor": "wide"
+        },
+        {
+          "src": "img/screenshots/screenshot-5.png",
+          "sizes": "1266x804",
+          "type": "image/png",
+          "form_factor": "wide"
+        },
+        {
+          "src": "img/screenshots/screenshot-6.png",
+          "sizes": "1266x804",
+          "type": "image/png",
+          "form_factor": "wide"
+        },
+        {
+          "src": "img/screenshots/screenshot-mobile-1.png",
+          "sizes": "448x872",
+          "type": "image/png"
+        },
+        {
+            "src": "img/screenshots/screenshot-mobile-2.png",
+            "sizes": "448x872",
+            "type": "image/png"
+        }
+    ],
     "start_url": "/index.html",
     "display": "standalone",
     "background_color": "#facc18",
     "theme_color": "#4c71fe",
-    "description": "Application de création de ramen"
+    "description": "Application de création de ramen",
+    "id": "999"
 }
