@@ -3,7 +3,7 @@ const CACHE_NAME = "static-cache-v9";
 //Add list of files to cache here.
 const FILES_TO_CACHE = [
   "offline.html",
-  "style/style.css",
+  "style/css/style.css",
 ];
 
 // Installation - fait seulement une fois, premiere ouverture du site (installation du service worker)
