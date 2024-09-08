@@ -1,9 +1,21 @@
-const CACHE_NAME = "static-cache-v10";
+const CACHE_NAME = "static-cache-v11";
 
 //Add list of files to cache here.
 const FILES_TO_CACHE = [
   "offline.html",
+  "index.html",
+  "inspiration.html",
+  "mes-recettes.html",
+  "preparation.html",
   "style/css/style.css",
+  "https://cdn.tailwindcss.com",
+  "fontawesome-free-6.6.0-web/css/all.min.css",
+  "scripts/collapse.js",
+  "scripts/mobile_menu.js",
+  "scripts/paralax.js",
+  "scripts/ramen-creation-form.js",
+  "scripts/RamenRecipe.js",
+  "scripts/recipe-display.js"
 ];
 
 // Installation - fait seulement une fois, premiere ouverture du site (installation du service worker)
@@ -42,7 +54,7 @@ self.addEventListener("activate", (evt) => {
 self.addEventListener("fetch", (evt) => {
   console.log("[ServiceWorker] Fetch", evt.request.url);
 
-  // Handle image requests with stale-while-revalidate strategy
+  // Permet de mettre en cache dynamiquement les images avec une strategie stale-while-revalidate, c'est a dire que l'image sera affichee meme si elle est obsolete, et sera remplacee par la nouvelle image une fois telechargee
   if (evt.request.url.includes('/img/')) {
     evt.respondWith(
       caches.match(evt.request).then((cachedResponse) => {
