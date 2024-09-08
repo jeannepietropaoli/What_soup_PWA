@@ -1,5 +1,5 @@
 // Mettre a jour la cache a chaque fois qu'un fichier de la cache change pour etre pris en compte
-const CACHE_NAME = "static-cache-v3";
+const CACHE_NAME = "static-cache-v5";
 
 //Add list of files to cache here.
 const FILES_TO_CACHE = ["offline.html"];
