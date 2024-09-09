@@ -1,4 +1,4 @@
-const CACHE_NAME = "static-cache-v29";
+const CACHE_NAME = "static-cache-v30";
 
 //Add list of files to cache here.
 const FILES_TO_CACHE = [
@@ -54,6 +54,26 @@ self.addEventListener("activate", (evt) => {
   console.log("[ServiceWorker] Activate");
 });
 
+//Acces aux ressources
+self.addEventListener('fetch', (evt) => {
+  console.log('[ServiceWorker] Fetch', evt.request.url);
+  //Add fetch event handler here.
+  if (evt.request.mode !== 'navigate') {
+  // Not a page navigation, bail.
+  return;
+  }
+  evt.respondWith(
+  fetch(evt.request)
+  .catch(() => {
+  return caches.open(CACHE_NAME)
+  .then((cache) => {
+ return cache.match('offline.html' );
+  });
+  })
+  );
+ });
+
+/* 
 // Fetch event - Acces aux ressources
 self.addEventListener("fetch", (evt) => {
   console.log("[ServiceWorker] Fetch", evt.request.url);
@@ -94,3 +114,5 @@ self.addEventListener("fetch", (evt) => {
     return;
   }
 });
+
+*/
