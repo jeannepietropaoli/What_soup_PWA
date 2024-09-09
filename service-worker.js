@@ -1,4 +1,4 @@
-const CACHE_NAME = "static-cache-v40";
+const CACHE_NAME = "static-cache-v42";
 
 // Files to cache
 const FILES_TO_CACHE = [
@@ -24,7 +24,7 @@ const FILES_TO_CACHE = [
 
 const IMAGES_TO_CACHE = [
   "img/favicon.png",
-  "img/ingredients-bg.png",
+  "img/ingredeints-bg.png",
   "img/ingredients-bg-checked.png",
   "img/ramen_bol.png",
   "img/ramen-semaine.png",
