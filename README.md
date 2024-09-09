@@ -22,7 +22,7 @@ J'ai choisi de monter un site de création de ramens en ligne: "What'soup?". De 
 *  Utiliser les outils **git et Github** pour le versionning de notre code
 *  Pratiquer la méthodologie **BEM**
 *  Pratiquer le **SASS**
-*  Fournir un **full responsive** notamment grâce aux **grilles Tailwind**
+*  Fournir un site **full responsive** notamment grâce aux **grilles Tailwind**
 *  Obtenir une **Progressive Web App** grâce à un **manifest** et un **service-worker** complets et fonctionnels
 *  Pratiquer la **validation des formulaires** avec JS
 
@@ -79,10 +79,16 @@ Je voulais rendre le projet plus interactif que les précédents, mais j'étais 
 
 ## Aperçu   
 
-|  |  |
-| --- | --- |
-| 
 <img src="img/screenshots/capture_accueil.jpeg" alt="capture écran page d'accueil" width="600" style="margin: 20px 0; border-bottom: 4px solid #D1D5DB;"/>
-| <img src="img/screenshots/capture_recettes.jpeg" alt="caputre écran page mes recettes" width="600" cstyle="margin: 20px 0; border-bottom: 4px solid #D1D5DB;"/>
-| <img src="img/screenshots/capture_inspiration.jpeg" alt="caputre écran page inspiration" width="600" style="margin: 20px 0; border-bottom: 4px solid #D1D5DB;"/>
-| <img src="img/screenshots/capture_preparation.jpeg" alt="caputre écran page préparation" width="600" style="margin: 20px 0; border-bottom: 4px solid #D1D5DB;"/>
+
+---
+
+<img src="img/screenshots/capture_recettes.jpeg" alt="caputre écran page mes recettes" width="600" cstyle="margin: 20px 0; border-bottom: 4px solid #D1D5DB;"/>
+
+---
+
+<img src="img/screenshots/capture_inspiration.jpeg" alt="caputre écran page inspiration" width="600" style="margin: 20px 0; border-bottom: 4px solid #D1D5DB;"/>
+
+---
+
+<img src="img/screenshots/capture_preparation.jpeg" alt="caputre écran page préparation" width="600" style="margin: 20px 0; border-bottom: 4px solid #D1D5DB;"/>
