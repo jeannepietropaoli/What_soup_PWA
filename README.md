@@ -2,9 +2,12 @@
 
 Elève: Jeanne Pietropaoli
 
+DA: PIEJ08579807
+
 ## Lien
 
 Repo : https://github.com/jeannepietropaoli/Integration_web_PWA_Jeanne_Pietropaoli
+
 Live: https://jeannepietropaoli.github.io/Integration_web_PWA_Jeanne_Pietropaoli/index.html
 
 ## Description
