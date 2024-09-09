@@ -1,4 +1,4 @@
-const CACHE_NAME = "static-cache-v27";
+const CACHE_NAME = "static-cache-v28";
 
 //Add list of files to cache here.
 const FILES_TO_CACHE = [
@@ -80,10 +80,15 @@ self.addEventListener("fetch", (evt) => {
   // Handle navigation requests (e.g., pages)
   if (evt.request.mode === "navigate") {
     evt.respondWith(
-      fetch(evt.request).catch(() => {
-        return caches.open(CACHE_NAME).then((cache) => {
-          return cache.match("offline.html");
-        }).catch(err => console.error("Cache match for offline.html failed", err)); // Catch errors
+      caches.match(evt.request).then((cachedResponse) => {
+        if (cachedResponse) {
+          return cachedResponse; // Return the cached page if available
+        }
+        return fetch(evt.request).catch(() => {
+          return caches.open(CACHE_NAME).then((cache) => {
+            return cache.match("offline.html");
+          });
+        });
       })
     );
     return;
