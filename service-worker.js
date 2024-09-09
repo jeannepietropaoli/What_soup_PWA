@@ -1,4 +1,4 @@
-const CACHE_NAME = "static-cache-v56";
+const CACHE_NAME = "static-cache-v57";
 
 // Fichiers a stocker dans la cache
 const FILES_TO_CACHE = [
