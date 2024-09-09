@@ -1112,66 +1112,68 @@
           <!--PARTIE 1: Recette Rundown -->
           <fieldset class="relative col-span-12 mb-8 lg:mb-0 lg:col-span-6 w-11/12 mx-auto flex flex-col">
             <legend class="font-bold bg-[#4c71fe] text-white text-sm mx-auto py-2 px-6">Recette rundown</legend>
-            <div class="border-2 border-slate-400 hover:border-[#4c71fe] transition-all py-4 flex-grow px-10">
-              <!-- Id du ramen -->
-              <div class="flex flex-col mb-4 space-y-1 input-control">
-                <label for="ramen-id" class="font-semibold">Id du ramen</label>
-                <input class="border border-slate-400" type="number" min="1" id="ramen-id" name="ramen-id" required>
-                <div class="input-control__error-msg block w-full"></div>
-              </div>
-              <!-- Nom de la recette -->
-              <div class="flex flex-col mb-4 space-y-1 input-control">
-                <label for="recipe-name" class="font-semibold">Nom de la recette</label>
-                <input class="border border-slate-400" type="text" id="recipe-name" name="recipe-name" minlength="3" maxlength="50" required>
-                <div class="input-control__error-msg block w-full"></div>
-              </div>
-              <!-- Description -->
-              <div class="flex flex-col mb-4 space-y-1 input-control">
-                  <label for="description" class="font-semibold">Description</label>
-                  <textarea class="border border-slate-400" name="description" id="description" cols="30" rows="10" minlength="4" maxlength="300" required></textarea>
+            <div class="border-2 border-slate-400 hover:border-[#4c71fe] transition-all py-4 flex-grow">
+              <div class="w-11/12 lg:w-10/12 py-4 mx-auto">
+                <!-- Id du ramen -->
+                <div class="flex flex-col mb-4 space-y-1 input-control">
+                  <label for="ramen-id" class="font-semibold">Id du ramen</label>
+                  <input class="border border-slate-400" type="number" min="1" id="ramen-id" name="ramen-id" required>
                   <div class="input-control__error-msg block w-full"></div>
-              </div>
-              <!-- Choix des étiquettes -->
-              <div class="flex flex-col mb-4">
-                <fieldset class="space-y-1">
-                  <legend class="font-semibold">Etiquettes</legend>
-                  <span class="text-xs">Choisir entre 1 et 3 étiquettes</span>
-                  <div class="flex flex-wrap gap-2 input-control">
-                    <div class="group w-max relative">
-                      <input class="peer absolute inset-0 z-10 cursor-pointer opacity-0" type="checkbox" id="labels-opt-1" name="labels" value="vege" required>
-                      <label class="font-semibold bg-gray-200 peer-hover:bg-[#4c71fe] peer-hover:text-white transition-all text-gray-600 hover:text-gray-600 py-[0.15rem] px-4 rounded-full text-sm z-[2] peer-checked:bg-[#4c71fe] peer-checked:text-white" for="labels-opt-1">vege</label>
-                    </div>
-                    <div class="group w-max relative">
-                      <input class="peer absolute inset-0 z-10 cursor-pointer opacity-0" type="checkbox" id="labels-opt-2" name="labels" value="traditionnel" required>
-                      <label class="font-semibold bg-gray-200 peer-hover:bg-[#4c71fe] peer-hover:text-white transition-all text-gray-600 hover:text-gray-600 py-[0.15rem] px-4 rounded-full text-sm z-[2] peer-checked:bg-[#4c71fe] peer-checked:text-white" for="labels-opt-2">traditionnel</label>
-                    </div>
-                    <div class="group w-max relative">
-                      <input class="peer absolute inset-0 z-10 cursor-pointer opacity-0" type="checkbox" id="labels-opt-3" name="labels" value="original" required>
-                      <label class="font-semibold bg-gray-200 peer-hover:bg-[#4c71fe] peer-hover:text-white transition-all text-gray-600 hover:text-gray-600 py-[0.15rem] px-4 rounded-full text-sm z-[2] peer-checked:bg-[#4c71fe] peer-checked:text-white" for="labels-opt-3">original</label>
-                    </div>
-                    <div class="group w-max relative">
-                      <input class="peer absolute inset-0 z-10 cursor-pointer opacity-0" type="checkbox" id="labels-opt-4" name="labels" value="spicy" required>
-                      <label class="font-semibold bg-gray-200 peer-hover:bg-[#4c71fe] peer-hover:text-white transition-all text-gray-600 hover:text-gray-600 py-[0.15rem] px-4 rounded-full text-sm z-[2] peer-checked:bg-[#4c71fe] peer-checked:text-white" for="labels-opt-4">spicy</label>
-                    </div>
-                    <div class="group w-max relative">
-                      <input class="peer absolute inset-0 z-10 cursor-pointer opacity-0" type="checkbox" id="labels-opt-5" name="labels" value="fusion" required>
-                      <label class="font-semibold bg-gray-200 peer-hover:bg-[#4c71fe] peer-hover:text-white transition-all text-gray-600 hover:text-gray-600 py-[0.15rem] px-4 rounded-full text-sm z-[2] peer-checked:bg-[#4c71fe] peer-checked:text-white" for="labels-opt-5">fusion</label>
-                    </div>
+                </div>
+                <!-- Nom de la recette -->
+                <div class="flex flex-col mb-4 space-y-1 input-control">
+                  <label for="recipe-name" class="font-semibold">Nom de la recette</label>
+                  <input class="border border-slate-400" type="text" id="recipe-name" name="recipe-name" minlength="3" maxlength="50" required>
+                  <div class="input-control__error-msg block w-full"></div>
+                </div>
+                <!-- Description -->
+                <div class="flex flex-col mb-4 space-y-1 input-control">
+                    <label for="description" class="font-semibold">Description</label>
+                    <textarea class="border border-slate-400" name="description" id="description" cols="30" rows="10" minlength="4" maxlength="300" required></textarea>
                     <div class="input-control__error-msg block w-full"></div>
-                  </div>
-                </fieldset>
-              </div>
-              <!-- Nom du chef -->
-              <div class="flex flex-col mb-4 space-y-1 input-control">
-                <label for="chef-name" class="font-semibold">Nom du chef</label>
-                <input class="border border-slate-400" type="text" id="chef-name" name="chef-name" minlength="2" maxlength="50" required>
-                <div class="input-control__error-msg block w-full"></div>
-              </div>
-              <!-- Courriel du chef -->
-              <div class="flex flex-col mb-4 space-y-1 input-control">
-                <label for="chef-email" class="font-semibold">Courriel du chef</label>
-                <input class="border border-slate-400" type="email" id="chef-email" name="chef-email" required>
-                <div class="input-control__error-msg block w-full"></div>
+                </div>
+                <!-- Choix des étiquettes -->
+                <div class="flex flex-col mb-4">
+                  <fieldset class="space-y-1">
+                    <legend class="font-semibold">Etiquettes</legend>
+                    <span class="text-xs">Choisir entre 1 et 3 étiquettes</span>
+                    <div class="flex flex-wrap gap-2 input-control">
+                      <div class="group w-max relative">
+                        <input class="peer absolute inset-0 z-10 cursor-pointer opacity-0" type="checkbox" id="labels-opt-1" name="labels" value="vege" required>
+                        <label class="font-semibold bg-gray-200 peer-hover:bg-[#4c71fe] peer-hover:text-white transition-all text-gray-600 hover:text-gray-600 py-[0.15rem] px-4 rounded-full text-sm z-[2] peer-checked:bg-[#4c71fe] peer-checked:text-white" for="labels-opt-1">vege</label>
+                      </div>
+                      <div class="group w-max relative">
+                        <input class="peer absolute inset-0 z-10 cursor-pointer opacity-0" type="checkbox" id="labels-opt-2" name="labels" value="traditionnel" required>
+                        <label class="font-semibold bg-gray-200 peer-hover:bg-[#4c71fe] peer-hover:text-white transition-all text-gray-600 hover:text-gray-600 py-[0.15rem] px-4 rounded-full text-sm z-[2] peer-checked:bg-[#4c71fe] peer-checked:text-white" for="labels-opt-2">traditionnel</label>
+                      </div>
+                      <div class="group w-max relative">
+                        <input class="peer absolute inset-0 z-10 cursor-pointer opacity-0" type="checkbox" id="labels-opt-3" name="labels" value="original" required>
+                        <label class="font-semibold bg-gray-200 peer-hover:bg-[#4c71fe] peer-hover:text-white transition-all text-gray-600 hover:text-gray-600 py-[0.15rem] px-4 rounded-full text-sm z-[2] peer-checked:bg-[#4c71fe] peer-checked:text-white" for="labels-opt-3">original</label>
+                      </div>
+                      <div class="group w-max relative">
+                        <input class="peer absolute inset-0 z-10 cursor-pointer opacity-0" type="checkbox" id="labels-opt-4" name="labels" value="spicy" required>
+                        <label class="font-semibold bg-gray-200 peer-hover:bg-[#4c71fe] peer-hover:text-white transition-all text-gray-600 hover:text-gray-600 py-[0.15rem] px-4 rounded-full text-sm z-[2] peer-checked:bg-[#4c71fe] peer-checked:text-white" for="labels-opt-4">spicy</label>
+                      </div>
+                      <div class="group w-max relative">
+                        <input class="peer absolute inset-0 z-10 cursor-pointer opacity-0" type="checkbox" id="labels-opt-5" name="labels" value="fusion" required>
+                        <label class="font-semibold bg-gray-200 peer-hover:bg-[#4c71fe] peer-hover:text-white transition-all text-gray-600 hover:text-gray-600 py-[0.15rem] px-4 rounded-full text-sm z-[2] peer-checked:bg-[#4c71fe] peer-checked:text-white" for="labels-opt-5">fusion</label>
+                      </div>
+                      <div class="input-control__error-msg block w-full"></div>
+                    </div>
+                  </fieldset>
+                </div>
+                <!-- Nom du chef -->
+                <div class="flex flex-col mb-4 space-y-1 input-control">
+                  <label for="chef-name" class="font-semibold">Nom du chef</label>
+                  <input class="border border-slate-400" type="text" id="chef-name" name="chef-name" minlength="2" maxlength="50" required>
+                  <div class="input-control__error-msg block w-full"></div>
+                </div>
+                <!-- Courriel du chef -->
+                <div class="flex flex-col mb-4 space-y-1 input-control">
+                  <label for="chef-email" class="font-semibold">Courriel du chef</label>
+                  <input class="border border-slate-400" type="email" id="chef-email" name="chef-email" required>
+                  <div class="input-control__error-msg block w-full"></div>
+                </div>
               </div>
             </div>
           </fieldset>
@@ -1180,131 +1182,130 @@
             <!--PARTIE 2: Caprices du chef -->
           <fieldset class="relative col-span-12 lg:col-span-6 w-11/12 mx-auto flex flex-col">
             <legend class="font-bold bg-[#4c71fe] text-white text-sm mx-auto py-2 px-6">Caprices du Chef</legend>
-            <div class="border-2 border-slate-400 hover:border-[#4c71fe] transition-all py-4 flex-grow px-10">
-              <!-- Mot du chef -->
-              <div class="flex flex-col mb-4 space-y-1 input-control">
-                <label for="comments" class="font-semibold">Mot du Chef</label>
-                <textarea class="border border-slate-400" name="comments" id="comments" cols="30" rows="10" minlength="4" maxlength="300" required></textarea>
-                <div class="input-control__error-msg block w-full"></div>
-              </div>
-              <!-- Superpouvoir du ramen -->
-              <div class="flex flex-col mb-4 space-y-1 input-control">
-                <label for="superpower" class="font-semibold">Superpouvoir du ramen</label>
-                <input class="border border-slate-400" type="text" id="superpower" name="superpower" minlength="2" maxlength="60" required>
-                <div class="input-control__error-msg block w-full"></div>
-              </div>
-            
-              <!-- Ustensiles indispensables -->
-              <div class="flex flex-col mb-4">
-                <fieldset class="space-y-1">
-                  <legend class="font-semibold">Ustensiles indispensables</legend>
-                  <span class="text-xs">Choisir entre 1 et 3 ustensiles</span>
-                  <div class="flex flex-wrap gap-2 input-control">
-                    <div class="group w-max relative">
-                      <input class="peer absolute inset-0 z-10 cursor-pointer opacity-0" type="checkbox" id="ustensils-opt-1" name="ustensils" value="fourchette-geante" required>
-                      <label class="font-semibold bg-gray-200 peer-hover:bg-[#4c71fe] peer-hover:text-white transition-all text-gray-600 hover:text-gray-600 py-[0.15rem] px-4 rounded-full text-sm z-[2] peer-checked:bg-[#4c71fe] peer-checked:text-white" for="ustensils-opt-1">fourchette geante</label>
+            <div class="border-2 border-slate-400 hover:border-[#4c71fe] transition-all py-4 flex-grow">
+              <div class="w-11/12 lg:w-10/12 py-4 mx-auto">
+                <!-- Mot du chef -->
+                <div class="flex flex-col mb-4 space-y-1 input-control">
+                  <label for="comments" class="font-semibold">Mot du Chef</label>
+                  <textarea class="border border-slate-400" name="comments" id="comments" cols="30" rows="10" minlength="4" maxlength="300" required></textarea>
+                  <div class="input-control__error-msg block w-full"></div>
+                </div>
+                <!-- Superpouvoir du ramen -->
+                <div class="flex flex-col mb-4 space-y-1 input-control">
+                  <label for="superpower" class="font-semibold">Superpouvoir du ramen</label>
+                  <input class="border border-slate-400" type="text" id="superpower" name="superpower" minlength="2" maxlength="60" required>
+                  <div class="input-control__error-msg block w-full"></div>
+                </div>
+                <!-- Ustensiles indispensables -->
+                <div class="flex flex-col mb-4">
+                  <fieldset class="space-y-1">
+                    <legend class="font-semibold">Ustensiles indispensables</legend>
+                    <span class="text-xs">Choisir entre 1 et 3 ustensiles</span>
+                    <div class="flex flex-wrap gap-2 input-control">
+                      <div class="group w-max relative">
+                        <input class="peer absolute inset-0 z-10 cursor-pointer opacity-0" type="checkbox" id="ustensils-opt-1" name="ustensils" value="fourchette-geante" required>
+                        <label class="font-semibold bg-gray-200 peer-hover:bg-[#4c71fe] peer-hover:text-white transition-all text-gray-600 hover:text-gray-600 py-[0.15rem] px-4 rounded-full text-sm z-[2] peer-checked:bg-[#4c71fe] peer-checked:text-white" for="ustensils-opt-1">fourchette geante</label>
+                      </div>
+                      <div class="group w-max relative">
+                        <input class="peer absolute inset-0 z-10 cursor-pointer opacity-0" type="checkbox" id="ustensils-opt-2" name="ustensils" value="baguettes" required>
+                        <label class="font-semibold bg-gray-200 peer-hover:bg-[#4c71fe] peer-hover:text-white transition-all text-gray-600 hover:text-gray-600 py-[0.15rem] px-4 rounded-full text-sm z-[2] peer-checked:bg-[#4c71fe] peer-checked:text-white" for="ustensils-opt-2">baguettes</label>
+                      </div>
+                      <div class="group w-max relative">
+                        <input class="peer absolute inset-0 z-10 cursor-pointer opacity-0" type="checkbox" id="ustensils-opt-3" name="ustensils" value="cuillere-a-soupe" required>
+                        <label class="font-semibold bg-gray-200 peer-hover:bg-[#4c71fe] peer-hover:text-white transition-all text-gray-600 hover:text-gray-600 py-[0.15rem] px-4 rounded-full text-sm z-[2] peer-checked:bg-[#4c71fe] peer-checked:text-white" for="ustensils-opt-3">cuillere a soupe</label>
+                      </div>
+                      <div class="group w-max relative">
+                        <input class="peer absolute inset-0 z-10 cursor-pointer opacity-0" type="checkbox" id="ustensils-opt-4" name="ustensils" value="mains" required>
+                        <label class="font-semibold bg-gray-200 peer-hover:bg-[#4c71fe] peer-hover:text-white transition-all text-gray-600 hover:text-gray-600 py-[0.15rem] px-4 rounded-full text-sm z-[2] peer-checked:bg-[#4c71fe] peer-checked:text-white" for="ustensils-opt-4">nos mains</label>
+                      </div>
+                      <div class="group w-max relative">
+                        <input class="peer absolute inset-0 z-10 cursor-pointer opacity-0" type="checkbox" id="ustensils-opt-5" name="ustensils" value="paille-a-soupe" required>
+                        <label class="font-semibold bg-gray-200 peer-hover:bg-[#4c71fe] peer-hover:text-white transition-all text-gray-600 hover:text-gray-600 py-[0.15rem] px-4 rounded-full text-sm z-[2] peer-checked:bg-[#4c71fe] peer-checked:text-white" for="ustensils-opt-5">paille a soupe</label>
+                      </div>
+                      <div class="group w-max relative">
+                        <input class="peer absolute inset-0 z-10 cursor-pointer opacity-0" type="checkbox" id="ustensils-opt-6" name="ustensils" value="epuisette" required>
+                        <label class="font-semibold bg-gray-200 peer-hover:bg-[#4c71fe] peer-hover:text-white transition-all text-gray-600 hover:text-gray-600 py-[0.15rem] px-4 rounded-full text-sm z-[2] peer-checked:bg-[#4c71fe] peer-checked:text-white" for="ustensils-opt-6">epuisette</label>
+                      </div>
+                      <div class="input-control__error-msg block w-full"></div>
                     </div>
-                    <div class="group w-max relative">
-                      <input class="peer absolute inset-0 z-10 cursor-pointer opacity-0" type="checkbox" id="ustensils-opt-2" name="ustensils" value="baguettes" required>
-                      <label class="font-semibold bg-gray-200 peer-hover:bg-[#4c71fe] peer-hover:text-white transition-all text-gray-600 hover:text-gray-600 py-[0.15rem] px-4 rounded-full text-sm z-[2] peer-checked:bg-[#4c71fe] peer-checked:text-white" for="ustensils-opt-2">baguettes</label>
+                  </fieldset>
+                </div>
+                <!-- Emojis -->
+                <div class="flex flex-col mb-4">
+                  <fieldset class="space-y-1">
+                    <legend class="font-semibold">Emojis decrivant la recette</legend>
+                    <span class="text-xs">Choisir entre 1 et 3 émojis</span>
+                    <div class="flex flex-wrap gap-2 input-control">
+                      <div class="group w-max relative">
+                        <input class="peer absolute inset-0 z-10 cursor-pointer opacity-0" type="checkbox" id="emojis-opt-1" name="emojis" value="spicy-emoji" required>
+                        <label class="font-semibold bg-gray-200 peer-hover:bg-[#4c71fe] peer-hover:text-white transition-all text-gray-600 py-[0.15rem] px-4 rounded-full text-sm z-[2] border-2 border-transparent peer-checked:border-[#4c71fe]" for="emojis-opt-1">🌶️</label>
+                      </div>
+                      <div class="group w-max relative">
+                        <input class="peer absolute inset-0 z-10 cursor-pointer opacity-0" type="checkbox" id="emojis-opt-2" name="emojis" value="corn-emoji" required>
+                        <label class="font-semibold bg-gray-200 peer-hover:bg-[#4c71fe] peer-hover:text-white transition-all text-gray-600 py-[0.15rem] px-4 rounded-full text-sm z-[2] border-2 border-transparent peer-checked:border-[#4c71fe]" for="emojis-opt-2">🌽</label>
+                      </div>
+                      <div class="group w-max relative">
+                        <input class="peer absolute inset-0 z-10 cursor-pointer opacity-0" type="checkbox" id="emojis-opt-3" name="emojis" value="ramen-emoji" required>
+                        <label class="font-semibold bg-gray-200 peer-hover:bg-[#4c71fe] peer-hover:text-white transition-all text-gray-600 py-[0.15rem] px-4 rounded-full text-sm z-[2] border-2 border-transparent peer-checked:border-[#4c71fe]" for="emojis-opt-3">🍜</label>
+                      </div>
+                      <div class="group w-max relative">
+                        <input class="peer absolute inset-0 z-10 cursor-pointer opacity-0" type="checkbox" id="emojis-opt-4" name="emojis" value="meat-emoji" required>
+                        <label class="font-semibold bg-gray-200 peer-hover:bg-[#4c71fe] peer-hover:text-white transition-all text-gray-600 py-[0.15rem] px-4 rounded-full text-sm z-[2] border-2 border-transparent peer-checked:border-[#4c71fe]" for="emojis-opt-4">🥩</label>
+                      </div>
+                      <div class="group w-max relative">
+                        <input class="peer absolute inset-0 z-10 cursor-pointer opacity-0" type="checkbox" id="emojis-opt-5" name="emojis" value="shrimp-emoji" required>
+                        <label class="font-semibold bg-gray-200 peer-hover:bg-[#4c71fe] peer-hover:text-white transition-all text-gray-600 py-[0.15rem] px-4 rounded-full text-sm z-[2] border-2 border-transparent peer-checked:border-[#4c71fe]" for="emojis-opt-5">🍤</label>
+                      </div>
+                      <div class="group w-max relative">
+                        <input class="peer absolute inset-0 z-10 cursor-pointer opacity-0" type="checkbox" id="emojis-opt-6" name="emojis" value="fungi-emoji" required>
+                        <label class="font-semibold bg-gray-200 peer-hover:bg-[#4c71fe] peer-hover:text-white transition-all text-gray-600 py-[0.15rem] px-4 rounded-full text-sm z-[2] border-2 border-transparent peer-checked:border-[#4c71fe]" for="emojis-opt-6">🍄</label>
+                      </div>
+                      <div class="group w-max relative">
+                        <input class="peer absolute inset-0 z-10 cursor-pointer opacity-0" type="checkbox" id="emojis-opt-7" name="emojis" value="vegie-emoji" required>
+                        <label class="font-semibold bg-gray-200 peer-hover:bg-[#4c71fe] peer-hover:text-white transition-all text-gray-600 py-[0.15rem] px-4 rounded-full text-sm z-[2] border-2 border-transparent peer-checked:border-[#4c71fe]" for="emojis-opt-7">🥬</label>
+                      </div>
+                      <div class="group w-max relative">
+                        <input class="peer absolute inset-0 z-10 cursor-pointer opacity-0" type="checkbox" id="emojis-opt-8" name="emojis" value="magician-emoji" required>
+                        <label class="font-semibold bg-gray-200 peer-hover:bg-[#4c71fe] peer-hover:text-white transition-all text-gray-600 py-[0.15rem] px-4 rounded-full text-sm z-[2] border-2 border-transparent peer-checked:border-[#4c71fe]" for="emojis-opt-8">🧙‍♂️</label>
+                      </div>
+                      <div class="group w-max relative">
+                        <input class="peer absolute inset-0 z-10 cursor-pointer opacity-0" type="checkbox" id="emojis-opt-9" name="emojis" value="fire-emoji" required>
+                        <label class="font-semibold bg-gray-200 peer-hover:bg-[#4c71fe] peer-hover:text-white transition-all text-gray-600 py-[0.15rem] px-4 rounded-full text-sm z-[2] border-2 border-transparent peer-checked:border-[#4c71fe]" for="emojis-opt-9">🔥</label>
+                      </div>
+                      <div class="group w-max relative">
+                        <input class="peer absolute inset-0 z-10 cursor-pointer opacity-0" type="checkbox" id="emojis-opt-10" name="emojis" value="rocket-emoji" required>
+                        <label class="font-semibold bg-gray-200 peer-hover:bg-[#4c71fe] peer-hover:text-white transition-all text-gray-600 py-[0.15rem] px-4 rounded-full text-sm z-[2] border-2 border-transparent peer-checked:border-[#4c71fe]" for="emojis-opt-10">🚀</label>
+                      </div>
+                      <div class="group w-max relative">
+                        <input class="peer absolute inset-0 z-10 cursor-pointer opacity-0" type="checkbox" id="emojis-opt-11" name="emojis" value="elegant-emoji" required>
+                        <label class="font-semibold bg-gray-200 peer-hover:bg-[#4c71fe] peer-hover:text-white transition-all text-gray-600 py-[0.15rem] px-4 rounded-full text-sm z-[2] border-2 border-transparent peer-checked:border-[#4c71fe]" for="emojis-opt-11">🎩</label>
+                      </div>
+                      <div class="group w-max relative">
+                        <input class="peer absolute inset-0 z-10 cursor-pointer opacity-0" type="checkbox" id="emojis-opt-12" name="emojis" value="wave-emoji" required>
+                        <label class="font-semibold bg-gray-200 peer-hover:bg-[#4c71fe] peer-hover:text-white transition-all text-gray-600 py-[0.15rem] px-4 rounded-full text-sm z-[2] border-2 border-transparent peer-checked:border-[#4c71fe]" for="emojis-opt-12">🌊</label>
+                      </div>
+                      <div class="group w-max relative">
+                        <input class="peer absolute inset-0 z-10 cursor-pointer opacity-0" type="checkbox" id="emojis-opt-13" name="emojis" value="wow-emoji" required>
+                        <label class="font-semibold bg-gray-200 peer-hover:bg-[#4c71fe] peer-hover:text-white transition-all text-gray-600 py-[0.15rem] px-4 rounded-full text-sm z-[2] border-2 border-transparent peer-checked:border-[#4c71fe]" for="emojis-opt-13">😍</label>
+                      </div>
+                      <div class="group w-max relative">
+                        <input class="peer absolute inset-0 z-10 cursor-pointer opacity-0" type="checkbox" id="emojis-opt-14" name="emojis" value="miam-emoji" required>
+                        <label class="font-semibold bg-gray-200 peer-hover:bg-[#4c71fe] peer-hover:text-white transition-all text-gray-600 py-[0.15rem] px-4 rounded-full text-sm z-[2] border-2 border-transparent peer-checked:border-[#4c71fe]" for="emojis-opt-14">😋</label>
+                      </div>
+                      <div class="group w-max relative">
+                        <input class="peer absolute inset-0 z-10 cursor-pointer opacity-0" type="checkbox" id="emojis-opt-15" name="emojis" value="hot-emoji" required>
+                        <label class="font-semibold bg-gray-200 peer-hover:bg-[#4c71fe] peer-hover:text-white transition-all text-gray-600 py-[0.15rem] px-4 rounded-full text-sm z-[2] border-2 border-transparent peer-checked:border-[#4c71fe]" for="emojis-opt-15">🥵</label>
+                      </div>
+                      <div class="input-control__error-msg block w-full"></div>
                     </div>
-                    <div class="group w-max relative">
-                      <input class="peer absolute inset-0 z-10 cursor-pointer opacity-0" type="checkbox" id="ustensils-opt-3" name="ustensils" value="cuillere-a-soupe" required>
-                      <label class="font-semibold bg-gray-200 peer-hover:bg-[#4c71fe] peer-hover:text-white transition-all text-gray-600 hover:text-gray-600 py-[0.15rem] px-4 rounded-full text-sm z-[2] peer-checked:bg-[#4c71fe] peer-checked:text-white" for="ustensils-opt-3">cuillere a soupe</label>
-                    </div>
-                    <div class="group w-max relative">
-                      <input class="peer absolute inset-0 z-10 cursor-pointer opacity-0" type="checkbox" id="ustensils-opt-4" name="ustensils" value="mains" required>
-                      <label class="font-semibold bg-gray-200 peer-hover:bg-[#4c71fe] peer-hover:text-white transition-all text-gray-600 hover:text-gray-600 py-[0.15rem] px-4 rounded-full text-sm z-[2] peer-checked:bg-[#4c71fe] peer-checked:text-white" for="ustensils-opt-4">nos mains</label>
-                    </div>
-                    <div class="group w-max relative">
-                      <input class="peer absolute inset-0 z-10 cursor-pointer opacity-0" type="checkbox" id="ustensils-opt-5" name="ustensils" value="paille-a-soupe" required>
-                      <label class="font-semibold bg-gray-200 peer-hover:bg-[#4c71fe] peer-hover:text-white transition-all text-gray-600 hover:text-gray-600 py-[0.15rem] px-4 rounded-full text-sm z-[2] peer-checked:bg-[#4c71fe] peer-checked:text-white" for="ustensils-opt-5">paille a soupe</label>
-                    </div>
-                    <div class="group w-max relative">
-                      <input class="peer absolute inset-0 z-10 cursor-pointer opacity-0" type="checkbox" id="ustensils-opt-6" name="ustensils" value="epuisette" required>
-                      <label class="font-semibold bg-gray-200 peer-hover:bg-[#4c71fe] peer-hover:text-white transition-all text-gray-600 hover:text-gray-600 py-[0.15rem] px-4 rounded-full text-sm z-[2] peer-checked:bg-[#4c71fe] peer-checked:text-white" for="ustensils-opt-6">epuisette</label>
-                    </div>
-                    <div class="input-control__error-msg block w-full"></div>
-                  </div>
-                </fieldset>
-              </div>
-
-              <!-- Emojis -->
-              <div class="flex flex-col mb-4">
-                <fieldset class="space-y-1">
-                  <legend class="font-semibold">Emojis decrivant la recette</legend>
-                  <span class="text-xs">Choisir entre 1 et 3 émojis</span>
-                  <div class="flex flex-wrap gap-2 input-control">
-                    <div class="group w-max relative">
-                      <input class="peer absolute inset-0 z-10 cursor-pointer opacity-0" type="checkbox" id="emojis-opt-1" name="emojis" value="spicy-emoji" required>
-                      <label class="font-semibold bg-gray-200 peer-hover:bg-[#4c71fe] peer-hover:text-white transition-all text-gray-600 py-[0.15rem] px-4 rounded-full text-sm z-[2] border-2 border-transparent peer-checked:border-[#4c71fe]" for="emojis-opt-1">🌶️</label>
-                    </div>
-                    <div class="group w-max relative">
-                      <input class="peer absolute inset-0 z-10 cursor-pointer opacity-0" type="checkbox" id="emojis-opt-2" name="emojis" value="corn-emoji" required>
-                      <label class="font-semibold bg-gray-200 peer-hover:bg-[#4c71fe] peer-hover:text-white transition-all text-gray-600 py-[0.15rem] px-4 rounded-full text-sm z-[2] border-2 border-transparent peer-checked:border-[#4c71fe]" for="emojis-opt-2">🌽</label>
-                    </div>
-                    <div class="group w-max relative">
-                      <input class="peer absolute inset-0 z-10 cursor-pointer opacity-0" type="checkbox" id="emojis-opt-3" name="emojis" value="ramen-emoji" required>
-                      <label class="font-semibold bg-gray-200 peer-hover:bg-[#4c71fe] peer-hover:text-white transition-all text-gray-600 py-[0.15rem] px-4 rounded-full text-sm z-[2] border-2 border-transparent peer-checked:border-[#4c71fe]" for="emojis-opt-3">🍜</label>
-                    </div>
-                    <div class="group w-max relative">
-                      <input class="peer absolute inset-0 z-10 cursor-pointer opacity-0" type="checkbox" id="emojis-opt-4" name="emojis" value="meat-emoji" required>
-                      <label class="font-semibold bg-gray-200 peer-hover:bg-[#4c71fe] peer-hover:text-white transition-all text-gray-600 py-[0.15rem] px-4 rounded-full text-sm z-[2] border-2 border-transparent peer-checked:border-[#4c71fe]" for="emojis-opt-4">🥩</label>
-                    </div>
-                    <div class="group w-max relative">
-                      <input class="peer absolute inset-0 z-10 cursor-pointer opacity-0" type="checkbox" id="emojis-opt-5" name="emojis" value="shrimp-emoji" required>
-                      <label class="font-semibold bg-gray-200 peer-hover:bg-[#4c71fe] peer-hover:text-white transition-all text-gray-600 py-[0.15rem] px-4 rounded-full text-sm z-[2] border-2 border-transparent peer-checked:border-[#4c71fe]" for="emojis-opt-5">🍤</label>
-                    </div>
-                    <div class="group w-max relative">
-                      <input class="peer absolute inset-0 z-10 cursor-pointer opacity-0" type="checkbox" id="emojis-opt-6" name="emojis" value="fungi-emoji" required>
-                      <label class="font-semibold bg-gray-200 peer-hover:bg-[#4c71fe] peer-hover:text-white transition-all text-gray-600 py-[0.15rem] px-4 rounded-full text-sm z-[2] border-2 border-transparent peer-checked:border-[#4c71fe]" for="emojis-opt-6">🍄</label>
-                    </div>
-                    <div class="group w-max relative">
-                      <input class="peer absolute inset-0 z-10 cursor-pointer opacity-0" type="checkbox" id="emojis-opt-7" name="emojis" value="vegie-emoji" required>
-                      <label class="font-semibold bg-gray-200 peer-hover:bg-[#4c71fe] peer-hover:text-white transition-all text-gray-600 py-[0.15rem] px-4 rounded-full text-sm z-[2] border-2 border-transparent peer-checked:border-[#4c71fe]" for="emojis-opt-7">🥬</label>
-                    </div>
-                    <div class="group w-max relative">
-                      <input class="peer absolute inset-0 z-10 cursor-pointer opacity-0" type="checkbox" id="emojis-opt-8" name="emojis" value="magician-emoji" required>
-                      <label class="font-semibold bg-gray-200 peer-hover:bg-[#4c71fe] peer-hover:text-white transition-all text-gray-600 py-[0.15rem] px-4 rounded-full text-sm z-[2] border-2 border-transparent peer-checked:border-[#4c71fe]" for="emojis-opt-8">🧙‍♂️</label>
-                    </div>
-                    <div class="group w-max relative">
-                      <input class="peer absolute inset-0 z-10 cursor-pointer opacity-0" type="checkbox" id="emojis-opt-9" name="emojis" value="fire-emoji" required>
-                      <label class="font-semibold bg-gray-200 peer-hover:bg-[#4c71fe] peer-hover:text-white transition-all text-gray-600 py-[0.15rem] px-4 rounded-full text-sm z-[2] border-2 border-transparent peer-checked:border-[#4c71fe]" for="emojis-opt-9">🔥</label>
-                    </div>
-                    <div class="group w-max relative">
-                      <input class="peer absolute inset-0 z-10 cursor-pointer opacity-0" type="checkbox" id="emojis-opt-10" name="emojis" value="rocket-emoji" required>
-                      <label class="font-semibold bg-gray-200 peer-hover:bg-[#4c71fe] peer-hover:text-white transition-all text-gray-600 py-[0.15rem] px-4 rounded-full text-sm z-[2] border-2 border-transparent peer-checked:border-[#4c71fe]" for="emojis-opt-10">🚀</label>
-                    </div>
-                    <div class="group w-max relative">
-                      <input class="peer absolute inset-0 z-10 cursor-pointer opacity-0" type="checkbox" id="emojis-opt-11" name="emojis" value="elegant-emoji" required>
-                      <label class="font-semibold bg-gray-200 peer-hover:bg-[#4c71fe] peer-hover:text-white transition-all text-gray-600 py-[0.15rem] px-4 rounded-full text-sm z-[2] border-2 border-transparent peer-checked:border-[#4c71fe]" for="emojis-opt-11">🎩</label>
-                    </div>
-                    <div class="group w-max relative">
-                      <input class="peer absolute inset-0 z-10 cursor-pointer opacity-0" type="checkbox" id="emojis-opt-12" name="emojis" value="wave-emoji" required>
-                      <label class="font-semibold bg-gray-200 peer-hover:bg-[#4c71fe] peer-hover:text-white transition-all text-gray-600 py-[0.15rem] px-4 rounded-full text-sm z-[2] border-2 border-transparent peer-checked:border-[#4c71fe]" for="emojis-opt-12">🌊</label>
-                    </div>
-                    <div class="group w-max relative">
-                      <input class="peer absolute inset-0 z-10 cursor-pointer opacity-0" type="checkbox" id="emojis-opt-13" name="emojis" value="wow-emoji" required>
-                      <label class="font-semibold bg-gray-200 peer-hover:bg-[#4c71fe] peer-hover:text-white transition-all text-gray-600 py-[0.15rem] px-4 rounded-full text-sm z-[2] border-2 border-transparent peer-checked:border-[#4c71fe]" for="emojis-opt-13">😍</label>
-                    </div>
-                    <div class="group w-max relative">
-                      <input class="peer absolute inset-0 z-10 cursor-pointer opacity-0" type="checkbox" id="emojis-opt-14" name="emojis" value="miam-emoji" required>
-                      <label class="font-semibold bg-gray-200 peer-hover:bg-[#4c71fe] peer-hover:text-white transition-all text-gray-600 py-[0.15rem] px-4 rounded-full text-sm z-[2] border-2 border-transparent peer-checked:border-[#4c71fe]" for="emojis-opt-14">😋</label>
-                    </div>
-                    <div class="group w-max relative">
-                      <input class="peer absolute inset-0 z-10 cursor-pointer opacity-0" type="checkbox" id="emojis-opt-15" name="emojis" value="hot-emoji" required>
-                      <label class="font-semibold bg-gray-200 peer-hover:bg-[#4c71fe] peer-hover:text-white transition-all text-gray-600 py-[0.15rem] px-4 rounded-full text-sm z-[2] border-2 border-transparent peer-checked:border-[#4c71fe]" for="emojis-opt-15">🥵</label>
-                    </div>
-                    <div class="input-control__error-msg block w-full"></div>
-                  </div>
-                </fieldset>
-              </div>
-
-              <!-- Miam-o-metre -->
-              <div class="flex flex-col mb-4 space-y-1 input-control">
-                <label for="miamometer" class="font-semibold">Miam-o-metre</label>
-                <input class="border border-slate-400" type="range" id="miamometer" name="miamometer" min="0" max="100">
-                <div class="input-control__error-msg block w-full"></div>
+                  </fieldset>
+                </div>
+                <!-- Miam-o-metre -->
+                <div class="flex flex-col mb-4 space-y-1 input-control">
+                  <label for="miamometer" class="font-semibold">Miam-o-metre</label>
+                  <input class="border border-slate-400" type="range" id="miamometer" name="miamometer" min="0" max="100">
+                  <div class="input-control__error-msg block w-full"></div>
+                </div>
               </div>
             </div>
           </fieldset>
