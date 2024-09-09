@@ -36,7 +36,6 @@ const FILES_TO_CACHE = [
   "img/etapes/nouilles-photo.jpg",
   "img/etapes/nouilles.png",
   "img/etapes/passoire.png",
-  "
   
 ];
 
