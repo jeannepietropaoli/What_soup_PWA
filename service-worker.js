@@ -1,4 +1,4 @@
-const CACHE_NAME = "static-cache-v45";
+const CACHE_NAME = "static-cache-v46";
 
 // Fichiers a stocker dans la cache
 const FILES_TO_CACHE = [
@@ -23,6 +23,20 @@ const FILES_TO_CACHE = [
   "img/favicon.png",
   "img/ingredeints-bg.png",
   "img/ingredients-bg-checked.png",
+  "img/ramen_bol.png",
+  "img/ramen-semaine.png",
+  "img/whatsoup-blue.png",
+  "img/etapes/bouillon_miso_avec_bg.png",
+  "img/etapes/bouillon_shio_avec_bg.png",
+  "img/etapes/bouillon_shoyu_avec_bg.png",
+  "img/etapes/bouillon_tonkotsu_avec_bg.png",
+  "img/etapes/bouillon-photo-2.jpg",
+  "img/etapes/bouillon-photo.jpg",
+  "img/etapes/casserole.png",
+  "img/etapes/nouilles-photo.jpg",
+  "img/etapes/nouilles.png",
+  "img/etapes/passoire.png",
+  "
   
 ];
 
