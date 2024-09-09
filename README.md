@@ -15,10 +15,10 @@ J'ai choisi de monter un site de création de ramens en ligne: "What'soup?". De 
 
 ## Aperçu   
 
-<img src="img/screenshots/capture_accueil.jpeg" alt="capture écran page d'accueil" width="600"/>
-<img src="img/screenshots/capture_recettes.jpeg" alt="caputre écran page mes recettes" width="600"/>
-<img src="img/screenshots/capture_inspiration.jpeg" alt="caputre écran page inspiration" width="600"/>
-<img src="img/screenshots/capture_preparation.jpeg" alt="caputre écran page préparation" width="600"/>
+<img src="img/screenshots/capture_accueil.jpeg" alt="capture écran page d'accueil" width="600" class="my-5 border-b-4 border-gray-300"/>
+<img src="img/screenshots/capture_recettes.jpeg" alt="caputre écran page mes recettes" width="600" class="my-5 border-b-4 border-gray-300"/>
+<img src="img/screenshots/capture_inspiration.jpeg" alt="caputre écran page inspiration" width="600" class="my-5 border-b-4 border-gray-300"/>
+<img src="img/screenshots/capture_preparation.jpeg" alt="caputre écran page préparation" width="600" class="my-5 border-b-4 border-gray-300"/>
 
 ## Objectifs
 
