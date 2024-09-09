@@ -3,3 +3,17 @@
 .oleo_font {
     font-family: "Oleo Script", system-ui;
 }
+
+@font-face {
+    font-family: 'Oleo Script';
+    font-style: normal;
+    font-weight: normal;
+    src: url('../../../fonts/oleo-script-regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Oleo Script';
+    font-style: normal;
+    font-weight: bold;
+    src: url('../../../fonts/oleo-script-bold.ttf') format('truetype');
+}
