@@ -1,4 +1,4 @@
-const CACHE_NAME = "static-cache-v54";
+const CACHE_NAME = "static-cache-v55";
 
 // Fichiers a stocker dans la cache
 const FILES_TO_CACHE = [
@@ -27,7 +27,7 @@ self.addEventListener("install", (evt) => {
   // Precaching des ressources statiques
   evt.waitUntil(
     caches.open(CACHE_NAME).then((cache) => {
-      console.log("[ServiceWorker] Pre-caching offline page");
+      // console.log("[ServiceWorker] Pre-caching offline page");
       return cache.addAll(FILES_TO_CACHE).catch((error) => {
         console.error("[ServiceWorker] Pre-caching failed:", error);
       });
@@ -45,7 +45,7 @@ self.addEventListener("activate", (evt) => {
       return Promise.all(
         keyList.map((key) => {
           if (key !== CACHE_NAME) {
-            console.log("[ServiceWorker] Removing old cache", key);
+            // console.log("[ServiceWorker] Removing old cache", key);
             return caches.delete(key);
           }
         })
@@ -58,7 +58,7 @@ self.addEventListener("activate", (evt) => {
 
 // Acces aux ressources
 self.addEventListener("fetch", (evt) => {
-  console.log("[ServiceWorker] Fetch", evt.request.url);
+  // console.log("[ServiceWorker] Fetch", evt.request.url);
 
   // Permet de mettre en cache dynamiquement les images avec une strategie stale-while-revalidate, c'est a dire que l'image sera affichee meme si elle est obsolete, et sera remplacee par la nouvelle image une fois telechargee
   if (evt.request.url.includes("/img/")) {
