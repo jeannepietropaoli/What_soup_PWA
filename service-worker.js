@@ -1,4 +1,4 @@
-const CACHE_NAME = "static-cache-v48";
+const CACHE_NAME = "static-cache-v50";
 
 // Fichiers a stocker dans la cache
 const FILES_TO_CACHE = [
@@ -20,37 +20,18 @@ const FILES_TO_CACHE = [
   "scripts/ramen-creation-form.js",
   "scripts/RamenRecipe.js",
   "scripts/recipe-display.js",
-  "img/favicon.png",
-  "img/ingredeints-bg.png",
-  "img/ingredients-bg-checked.png",
-  "img/ramen_bol.png",
-  "img/ramen-semaine.png",
-  "img/whatsoup-blue.png",
-  "img/etapes/bouillon_miso_avec_bg.png",
-  "img/etapes/bouillon_shio_avec_bg.png",
-  "img/etapes/bouillon_shoyu_avec_bg.png",
-  "img/etapes/bouillon_tonkotsu_avec_bg.png",
-  "img/etapes/bouillon-photo-2.jpg",
-  "img/etapes/bouillon-photo.jpg",
-  "img/etapes/casserole.png",
-  "img/etapes/nouilles-photo.jpg",
-  "img/etapes/nouilles.png",
-  "img/etapes/passoire.png",
-  
 ];
 
 // Installation - fait seulement une fois, premiere ouverture du site (installation du service worker)
 self.addEventListener("install", (evt) => {
-    // Precache static resources here.
+  // Precaching des ressources statiques
   evt.waitUntil(
-    caches.open(CACHE_NAME)
-      .then((cache) => {
-        console.log("[ServiceWorker] Pre-caching offline page");
-        return cache.addAll(FILES_TO_CACHE)
-          .catch((error) => {
-            console.error("[ServiceWorker] Pre-caching failed:", error);
-          });
-      })
+    caches.open(CACHE_NAME).then((cache) => {
+      console.log("[ServiceWorker] Pre-caching offline page");
+      return cache.addAll(FILES_TO_CACHE).catch((error) => {
+        console.error("[ServiceWorker] Pre-caching failed:", error);
+      });
+    })
   );
   self.skipWaiting();
   console.log("[ServiceWorker] Install");
@@ -58,7 +39,7 @@ self.addEventListener("install", (evt) => {
 
 // Activation - a chaque ouverture du site / app
 self.addEventListener("activate", (evt) => {
-  // Remove previous cached data from disk.
+  // efface les anciennes caches
   evt.waitUntil(
     caches.keys().then((keyList) => {
       return Promise.all(
@@ -75,41 +56,41 @@ self.addEventListener("activate", (evt) => {
   console.log("[ServiceWorker] Activate");
 });
 
-
-// Fetch event - Acces aux ressources
+// Acces aux ressources
 self.addEventListener("fetch", (evt) => {
   console.log("[ServiceWorker] Fetch", evt.request.url);
 
   // Permet de mettre en cache dynamiquement les images avec une strategie stale-while-revalidate, c'est a dire que l'image sera affichee meme si elle est obsolete, et sera remplacee par la nouvelle image une fois telechargee
-  if (evt.request.url.includes('/img/')) {
+  if (evt.request.url.includes("/img/")) {
     evt.respondWith(
-      caches.match(evt.request).then((cachedResponse) => {
-        // Fetch the image from the network in the background
-        const fetchPromise = fetch(evt.request).then((networkResponse) => {
-          const clonedResponse = networkResponse.clone(); 
-          caches.open(CACHE_NAME).then((cache) => {
-            cache.put(evt.request, clonedResponse); 
-          });
-          return networkResponse; 
-        }).catch(err => console.error("Fetch failed for image", err)); 
-        
-        return cachedResponse || fetchPromise;
-      }).catch(err => console.error("Cache match failed", err))
+      caches
+        .match(evt.request)
+        .then((cachedResponse) => {
+          const fetchPromise = fetch(evt.request)
+            .then((networkResponse) => {
+              const clonedResponse = networkResponse.clone();
+              caches.open(CACHE_NAME).then((cache) => {
+                cache.put(evt.request, clonedResponse);
+              });
+              return networkResponse;
+            })
+            .catch((err) => console.error("Fetch failed for image", err));
+
+          return cachedResponse || fetchPromise;
+        })
+        .catch((err) => console.error("Cache match failed", err))
     );
     return;
   }
 
-  if (evt.request.mode !== 'navigate') {
-    // Not a page navigation, bail.
+  if (evt.request.mode !== "navigate") {
     return;
-    }
-    evt.respondWith(
-    fetch(evt.request)
-    .catch(() => {
-    return caches.open(CACHE_NAME)
-    .then((cache) => {
-   return cache.match('offline.html' );
-    });
+  }
+  evt.respondWith(
+    fetch(evt.request).catch(() => {
+      return caches.open(CACHE_NAME).then((cache) => {
+        return cache.match("offline.html");
+      });
     })
-    );
-   });
+  );
+});
