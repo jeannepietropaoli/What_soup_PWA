@@ -1,3 +1,159 @@
+const CACHE_NAME = "static-cache-v39";
+
+// Files to cache
+const FILES_TO_CACHE = [
+  "offline.html",
+  "index.html",
+  "inspiration.html",
+  "mes-recettes.html",
+  "preparation.html",
+  "style/css/style.css",
+  "fontawesome-free-6.6.0-web/css/all.min.css",
+  "fontawesome-free-6.6.0-web/webfonts/fa-solid-900.woff2",
+  "fontawesome-free-6.6.0-web/webfonts/fa-regular-400.woff2",
+  "fontawesome-free-6.6.0-web/webfonts/fa-brands-400.woff2",
+  "https://fonts.googleapis.com/css2?family=Oleo+Script:wght@400;700&display=swap",
+  "scripts/collapse.js",
+  "scripts/mobile_menu.js",
+  "scripts/paralax.js",
+  "scripts/formValidation.js",
+  "scripts/ramen-creation-form.js",
+  "scripts/RamenRecipe.js",
+  "scripts/recipe-display.js"
+];
+
+const IMAGES_TO_CACHE = [
+  "img/favicon.png",
+  "img/ingredients-bg.png",
+  "img/ingredients-bg-checked.png",
+  "img/ramen_bol.png",
+  "img/ramen-semaine.png",
+  "img/whatsoup-blue.png",
+  "img/etapes/bouillon_miso_avec_bg.png",
+  "img/etapes/bouillon_shio_avec_bg.png",
+  "img/etapes/bouillon_shoyu_avec_bg.png",
+  "img/etapes/bouillon_tonkotsu_avec_bg.png",
+  "img/etapes/bouillon-photo-2.jpg",
+  "img/etapes/bouillon-photo.jpg",
+  "img/etapes/casserole.png",
+  "img/etapes/nouilles-photo.jpg",
+  "img/etapes/nouilles.png",
+  "img/etapes/passoire.png",
+  "img/etapes/toppings-photo.jpg",
+  "img/ingredients/bouillons/bol-v1-trs.png",
+  "img/ingredients/bouillons/bol-v2-trspng.png",
+  "img/ingredients/bouillons/bol-v3-trs.png",
+  "img/ingredients/bouillons/bol-v4-trs.png",
+  "img/epices/ail_poudre.png",
+  "img/epices/gingembre_poudre.png",
+  "img/epices/huile_sesame.png",
+  "img/epices/kimchi.png",
+  "img/epices/piment_poudre.png",
+  "img/epices/poivre_noir.png",
+  "img/epices/shichimi_togarashi.png",
+  "img/epices/yuzu_kosho.png",
+  "img/legumes/bambou.png",
+  "img/legumes/basilic.png",
+  "img/legumes/brocoli.png",
+  "img/legumes/champignons.png",
+  "img/legumes/chou.png",
+  "img/legumes/epinards.png",
+  "img/legumes/fenouil.png",
+  "img/legumes/feuille-chou.png",
+  "img/legumes/mais.png",
+  "img/legumes/oignons_verts.png",
+  "img/legumes/poireau.png",
+  "img/legumes/pousses_soja.png",
+  "img/legumes/radis.png",
+  "img/legumes/shiitake.png",
+  "img/nouilles/plates-trs.png",
+  "img/nouilles/thick-trs.png",
+  "img/nouilles/thin-trs.png",
+  "img/nouilles/wavy-trs.png",
+  "img/proteines/boeuf.png",
+  "img/proteines/crevette.png",
+  "img/proteines/porc.png",
+  "img/proteines/poulet.png",
+  "img/proteines/tempura_crevette.png",
+  "img/proteines/tofu.png",
+  "img/toppings/ail_frit.png",
+  "img/toppings/algues.png",
+  "img/toppings/beurre.png",
+  "img/toppings/dumplings.png",
+  "img/toppings/gingembre.png",
+  "img/toppings/narutomaki.png",
+  "img/toppings/oeuf-mollet.png",
+  "img/toppings/oeuf.png",
+  "img/toppings/sesame.png",
+  "img/presntation_cards/creer.jpg",
+  "img/presntation_cards/s_inspirer.jpg",
+  "img/presntation_cards/tester.jpg",
+];
+
+// Install event
+self.addEventListener("install", (evt) => {
+  evt.waitUntil(
+    caches.open(CACHE_NAME)
+      .then((cache) => {
+        console.log("[ServiceWorker] Pre-caching files");
+        return cache.addAll([...FILES_TO_CACHE, ...IMAGES_TO_CACHE])
+          .catch((error) => {
+            console.error("[ServiceWorker] Pre-caching failed:", error);
+          });
+      })
+  );
+  self.skipWaiting();
+  console.log("[ServiceWorker] Installed");
+});
+
+// Activate event
+self.addEventListener("activate", (evt) => {
+  evt.waitUntil(
+    caches.keys().then((keyList) => {
+      return Promise.all(
+        keyList.map((key) => {
+          if (key !== CACHE_NAME) {
+            console.log("[ServiceWorker] Removing old cache:", key);
+            return caches.delete(key);
+          }
+        })
+      );
+    })
+  );
+  self.clients.claim();
+  console.log("[ServiceWorker] Activated");
+});
+
+// Fetch event
+self.addEventListener("fetch", (evt) => {
+  console.log("[ServiceWorker] Fetching:", evt.request.url);
+
+  if (evt.request.mode === 'navigate') {
+    evt.respondWith(
+      fetch(evt.request)
+        .catch(() => caches.match('offline.html'))
+    );
+  } else if (evt.request.url.includes('/img/')) {
+    evt.respondWith(
+      caches.match(evt.request)
+        .then((cachedResponse) => {
+          const fetchPromise = fetch(evt.request)
+            .then((networkResponse) => {
+              const clonedResponse = networkResponse.clone();
+              caches.open(CACHE_NAME)
+                .then((cache) => cache.put(evt.request, clonedResponse));
+              return networkResponse;
+            })
+            .catch(err => console.error("Fetch failed:", err));
+          return cachedResponse || fetchPromise;
+        })
+        .catch(err => console.error("Cache match failed:", err))
+    );
+  }
+});
+
+/*
+
 const CACHE_NAME = "static-cache-v38";
 
 // Fichiers a stocker dans la cache
@@ -165,3 +321,6 @@ self.addEventListener("fetch", (evt) => {
     })
     );
    });
+
+
+   */
