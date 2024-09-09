@@ -1,6 +1,6 @@
-const CACHE_NAME = "static-cache-v32";
+const CACHE_NAME = "static-cache-v34";
 
-//Add list of files to cache here.
+// Fichiers a stocker dans la cache
 const FILES_TO_CACHE = [
   "offline.html",
   "index.html",
@@ -54,27 +54,6 @@ self.addEventListener("activate", (evt) => {
   console.log("[ServiceWorker] Activate");
 });
 
-/*
-//Acces aux ressources
-self.addEventListener('fetch', (evt) => {
-  console.log('[ServiceWorker] Fetch', evt.request.url);
-  //Add fetch event handler here.
-  if (evt.request.mode !== 'navigate') {
-  // Not a page navigation, bail.
-  return;
-  }
-  evt.respondWith(
-  fetch(evt.request)
-  .catch(() => {
-  return caches.open(CACHE_NAME)
-  .then((cache) => {
- return cache.match('offline.html' );
-  });
-  })
-  );
- });
- */
-
 
 // Fetch event - Acces aux ressources
 self.addEventListener("fetch", (evt) => {
@@ -86,40 +65,30 @@ self.addEventListener("fetch", (evt) => {
       caches.match(evt.request).then((cachedResponse) => {
         // Fetch the image from the network in the background
         const fetchPromise = fetch(evt.request).then((networkResponse) => {
-          const clonedResponse = networkResponse.clone(); // Clone the response
+          const clonedResponse = networkResponse.clone(); 
           caches.open(CACHE_NAME).then((cache) => {
-            cache.put(evt.request, clonedResponse); // Use cloned response for cache
+            cache.put(evt.request, clonedResponse); 
           });
-          return networkResponse; // Return the original response to the browser
-        }).catch(err => console.error("Fetch failed for image", err)); // Catch fetch errors
-        // Return the cached image if available, else wait for the network response
+          return networkResponse; 
+        }).catch(err => console.error("Fetch failed for image", err)); 
+        
         return cachedResponse || fetchPromise;
-      }).catch(err => console.error("Cache match failed", err)) // Catch cache match errors
-    );
-    return; // Exit the fetch event handler after processing images
-  }
-
-  // Handle navigation requests
-  if (evt.request.mode === "navigate" || evt.request.method === "GET") {
-    evt.respondWith(
-      caches.match(evt.request).then((cachedResponse) => {
-        if (cachedResponse) {
-          return cachedResponse; // Return the cached page if available
-        }
-        return fetch(evt.request).then((networkResponse) => {
-          return caches.open(CACHE_NAME).then((cache) => {
-            // Cache the newly fetched response for future use
-            cache.put(evt.request, networkResponse.clone());
-            return networkResponse;
-          });
-        }).catch(() => {
-          return caches.open(CACHE_NAME).then((cache) => {
-            return cache.match("offline.html");
-          });
-        });
-      })
+      }).catch(err => console.error("Cache match failed", err))
     );
     return;
   }
-});
 
+  if (evt.request.mode !== 'navigate') {
+    // Not a page navigation, bail.
+    return;
+    }
+    evt.respondWith(
+    fetch(evt.request)
+    .catch(() => {
+    return caches.open(CACHE_NAME)
+    .then((cache) => {
+   return cache.match('offline.html' );
+    });
+    })
+    );
+   });
