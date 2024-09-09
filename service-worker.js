@@ -1,4 +1,4 @@
-const CACHE_NAME = "static-cache-v28";
+const CACHE_NAME = "static-cache-v29";
 
 //Add list of files to cache here.
 const FILES_TO_CACHE = [
@@ -78,7 +78,7 @@ self.addEventListener("fetch", (evt) => {
   }
 
   // Handle navigation requests (e.g., pages)
-  if (evt.request.mode === "navigate") {
+  if (evt.request.mode === "navigate" || evt.request.method === "GET") {
     evt.respondWith(
       caches.match(evt.request).then((cachedResponse) => {
         if (cachedResponse) {
