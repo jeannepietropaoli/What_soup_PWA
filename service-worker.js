@@ -1,4 +1,4 @@
-const CACHE_NAME = "static-cache-v20";
+const CACHE_NAME = "static-cache-v21";
 
 //Add list of files to cache here.
 const FILES_TO_CACHE = [
@@ -12,8 +12,8 @@ const FILES_TO_CACHE = [
   "fontawesome-free-6.6.0-web/webfonts/fa-solid-900.woff2",
   "fontawesome-free-6.6.0-web/webfonts/fa-regular-400.woff2",
   "fontawesome-free-6.6.0-web/webfonts/fa-brands-400.woff2",
-  "fonts/oleo-script-bold.ttf",
-  "fonts/oleo-script-regular.ttf",
+  "Integration_web_PWA_Jeanne_Pietropaoli/fonts/oleo-script-bold.ttf",
+  "Integration_web_PWA_Jeanne_Pietropaoli/fonts/oleo-script-regular.ttf",
   "scripts/collapse.js",
   "scripts/mobile_menu.js",
   "scripts/paralax.js",
