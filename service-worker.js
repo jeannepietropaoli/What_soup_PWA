@@ -1,4 +1,4 @@
-const CACHE_NAME = "static-cache-v22";
+const CACHE_NAME = "static-cache-v23";
 
 //Add list of files to cache here.
 const FILES_TO_CACHE = [
@@ -12,8 +12,7 @@ const FILES_TO_CACHE = [
   "fontawesome-free-6.6.0-web/webfonts/fa-solid-900.woff2",
   "fontawesome-free-6.6.0-web/webfonts/fa-regular-400.woff2",
   "fontawesome-free-6.6.0-web/webfonts/fa-brands-400.woff2",
-  "fonts/oleo-script-bold.ttf",
-  "fonts/oleo-script-regular.ttf",
+  "https://fonts.googleapis.com/css2?family=Oleo+Script:wght@400;700&display=swap",
   "scripts/collapse.js",
   "scripts/mobile_menu.js",
   "scripts/paralax.js",
