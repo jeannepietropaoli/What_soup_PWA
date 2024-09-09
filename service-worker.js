@@ -1,4 +1,4 @@
-const CACHE_NAME = "static-cache-v36";
+const CACHE_NAME = "static-cache-v37";
 
 // Fichiers a stocker dans la cache
 const FILES_TO_CACHE = [
@@ -25,7 +25,7 @@ const FILES_TO_CACHE = [
 const IMAGES_TO_CACHE = [
   "img/favicon.png",
   "img/ingredeints-bg.png",
-  "img/ingredeints-bg-checked.png",
+  "img/ingredients-bg-checked.png",
   "img/ramen_bol.png",
   "img/ramen-semaine.png",
   "img/whatsoup-blue.png",
@@ -91,12 +91,16 @@ const IMAGES_TO_CACHE = [
 
 // Installation - fait seulement une fois, premiere ouverture du site (installation du service worker)
 self.addEventListener("install", (evt) => {
-  // Precache static resources here.
+    // Precache static resources here.
   evt.waitUntil(
-    caches.open(CACHE_NAME).then((cache) => {
-      console.log("[ServiceWorker] Pre-caching offline page");
-      return cache.addAll([...FILES_TO_CACHE, ...IMAGES_TO_CACHE]);
-    })
+    caches.open(CACHE_NAME)
+      .then((cache) => {
+        console.log("[ServiceWorker] Pre-caching offline page");
+        return cache.addAll([...FILES_TO_CACHE, ...IMAGES_TO_CACHE])
+          .catch((error) => {
+            console.error("[ServiceWorker] Pre-caching failed:", error);
+          });
+      })
   );
   self.skipWaiting();
   console.log("[ServiceWorker] Install");
