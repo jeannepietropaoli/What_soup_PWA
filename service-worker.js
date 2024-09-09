@@ -1,4 +1,4 @@
-const CACHE_NAME = "static-cache-v30";
+const CACHE_NAME = "static-cache-v31";
 
 //Add list of files to cache here.
 const FILES_TO_CACHE = [
@@ -55,26 +55,6 @@ self.addEventListener("activate", (evt) => {
 });
 
 //Acces aux ressources
-self.addEventListener('fetch', (evt) => {
-  console.log('[ServiceWorker] Fetch', evt.request.url);
-  //Add fetch event handler here.
-  if (evt.request.mode !== 'navigate') {
-  // Not a page navigation, bail.
-  return;
-  }
-  evt.respondWith(
-  fetch(evt.request)
-  .catch(() => {
-  return caches.open(CACHE_NAME)
-  .then((cache) => {
- return cache.match('offline.html' );
-  });
-  })
-  );
- });
-
-/* 
-// Fetch event - Acces aux ressources
 self.addEventListener("fetch", (evt) => {
   console.log("[ServiceWorker] Fetch", evt.request.url);
 
@@ -98,21 +78,18 @@ self.addEventListener("fetch", (evt) => {
   }
 
   // Handle navigation requests (e.g., pages)
-  if (evt.request.mode === "navigate" || evt.request.method === "GET") {
-    evt.respondWith(
-      caches.match(evt.request).then((cachedResponse) => {
-        if (cachedResponse) {
-          return cachedResponse; // Return the cached page if available
-        }
-        return fetch(evt.request).catch(() => {
-          return caches.open(CACHE_NAME).then((cache) => {
-            return cache.match("offline.html");
-          });
-        });
-      })
-    );
+  /* if (evt.request.mode !== 'navigate') {
+    // Not a page navigation, bail.
     return;
-  }
-});
-
-*/
+    }
+    */
+    evt.respondWith(
+    fetch(evt.request)
+    .catch(() => {
+    return caches.open(CACHE_NAME)
+    .then((cache) => {
+   return cache.match('offline.html' );
+    });
+    })
+    );
+   });
