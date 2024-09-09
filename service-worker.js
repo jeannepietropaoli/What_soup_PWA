@@ -54,7 +54,29 @@ self.addEventListener("activate", (evt) => {
   console.log("[ServiceWorker] Activate");
 });
 
+/*
 //Acces aux ressources
+self.addEventListener('fetch', (evt) => {
+  console.log('[ServiceWorker] Fetch', evt.request.url);
+  //Add fetch event handler here.
+  if (evt.request.mode !== 'navigate') {
+  // Not a page navigation, bail.
+  return;
+  }
+  evt.respondWith(
+  fetch(evt.request)
+  .catch(() => {
+  return caches.open(CACHE_NAME)
+  .then((cache) => {
+ return cache.match('offline.html' );
+  });
+  })
+  );
+ });
+ */
+
+
+// Fetch event - Acces aux ressources
 self.addEventListener("fetch", (evt) => {
   console.log("[ServiceWorker] Fetch", evt.request.url);
 
@@ -77,19 +99,27 @@ self.addEventListener("fetch", (evt) => {
     return; // Exit the fetch event handler after processing images
   }
 
-  // Handle navigation requests (e.g., pages)
-  /* if (evt.request.mode !== 'navigate') {
-    // Not a page navigation, bail.
-    return;
-    }
-    */
+  // Handle navigation requests
+  if (evt.request.mode === "navigate" || evt.request.method === "GET") {
     evt.respondWith(
-    fetch(evt.request)
-    .catch(() => {
-    return caches.open(CACHE_NAME)
-    .then((cache) => {
-   return cache.match('offline.html' );
-    });
-    })
+      caches.match(evt.request).then((cachedResponse) => {
+        if (cachedResponse) {
+          return cachedResponse; // Return the cached page if available
+        }
+        return fetch(evt.request).then((networkResponse) => {
+          return caches.open(CACHE_NAME).then((cache) => {
+            // Cache the newly fetched response for future use
+            cache.put(evt.request, networkResponse.clone());
+            return networkResponse;
+          });
+        }).catch(() => {
+          return caches.open(CACHE_NAME).then((cache) => {
+            return cache.match("offline.html");
+          });
+        });
+      })
     );
-   });
+    return;
+  }
+});
+
