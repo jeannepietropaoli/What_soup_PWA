@@ -1,4 +1,4 @@
-const CACHE_NAME = "static-cache-v37";
+const CACHE_NAME = "static-cache-v38";
 
 // Fichiers a stocker dans la cache
 const FILES_TO_CACHE = [
@@ -36,13 +36,14 @@ const IMAGES_TO_CACHE = [
   "img/etapes/bouillon-photo-2.jpg",
   "img/etapes/bouillon-photo.jpg",
   "img/etapes/casserole.png",
+  "img/etapes/nouilles-photo.jpg",
   "img/etapes/nouilles.png",
   "img/etapes/passoire.png",
   "img/etapes/toppings-photo.jpg",
-  "img/ingredients/bouillon/bol-v1-trs.png",
-  "img/ingredients/bouillon/bol-v2-trspng.png",
-  "img/ingredients/bouillon/bol-v3-trs.png",
-  "img/ingredients/bouillon/bol-v4-trs.png",
+  "img/ingredients/bouillons/bol-v1-trs.png",
+  "img/ingredients/bouillons/bol-v2-trspng.png",
+  "img/ingredients/bouillons/bol-v3-trs.png",
+  "img/ingredients/bouillons/bol-v4-trs.png",
   "img/epices/ail_poudre.png",
   "img/epices/gingembre_poudre.png",
   "img/epices/huile_sesame.png",
