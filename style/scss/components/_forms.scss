@@ -20,3 +20,15 @@
         }
     }
 }
+
+// Résout le problème de sélection sur écrans tactiles : l'effet hover ne gêne pas la sélection, évitant que le fond décoratif reste après désélection
+@media (pointer: fine) {
+// Ecrans non-tactiles
+.ingredient {
+    &:hover {
+        .ingredient__bg {
+            display: flex;
+        }
+    }
+    }
+}

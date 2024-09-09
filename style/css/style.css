@@ -47,6 +47,11 @@
     color: white;
   }
 }
+@media (pointer: fine) {
+  .ingredient:hover .ingredient__bg {
+    display: flex;
+  }
+}
 .button {
   display: inline-block;
   cursor: pointer;
