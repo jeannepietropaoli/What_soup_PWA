@@ -1,4 +1,4 @@
-const CACHE_NAME = "static-cache-v34";
+const CACHE_NAME = "static-cache-v35";
 
 // Fichiers a stocker dans la cache
 const FILES_TO_CACHE = [
@@ -60,6 +60,8 @@ self.addEventListener("fetch", (evt) => {
   console.log("[ServiceWorker] Fetch", evt.request.url);
 
   // Permet de mettre en cache dynamiquement les images avec une strategie stale-while-revalidate, c'est a dire que l'image sera affichee meme si elle est obsolete, et sera remplacee par la nouvelle image une fois telechargee
+  
+  // faire en sorte de cacher les images qui ne se trouvent pad sur la page sur laquelle on est sinon hors ligne ne seront pas cachees deja
   if (evt.request.url.includes('/img/')) {
     evt.respondWith(
       caches.match(evt.request).then((cachedResponse) => {
