@@ -1,4 +1,4 @@
-const CACHE_NAME = "static-cache-v39";
+const CACHE_NAME = "static-cache-v40";
 
 // Files to cache
 const FILES_TO_CACHE = [
@@ -305,7 +305,6 @@ self.addEventListener("fetch", (evt) => {
     );
     return;
   }
-    */
 
   if (evt.request.mode !== 'navigate') {
     // Not a page navigation, bail.
