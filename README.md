@@ -13,13 +13,6 @@ Le but est de créer une PWA (Progressive Web App) sur le sujet de notre choix. 
 
 J'ai choisi de monter un site de création de ramens en ligne: "What'soup?". De l'inspiration à la création en passant par les étapes de préparation, What'soup est une application fun et interactive sur un sujet qui plait au plus grand nombre pour conconcter vos meilleures (ou vos pires) recettes ! 
 
-## Aperçu   
-
-<img src="img/screenshots/capture_accueil.jpeg" alt="capture écran page d'accueil" width="600" style="margin: 20px 0; border-bottom: 4px solid #D1D5DB;"/>
-<img src="img/screenshots/capture_recettes.jpeg" alt="caputre écran page mes recettes" width="600" cstyle="margin: 20px 0; border-bottom: 4px solid #D1D5DB;"/>
-<img src="img/screenshots/capture_inspiration.jpeg" alt="caputre écran page inspiration" width="600" style="margin: 20px 0; border-bottom: 4px solid #D1D5DB;"/>
-<img src="img/screenshots/capture_preparation.jpeg" alt="caputre écran page préparation" width="600" style="margin: 20px 0; border-bottom: 4px solid #D1D5DB;"/>
-
 ## Objectifs
 
 *  Elaborer un **design** intéressant
@@ -82,3 +75,14 @@ Les images ont été générées grâce à l'outil Bing Image Creator (IA).
 ## Améliorations
 
 Je voulais rendre le projet plus interactif que les précédents, mais j'étais assez limitée du fait des langages utilisés, plutôt orientés pour des sites plus statiques. Le JS pour la création des ramens n'est pas le plus optimisé et je prévois reconstruire le projet avec React de manière beaucoup plus simple et efficace ! 
+
+
+## Aperçu   
+
+|  |  |
+| --- | --- |
+| 
+<img src="img/screenshots/capture_accueil.jpeg" alt="capture écran page d'accueil" width="600" style="margin: 20px 0; border-bottom: 4px solid #D1D5DB;"/>
+| <img src="img/screenshots/capture_recettes.jpeg" alt="caputre écran page mes recettes" width="600" cstyle="margin: 20px 0; border-bottom: 4px solid #D1D5DB;"/>
+| <img src="img/screenshots/capture_inspiration.jpeg" alt="caputre écran page inspiration" width="600" style="margin: 20px 0; border-bottom: 4px solid #D1D5DB;"/>
+| <img src="img/screenshots/capture_preparation.jpeg" alt="caputre écran page préparation" width="600" style="margin: 20px 0; border-bottom: 4px solid #D1D5DB;"/>
