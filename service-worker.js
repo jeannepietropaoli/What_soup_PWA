@@ -1,4 +1,4 @@
-const CACHE_NAME = "static-cache-v44";
+const CACHE_NAME = "static-cache-v45";
 
 // Fichiers a stocker dans la cache
 const FILES_TO_CACHE = [
@@ -21,6 +21,9 @@ const FILES_TO_CACHE = [
   "scripts/RamenRecipe.js",
   "scripts/recipe-display.js",
   "img/favicon.png",
+  "img/ingredeints-bg.png",
+  "img/ingredients-bg-checked.png",
+  
 ];
 
 // Installation - fait seulement une fois, premiere ouverture du site (installation du service worker)
