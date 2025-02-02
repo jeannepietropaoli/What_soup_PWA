@@ -71,7 +71,7 @@ Les images ont été générées grâce à l'outil Bing Image Creator (IA).
 
 ## Améliorations
 
-Je voulais rendre le projet plus interactif que les précédents, mais j'étais assez limitée du fait des langages utilisés. J'aimerais developper une version avec un framework (VueJS ou React) afin de faciliter et d'augemnter les features en rendant le code plus facile à lire et maintenir.
+Je voulais rendre le projet plus interactif que les précédents, mais j'étais assez limitée du fait des langages utilisés. J'aimerais developper une version avec un framework (VueJS ou React) afin de faciliter et d'augmenter les features en rendant le code plus facile à lire et maintenir.
 
 
 ## Aperçu   
