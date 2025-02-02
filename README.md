@@ -1,8 +1,4 @@
-# TP3 PWA - Intégration Web 2
-
-Elève: Jeanne Pietropaoli
-
-DA: PIEJ08579807
+# What'soup PWA
 
 ## Lien
 
@@ -71,13 +67,11 @@ Palette colorée / fun à l'image du projet:
 
 ## Notes
 
-Le formulaire à évaluer est celui au bas de la page inspiration.html.
-
 Les images ont été générées grâce à l'outil Bing Image Creator (IA).
 
 ## Améliorations
 
-Je voulais rendre le projet plus interactif que les précédents, mais j'étais assez limitée du fait des langages utilisés, plutôt orientés pour des sites plus statiques. Le JS pour la création des ramens n'est pas le plus optimisé et je prévois reconstruire le projet avec React de manière beaucoup plus simple et efficace ! 
+Je voulais rendre le projet plus interactif que les précédents, mais j'étais assez limitée du fait des langages utilisés. J'aimerais developper une version avec un framework (VueJS ou React) afin de faciliter et d'augemnter les features en rendant le code plus facile à lire et maintenir.
 
 
 ## Aperçu   
